@@ -16,6 +16,7 @@ vscode:
     - Catppuccin.catppuccin-vsc
     - DavidAnson.vscode-markdownlint
     - dbaeumer.vscode-eslint
+    - deque-systems.vscode-axe-linter
     - ecmel.vscode-html-css
     - esbenp.prettier-vscode
     - eseom.nunjucks-template
