@@ -215,6 +215,9 @@ layout: base.liquid
                 <h2>Filter added in Gitpod on 4 oct</h2>
                 <h2>Filter added in Gitpod on 6 oct 1.1</h2>
 
+            <div class="new_filter">
+
+                <div class="checkbox-columns">
                 <div class="checkbox-wrapper-1">
                     <label class="checkbox-wrapper">
                       <input type="checkbox" class="checkbox-input" />
@@ -226,6 +229,7 @@ layout: base.liquid
                       </span>
                     </label>
                   </div>
+
                   <div class="checkbox-wrapper-1">
                     <label class="checkbox-wrapper">
                       <input type="checkbox" class="checkbox-input" />
@@ -315,17 +319,18 @@ layout: base.liquid
   .checkbox-wrapper-1 *:after,
   .checkbox-wrapper-1 *:before {
     box-sizing: border-box;
+
   }
 
   .checkbox-wrapper-1 .checkbox-input {
-    clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(100%);
-            clip-path: inset(100%);
+    clip-path: inset(0 0 0 0); 
     height: 1px;
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
     width: 1px;
+
+    
   }
   .checkbox-wrapper-1 .checkbox-input:checked + .checkbox-tile {
     border-color: #192a1b;
@@ -353,10 +358,11 @@ layout: base.liquid
 
   .checkbox-wrapper-1 .checkbox-tile {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center; /* checkbox title ie land fire position within box */
     justify-content: left; /* change icon position to left instead of center */
-    width: 22rem;  /* main checkbox tile width */
+    width: 90%;  /* main checkbox tile width */
     min-height: 1.2rem;
     border-radius: 0.5rem;
     border: 3px solid #c3d7b6;
@@ -413,11 +419,36 @@ layout: base.liquid
     transition: 0.375s ease;
     text-align: center;
   }
+
+ .checkbox-columns {
+        display: flex;          
+        flex-wrap: wrap;         
+        justify-content: flex-start;
+    }
+      
+ .checkbox-wrapper-1 {
+        width: 50%;              
+        box-sizing: border-box;  
+        padding: 10px;          
+    }
+     
+@media (max-width: 768px) {
+  .checkbox-columns {
+    flex-direction: column; 
+  }
+
+  .checkbox-wrapper-1 {
+    width: 100%; /* each checkbox takes up full container width */
+    padding: 10px;
+  }
+}
+
+
 </style>
 
-                  
+                </div>              
 
-
+            </div>
                 <table>
                     <tbody>
                     <tr>
@@ -585,7 +616,10 @@ layout: base.liquid
                         </ul>
                     </li>
                 </ul>
-            </div>
+            
+            
+                </div>
+                
         </article>
     </section>
 </div>
