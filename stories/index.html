@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-10-06 17:01 -->
+    <!-- Built with 11ty - 2023-10-06 17:59 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1696611678">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1696615148">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1696611678"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1696615148"></script>
     
     <style>
     .map-label {
@@ -430,6 +430,14 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
                 <h2>Filter added in Gitpod on 4 oct</h2>
                 <h2>Filter added in Gitpod on 6 oct 1.1</h2>
 
+             <div class="filter-controls">
+                    <label class="switch">
+                      <input type="checkbox" id="toggle-all-filters">
+                      <span class="slider round"></span>
+                    </label>
+                    <span class="switch-label">Toggle All Filters</span>
+                </div>
+
             <div class="new_filter">
 
                 <div class="checkbox-columns">
@@ -658,8 +666,62 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
   }
 }
 
+/* Style the switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #c3d7b6;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #c3d7b6;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
 
 </style>
+
 
                 </div>              
 
