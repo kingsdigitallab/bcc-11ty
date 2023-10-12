@@ -101,7 +101,7 @@ layout: base.liquid
         
 
         <article id="half-page-filter">
-          <button id="toggleButton">Toggle Element</button>
+          <button id="toggleButton" class="active">Toggle Element</button>
 
             <div id="filterContainer" class="map-filters">
     
@@ -327,7 +327,8 @@ layout: base.liquid
                       </span>
                     </label>
                   </div>
-  
+
+                  <br><br><br><br><br>
 <style> 
   .checkbox-wrapper-1 *,
   .checkbox-wrapper-1 *:after,
@@ -477,9 +478,10 @@ body {
 
         #half-page-filter {
             
-            padding: 20px;
-            margin: 20px;
-            display: block;
+            padding: 0; 
+            margin: 0; 
+            height: 100%; /* Set the height to 100% to fill the screen */
+            overflow: auto; /* Add overflow: auto to enable scrolling if the content exceeds the screen height */
         }
 
         #filterContainer {
@@ -494,12 +496,26 @@ body {
             cursor: pointer;
             position: absolute;
             bottom: 0;
-            /* right: 30;  Align the button to the right side of the screen */
-            width: 100%;
+            right: 25;  /* Align the button to the right side of the screen */
+            width: 15%;
             z-index: 9999; /* A high z-index value to ensure it's on top */
             pointer-events: auto;
         }
         
+        button::before {
+            content: "▼"; /* Unicode characters. Initially, use the downward arrow */
+            display: inline-block;
+            font-size: 16px; 
+            margin-right: 5px; /* control the spacing between the icon and the button text */
+            margin-bottom: 0px;
+        }
+
+        /* Add styles for the "active" state */
+        button.active::before {
+            content: "▲"; /* Use the upward arrow when active (shown) */
+        }
+
+
         /* Ensure the button looks like a button */
         button:hover {
             background-color: #257c00; /* Change color on hover */
@@ -568,6 +584,7 @@ input:checked + .slider:before {
 </div>
 
 
+
 <script defer type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
 <script defer type="text/javascript" src="{{ '/assets/node_modules/leaflet-dvf/dist/leaflet-dvf.js' | url }}"></script>
 <script defer type="text/javascript" src="{{ '/assets/js/leaflet/plugins/leaflet.textpath.js' | url }}"></script>
@@ -603,9 +620,11 @@ input:checked + .slider:before {
         let isFilterVisible = true;
 
         toggleButton.addEventListener('click', function() {
-            isFilterVisible = !isFilterVisible;
-            filterContainer.style.display = isFilterVisible ? 'block' : 'none';
-        });
+          isFilterVisible = !isFilterVisible;
+          filterContainer.style.display = isFilterVisible ? 'block' : 'none';
+          toggleButton.classList.toggle('active', isFilterVisible);
+});
+
     </script>
 
 
