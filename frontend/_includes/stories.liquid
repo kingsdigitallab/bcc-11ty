@@ -419,10 +419,17 @@ layout: base.liquid
     transition: 0.375s ease;
     color: #494949;
     margin-left: 35px; /* ensure icons not stick on left corner */
-    width: auto;
-    height: auto;
+    display: inline-block; 
+    vertical-align: middle; 
+    margin-right: 10px; 
     
   }
+/* Override the size for checkbox icon, was 4vw for both little map and feature icons  */
+  .checkbox-wrapper-1 .checkbox-icon img {
+    width: 2.2vw !important; 
+    height: 2.2vw !important; 
+}
+
   .checkbox-wrapper-1 .checkbox-icon svg {
     width: 3rem;
     height: 3rem;
