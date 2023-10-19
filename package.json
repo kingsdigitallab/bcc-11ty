@@ -44,9 +44,7 @@
     "simple-git-hooks": "^2.8.0",
     "vscode-langservers-extracted": "^4.2.1"
   },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
+  
   "lint-staged": {
     "*.js": "npm run format",
     "*.{md,yaml}": "npm run prettier:fix"
