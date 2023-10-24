@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-10-23 12:59 -->
+    <!-- Built with 11ty - 2023-10-24 15:43 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1698065980">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1698162236">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1698065980"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1698162236"></script>
     
     <style>
     .map-label {
@@ -319,8 +319,19 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
           <button id="toggleButton" class="active">Toggle Element</button>
 
             <div id="filterContainer" class="map-filters">
-    
+
               <h2>Maps</h2>
+
+              <div class="filter-controls">
+                <label class="switch">
+                  <input type="checkbox" id="toggle-all-filters-one" data-featuretype="all" data-criteria="map_source" class="map_filter" data-filtervalue="12-19" />
+                  <span class="slider round"></span>
+                </label>
+                <span class="switch-label">Toggle All Filters</span>
+              </div>
+                       
+
+
                 <ul>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="1" class="map_filter" id="checkbox1"/>
                         <label for="checkbox1">
@@ -450,7 +461,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 
              <div class="filter-controls">
                     <label class="switch">
-                      <input type="checkbox" id="toggle-all-filters">
+                      <input type="checkbox" id="toggle-all-filters-two">
                       <span class="slider round"></span>
                     </label>
                     <span class="switch-label">Toggle All Filters</span>
@@ -459,6 +470,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
             <div id="newFilter" class="new_filter">
 
                 <div class="checkbox-columns">
+
                 <div class="checkbox-wrapper-1">
                     <label class="checkbox-wrapper">
                       <input type="checkbox" class="checkbox-input" />
@@ -837,17 +849,53 @@ input:checked + .slider:before {
 
 
 <script>
+  // this is for toggle show and hide, not smaller toggle
         const toggleButton = document.getElementById('toggleButton');
         const filterContainer = document.getElementById('filterContainer');
         let isFilterVisible = true;
-
         toggleButton.addEventListener('click', function() {
-          isFilterVisible = !isFilterVisible;
-          filterContainer.style.display = isFilterVisible ? 'block' : 'none';
-          toggleButton.classList.toggle('active', isFilterVisible);
-});
-
+            isFilterVisible = !isFilterVisible;
+            filterContainer.style.display = isFilterVisible ? 'block' : 'none';
+        });
     </script>
+
+<script>
+  // "Apply to All" toggle for Filters One, for the Map
+  const checkboxesOne = document.querySelectorAll(".map_filter");
+  const toggleAllCheckboxOne = document.getElementById("toggle-all-filters-one");
+
+  function applyFilterOne(filterValue) {
+  const values = filterValue.split('-');
+  const start = parseInt(values[0]);
+  const end = parseInt(values[1]);
+
+  if (!isNaN(start) && !isNaN(end)) {
+    for (let i = start; i <= end; i++) {
+      // this is the trigger function where to trigger a range of 1-19 value
+      console.log(`Applying filter to map with value ${i} for Filters One`);
+    }
+  } else {
+    console.log("Invalid filter range");
+  }
+}
+  toggleAllCheckboxOne.addEventListener("change", function() {
+   
+    const applyToAll = toggleAllCheckboxOne.checked;
+
+    checkboxesOne.forEach(checkbox => {
+      checkbox.checked = applyToAll;
+      applyFilterOne(checkbox.getAttribute("data-filtervalue"));
+    });
+  });
+
+  checkboxesOne.forEach(checkbox => {
+    checkbox.addEventListener("change", function() {
+      applyFilterOne(checkbox.getAttribute("data-filtervalue"));
+    });
+  });
+</script>
+
+
 
 
 </body>
