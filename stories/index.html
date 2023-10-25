@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-10-25 09:27 -->
+    <!-- Built with 11ty - 2023-10-25 09:58 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1698226022">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1698227937">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1698226022"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1698227937"></script>
     
     <style>
     .map-label {
@@ -327,7 +327,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
                   <input type="checkbox" id="toggle-all-filters-one" data-featuretype="all" data-criteria="map_source" class="map_filter" data-filtervalue="12-19" />
                   <span class="slider round"></span>
                 </label>
-                <span class="switch-label">Toggle All Filters</span>
+                <label for="toggle-all-filters-one" class="switch-label">Toggle All Filters</label>
               </div>
                        
 
@@ -757,12 +757,12 @@ body {
             background-color: #257c00; /* Change color on hover */
         }
 
-/* Style the switch */
+/* style the switch, on/off */
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 50px;
+  height: 24px;
 }
 
 .switch input {
@@ -787,8 +787,8 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -809,6 +809,14 @@ input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+}
+.filter-controls {
+  display: flex;
+  align-items: center;
+}
+
+.switch-label {
+  margin-left: 15px; /* change this margin if toggle text is too close to the icon */
 }
 </style>
 
