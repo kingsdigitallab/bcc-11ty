@@ -389,7 +389,7 @@ layout: base.liquid
     flex-direction: row;
     align-items: center; /* checkbox title ie land fire position within box */
     justify-content: left; /* change icon position to left instead of center */
-    width: 90%;  /* main checkbox tile width */
+    width: 95%;  /* main checkbox tile width */
     height: 90%;  /* main checkbox tile height */
     border-radius: 0.5rem;
     border: 3px solid #c3d7b6;
@@ -398,7 +398,8 @@ layout: base.liquid
     transition: 0.15s ease;
     cursor: pointer;
     position: relative;
-    margin: 5px; /* margin bewteen each checkbox ensure not stick together */
+    margin-top: 12px; /* ensure features section not stick too close on top */
+ 
   }
   .checkbox-wrapper-1 .checkbox-tile:before {
     content: "";
@@ -456,18 +457,18 @@ layout: base.liquid
   }
 
  .checkbox-columns {
-        display: flex;          
-        flex-wrap: wrap;         
-        justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
     }
       
  .checkbox-wrapper-1 {
         width: 33%;   /* three columns */    
         height: 80px;       
         box-sizing: border-box;  
-        padding-left: 15px;       
+        padding-left: 0px; 
+ 
     }
-     
+    
 @media (max-width: 768px) {
   .checkbox-columns {
     flex-direction: column; 
@@ -497,10 +498,11 @@ body {
 
         #half-page-filter {
             
-            padding: 0; 
+            padding-left: 15px;
             margin: 0; 
-            height: 100%; /* Set the height to 100% to fill the screen */
-            overflow: auto; /* Add overflow: auto to enable scrolling if the content exceeds the screen height */
+            height: 100%; /* set the height to 100% to fill the screen */
+            overflow: auto; /* add overflow: auto to enable scrolling if the content exceeds the screen height */
+            box-sizing: border-box; /* to include padding and border in the element's total width, prevent triggering a scrollbar */
         }
 
         #filterContainer {
