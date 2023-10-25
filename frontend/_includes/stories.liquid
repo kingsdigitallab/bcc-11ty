@@ -649,9 +649,10 @@ input:checked + .slider:before {
         const filterContainer = document.getElementById('filterContainer');
         let isFilterVisible = true;
         toggleButton.addEventListener('click', function() {
-            isFilterVisible = !isFilterVisible;
-            filterContainer.style.display = isFilterVisible ? 'block' : 'none';
-        });
+          isFilterVisible = !isFilterVisible;
+          filterContainer.style.display = isFilterVisible ? 'block' : 'none';
+          toggleButton.classList.toggle('active', isFilterVisible);
+});
     </script>
 
 <script>
