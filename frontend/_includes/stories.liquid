@@ -105,13 +105,13 @@ layout: base.liquid
               <h2>Maps</h2>
 
               <div class="filter-controls">
+                <span class="switch-label">Off</span>
                 <label class="switch">
                   <input type="checkbox" id="toggle-all-filters-one" data-featuretype="all" data-criteria="map_source" class="map_filter" data-filtervalue="12-19" />
                   <span class="slider round"></span>
                 </label>
-                <label for="toggle-all-filters-one" class="switch-label">Toggle All Filters</label>
+                <label for="toggle-all-filters-one" class="switch-label">On</label>
               </div>
-                       
 
 
                 <ul>
@@ -242,11 +242,12 @@ layout: base.liquid
                 <h2>Features</h2>
 
              <div class="filter-controls">
+                    <span class="switch-label">Off</span>
                     <label class="switch">
                       <input type="checkbox" id="toggle-all-filters-two">
                       <span class="slider round"></span>
                     </label>
-                    <span class="switch-label">Toggle All Filters</span>
+                    <span class="switch-label">On</span>
                 </div>
 
             <div id="newFilter" class="new_filter">
@@ -598,7 +599,8 @@ input:checked + .slider:before {
 }
 
 .switch-label {
-  margin-left: 15px; /* change this margin if toggle text is too close to the icon */
+  margin-left: 10px; /* change this margin if toggle text is too close to the icon */
+  margin-right: 10px;
 }
 </style>
 
