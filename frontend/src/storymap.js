@@ -314,13 +314,6 @@ export class StoryMap {
         //if (feature.properties.story_link === story_id) {
         storyFeatures.push(feature);
         //}
-
-        /*let frame_link = feature.properties.frame_link;
-                                                            if (shapesByFrameLink[frame_link]) {
-                                                                shapesByFrameLink[frame_link].push(feature);
-                                                            } else {
-                                                                shapesByFrameLink[frame_link] = [feature]
-                                                            }*/
       }
     }
 
@@ -557,9 +550,11 @@ export class StoryMap {
     if (this.d3Intro.slideIds[slideid + ""]) {
       // This slide triggers an animated slide
       // Clear layers
+      console.log(slideid);
       this.storyFeatureLayerGroup.clearLayers();
       this.d3Intro.SectionIntro(this.map, slideid, this.slides);
-    } else if (slideid != "explore") {
+    } else
+      if (slideid != "explore") {
       if (this.d3Intro.svgDrawn) {
         // Clear the svg overlay so we can replace with layers
         this.d3Intro.stopAll();

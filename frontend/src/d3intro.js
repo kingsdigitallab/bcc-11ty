@@ -9,11 +9,11 @@ import 'leaflet-textpath';*/
 export class D3intro {
   constructor(geometryUris, L, d3) {
     this.slideIds = {
-      5: "homelands",
-      18: "pathways1",
-      14: "pathways2",
-      20: "villagerssettlers",
-      30: "lines",
+      500: "homelands",
+      600: "pathways1",
+      700: "pathways2",
+      800: "villagerssettlers",
+      900: "lines",
     };
     this.L = L;
     this.d3 = d3;
@@ -178,9 +178,11 @@ export class D3intro {
   }
 
   async SectionIntro(map, slideid) {
-    if (this.slideIds[slideid + ""] && !this.introRunning) {
+    //&& !this.introRunning
+    if (this.slideIds[slideid + ""] ) {
       let introRun = false;
       this.introRunning = true;
+      console.log(this.svgDrawn);
       if (this.svgDrawn) {
         // Clear any existing transitions and elements
         this.stopAll();
