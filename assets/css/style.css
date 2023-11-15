@@ -488,6 +488,12 @@ nav {
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
 }
+.mapOverlay section .storyTitleSpacerAbove {
+  padding-top: 40vh;
+}
+.mapOverlay section .storyTitleSpacerBelow {
+  padding-bottom: 50vh;
+}
 .mapOverlay section article.storyTitle {
   padding: 0 2em;
   margin-top: 10vh;
