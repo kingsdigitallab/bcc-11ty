@@ -336,11 +336,16 @@ nav {
       margin-top: 10em;
       font-size: 1.7em;
     } //h1 a
+
+    div.article_spacer {
+      padding-top: 75vh;
+      padding-bottom: 75vh;
+    }
     article {
       width: calc(95% - 4em);
       background: rgba(255, 255, 255, 0.7);
       padding: 1em 2em;
-      margin: 0 5% 100vh 0;
+      margin: 0 5% 0 0;
       text-align: justify;
 
       blockquote {
@@ -476,7 +481,7 @@ nav {
       padding-top: 40vh;
     }
     .storyTitleSpacerBelow {
-      padding-bottom: 50vh;
+      padding-bottom: 65vh;
     }
     // Story Heading
     article.storyTitle {
@@ -496,7 +501,7 @@ nav {
       margin: 0;
       article {
         width: 40%;
-        margin: 0 30% 100vh 30%;
+        margin: 0 30% 0 30%;
         &.storyTitle {
           margin-bottom: 0;
         } //.storyTitle {

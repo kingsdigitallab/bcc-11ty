@@ -57,7 +57,7 @@ module.exports = function (config) {
         //return '<details><summary>' + md.utils.escapeHtml(m[1]) + '</summary>\n';
         if (m) {
           return (
-            '<article id="slide_' +
+            '<article class="mapSlide" id="slide_' +
             md.utils.escapeHtml(m[1]) +
             '" data-slideId="' +
             md.utils.escapeHtml(m[1]) +
@@ -68,7 +68,7 @@ module.exports = function (config) {
         }
       } else {
         // closing tag
-        return "</article>\n";
+        return "</article>\n<div class=\"article_spacer\">&nbsp;</div>";
       }
     },
     marker: ":",
