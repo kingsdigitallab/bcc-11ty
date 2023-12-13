@@ -294,11 +294,15 @@ nav {
   margin-top: 10em;
   font-size: 1.7em;
 }
+.mapOverlay section div.article_spacer {
+  padding-top: 75vh;
+  padding-bottom: 75vh;
+}
 .mapOverlay section article {
   width: calc(95% - 4em);
   background: rgba(255, 255, 255, 0.7);
   padding: 1em 2em;
-  margin: 0 5% 100vh 0;
+  margin: 0 5% 0 0;
   text-align: justify;
 }
 .mapOverlay section article blockquote {
@@ -492,7 +496,7 @@ nav {
   padding-top: 40vh;
 }
 .mapOverlay section .storyTitleSpacerBelow {
-  padding-bottom: 50vh;
+  padding-bottom: 65vh;
 }
 .mapOverlay section article.storyTitle {
   padding: 0 2em;
@@ -511,7 +515,7 @@ nav {
 }
 .mapOverlay section:last-child article {
   width: 40%;
-  margin: 0 30% 100vh 30%;
+  margin: 0 30% 0 30%;
 }
 .mapOverlay section:last-child article.storyTitle {
   margin-bottom: 0;
