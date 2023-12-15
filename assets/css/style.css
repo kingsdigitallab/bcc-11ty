@@ -27,16 +27,16 @@ a:hover {
 a#sitetitle {
   color: white;
   text-decoration: none;
-  padding: 0.2em 0 0 1em;
+  padding: 4px 0 0 24px;
   display: block;
   position: fixed;
   width: 100%;
   background: #132b19;
-  height: 1.8em;
+  height: 44px;
   z-index: 9;
   font-family: "Corben", cursive;
-  font-size: 1.5em;
-  border-bottom: 0.1em solid #4b5d04;
+  font-size: 22px;
+  border-bottom: 4px solid #4b5d04;
   font-family: "Playfair Display", serif;
   font-family: "EB Garamond", serif;
 }
@@ -44,7 +44,6 @@ a#sitetitle {
 nav {
   height: 3em;
   top: 0;
-  background: #1a1a1a;
 }
 
 #menu {
@@ -154,8 +153,8 @@ nav {
 #basemap {
   z-index: 0 !important;
   position: fixed;
-  top: 4em;
-  height: calc(100% - 4em);
+  top: 44px;
+  height: calc(100% - 44px);
   width: 100%;
 }
 #basemap .leaflet-map-pane {
@@ -188,14 +187,16 @@ nav {
 .mapOverlay nav {
   z-index: 99;
   pointer-events: auto;
-  background: #ededed;
+  background: #f2f2f2;
   height: 3.5em;
-  top: 2.8em;
+  top: 44px;
   border-bottom: 0;
   position: fixed;
   width: 60%;
   margin: 0 20%;
   font-family: "Pontano Sans", sans-serif;
+  border: 1px solid #124d20;
+  border-top: 0;
 }
 .mapOverlay nav > ol {
   display: flex;
@@ -279,7 +280,7 @@ nav {
   opacity: 1;
 }
 .mapOverlay nav > ol > li > a.active {
-  border-top: 0.9em solid #b2d2a4;
+  border-top: 18px solid #132b19;
   color: black;
   font-weight: bold;
   -webkit-transition: all 300ms ease-in;
