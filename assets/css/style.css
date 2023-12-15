@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
@@ -46,15 +47,15 @@ nav {
   top: 0;
 }
 
-#menu {
+#mainmenu {
   /* end ol*/
 }
-#menu .active {
+#mainmenu .active {
   color: #86a707;
   border-left: 0.1em solid #86a707;
   padding-left: 0.5em;
 }
-#menu > ol {
+#mainmenu > ol {
   position: fixed;
   z-index: 999;
   height: 100vh;
@@ -73,31 +74,31 @@ nav {
   overflow: scroll;
   text-align: left;
 }
-#menu > ol > li {
+#mainmenu > ol > li {
   display: block;
   margin-bottom: 1em;
 }
-#menu > ol > li > a {
+#mainmenu > ol > li > a {
   font-size: 1.6em;
   text-decoration: none;
   display: block;
   line-height: 1;
   color: white;
 }
-#menu > ol > li:last-of-type {
+#mainmenu > ol > li:last-of-type {
   padding-bottom: 50vh;
 }
-#menu > ol > li > ol {
+#mainmenu > ol > li > ol {
   margin-bottom: 1em;
 }
-#menu > ol > li > ol li {
+#mainmenu > ol > li > ol li {
   list-style-type: none;
 }
-#menu > ol > li > ol li a {
+#mainmenu > ol > li > ol li a {
   color: white;
   text-decoration: none;
 }
-#menu label {
+#mainmenu > label {
   display: block;
   -webkit-transition: all 250ms ease-in;
   -moz-transition: all 250ms ease-in;
@@ -114,14 +115,14 @@ nav {
   color: white;
   z-index: 9999;
 }
-#menu input#legend[type=checkbox] {
+#mainmenu input#menu[type=checkbox] {
   display: none;
 }
-#menu input#legend[type=checkbox]:checked ~ ol {
+#mainmenu input#menu[type=checkbox]:checked ~ ol {
   margin: 0;
   right: 0;
 }
-#menu input#legend[type=checkbox]:checked ~ label.legend {
+#mainmenu input#menu[type=checkbox]:checked ~ label.menu {
   right: 2em;
   -moz-transform: rotate(0);
   -o-transform: rotate(0);
@@ -136,7 +137,7 @@ nav {
   transition: all 400ms ease-in;
   /* cross icon */
 }
-#menu input#legend[type=checkbox]:checked ~ label.legend:before {
+#mainmenu input#menu[type=checkbox]:checked ~ label.menu:before {
   content: "X";
   position: fixed;
   right: -1em;
@@ -208,7 +209,7 @@ nav {
   cursor: pointer;
   text-align: center;
   list-style-type: none;
-  border-top: 0.1em solid lightgray;
+  border-top: 0.1em solid #9a9a9a;
   margin: 0 0.5em;
   padding-bottom: 4em;
   -webkit-transition: all 300ms ease-in;
@@ -253,7 +254,7 @@ nav {
   } //ol*/
 }
 .mapOverlay nav > ol > li:hover {
-  border-top: 0.1em solid #124d20;
+  border-top: 1px solid #124d20;
 }
 .mapOverlay nav > ol > li:nth-child(1) a, .mapOverlay nav > ol > li:nth-child(7) a {
   font-size: 0.9em;
@@ -261,7 +262,7 @@ nav {
 }
 .mapOverlay nav > ol > li > a {
   text-decoration: none;
-  color: #676767;
+  color: #4d4d4d;
   display: block;
   padding: 1em 0 1em 0;
   line-height: 1;
@@ -280,7 +281,7 @@ nav {
   opacity: 1;
 }
 .mapOverlay nav > ol > li > a.active {
-  border-top: 18px solid #132b19;
+  border-top: 18px solid #4b5d04;
   color: black;
   font-weight: bold;
   -webkit-transition: all 300ms ease-in;
@@ -527,4 +528,242 @@ nav {
   color: white;
   margin: 0;
   padding: 0.2em 0;
+}
+.mapOverlay #filter-wrapper {
+  /* end .content */
+}
+.mapOverlay #filter-wrapper > label {
+  display: block;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  font-size: 1.2em;
+  background: #1a1a1a;
+  color: white;
+  width: 140px;
+  height: 2em;
+  box-shadow: #262626 0.1em 0.1em 0.3em;
+}
+.mapOverlay #filter-wrapper > label:hover {
+  background: #262626;
+  bottom: 0.3em;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+.mapOverlay #filter-wrapper > label:hover:after {
+  border: 1em solid #595959;
+  border-right: 1em solid transparent;
+}
+.mapOverlay #filter-wrapper > label:hover ~ .content {
+  bottom: -190px; /* content on hover */
+}
+.mapOverlay #filter-wrapper > label h2 {
+  font-size: 1em;
+  padding: 0 0.8em;
+  line-height: 0.5;
+}
+.mapOverlay #filter-wrapper > label:before {
+  content: "▴";
+  position: absolute;
+  right: 1em;
+  bottom: 0.3em;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+.mapOverlay #filter-wrapper .content {
+  position: fixed;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  bottom: -200px;
+  width: 50%;
+  height: 200px;
+  overflow: scroll;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  background: #f2f2f2;
+  padding: 8px 16px 8px 16px;
+  line-height: 1.4;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.mapOverlay #filter-wrapper .content p {
+  width: 100%;
+}
+.mapOverlay #filter-wrapper .content section {
+  border: 1px solid black;
+  width: 45%;
+}
+.mapOverlay #filter-wrapper .content section header {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.mapOverlay #filter-wrapper .content section header h3 {
+  margin: 0;
+}
+.mapOverlay #filter-wrapper .content section header h3 em {
+  color: gray;
+  font-size: 0.6em;
+}
+.mapOverlay #filter-wrapper input#filter[type=checkbox] {
+  display: none;
+}
+.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ .content {
+  bottom: 2px; /* content on click */
+}
+.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button {
+  bottom: 8.2em;
+  /* cross icon */
+}
+.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:before {
+  content: "▾";
+}
+.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:after {
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
+  background: #595959;
+}
+
+#legend-wrapper {
+  z-index: 99;
+  pointer-events: auto;
+  font-family: "Pontano Sans", sans-serif;
+  /* end .content */
+}
+#legend-wrapper > label {
+  display: block;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  z-index: 2;
+  cursor: pointer;
+  right: -23px;
+  bottom: 0;
+  top: 20px;
+  margin: auto;
+  position: fixed;
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transform-origin: top center;
+  font-size: 1.2em;
+  background: #f2f2f2;
+  color: black;
+  border: 1px solid #124d20;
+  width: 120px;
+  height: 2em;
+}
+#legend-wrapper > label:hover {
+  border: 1px solid #132b19;
+  right: -18px;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+#legend-wrapper > label:hover h2 {
+  color: gray;
+}
+#legend-wrapper > label:hover:after {
+  border: 1em solid #595959;
+  border-right: 1em solid transparent;
+}
+#legend-wrapper > label:hover ~ .content {
+  right: -200px; /* content on hover */
+}
+#legend-wrapper > label h2 {
+  font-size: 14px;
+  padding: 6px 20px;
+  line-height: 0.5;
+  color: #4d4d4d;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+#legend-wrapper > label:before {
+  content: "▾";
+  -moz-transform: rotate(180deg) translate(0, -3px);
+  -o-transform: rotate(180deg) translate(0, -3px);
+  -ms-transform: rotate(180deg) translate(0, -3px);
+  -webkit-transform: rotate(180deg) translate(0, -3px);
+  transform: rotate(180deg) translate(0, -3px);
+  position: absolute;
+  right: 1em;
+  bottom: 0.3em;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+#legend-wrapper .content {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -225px;
+  overflow: scroll;
+  font-size: 14px;
+  line-height: 1.6;
+  width: 220px;
+  margin: 80px auto 20px auto;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  background: white;
+  padding: 8px 0;
+}
+#legend-wrapper input#legend[type=checkbox] {
+  display: none;
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ .content {
+  right: 0px; /* content on click */
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button {
+  right: 185px;
+  background: #132b19;
+  /* cross icon */
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button h2 {
+  color: white;
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:before {
+  content: "▾";
+  -moz-transform: rotate(0) translate(0, 1px);
+  -o-transform: rotate(0) translate(0, 1px);
+  -ms-transform: rotate(0) translate(0, 1px);
+  -webkit-transform: rotate(0) translate(0, 1px);
+  transform: rotate(0) translate(0, 1px);
+  color: white;
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:after {
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:hover:before {
+  background: #595959;
 }

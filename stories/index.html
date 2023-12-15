@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-12-15 14:14 -->
+    <!-- Built with 11ty - 2023-12-15 19:39 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1702649680">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1702669183">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1702649680"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1702669183"></script>
     
     <style>
     .map-label {
@@ -40,9 +40,9 @@
 
 <a id="sitetitle" href="/">Movement and Common World in Early America</a>
 <nav>
-  <div id="menu">
-    <input id="legend" type="checkbox"/>
-    <label class="legend" role="button" for="legend">Menu</label>
+  <div id="mainmenu">
+    <input id="menu" type="checkbox"/>
+    <label class="menu" role="button" for="menu">Menu</label>
     <ol>
       <li> <a href="#overview">Overview</a></li>
       <li> <a href="#stories">Stories  </a>
@@ -103,6 +103,7 @@
 
 
 <div id="basemap"></div>
+
 <div class="mapOverlay">
     <nav>
         <ol>
@@ -115,7 +116,33 @@
             <li><a href="#filters">Explore </a></li>
         </ol>
     </nav>
+
+    <div id="legend-wrapper">
+        <input type="checkbox" id="legend">
+        <label aria-label="map legend list" class="legend-button" for="legend">
+          <h2>Legend</h2>
+        </label>
+        <div class="content">
+     <ol>
+       <li>Placenames (Indigenous)</li>
+       <li>Placenames (European)</li>
+       <li>Settlements (Indigenous)</li>
+       <li>Settlements (European)</li>
+       <li>Principal Rivers</li>
+       <li>Pathways and Lines</li>
+       <li>Council Fires</li>
+       <li>Placenames (Indigenous)</li>
+       <li>Placenames (European)</li>
+       <li>Settlements (Indigenous)</li>
+       <li>Settlements (European)</li>
+       <li>Principal Rivers</li>
+       <li>Pathways and Lines</li>
+       <li>Council Fires</li>
+     </ol>
+        </div>
+    </div>
     
+
     <section id="overview">
         <article class="storyTitle">
             <h2>Overview</h2>
@@ -867,7 +894,13 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 
 
     </section>
+
+
+
+
 </div>
+
+
 
 
 <script defer type="text/javascript" src="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.js"></script>
