@@ -98,7 +98,7 @@ nav {
   top: 0;
   //border-bottom:0.1em solid gray;
 } //nav
-#menu {
+#mainmenu {
   .active {
     color: darken($lightgreen, 5%);
     border-left: 0.1em solid darken($lightgreen, 5%);
@@ -145,7 +145,7 @@ nav {
       } //ol
     } //li
   } /* end ol*/
-  label {
+  >label {
     display: block;
     @include transition(all 250ms ease-in);
     cursor: pointer;
@@ -158,14 +158,14 @@ nav {
     color: white;
     z-index: 9999;
   }
-  input#legend[type="checkbox"] {
+  input#menu[type="checkbox"] {
     display: none;
   }
-  input#legend[type="checkbox"]:checked ~ ol {
+  input#menu[type="checkbox"]:checked ~ ol {
     margin: 0;
     right: 0;
   }
-  input#legend[type="checkbox"]:checked ~ label.legend {
+  input#menu[type="checkbox"]:checked ~ label.menu {
     right: 2em;
     @include transform(rotate(0));
     background: none;
@@ -235,12 +235,12 @@ nav {
         cursor: pointer;
         text-align: center;
         list-style-type: none;
-        border-top: 0.1em solid lightgray;
+        border-top: 0.1em solid lighten(gray,10%);
         margin: 0 0.5em;
         padding-bottom: 4em;
         @include transition(all 300ms ease-in);
         &:hover {
-          border-top: 0.1em solid $midgreen;
+          border-top: 1px solid $midgreen;
           //@include transition(all 300ms ease-in);
         }
         &:nth-child(1),
@@ -252,7 +252,7 @@ nav {
         }
         > a {
           text-decoration: none;
-          color: darken(gray, 10%);
+          color: darken(gray, 20%);
           display: block;
           padding: 1em 0 1em 0;
           line-height: 1;
@@ -271,7 +271,7 @@ nav {
             opacity: 1;
           }
           &.active {
-            border-top: 18px solid $darkgreen;
+            border-top: 18px solid darken($lightgreen, 20%);
             color: black;
             font-weight: bold;
             @include transition(all 300ms ease-in);
@@ -516,5 +516,244 @@ nav {
 
 
   } //section
+  #filter-wrapper {
+    >label {
+        display: block;
+        -moz-transition: all 200ms ease-in;
+        -webkit-transition: all 200ms ease-in;
+        -o-transition: all 200ms ease-in;
+        transition: all 200ms ease-in;
+        z-index: 2;
+        cursor: pointer;
+        position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+          font-size: 1.2em;
+          background: lighten(black, 10%);
+          color: white;
+          width: 140px;
+          height: 2em;
+          box-shadow: lighten(black, 15%) 0.1em 0.1em 0.3em;
+            &:hover{
+                background:lighten(black, 15%);
+                  bottom:0.3em;
+        -moz-transition: all 200ms ease-in;
+        -webkit-transition: all 200ms ease-in;
+        -o-transition: all 200ms ease-in;
+        transition: all 200ms ease-in; 
+                &:after{
+                  border: 1em solid lighten(black, 35%);
+                  border-right: 1em solid transparent;
+                }
+              ~.content{
+                bottom:-190px; /* content on hover */
+              }
+            }//&:hover
+            
+          h2{
+            font-size: 1em;
+            padding:0 0.8em;
+            line-height: 0.5;
+          }//h2
+            &:before{
+              content: '▴';
+              position: absolute;
+              right:1em;
+              bottom:0.3em;
+              -moz-transition: all 200ms ease-in;
+              -webkit-transition: all 200ms ease-in;
+              -o-transition: all 200ms ease-in;
+              transition: all 200ms ease-in;
+            }//&:before
+
+        }//label
+      .content {
+        position: fixed;
+           position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+        bottom: -200px;
+        width:50%;
+        height:200px;
+        overflow:scroll;
+        -moz-transition: all 200ms ease-in;
+        -webkit-transition: all 200ms ease-in;
+        -o-transition: all 200ms ease-in;
+        transition: all 200ms ease-in; 
+        background: lighten(black, 95%);
+        padding: 8px 16px 8px 16px;
+        line-height: 1.4;
+        display:flex;
+         justify-content: space-between;
+  flex-wrap: wrap;
+        p {
+          width:100%;
+        } // p 
+        section{
+          border:1px solid black;
+          width:45%;
+          header{
+            display:flex;
+            align-items: stretch;
+justify-content: space-between;
+            h3{
+              margin:0;
+              em{
+                color:gray;
+                font-size:0.6em;
+              }
+            }
+          }//header
+        }//section
+        
+        
+        
+        
+    }/* end .content */
+      input#filter[type="checkbox"] {
+        display: none;
+    }
+    input#filter[type="checkbox"]:checked~.content{
+        bottom:2px; /* content on click */
+    }
+    input#filter[type="checkbox"]:checked~label.filter-button{
+            bottom: 8.2em; 
+            /* cross icon */
+            &:before {
+              content: '▾';
+            }//&:before
+            &:after {   
+              -moz-transition: all 200ms ease-in;
+              -webkit-transition: all 200ms ease-in;
+              -o-transition: all 200ms ease-in;
+              transition: all 200ms ease-in;
+            }//&:after 
+            &:hover{
+              &:before {
+                background:lighten(black, 35%);
+              }//&:before
+        }//&:hover
+}//input#filter[type="checkbox"]:checked~label.filter
+}//#filter-wrapper
+
+
+
+
 } //#map
 //MAP
+
+#legend-wrapper {
+  z-index: 99;
+  pointer-events: auto;
+  font-family: "Pontano Sans", sans-serif;
+  >label {
+      display: block;
+      -moz-transition: all 200ms ease-in;
+      -webkit-transition: all 200ms ease-in;
+      -o-transition: all 200ms ease-in;
+      transition: all 200ms ease-in;
+      z-index: 2;
+      cursor: pointer;
+right: -23px;
+bottom: 0;
+    top:20px;
+margin: auto;
+position:fixed;
+    @include transform(rotate(-90deg));
+    transform-origin:top center;
+        font-size: 1.2em;
+        background: lighten(lightgray, 12%);
+        color: black;
+        border:1px solid $midgreen;
+        width: 120px;
+        height: 2em;
+          &:hover{
+            border:1px solid $darkgreen;
+                right:-18px;
+      -moz-transition: all 200ms ease-in;
+      -webkit-transition: all 200ms ease-in;
+      -o-transition: all 200ms ease-in;
+      transition: all 200ms ease-in; 
+      h2{
+        color:gray;
+      }
+              &:after{
+                border: 1em solid lighten(black, 35%);
+                border-right: 1em solid transparent;
+              }
+            ~.content{
+              right:-200px; /* content on hover */
+            }
+          }//&:hover
+          
+        h2{
+          font-size: 14px;
+          padding:6px 20px;
+          line-height: 0.5;
+          color:darken(gray,20%);
+          font-weight:normal;
+          text-transform: uppercase;
+        }//h2
+          &:before{
+            content: '▾';
+            @include transform(rotate(180deg)translate(0,-3px));
+            position: absolute;
+            right:1em;
+            bottom:0.3em;
+            -moz-transition: all 200ms ease-in;
+            -webkit-transition: all 200ms ease-in;
+            -o-transition: all 200ms ease-in;
+            transition: all 200ms ease-in;
+          }//&:before
+      }//label
+    .content {
+         position: fixed;
+      top:0;
+      bottom:0;
+right: -225px;
+      overflow:scroll;
+      font-size:14px;
+      line-height: 1.6;
+      width:220px;
+      margin:80px auto 20px auto;
+      -moz-transition: all 200ms ease-in;
+      -webkit-transition: all 200ms ease-in;
+      -o-transition: all 200ms ease-in;
+      transition: all 200ms ease-in; 
+      background: white;
+      padding: 8px 0;
+  }/* end .content */
+    input#legend[type="checkbox"] {
+      display: none;
+  }
+  input#legend[type="checkbox"]:checked~.content{
+      right:0px; /* content on click */
+  }
+  input#legend[type="checkbox"]:checked~label.legend-button{
+          right: 185px; 
+          background:$darkgreen;
+          h2{
+          color:white;
+          }
+          /* cross icon */
+          &:before {
+            content: '▾';
+            @include transform(rotate(0)translate(0,1px));
+            color:white;
+          }//&:before
+          &:after {   
+            -moz-transition: all 200ms ease-in;
+            -webkit-transition: all 200ms ease-in;
+            -o-transition: all 200ms ease-in;
+            transition: all 200ms ease-in;
+          }//&:after 
+          &:hover{
+            &:before {
+              background:lighten(black, 35%);
+            }//&:before
+      }//&:hover
+}//input#filter[type="checkbox"]:checked~label.filter
+}//#legend-wrapper

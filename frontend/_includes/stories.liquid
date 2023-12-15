@@ -23,6 +23,7 @@ layout: base.liquid
 
 
 <div id="basemap"></div>
+
 <div class="mapOverlay">
     <nav>
         <ol>
@@ -35,7 +36,33 @@ layout: base.liquid
             <li><a href="#filters">Explore </a></li>
         </ol>
     </nav>
+
+    <div id="legend-wrapper">
+        <input type="checkbox" id="legend">
+        <label aria-label="map legend list" class="legend-button" for="legend">
+          <h2>Legend</h2>
+        </label>
+        <div class="content">
+     <ol>
+       <li>Placenames (Indigenous)</li>
+       <li>Placenames (European)</li>
+       <li>Settlements (Indigenous)</li>
+       <li>Settlements (European)</li>
+       <li>Principal Rivers</li>
+       <li>Pathways and Lines</li>
+       <li>Council Fires</li>
+       <li>Placenames (Indigenous)</li>
+       <li>Placenames (European)</li>
+       <li>Settlements (Indigenous)</li>
+       <li>Settlements (European)</li>
+       <li>Principal Rivers</li>
+       <li>Pathways and Lines</li>
+       <li>Council Fires</li>
+     </ol>
+        </div>
+    </div>
     
+
     <section id="overview">
         <article class="storyTitle">
             <h2>Overview</h2>
@@ -652,7 +679,13 @@ layout: base.liquid
 
 
     </section>
+
+
+
+
 </div>
+
+
 
 
 <script defer type="text/javascript" src="{{ '/assets/node_modules/leaflet/dist/leaflet.js' | url }}"></script>
