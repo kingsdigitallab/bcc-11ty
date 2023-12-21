@@ -656,16 +656,11 @@ nav {
   transition: all 200ms ease-in;
   z-index: 2;
   cursor: pointer;
-  right: -23px;
+  right: 0px;
   bottom: 0;
-  top: 20px;
+  left: 0;
   margin: auto;
   position: fixed;
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
   transform-origin: top center;
   font-size: 1.2em;
   background: #f2f2f2;
@@ -676,7 +671,7 @@ nav {
 }
 #filter-wrapper > label:hover {
   border: 1px solid #132b19;
-  right: -18px;
+  bottom: 12px;
   -moz-transition: all 200ms ease-in;
   -webkit-transition: all 200ms ease-in;
   -o-transition: all 200ms ease-in;
@@ -690,19 +685,19 @@ nav {
   border-right: 1px solid transparent;
 }
 #filter-wrapper > label:hover ~ .content {
-  right: -200px; /* content on hover */
+  bottom: -370px; /* content on hover */
 }
 #filter-wrapper > label:hover:before {
-  -moz-transform: rotate(180deg) translate(0, -1px);
-  -o-transform: rotate(180deg) translate(0, -1px);
-  -ms-transform: rotate(180deg) translate(0, -1px);
-  -webkit-transform: rotate(180deg) translate(0, -1px);
-  transform: rotate(180deg) translate(0, -1px);
+  -moz-transform: rotate(180deg) translate(0, 1px);
+  -o-transform: rotate(180deg) translate(0, 1px);
+  -ms-transform: rotate(180deg) translate(0, 1px);
+  -webkit-transform: rotate(180deg) translate(0, 1px);
+  transform: rotate(180deg) translate(0, 1px);
 }
 #filter-wrapper > label h2 {
   font-size: 14px;
   padding: 6px 20px;
-  line-height: 0.5;
+  line-height: 0.2;
   color: #4d4d4d;
   font-weight: normal;
   text-transform: uppercase;
@@ -724,38 +719,112 @@ nav {
 }
 #filter-wrapper .content {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  right: -225px;
+  right: 0;
+  left: 0;
+  bottom: -425px;
   overflow: scroll;
   font-size: 14px;
   line-height: 1.6;
-  width: 220px;
+  width: 800px;
   -moz-transition: all 200ms ease-in;
   -webkit-transition: all 200ms ease-in;
   -o-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
   background: white;
-  padding: 8px 0;
+  padding: 8px 16px;
   height: 400px;
   margin: auto;
   border: 1px solid #132b19;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-#filter-wrapper input#legend[type=checkbox] {
+#filter-wrapper .content section {
+  width: 45%;
+}
+#filter-wrapper .content section header {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+#filter-wrapper .content section header h3 {
+  margin: 0;
+}
+#filter-wrapper .content section header h3 em {
+  color: gray;
+  font-size: 0.6em;
+}
+#filter-wrapper .content section ol {
+  list-style-type: none;
+  max-width: auto;
+  margin-left: -40px;
+  /**
+   * Provide a border when hovered and when the input is checked
+   */
+  /*:checked + label:before {
+    transform: scale(2);
+  }*/
+}
+#filter-wrapper .content section ol li {
+  margin-bottom: 4px;
+}
+#filter-wrapper .content section ol li label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 4px;
+}
+#filter-wrapper .content section ol li label span {
+  font-size: 18px;
+}
+#filter-wrapper .content section ol li label span em {
+  font-size: 14px;
+  margin-left: 4px;
+  font-style: normal;
+}
+#filter-wrapper .content section ol li label img {
+  height: 40px;
+  width: 40px;
+  transition-duration: 0.2s;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+#filter-wrapper .content section ol li:hover {
+  background: #e0e0e0;
+  opacity: 0.9;
+}
+#filter-wrapper .content section ol li:hover img {
+  border: 1px solid transparent;
+}
+#filter-wrapper .content section ol li input[type=checkbox][id^=checkbox] {
   display: none;
 }
-#filter-wrapper input#legend[type=checkbox]:checked ~ .content {
-  right: 0px; /* content on click */
+#filter-wrapper .content section ol li :checked + label {
+  font-weight: bold;
+  background: #132b19;
+  color: white;
 }
-#filter-wrapper input#legend[type=checkbox]:checked ~ label.legend-button {
-  right: 185px;
+#filter-wrapper .content section ol li :checked + label img {
+  border: 1px solid #124d20;
+  opacity: 1;
+}
+#filter-wrapper input#filter[type=checkbox] {
+  display: none;
+}
+#filter-wrapper input#filter[type=checkbox]:checked ~ .content {
+  bottom: 0px; /* content on click */
+}
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button {
+  bottom: 385px;
   background: #132b19;
   /* cross icon */
 }
-#filter-wrapper input#legend[type=checkbox]:checked ~ label.legend-button h2 {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button h2 {
   color: white;
 }
-#filter-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:before {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:before {
   content: "▾";
   -moz-transform: rotate(0) translate(0, 1px);
   -o-transform: rotate(0) translate(0, 1px);
@@ -764,13 +833,13 @@ nav {
   transform: rotate(0) translate(0, 1px);
   color: white;
 }
-#filter-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:after {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:after {
   -moz-transition: all 200ms ease-in;
   -webkit-transition: all 200ms ease-in;
   -o-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
-#filter-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:hover:before {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
   transform: translate(0, 3px);
 }
 
