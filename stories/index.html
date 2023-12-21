@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2023-12-21 17:25 -->
+    <!-- Built with 11ty - 2023-12-21 18:09 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1703179536">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1703182151">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1703179536"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1703182151"></script>
     
     <style>
     .map-label {
@@ -931,13 +931,52 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 <label for="selectall">Select All</label></span>
  </header>
  <ol>
-    <li>Placenames (Indigenous)</li>
-    <li>Placenames (European)</li>
-    <li>Settlements (Indigenous)</li>
-    <li>Settlements (European)</li>
-    <li>Principal Rivers</li>
-    <li>Pathways and Lines</li>
-    <li>Council Fires</li>
+    <ol>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="1"
+                   class="map_filter" id="checkbox1"/>
+            <label for="checkbox1">
+                <img src="https://static.thenounproject.com/png/717161-200.png"/><span>Placenames (Indigenous)</span>
+            </label>
+        </li>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="2"
+                   class="map_filter" id="checkbox2"/>
+            <label for="checkbox2">
+                <img
+                        src="https://static.thenounproject.com/png/1779673-200.png"/><span>Placenames (European)</span>
+            </label>
+        </li>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="3"
+                   class="map_filter" id="checkbox3"/>
+            <label for="checkbox3">
+                <img src="https://static.thenounproject.com/png/3957514-200.png"/><span>Settlements (Indigenous)</span>
+            </label>
+        </li>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="5"
+                   class="map_filter" id="checkbox4"/>
+            <label for="checkbox4">
+                <img src="https://static.thenounproject.com/png/1461154-200.png"/><span>Settlements (European)</span>
+            </label>
+        </li>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="6"
+                   class="map_filter" id="checkbox5"/>
+            <label for="checkbox5">
+                <img
+                        src="https://static.thenounproject.com/png/2615726-200.png"/><span>Principal Rivers</span>
+            </label>
+        </li>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="7"
+                   class="map_filter" id="checkbox6"/>
+            <label for="checkbox6">
+                <img src="https://static.thenounproject.com/png/4256430-200.png"/><span>Pathways and Lines</span>
+            </label>
+        </li>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="8"
+                   class="map_filter" id="checkbox8"/>
+            <label for="checkbox8">
+                <img
+                        src="https://static.thenounproject.com/png/2631029-200.png"/><span>Council Fires</span>
+            </label>
+        </li>
  </ol>
       </section>
  <section>

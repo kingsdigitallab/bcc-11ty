@@ -527,120 +527,6 @@ nav {
   margin: 0;
   padding: 0.2em 0;
 }
-.mapOverlay #filter-wrapper {
-  /* end .content */
-}
-.mapOverlay #filter-wrapper > label {
-  display: block;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-  z-index: 2;
-  cursor: pointer;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  font-size: 1.2em;
-  background: #1a1a1a;
-  color: white;
-  width: 140px;
-  height: 2em;
-  box-shadow: #262626 0.1em 0.1em 0.3em;
-}
-.mapOverlay #filter-wrapper > label:hover {
-  background: #262626;
-  bottom: 0.3em;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
-.mapOverlay #filter-wrapper > label:hover:after {
-  border: 1em solid #595959;
-  border-right: 1em solid transparent;
-}
-.mapOverlay #filter-wrapper > label:hover ~ .content {
-  bottom: -190px; /* content on hover */
-}
-.mapOverlay #filter-wrapper > label h2 {
-  font-size: 1em;
-  padding: 0 0.8em;
-  line-height: 0.5;
-}
-.mapOverlay #filter-wrapper > label:before {
-  content: "▴";
-  position: absolute;
-  right: 1em;
-  bottom: 0.3em;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
-.mapOverlay #filter-wrapper .content {
-  position: fixed;
-  right: 0;
-  left: 0;
-  margin: auto;
-  bottom: -200px;
-  width: 50%;
-  height: 200px;
-  overflow: scroll;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-  background: #f2f2f2;
-  padding: 8px 16px 8px 16px;
-  line-height: 1.4;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.mapOverlay #filter-wrapper .content p {
-  width: 100%;
-}
-.mapOverlay #filter-wrapper .content section {
-  border: 1px solid black;
-  width: 45%;
-}
-.mapOverlay #filter-wrapper .content section header {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-}
-.mapOverlay #filter-wrapper .content section header h3 {
-  margin: 0;
-}
-.mapOverlay #filter-wrapper .content section header h3 em {
-  color: gray;
-  font-size: 0.6em;
-}
-.mapOverlay #filter-wrapper input#filter[type=checkbox] {
-  display: none;
-}
-.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ .content {
-  bottom: 2px; /* content on click */
-}
-.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button {
-  bottom: 8.2em;
-  /* cross icon */
-}
-.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:before {
-  content: "▾";
-}
-.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:after {
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
-.mapOverlay #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
-  background: #595959;
-}
 
 #filter-wrapper {
   z-index: 99;
@@ -672,13 +558,11 @@ nav {
 #filter-wrapper > label:hover {
   border: 1px solid #132b19;
   bottom: 12px;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
-#filter-wrapper > label:hover h2 {
-  color: gray;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
 }
 #filter-wrapper > label:hover:after {
   border: 1px solid #595959;
@@ -698,7 +582,7 @@ nav {
   font-size: 14px;
   padding: 6px 20px;
   line-height: 0.2;
-  color: #4d4d4d;
+  color: #404040;
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -712,10 +596,11 @@ nav {
   position: absolute;
   right: 1em;
   bottom: 0.3em;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
 }
 #filter-wrapper .content {
   position: fixed;
@@ -726,10 +611,11 @@ nav {
   font-size: 14px;
   line-height: 1.6;
   width: 800px;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
   background: white;
   padding: 8px 16px;
   height: 400px;
@@ -810,6 +696,10 @@ nav {
   border: 1px solid #124d20;
   opacity: 1;
 }
+#filter-wrapper .content section:first-of-type ol li img {
+  border-radius: 0;
+  border: none;
+}
 #filter-wrapper input#filter[type=checkbox] {
   display: none;
 }
@@ -833,12 +723,6 @@ nav {
   transform: rotate(0) translate(0, 1px);
   color: white;
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:after {
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
 #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
   transform: translate(0, 3px);
 }
@@ -851,10 +735,11 @@ nav {
 }
 #legend-wrapper > label {
   display: block;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
   z-index: 2;
   cursor: pointer;
   right: -23px;
@@ -878,13 +763,11 @@ nav {
 #legend-wrapper > label:hover {
   border: 1px solid #132b19;
   right: -18px;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
-#legend-wrapper > label:hover h2 {
-  color: gray;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
 }
 #legend-wrapper > label:hover:after {
   border: 1px solid #595959;
@@ -904,7 +787,7 @@ nav {
   font-size: 14px;
   padding: 6px 20px;
   line-height: 0.5;
-  color: #4d4d4d;
+  color: #404040;
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -918,10 +801,11 @@ nav {
   position: absolute;
   right: 1em;
   bottom: 0.3em;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
 }
 #legend-wrapper .content {
   position: fixed;
@@ -932,10 +816,11 @@ nav {
   font-size: 14px;
   line-height: 1.6;
   width: 220px;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
   background: white;
   padding: 8px 0;
   height: 400px;
@@ -964,12 +849,6 @@ nav {
   -webkit-transform: rotate(0) translate(0, 1px);
   transform: rotate(0) translate(0, 1px);
   color: white;
-}
-#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:after {
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
 }
 #legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:hover:before {
   transform: translate(0, 3px);
