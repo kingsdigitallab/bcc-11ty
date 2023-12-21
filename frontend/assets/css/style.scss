@@ -656,12 +656,11 @@ justify-content: space-between;
       transition: all 200ms ease-in;
       z-index: 2;
       cursor: pointer;
-right: -23px;
+right: 0px;
 bottom: 0;
-    top:20px;
+left:0;
 margin: auto;
 position:fixed;
-    @include transform(rotate(-90deg));
     transform-origin:top center;
         font-size: 1.2em;
         background: lighten(lightgray, 12%);
@@ -671,7 +670,7 @@ position:fixed;
         height: 2em;
           &:hover{
             border:1px solid $darkgreen;
-                right:-18px;
+                bottom:12px;
       -moz-transition: all 200ms ease-in;
       -webkit-transition: all 200ms ease-in;
       -o-transition: all 200ms ease-in;
@@ -684,17 +683,17 @@ position:fixed;
                 border-right: 1px solid transparent;
               }
             ~.content{
-              right:-200px; /* content on hover */
+              bottom:-370px; /* content on hover */
             }
             &:before {
-              @include transform(rotate(180deg)translate(0,-1px));
+              @include transform(rotate(180deg)translate(0,1px));
             }//&:before
           }//&:hover
           
         h2{
           font-size: 14px;
           padding:6px 20px;
-          line-height: 0.5;
+          line-height: 0.2;
           color:darken(gray,20%);
           font-weight:normal;
           text-transform: uppercase;
@@ -713,31 +712,112 @@ position:fixed;
       }//label
     .content {
          position: fixed;
-      top:0;
-      bottom:0;
-      right: -225px;
+      right:0;
+      left:0;
+      bottom: -425px;
       overflow:scroll;
       font-size:14px;
       line-height: 1.6;
-      width:220px;
+      width:800px;
       -moz-transition: all 200ms ease-in;
       -webkit-transition: all 200ms ease-in;
       -o-transition: all 200ms ease-in;
       transition: all 200ms ease-in; 
       background: white;
-      padding: 8px 0;
+      padding: 8px 16px;
       height:400px;
       margin: auto;
       border:1px solid $darkgreen;
+      display:flex;
+      justify-content: space-between;
+flex-wrap: wrap;
+
+      section{
+        //border:1px solid black;
+        width:45%;
+        header{
+          display:flex;
+          align-items: stretch;
+justify-content: space-between;
+          h3{
+            margin:0;
+            em{
+              color:gray;
+              font-size:0.6em;
+            }
+          }
+        }//header
+        ol{
+            list-style-type: none;
+            max-width: auto;
+            margin-left:-40px;
+
+            input[type="checkbox"][id^="checkbox"] {
+            display: none;
+            }
+          
+          label {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            h3{
+              //transform: rotate(-45deg);
+              font-size:0.7em;
+            }//h3
+            p{
+              margin:0;
+              font-size:0.8em;
+            }
+          
+          }//label
+          
+          
+          label img {
+            height:40px;
+            width: 40px;
+            transition-duration: 0.2s;
+            border: 2px solid white;
+            opacity:0.7;
+            border-radius:50%;
+              &:hover {
+                  border: 2px solid lightgray;
+                opacity:1;
+                transform: scale(0.95);
+              }
+          }
+          
+              /**
+               * Provide a border when hovered and when the input is checked
+               */
+          
+          
+          
+          :checked + label:before {
+            transform: scale(2);
+          }
+          
+          :checked + label img {
+            transform: scale(1);
+           border:2px solid black;
+            opacity:1;
+                &:hover {
+                opacity:1;
+                transform: scale(1);
+              }
+
+              }
+        }//ol
+      }//section
+
   }/* end .content */
-    input#legend[type="checkbox"] {
+    input#filter[type="checkbox"] {
       display: none;
   }
-  input#legend[type="checkbox"]:checked~.content{
-      right:0px; /* content on click */
+  input#filter[type="checkbox"]:checked~.content{
+      bottom:0px; /* content on click */
   }
-  input#legend[type="checkbox"]:checked~label.legend-button{
-          right: 185px; 
+  input#filter[type="checkbox"]:checked~label.filter-button{
+          bottom: 385px; 
           background:$darkgreen;
           h2{
           color:white;
