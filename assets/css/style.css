@@ -528,6 +528,10 @@ nav {
   padding: 0.2em 0;
 }
 
+#filter-wrapper * {
+  overscroll-behavior: contain;
+}
+
 #filter-wrapper {
   z-index: 99;
   pointer-events: auto;
