@@ -522,9 +522,12 @@ nav {
 } //#map
 //MAP
 
-
+#filter-wrapper * {
+  overscroll-behavior: contain;
+}
 #filter-wrapper {
   z-index: 99;
+
   pointer-events: auto;
   font-family: "Pontano Sans", sans-serif;
   >label {
