@@ -684,6 +684,9 @@ nav {
 #filter-wrapper .content section ol li input[type=checkbox][id^=checkbox] {
   display: none;
 }
+#filter-wrapper .content section ol li input[type=checkbox][id^=mapcheckbox] {
+  display: none;
+}
 #filter-wrapper .content section ol li :checked + label {
   font-weight: bold;
   background: #132b19;

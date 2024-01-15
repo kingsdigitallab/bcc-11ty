@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2024-01-15 15:19 -->
+    <!-- Built with 11ty - 2024-01-15 16:32 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1705331968">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1705336343">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1705331968"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1705336343"></script>
     
     <style>
     .map-label {
@@ -332,7 +332,11 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
             </p>
         </article>
          <div class="storyTitleSpacerBelow"></div>
-         <div class="storyTitleSpacerBelow"></div
+         <div class="storyTitleSpacerBelow"></div>
+
+
+
+         <div class="storyTitleSpacerBelow"></div>
 
     </section>
 </div>
@@ -345,52 +349,53 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
         <div class="content">
 <p>Click on the individual features or maps to customise your view. Select or deselect all if needed.</p>
 <section>
- <header><h3>Features <em>2/7 Selected</em></h3>
- <span><input type="checkbox" id="selectall" name="selectall" value="All">
+ <header><h3>Features <em><span id="totalExploreFiltersApplied">0</span>/7 Selected</em></h3>
+ <span><input type="checkbox" id="selectallFeatures" name="selectall" value="All">
 <label for="selectall">Select All</label></span>
  </header>
+
  <ol>
-    <ol>
-        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="1"
-                   class="map_filter" id="checkbox1"/>
+
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter" data-filtervalue='{"sub_type":10, "identity":[2]}'
+                   class="explore_filter" id="checkbox1"/>
             <label for="checkbox1">
                 <img src="https://static.thenounproject.com/png/717161-200.png"/><span>Placenames (Indigenous)</span>
             </label>
         </li>
-        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="2"
-                   class="map_filter" id="checkbox2"/>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter" data-filtervalue='{"sub_type":10, "identity":[1]}'
+                   class="explore_filter" id="checkbox2"/>
             <label for="checkbox2">
                 <img
                         src="https://static.thenounproject.com/png/1779673-200.png"/><span>Placenames (European)</span>
             </label>
         </li>
-        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="3"
-                   class="map_filter" id="checkbox3"/>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter" data-filtervalue='{"sub_type":4, "identity":[2]}'
+                   class="explore_filter" id="checkbox3"/>
             <label for="checkbox3">
                 <img src="https://static.thenounproject.com/png/3957514-200.png"/><span>Settlements (Indigenous)</span>
             </label>
         </li>
-        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="5"
-                   class="map_filter" id="checkbox4"/>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter" data-filtervalue='{"sub_type":4, "identity":[1]}'
+                   class="explore_filter" id="checkbox4"/>
             <label for="checkbox4">
                 <img src="https://static.thenounproject.com/png/1461154-200.png"/><span>Settlements (European)</span>
             </label>
         </li>
-        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="6"
-                   class="map_filter" id="checkbox5"/>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter" data-filtervalue='{"sub_type":13, "identity":[0]}'
+                   class="explore_filter" id="checkbox5"/>
             <label for="checkbox5">
                 <img
                         src="https://static.thenounproject.com/png/2615726-200.png"/><span>Principal Rivers</span>
             </label>
         </li>
-        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="7"
-                   class="map_filter" id="checkbox6"/>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter" data-filtervalue='{"sub_type":3, "identity":[0]}'
+                   class="explore_filter" id="checkbox6"/>
             <label for="checkbox6">
                 <img src="https://static.thenounproject.com/png/4256430-200.png"/><span>Pathways and Lines</span>
             </label>
         </li>
-        <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="8"
-                   class="map_filter" id="checkbox8"/>
+        <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter" data-filtervalue='{"sub_type":12, "identity":[0]}'
+                   class="explore_filter" id="checkbox8"/>
             <label for="checkbox8">
                 <img
                         src="https://static.thenounproject.com/png/2631029-200.png"/><span>Council Fires</span>
@@ -399,117 +404,122 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
  </ol>
       </section>
  <section>
-      <header><h3>Maps <em>2/17 Selected</em></h3>
- <span><input type="checkbox" id="selectall" name="selectall" value="All">
+     <header><h3>Maps <em><span id="totalMapFiltersApplied">0</span>/17 Selected</em></h3>
+ <span><input type="checkbox" id="selectallMaps" name="selectall" value="All">
 <label for="selectall">Select All</label></span>
  </header>
                 <ol>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="1"
-                               class="map_filter" id="checkbox1"/>
-                        <label for="checkbox1">
-                            <img src="../assets/img/map-thumbs/1590-White.jpg" alt="cropped image of map"><span>1590 <em>White</em></span>
+                               class="map_selector" id="mapcheckbox1"/>
+                        <label for="mapcheckbox1">
+                            <img src="../assets/img/map-thumbs/1590-White.jpg"/><span>1590 <em>White</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="2"
-                               class="map_filter" id="checkbox2"/>
-                        <label for="checkbox2">
-                            <img src="../assets/img/map-thumbs/1650-Bleau.jpg" alt="cropped image of map"><span>1650 <em>Bleau</em></span>
+                               class="map_selector" id="mapcheckbox2"/>
+                        <label for="mapcheckbox2">
+                            <img
+                                    src="../assets/img/map-thumbs/1650-Bleau.jpg"/><span>1650 <em>Bleau</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="3"
-                               class="map_filter" id="checkbox3"/>
-                        <label for="checkbox3">
+                               class="map_selector" id="mapcheckbox3"/>
+                        <label for="mapcheckbox3">
                             <img src="../assets/img/map-thumbs/1676-Seller.jpg" alt="cropped image of map"><span>1676 <em>Seller</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="5"
-                               class="map_filter" id="checkbox4"/>
-                        <label for="checkbox4">
+                               class="map_selector" id="mapcheckbox4"/>
+                        <label for="mapcheckbox4">
                             <img src="../assets/img/map-thumbs/1677-Foster.jpg" alt="cropped image of map"><span>1677 <em>Foster</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="6"
-                               class="map_filter" id="checkbox5"/>
-                        <label for="checkbox5">
-                            <img src="../assets/img/map-thumbs/1720-Moll.jpg" alt="cropped image of map"><span>1720 <em>Moll</em></span>
+                               class="map_selector" id="mapcheckbox5"/>
+                        <label for="mapcheckbox5">
+                            <img
+                                    src="../assets/img/map-thumbs/1720-Moll.jpg"/><span>1720 <em>Moll</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="7"
-                               class="map_filter" id="checkbox6"/>
-                        <label for="checkbox6">
+                               class="map_selector" id="mapcheckbox6"/>
+                        <label for="mapcheckbox6">
                             <img src="../assets/img/map-thumbs/1738-Burghers.jpg" alt="cropped image of map"><span>1738 <em>Burghers</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="8"
-                               class="map_filter" id="checkbox8"/>
+                               class="map_selector" id="mapcheckbox8"/>
                         <label for="checkbox8">
                             <img src="../assets/img/map-thumbs/1752-Evans.jpg" alt="cropped image of map"><span>1752 <em>Evans</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="10"
-                               class="map_filter" id="checkbox9"/>
+                               class="map_selector" id="mapcheckbox9"/>
                         <label for="checkbox9">
                             <img src="../assets/img/map-thumbs/1755-Herbert.jpg" alt="cropped image of map"><span>1755 <em>Herbert</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="11"
-                               class="map_filter" id="checkbox10"/>
-                        <label for="checkbox10">
-                            <img src="../assets/img/map-thumbs/1755-Mitchell.jpg" alt="cropped image of map"><span>1755 <em>Mitchell</em></span><
+                               class="map_selector" id="mapcheckbox10"/>
+                        <label for="mapcheckbox10">
+                            <img src="../assets/img/map-thumbs/1755-Moll.jpg"/><span>1755 <em>Moll</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="12"
-                               class="map_filter" id="checkbox11"/>
-                        <label for="checkbox11">
-                            <img src="../assets/img/map-thumbs/1755-Moll.jpg" alt="cropped image of map"><span>1755 <em>Moll</em></span>
+                               class="map_selector" id="mapcheckbox11"/>
+                        <label for="mapcheckbox11">
+                            <img
+                                    src="../assets/img/map-thumbs/1755-Mitchell.jpg"/><span>1755 <em>Mitchell</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="13"
-                               class="map_filter" id="checkbox12"/>
-                        <label for="checkbox12">
-                            <img src="../assets/img/map-thumbs/1772-Bowen.jpg" alt="cropped image of map"><span>1772 <em>Bowen</em></span>
+                               class="map_selector" id="mapcheckbox12"/>
+                        <label for="mapcheckbox12">
+                            <img src="../assets/img/map-thumbs/1772-Bowen.jpg"/><span>1772 <em>Bowen</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="14"
-                               class="map_filter" id="checkbox13"/>
-                        <label for="checkbox13">
-                            <img src="../assets/img/map-thumbs/1774-Jefferys.jpg" alt="cropped image of map"><span>1774 <em>Jefferys</em></span>
+                               class="map_selector" id="mapcheckbox13"/>
+                        <label for="mapcheckbox13">
+                            <img src="../assets/img/map-thumbs/1774-Jefferys.jpg"/><span>1774 <em>Jefferys</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="15"
-                               class="map_filter" id="checkbox14"/>
-                        <label for="checkbox14">
-                            <img src="../assets/img/map-thumbs/1778-Hutchins.jpg" alt="cropped image of map"><span>1778 <em>Hutchins</em></span>
+                               class="map_selector" id="mapcheckbox14"/>
+                        <label for="mapcheckbox14">
+                            <img
+                                    src="../assets/img/map-thumbs/1778-Hutchins.jpg"/><span>1778 <em>Hutchins</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="16"
-                               class="map_filter" id="checkbox15"/>
-                        <label for="checkbox15">
-                            <img src="../assets/img/map-thumbs/1783-Cary.jpg" alt="cropped image of map"><span>1783 <em>Cary</em></span>
+                               class="map_selector" id="mapcheckbox15"/>
+                        <label for="mapcheckbox15">
+                            <img src="../assets/img/map-thumbs/1783-Cary.jpg"/><span>1783 <em>Cary</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="17"
-                               class="map_filter" id="checkbox16"/>
-                        <label for="checkbox16">
-                            <img src="../assets/img/map-thumbs/1784-Buell.jpg" alt="cropped image of map"><span>1784 <em>Buell</em></span>
+                               class="map_selector" id="mapcheckbox16"/>
+                        <label for="mapcheckbox16">
+                            <img src="../assets/img/map-thumbs/1784-Buell.jpg"/><span>1784 <em>Buell</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="18"
-                               class="map_filter" id="checkbox17"/>
-                        <label for="checkbox17">
-                            <img src="../assets/img/map-thumbs/1794-Russell.jpg" alt="cropped image of map"><span>1794 <em>Russell</em></span>
+                               class="map_selector" id="mapcheckbox17"/>
+                        <label for="mapcheckbox17">
+                            <img
+                                    src="../assets/img/map-thumbs/1794-Russell.jpg"/><span>1794 <em>Russell</em></span>
                         </label>
                     </li>
                     <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="19"
-                               class="map_filter" id="checkbox18"/>
-                        <label for="checkbox18">
-                            <img src="../assets/img/map-thumbs/1796-Bradley.jpg" alt="cropped image of map"><span>1796 <em>Bradley</em></span>
+                               class="map_selector" id="mapcheckbox18"/>
+                        <label for="mapcheckbox18">
+                            <img src="../assets/img/map-thumbs/1796-Bradley.jpg"/><span>1796 <em>Bradley</em></span>
                         </label>
                     </li>
 
-                  
+
  </ol>
-      </section>     
+      </section>
     </div>
     </div>
 
@@ -537,7 +547,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
      </ol>
         </div>
     </div>
-    
+
 
 </div>
 
@@ -574,20 +584,14 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 
 <script>
     // this is for toggle show and hide, not smaller toggle
-    const toggleButton = document.getElementById('toggleButton');
-    const filterContainer = document.getElementById('filterContainer');
-    let isFilterVisible = true;
-    toggleButton.addEventListener('click', function () {
-        isFilterVisible = !isFilterVisible;
-        filterContainer.style.display = isFilterVisible ? 'block' : 'none';
-        toggleButton.classList.toggle('active', isFilterVisible);
-    });
+    /*
 
     // "Apply to All" toggle for Filters One, for the Map
-    const checkboxesOne = document.querySelectorAll(".map_filter");
-    const toggleAllCheckboxOne = document.getElementById("toggle-all-filters-one");
+    const checkboxesOne = document.querySelectorAll(".explore_filter");
+    const toggleAllFeatures = document.getElementById("selectallFeatures");
+    const toggleAllMaps = document.getElementById("selectallMaps");
 
-    function applyFilterOne(filterValue) {
+    function applyMapFilter(filterValue) {
         const values = filterValue.split('-');
         const start = parseInt(values[0]);
         const end = parseInt(values[1]);
@@ -602,19 +606,19 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
         }
     }
 
-    toggleAllCheckboxOne.addEventListener("change", function () {
-        const applyToAll = toggleAllCheckboxOne.checked;
-        checkboxesOne.forEach(checkbox => {
+    toggleAllFeatures.addEventListener("change", function () {
+        const applyToAll = toggleAllFeatures.checked;
+        document.querySelectorAll(".explore_filter").forEach(checkbox => {
             checkbox.checked = applyToAll;
-            applyFilterOne(checkbox.getAttribute("data-filtervalue"));
+            applyMapFilter(checkbox.getAttribute("data-filtervalue"));
         });
     });
 
     checkboxesOne.forEach(checkbox => {
         checkbox.addEventListener("change", function () {
-            applyFilterOne(checkbox.getAttribute("data-filtervalue"));
+            applyMapFilter(checkbox.getAttribute("data-filtervalue"));
         });
-    });
+    });*/
 </script>
 
 
