@@ -91,7 +91,7 @@ export class StoryMap {
         this.exploreFilterControl = {
             id: 0,
             fid: 0, // We should look at this
-            sub_type: [[], [], [], [], [], [], [], [], [], [], [], [], []],
+            sub_type: [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
             maps: [],
             features: [],
 
@@ -109,6 +109,25 @@ export class StoryMap {
             },
             excludes: {},
         };
+
+        // Selector dict for explore controls
+        this.exploreSelectors = {
+            explore_filter: "input.explore_filter",
+            map_filter: "input.map_selector",
+            explore_counter: "totalExploreFiltersApplied",
+            map_counter: "totalMapFiltersApplied",
+            selectall_maps: "selectallMaps",
+            selectall_features: "selectallFeatures"
+        };
+
+        // Total map and explore filters currently applied
+        this.totalExploreFilters = 7;
+        this.totalExploreFiltersApplied = 0;
+        this.totalMapFilters = 17;
+        this.totalMapFiltersApplied = 0;
+        // This is all the subtypes used in explore
+        this.exploreFeatureSubtypes = [10, 4, 12, 13, 3, 12];
+        this.exploreFeatures = [];
         this.initExploreFilters();
     }
 
@@ -311,9 +330,9 @@ export class StoryMap {
             if (feature.properties) {
                 // add to all features
                 this.allFeatures.push(feature);
-                //if (feature.properties.story_link === story_id) {
                 storyFeatures.push(feature);
-                //}
+
+
             }
         }
 
@@ -550,7 +569,7 @@ export class StoryMap {
         if (this.d3Intro.slideIds[slideid + ""]) {
             // This slide triggers an animated slide
             // Clear layers
-            console.log(slideid);
+            //console.log(slideid);
             this.storyFeatureLayerGroup.clearLayers();
             this.d3Intro.SectionIntro(this.map, slideid, this.slides);
         } else if (slideid != "explore") {
@@ -716,9 +735,7 @@ export class StoryMap {
                         // Set this slide to last intersected
                         lastIntersected = entry.target.dataset.slideid;
                         intersectionY = window.scrollY;
-                        //console.log(entry.target.dataset.slideid);
 
-                        //console.log('enabled: '+ entry.target.dataset.slideid);
                     } /*else if (entry.intersectionRatio > 0 && entry.intersectionRatio < 0.3 && entry.target.dataset.slideid == lastIntersected){
                         let nextSlide = null;
                         for (let x=0; x < slides.length;x++){
@@ -759,15 +776,6 @@ export class StoryMap {
         }
         // Add intersection observer for filters
         observer.observe(document.getElementById("filters"));
-
-        /*window.addEventListener("scroll", function () {
-            let elementTarget = document.getElementById("slide_500");
-            console.log(window.scrollY + " : " + (elementTarget.offsetTop + elementTarget.offsetHeight));
-            if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight)) {
-                //alert("You've scrolled past the second div");
-                console.log('trigger');
-            }
-        });*/
 
         // Init our d3 intro class and pass relevant layer data
         this.d3Intro = new D3intro(this.storyUris, this.L, this.d3);
@@ -1032,18 +1040,23 @@ export class StoryMap {
 
     /** Add a single criteria value to our search filters */
     addSubtypeFilter(subtypeValue, filterValue, include) {
-        //console.log(this.exploreFilterSlide[featureType]);
+
         if (
             this.exploreFilterControl.sub_type &&
             this.exploreFilterControl.sub_type.length >= filterValue
         ) {
             const index =
                 this.exploreFilterControl.sub_type[subtypeValue].indexOf(filterValue);
+            //console.log("index: " + index);
             if (include && index < 0) {
                 this.exploreFilterControl.sub_type[subtypeValue].push(filterValue);
+                this.totalExploreFiltersApplied += 1;
             } else if (!include) {
                 // Remove from array
                 this.exploreFilterControl.sub_type[subtypeValue].splice(index, 1);
+                if (this.totalExploreFiltersApplied > 0) {
+                    this.totalExploreFiltersApplied -= 1;
+                }
             }
         }
 
@@ -1085,77 +1098,155 @@ export class StoryMap {
      */
     initExploreFilters() {
         // Map filters
-        let mapFilters = document.querySelectorAll("input.map_filter");
+        let mapFilters = document.querySelectorAll(this.exploreSelectors.map_filter);
         if (mapFilters) {
             for (let f = 0; f < mapFilters.length; f++) {
                 mapFilters[f].addEventListener(
                     "click",
                     this.mapFilterClickEvent.bind(this)
                 );
-                /*mapFilters[f].addEventListener('click', function (e) {
-                                            let dataset = e.target.dataset;
-                                            console.log(dataset);
-                                            if (dataset) {
-                                                if (dataset.featuretype == "all") {
-                                                    for (let t = 0; t < this.featureTypes.length; t++) {
-                                                        this.addExploreFilter(
-                                                            this.featureTypes[t],
-                                                            dataset.criteria,
-                                                            dataset.filtervalue,
-                                                            true
-                                                        );
-                                                    }
-
-                                                } else {
-                                                    this.addExploreFilter(
-                                                        dataset.featuretype,
-                                                        dataset.criteria,
-                                                        dataset.filtervalue,
-                                                        true
-                                                    );
-                                                }
-
-                                                this.applyExploreFilters();
-                                            }
-
-                                        }.bind(this));*/
+                mapFilters[f].checked = false;
             }
         }
 
         // Subtype filters (borders, land routes, etc.)
-        let subtypeFilters = document.querySelectorAll("input.explore_filter");
+        let subtypeFilters = document.querySelectorAll(this.exploreSelectors.explore_filter);
         if (subtypeFilters) {
             for (let f = 0; f < subtypeFilters.length; f++) {
                 subtypeFilters[f].addEventListener(
                     "click",
                     this.subtypeFilterClickEvent.bind(this)
                 );
+                subtypeFilters[f].checked = false;
             }
         }
+
+        //selectallFeatures
+        let selectAllExplore = document.getElementById(this.exploreSelectors.selectall_features);
+        if (selectAllExplore) {
+            selectAllExplore.addEventListener(
+                "click",
+                function (event) {
+                    this.toggleAllFeaturesEnabled = event.target.checked;
+                    this.toggleAll(this.exploreSelectors.explore_filter, event.target.checked);
+                }.bind(this)
+            );
+            selectAllExplore.checked = false;
+        }
+        //selectallMaps
+        let selectAllMaps = document.getElementById(this.exploreSelectors.selectall_maps)
+        if (selectAllMaps) {
+            selectAllMaps.addEventListener(
+                "click",
+                function (event) {
+                    this.toggleAllMapsEnabled = event.target.checked;
+                    this.toggleAll(this.exploreSelectors.map_filter, event.target.checked);
+                }.bind(this)
+            );
+            selectAllMaps.checked = false;
+        }
+
+
+        this.toggleAllFeaturesEnabled = false;
+        this.toggleAllMapsEnabled = false;
+
+    }
+
+    /**
+     * Function to toggle all filters or maps
+     * @param selector which group we're toggling on as selector
+     */
+    toggleAll(selector, checked) {
+
+        let elements = document.querySelectorAll(selector);
+        // Switch to prevent updates on each criteria selected
+        Array.prototype.forEach.call(elements, function (el) {
+            if (el.checked != checked) {
+                el.click();
+            }
+        });
+        // Apply filters and update counts
+        this.applyExploreFilters();
+        this.updateFilterCounts();
+
     }
 
     mapFilterClickEvent(e) {
         let dataset = e.target.dataset;
+        this.updateToggleAllElement(this.exploreSelectors.selectall_maps, e.target.checked);
         if (dataset) {
             const filterValue = parseInt(dataset.filtervalue);
             const index = this.exploreFilterControl.maps.indexOf(filterValue);
             if (index < 0) {
                 this.exploreFilterControl.maps.push(filterValue);
+                this.totalMapFiltersApplied += 1;
             } else {
                 this.exploreFilterControl.maps.splice(index, 1);
+                if (this.totalMapFiltersApplied > 0) {
+                    this.totalMapFiltersApplied -= 1;
+                }
             }
-            this.applyExploreFilters();
+            if (!this.toggleAllFeaturesEnabled) {
+                this.applyExploreFilters();
+                // Update filter counts for map and explore
+                this.updateFilterCounts();
+            }
+
+        }
+    }
+
+    /** Updates the total filters applied numbers in the filter box */
+    updateFilterCounts() {
+        let filterTotal = document.getElementById(this.exploreSelectors.explore_counter);
+        let mapTotal = document.getElementById(this.exploreSelectors.map_counter);
+        if (filterTotal) {
+            filterTotal.innerHTML = this.totalExploreFiltersApplied;
+            // Case when all filters have been individually clicked; silently turn on toggle all controls
+            let exploreToggleAll = document.getElementById(this.exploreSelectors.selectall_features);
+            if (this.totalExploreFiltersApplied == this.totalExploreFilters && exploreToggleAll.checked == false) {
+                exploreToggleAll.checked = true;
+            } else if (exploreToggleAll.checked == true && this.totalExploreFiltersApplied < this.totalExploreFilters) {
+                exploreToggleAll.checked = false;
+            }
+        }
+        if (mapTotal) {
+            mapTotal.innerHTML = this.totalMapFiltersApplied;
+            // same as above
+            let mapToggleAll = document.getElementById(this.exploreSelectors.selectall_maps);
+            if (this.totalMapFiltersApplied == this.totalMapFilters && mapToggleAll.checked == false) {
+                mapToggleAll.checked = true;
+            } else if (mapToggleAll.checked == true && this.totalMapFiltersApplied < this.totalMapFilters) {
+                mapToggleAll.checked = false;
+            }
+        }
+
+    }
+
+    /**
+     * Keeps the select all toggles in line with their list of criteria
+     * by turning off after all is selected, then one criteria is unselected.
+     * @param selector elements selector for which checkbox
+     * @param checked The status of the criteria calling it
+     */
+    updateToggleAllElement(selector, checked) {
+        if (this.toggleAllFeaturesEnabled && checked != this.toggleAllFeaturesEnabled) {
+            this.toggleAllEnabled = false;
+            let toggleAll = document.getElementById(selector);
+            if (toggleAll) {
+                toggleAll.checked = false;
+            }
         }
     }
 
     subtypeFilterClickEvent(e) {
         let dataset = e.target.dataset;
-        //console.log(dataset);
+        this.updateToggleAllElement(this.exploreSelectors.selectall_features, e.target.checked);
         if (dataset) {
             // [{"sub_type":3, "identity":[2,3,4]}]
             const values = JSON.parse(dataset.filtervalue);
             if (values.sub_type) {
                 let subtypeValue = values.sub_type;
+
                 // Add identities
                 for (let t = 0; t < values.identity.length; t++) {
                     this.addSubtypeFilter(
@@ -1165,7 +1256,13 @@ export class StoryMap {
                     );
                 }
             }
-            this.applyExploreFilters();
+
+            if (!this.toggleAllFeaturesEnabled) {
+                this.applyExploreFilters();
+                // Update filter counts for map and explore
+                this.updateFilterCounts();
+            }
+
         }
     }
 
@@ -1178,40 +1275,65 @@ export class StoryMap {
         // Filter by subtype first
         let filteredFeatures = [];
         let subtypeFeatures = [];
-        if (this.allFeatures) {
-            console.log(this.exploreFilterControl.sub_type);
-            this.allFeatures.forEach(
-                function (item) {
-                    let subtypeIndex = -1;
-                    if (
-                        item.properties &&
-                        this.exploreFilterControl.sub_type[0].length > 0
-                    ) {
-                        // All features
-                        subtypeIndex = 0;
-                    } else if (item.properties && item.properties.sub_type) {
-                        subtypeIndex = item.properties.sub_type;
+        console.log(this.exploreFilterControl.sub_type.length);
+        if (this.exploreFeatures) {
+            let exploreFilteringEnabled = false;
+            if (!this.toggleAllFeaturesEnabled) {
+                // Check if any feature criteria are enabled
+                let subtypeFilters = document.querySelectorAll(this.exploreSelectors.explore_filter);
+                if (subtypeFilters) {
+                    for (let f = 0; f < subtypeFilters.length; f++) {
+                        if (subtypeFilters[f].checked){
+                            exploreFilteringEnabled = true;
+                            break;
+                        }
                     }
-                    if (
-                        item.properties &&
-                        item.properties.identity &&
-                        this.exploreFilterControl.sub_type[subtypeIndex].indexOf(
-                            item.properties.identity
-                        ) > -1
-                    ) {
-                        subtypeFeatures.push(item);
-                    }
-                }.bind(this)
-            );
-        }
-
-        if (this.exploreFilterControl.maps.length > 0) {
-            // if it's empty, apply any map
-            let iterateFeatures = this.allFeatures;
-            if (subtypeFeatures.length > 0) {
-                // If we have a subset, apply map filter to that subset
-                iterateFeatures = subtypeFeatures;
+                }
             }
+            if (this.toggleAllFeaturesEnabled || !exploreFilteringEnabled) {
+                // All or none selected, ignore these criteria
+                subtypeFeatures = this.exploreFeatures;
+            } else {
+                this.exploreFeatures.forEach(
+                    function (item) {
+                        let subtypeIndex = -1;
+                        if (
+                            item.properties &&
+                            this.exploreFilterControl.sub_type[0].length > 0
+                        ) {
+                            // All features
+                            subtypeIndex = 0;
+                        } else if (item.properties && item.properties.sub_type) {
+                            subtypeIndex = item.properties.sub_type;
+                        }
+                        // If we've got an identity e.g. European and a subtype OR just a subtype (0 in criteria)
+                        if (
+                            subtypeIndex >= 0 &&
+                            item.properties &&
+                            this.exploreFilterControl.sub_type.length > subtypeIndex) {
+                            if (
+                                (item.properties.identity && this.exploreFilterControl.sub_type[subtypeIndex].indexOf(item.properties.identity) > -1) ||
+                                (this.exploreFilterControl.sub_type[subtypeIndex].indexOf(0) > -1)
+                            ) {
+                                subtypeFeatures.push(item);
+                            }
+                        }
+                    }.bind(this)
+                );
+            }
+        }
+        // Filter what we've done in subtype
+        // todo we need default behaviour so toggle all if explore filter selected
+        // but don't filter
+        // Otherwise filter
+        if (this.toggleAllMapsEnabled) {
+            filteredFeatures = subtypeFeatures;
+        } else if (this.exploreFilterControl.maps.length == 0 && !this.toggleAllMapsEnabled) {
+            // In this case, no maps selected, show nothing
+            filteredFeatures = [];
+        } else if (this.exploreFilterControl.maps.length > 0 && !this.toggleAllMapsEnabled) {
+            // Filter by map
+            let iterateFeatures = subtypeFeatures;
             iterateFeatures.forEach(
                 function (item) {
                     if (
@@ -1224,38 +1346,9 @@ export class StoryMap {
                     }
                 }.bind(this)
             );
-        } else {
-            filteredFeatures = subtypeFeatures;
         }
 
         if (filteredFeatures && filteredFeatures.length > 0) {
-            // EH: commented out pending review
-            //     // sort the checkboxes
-            //     if (document.querySelectorAll("input.explore_filter:checked").length == 0) {
-            //         // IF we've got one or the other not checked, maps of subtypes
-            //         let exploreFilters = document.querySelectorAll("input.explore_filter");
-            //         let availableSubtypes = [];
-            //         filteredFeatures.forEach(function (item) {
-            //             if (item.properties && item.properties.sub_type && availableSubtypes.indexOf(item.properties.sub_type) == -1) {
-            //                 availableSubtypes.push(item.properties.sub_type);
-            //                 /*for (let e = 0; e<exploreFilters.length;e++){
-            //                     const values = JSON.parse(exploreFilters[e].dataset.filtervalue);
-            //                     if (item.properties.sub_type == values.sub_type && !exploreFilters[e].checked){
-            //
-            //                         exploreFilters[e].checked = true;
-            //                         break;
-            //                     }
-            //                 }*/
-            //             }
-            //
-            //         }.bind(this));
-            //     }
-
-            // IF we've got selected maps, but no subtypes
-            // Go through our subset and check every relevant subtype
-
-            // IF we've got selected subtype but not maps
-            // go through subset and enable any maps we find.
 
             // ONLY show the layer if we've got something at the end.
             this.exploreFeaturesLayer = this.L.geoJSON(filteredFeatures, {
@@ -1266,7 +1359,7 @@ export class StoryMap {
             this.storyFeatureLayerGroup.addLayer(this.exploreFeaturesLayer);
         }
 
-        console.log(filteredFeatures);
+
     }
 
     /** Apply filter logic to feature of one type
@@ -1302,7 +1395,7 @@ export class StoryMap {
 
     /**
      * Apply filter criteria to a feature to see if it should be included in this
-     * slide (or search)
+     * slide
      * @param feature
      * @param featureType
      * @param slide
@@ -1356,6 +1449,8 @@ export class StoryMap {
             default:
                 break;
         }
+
+
         return includeFeature;
     }
 
@@ -1374,6 +1469,13 @@ export class StoryMap {
             if (includeFeature) {
                 slide.features.push(feature);
             }
+        }
+
+        // Add to explorefeatures if it has one of our subtypes
+        if (feature && feature.properties && feature.properties.sub_type &&
+            this.exploreFeatureSubtypes.includes(feature.properties.sub_type)) {
+            this.exploreFeatures.push(feature);
+
         }
     }
 

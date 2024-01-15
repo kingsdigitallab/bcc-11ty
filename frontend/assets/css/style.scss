@@ -659,6 +659,9 @@ justify-content: space-between;
             input[type="checkbox"][id^="checkbox"] {
               display: none;
               }
+            input[type="checkbox"][id^="mapcheckbox"] {
+              display: none;
+              }
 
             :checked + label{
               font-weight: bold;
