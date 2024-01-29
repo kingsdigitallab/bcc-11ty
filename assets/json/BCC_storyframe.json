@@ -202,17 +202,6 @@
       "type": "Feature",
       "properties": {
         "id": null,
-        "FID": 12,
-        "Narr_ID": 0,
-        "Seq_ID": 20,
-        "Desc": "Extent of Indigenous references in 12 Mitchell"
-      },
-      "geometry": { "type": "MultiPolygon", "coordinates": [] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": null,
         "FID": 13,
         "Narr_ID": 2,
         "Seq_ID": 150,
