@@ -3,31 +3,24 @@
     {
       "id": 2,
       "fid": 12,
-      "lines": {
-        "includes": {
-          "sub_type": [8, 6]
-        }
-      },
+      "lines": {},
       "points": {
         "includes": {
-          "sub_type": [4, 10]
+          "sub_type": [4, 10],
+          "map_source": [12]
         }
       },
       "features": []
     },
     {
       "id": 3,
-      "fid": 12,
-      "lines": {
-        "includes": {
-          "sub_type": [3],
-          "map_source": [17]
-        }
+      "fid": 16,
+      "lines": {}
       },
       "points": {
         "includes": {
-          "sub_type": [4, 10],
-          "map_source": [19],
+          "sub_type": [4],
+          "map_source": [12],
           "identity": [1]
         }
       },
