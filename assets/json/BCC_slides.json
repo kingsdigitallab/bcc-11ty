@@ -27,13 +27,19 @@
     },
     {
       "id": 4,
-      "fid": 12,
+      "fid": 17,
       "lines": {
         "includes": {
-          "sub_type": [3, 5, 8],
+          "sub_type": [5, 13],
           "map_source": [12]
         }
       },
+      "points": { 
+        "includes": { 
+          "sub_type": [4, 12],  
+          "map_source": [12] 
+        }
+     }, 
       "features": []
     },
     {
@@ -41,8 +47,7 @@
       "fid": 10,
       "lines": {
         "includes": {
-          "sub_type": [8],
-          "map_source": [12]
+          "sub_type": [13]
         }
       },
       "points": {
@@ -57,11 +62,10 @@
     },
     {
       "id": 6,
-      "fid": 10,
+      "fid": 18,
       "lines": {
         "includes": {
-          "sub_type": [8],
-          "map_source": [12]
+          "sub_type": [13]
         }
       },
       "points": {
@@ -76,16 +80,15 @@
     },
     {
       "id": 7,
-      "fid": 10,
+      "fid": 19,
       "lines": {
         "includes": {
-          "sub_type": [8],
-          "map_source": [12]
+          "sub_type": [13]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4, 10]
+          "sub_type": [4, 10, 12]
         },
         "excludes": {
           "identity": [1]
