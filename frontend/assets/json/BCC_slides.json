@@ -15,8 +15,7 @@
     {
       "id": 3,
       "fid": 16,
-      "lines": {}
-      },
+      "lines": {},
       "points": {
         "includes": {
           "sub_type": [4],
