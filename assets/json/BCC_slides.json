@@ -98,12 +98,18 @@
     },
     {
       "id": 8,
-      "fid": 11,
+      "fid": 20,      
+      "points": { 
+        "includes": { 
+          "id": [50912] 
+        }
+     }, 
       "indigenous": {
         "includes": {
-          "ID": [36681, 35919, 36519, 36677, 34083]
+          "ID": [4079]
         }
       },
+      "homelands": {},
       "features": []
     },
     {
