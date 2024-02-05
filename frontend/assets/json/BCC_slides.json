@@ -2,8 +2,12 @@
   "slides": [
     {
       "id": 2,
-      "fid": 12,
-      "lines": {},
+      "fid": 33,
+      "lines": {
+        "includes": {
+          "sub_type": [13]
+        }
+      },
       "points": {
         "includes": {
           "sub_type": [4, 10],
@@ -106,12 +110,12 @@
      }, 
       "indigenous": {
         "includes": {
-          "ID": [4079]
+          "ID": [36124]
         }
       },
       "homelands": {
         "includes": {
-          "ID": [36124]
+          "ID": [4079]
         }
       },
       "features": []
