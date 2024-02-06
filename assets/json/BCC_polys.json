@@ -3819,7 +3819,7 @@
         "norm_text": "Onondagaes",
         "story_link": 1,
         "frame_link": null,
-        "identity": 2
+        "identity": 3
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -8305,7 +8305,7 @@
         "norm_text": "Seneka",
         "story_link": 1,
         "frame_link": null,
-        "identity": 2
+        "identity": 3
       },
       "geometry": {
         "type": "MultiPolygon",
