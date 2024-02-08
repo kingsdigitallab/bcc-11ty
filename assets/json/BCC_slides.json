@@ -184,13 +184,13 @@
       "points": {
         "includes": {
           "sub_type": [4, 12]
-        },
-        "excludes": {
-          "identity": [1]
         }
       },
       "polys": {
-        "includes": {},
+        "includes": {
+          "sub_type": [7],
+          "map_source": [16, 19]
+        },
         "excludes": {}
       },
       "features": []
