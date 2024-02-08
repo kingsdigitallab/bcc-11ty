@@ -179,11 +179,11 @@
     },
     {
       "id": 13,
-      "fid": 10,
+      "fid": 34,
       "lines": {},
       "points": {
         "includes": {
-          "sub_type": [4]
+          "sub_type": [4, 12]
         },
         "excludes": {
           "identity": [1]
@@ -197,7 +197,7 @@
     },
     {
       "id": 14,
-      "fid": 21,
+      "fid": 35,
       "lines": {
         "includes": {
           "sub_type": [5],
@@ -215,10 +215,10 @@
     },
     {
       "id": 15,
-      "fid": 21,
+      "fid": 36,
       "lines": {
         "includes": {
-          "sub_type": [5],
+          "sub_type": [5, 13],
           "map_source": [12]
         }
       },
