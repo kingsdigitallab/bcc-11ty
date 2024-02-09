@@ -163,13 +163,13 @@ export class StoryMap {
         this.lineRiverRouteStyle = {
             stroke: true,
             //smoothFactor:10,
-            dashArray: "7 9",
-            color: "#00c2cb",
+            //dashArray: "7 9",
+            color: "#2D9BF0",
             lineCap: "square",
             lineJoin: "round",
             weight: 2,
             fill: false,
-            opacity: 0.1,
+            opacity: 0.5,
         };
         this.lineRiverRouteStyleLabel = {
             stroke: true,
@@ -356,12 +356,12 @@ export class StoryMap {
 
     pointToLayer(feature, latlng) {
         switch (feature.properties.sub_type) {
-            // Indigenous : Circle - Red - point down
+            // Indigenous : Circle - Red
             case 1:
                 return this.L.circleMarker(latlng, {
                     radius: 4,
-                    fillColor: "#0000ff",
-                    color: "#000",
+                    fillColor: "#7A0707",
+                    color: "#7A0707",
                     weight: 0.5,
                     opacity: 1,
                     fillOpacity: 1,
@@ -372,15 +372,15 @@ export class StoryMap {
                 // Capture Indig vs Haudenasnee
                 switch (feature.properties.identity) {
                     case 1:
-                        // European - Green Squre
+                        // European - Red Square
                         return new this.L.RegularPolygonMarker(latlng, {
                             numberOfSides: 4,
                             rotation: -45,
-                            radius: 5,
+                            radius: 6,
                             //this.L.Path style options
                             fill: true,
-                            fillColor: "#124d20",
-                            color: "#124d20",
+                            fillColor: "#7A0707",
+                            color: "#7A0707",
                             weight: 0.5,
                             fillOpacity: 1,
                             stroke: true,
@@ -390,8 +390,8 @@ export class StoryMap {
                     default:
                         return this.L.circleMarker(latlng, {
                             radius: 5,
-                            fillColor: "#ff0000",
-                            color: "#ff000",
+                            fillColor: "#7A0707",
+                            color: "#7A0707",
                             weight: 0.5,
                             opacity: 1,
                             fillOpacity: 1,
@@ -467,28 +467,32 @@ export class StoryMap {
             case 10:
                 // Capture Indig vs Haudenasnee
                 switch (feature.properties.identity) {
-                    case 1:
-                        return this.L.circleMarker(latlng, {
-                            radius: 5,
-                            fillColor: "#800080",
-                            color: "#800080",
+                    case 1: //European - green sq, white centre
+                        return new this.L.RegularPolygonMarker(latlng, {
+                            numberOfSides: 4,
+                            rotation: -45,
+                            radius: 6,
+                            //this.L.Path style options
+                            fill: true,
+                            fillColor: "#FFFFFF",
+                            color: "#48A795",
                             weight: 1,
-                            opacity: 1,
-                            fillOpacity: 0.6,
+                            fillOpacity: 1,
+                            stroke: true,
                             bubblingMouseEvents: true,
                         });
-                    default:
+                    default: //indigenouns - green circle,white centre
                         return this.L.circleMarker(latlng, {
                             radius: 5,
-                            fillColor: "#FFFF00",
-                            color: "#FFFF00",
-                            weight: 0.5,
+                            fillColor: "#FFFFFF",
+                            color: "#48A795",
+                            weight: 1,
                             opacity: 1,
                             fillOpacity: 1,
                             bubblingMouseEvents: true,
                         });
                 }
-            default:
+            default: //other 
                 return this.L.circleMarker(latlng, {
                     radius: 4,
                     fillColor: "#000ff",
