@@ -339,7 +339,7 @@
     },
     {
       "id": 23,
-      "fid": 24,
+      "fid": 28,
       "lines": {
         "includes": {
           "sub_type": [13]
@@ -356,7 +356,7 @@
     },
     {
       "id": 24,
-      "fid": 24,
+      "fid": 28,
       "lines": {
         "includes": {
           "sub_type": [13]
@@ -402,7 +402,7 @@
       "fid": 29,
       "lines": {
         "includes": {
-          "sub_type": [13]
+          "id": [8210, 6768, 7860, 6746, 6747, 6738]
         }
       },
       "points": {
@@ -428,8 +428,10 @@
       },
       "points": {
         "includes": {
-          "sub_type": [4, 10, 12],
-          "map_source": [19]
+          "sub_type": [4, 10, 12]
+        },
+        "excludes": {
+          "map_source": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
         }
       },
       "polys": {},
@@ -468,7 +470,7 @@
     },
     {
       "id": 31,
-      "fid": 12,
+      "fid": 39,
       "lines": {},
       "points": {},
       "polys": {
