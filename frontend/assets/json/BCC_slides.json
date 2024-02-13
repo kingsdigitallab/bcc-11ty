@@ -528,7 +528,7 @@
     },
     {
       "id": 35,
-      "fid": 12,
+      "fid": 39,
       "lines": {
         "includes": {
           "id": [82666]
@@ -545,7 +545,7 @@
     },
     {
       "id": 36,
-      "fid": 12,
+      "fid": 39,
       "lines": {
         "includes": {
           "id": [82666]
@@ -562,19 +562,15 @@
     },
     {
       "id": 37,
-      "fid": 15,
+      "fid": 39,
       "lines": {
         "includes": {
-          "id": [1]
+          "sub_type": [3],
+          "identity": [1]
         }
       },
       "points": {},
-      "polys": {
-        "includes": {
-          "sub_type": [7],
-          "map_source": [7]
-        }
-      },
+      "polys": {},
       "excludes": {},
       "features": []
     },    
@@ -583,16 +579,12 @@
       "fid": 15,
       "lines": {
         "includes": {
-          "id": [1]
+          "sub_type": [3],
+          "map_source": [17]
         }
       },
       "points": {},
-      "polys": {
-        "includes": {
-          "sub_type": [7],
-          "map_source": [7]
-        }
-      },
+      "polys": {},
       "excludes": {},
       "features": []
     },
