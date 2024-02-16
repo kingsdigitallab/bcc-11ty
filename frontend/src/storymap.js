@@ -472,22 +472,22 @@ export class StoryMap {
                         return new this.L.RegularPolygonMarker(latlng, {
                             numberOfSides: 4,
                             rotation: -45,
-                            radius: 6,
+                            radius: 7,
                             //this.L.Path style options
                             fill: true,
                             fillColor: "#FFFFFF",
                             color: "#48A795",
-                            weight: 1,
+                            weight: 2.5,
                             fillOpacity: 1,
                             stroke: true,
                             bubblingMouseEvents: true,
                         });
                     default: //indigenouns - green circle,white centre
                         return this.L.circleMarker(latlng, {
-                            radius: 5,
+                            radius: 6,
                             fillColor: "#FFFFFF",
                             color: "#48A795",
-                            weight: 1,
+                            weight: 2.5,
                             opacity: 1,
                             fillOpacity: 1,
                             bubblingMouseEvents: true,
@@ -497,7 +497,7 @@ export class StoryMap {
                 return this.L.circleMarker(latlng, {
                     radius: 4,
                     fillColor: "#000ff",
-                    color: "#oooff",
+                    color: "#0000ff",
                     weight: 0.5,
                     opacity: 1,
                     fillOpacity: 1,
