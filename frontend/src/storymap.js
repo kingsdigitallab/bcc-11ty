@@ -352,6 +352,7 @@ export class StoryMap {
                 return this.slides[s];
             }
         }
+        console.log('Warning! slide '+ slideid + ' not found');
     }
 
     pointToLayer(feature, latlng) {
@@ -569,7 +570,7 @@ export class StoryMap {
      */
     async triggerSlideMapEvents(slideid) {
         /* Trigger intros */
-        //console.log(slideid);
+        console.log(slideid);
         if (this.d3Intro.slideIds[slideid + ""]) {
             // This slide triggers an animated slide
             // Clear layers
@@ -601,7 +602,7 @@ export class StoryMap {
                             fillOpacity: 0,
                         });
                         this.storyFeatureLayerGroup.addLayer(slide.layer);
-                        this.fadeLayerLeaflet(slide.layer, 0, 0.8, 0.2, 0.01);
+                        this.fadeLayerLeaflet(slide.layer, 0, 1, 0.2, 0.01);
                         this.map.off("moveend", slideUpdate);
                     }.bind(this);
                     this.map.on("moveend", slideUpdate);
@@ -783,10 +784,10 @@ export class StoryMap {
 
         // Init our d3 intro class and pass relevant layer data
         this.d3Intro = new D3intro(this.storyUris, this.L, this.d3);
-        this.d3Intro.homelandsSlide = this.getSlideById(102);
-        this.d3Intro.pathways1Slide = this.getSlideById(1031);
+        this.d3Intro.homelandsSlide = this.getSlideById(500);
+        this.d3Intro.pathways1Slide = this.getSlideById(600);
         this.d3Intro.pathways2Slide = this.getSlideById(1032);
-        this.d3Intro.villagerssettlersSlide = this.getSlideById(104);
+        this.d3Intro.villagerssettlersSlide = this.getSlideById(700);
         this.d3Intro.linesSlide.push(this.getSlideById(1051));
         this.d3Intro.linesSlide.push(this.getSlideById(1052));
         this.d3Intro.linesSlide.push(this.getSlideById(1053));

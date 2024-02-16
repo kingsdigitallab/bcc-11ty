@@ -34,6 +34,7 @@ Finding open water, Washington decided to try travel by canoe:
 Washington eventually abandoned his bulky British uniform, and ‘put myself in an Indian walking Dress’. Transposed onto John Mitchell’s map, Washington’s journey could be measured in inches. In this short distance, he was never in ‘British’ or French territory, but instead moved through unseen diplomatic and kinship pathways that carried wampum, information and gifts of tribute along multiple connecting routes.
 
 ![Map attached to George Washington's journal to the Ohio](../assets/img/stories/26-GeorgeWashingtonmapaccompanyinghisjournalttotheOhio-1754.jpg)
+
 :::
 
 ::: slide 18
