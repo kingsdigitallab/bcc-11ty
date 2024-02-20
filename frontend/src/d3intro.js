@@ -14,6 +14,7 @@ export class D3intro {
             700: "pathways2",
             800: "villagerssettlers",
             900: "lines",
+
         };
         this.L = L;
         this.d3 = d3;
@@ -179,6 +180,7 @@ export class D3intro {
 
     async SectionIntro(map, slideid) {
         //&& !this.introRunning
+        console.log("SectoinInto: " + slideid);
         if (this.slideIds[slideid + ""]) {
             let introRun = false;
             this.introRunning = true;

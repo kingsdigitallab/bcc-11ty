@@ -574,7 +574,7 @@ export class StoryMap {
         if (this.d3Intro.slideIds[slideid + ""]) {
             // This slide triggers an animated slide
             // Clear layers
-            //console.log(slideid);
+            console.log("Section intro :" + slideid);
             this.storyFeatureLayerGroup.clearLayers();
             this.d3Intro.SectionIntro(this.map, slideid, this.slides);
         } else if (slideid != "explore") {
@@ -709,22 +709,28 @@ export class StoryMap {
                         - clearing the map layers and svg after a triggered slide is no longer visible
                         (Timeout is to stop fast scrolling triggering slides as it goes past)
                          */
-        let lastIntersected = "";
+        this.lastIntersected = "";
         let slideIndex = -1;
         let intersectionY = 0;
         let slides = document.getElementsByClassName("mapSlide");
+        //console.log(slides);
 
         let observer = new IntersectionObserver(
             function (entries) {
                 let nextSlide = null;
+                let lastIntersected = this.lastIntersected;
+                console.log(entries);
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting === false && entry.target.dataset.slideid == lastIntersected) {
-                        //console.log(entry.target.dataset.slideid + " hidden");
-
+                    if (this.lastIntersected.length == 0) {
+                        this.lastIntersected = entry.target.dataset.slideid;
+                        nextSlide =
+                    }
+                     if (entry.isIntersecting === false && entry.target.dataset.slideid == lastIntersected) {
+                        console.log(entry.target.dataset.slideid + " hidden");
                         for (let x = 0; x < slides.length; x++) {
                             if (slides[x].dataset.slideid == lastIntersected) {
                                 // Are we scrolling up or down, set previous or next slide
-                                //console.log(window.scrollY + " :: " + intersectionY);
+                                console.log(window.scrollY + " :: " + intersectionY);
                                 if (window.scrollY < intersectionY && x > 0) {
                                     nextSlide = slides[x - 1];
                                 } else if (window.scrollY > intersectionY && (x + 1) < slides.length) {
@@ -758,7 +764,7 @@ export class StoryMap {
                             }
                         }*/
                     if (nextSlide) {
-                        //console.log('trigger: ' + nextSlide.dataset.slideid);
+                        console.log('trigger: ' + nextSlide.dataset.slideid);
                         observerTimeouts[nextSlide.dataset.slideid] = setTimeout(
                             function () {
                                 nextSlide.dataset.isActive = "true";
@@ -766,7 +772,11 @@ export class StoryMap {
                             }.bind(this),
                             1000
                         );
+                    } else{
+                        console.log("NO next slide! last: " + lastIntersected);
                     }
+                    //console.log(lastIntersected);
+                    //this.lastIntersected = lastIntersected;
 
                 });
             }.bind(this),
@@ -786,12 +796,12 @@ export class StoryMap {
         this.d3Intro = new D3intro(this.storyUris, this.L, this.d3);
         this.d3Intro.homelandsSlide = this.getSlideById(500);
         this.d3Intro.pathways1Slide = this.getSlideById(600);
-        this.d3Intro.pathways2Slide = this.getSlideById(1032);
-        this.d3Intro.villagerssettlersSlide = this.getSlideById(700);
-        this.d3Intro.linesSlide.push(this.getSlideById(1051));
-        this.d3Intro.linesSlide.push(this.getSlideById(1052));
-        this.d3Intro.linesSlide.push(this.getSlideById(1053));
-        this.d3Intro.linesSlide.push(this.getSlideById(1054));
+        this.d3Intro.pathways2Slide = this.getSlideById(700);
+        this.d3Intro.villagerssettlersSlide = this.getSlideById(800);
+        this.d3Intro.linesSlide.push(this.getSlideById(900));
+        this.d3Intro.linesSlide.push(this.getSlideById(901));
+        this.d3Intro.linesSlide.push(this.getSlideById(902));
+        this.d3Intro.linesSlide.push(this.getSlideById(903));
 
         this.svg = await this.d3Intro.loadD3(this.map);
     }
@@ -1280,7 +1290,7 @@ export class StoryMap {
         // Filter by subtype first
         let filteredFeatures = [];
         let subtypeFeatures = [];
-        console.log(this.exploreFilterControl.sub_type.length);
+        //console.log(this.exploreFilterControl.sub_type.length);
         if (this.exploreFeatures) {
             let exploreFilteringEnabled = false;
             if (!this.toggleAllFeaturesEnabled) {
