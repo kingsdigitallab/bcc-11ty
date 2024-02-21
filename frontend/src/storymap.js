@@ -352,7 +352,7 @@ export class StoryMap {
                 return this.slides[s];
             }
         }
-        console.log('Warning! slide '+ slideid + ' not found');
+        console.log('Warning! slide ' + slideid + ' not found');
     }
 
     pointToLayer(feature, latlng) {
@@ -570,7 +570,7 @@ export class StoryMap {
      */
     async triggerSlideMapEvents(slideid) {
         /* Trigger intros */
-        console.log(slideid);
+        //console.log(slideid);
         if (this.d3Intro.slideIds[slideid + ""]) {
             // This slide triggers an animated slide
             // Clear layers
@@ -710,27 +710,28 @@ export class StoryMap {
                         (Timeout is to stop fast scrolling triggering slides as it goes past)
                          */
         this.lastIntersected = "";
+        this.iIndex = 0;
         let slideIndex = -1;
         let intersectionY = 0;
         let slides = document.getElementsByClassName("mapSlide");
-        //console.log(slides);
+        console.log(slides);
 
         let observer = new IntersectionObserver(
             function (entries) {
                 let nextSlide = null;
                 let lastIntersected = this.lastIntersected;
-                console.log(entries);
+                //console.log(entries);
                 entries.forEach((entry) => {
-                    if (this.lastIntersected.length == 0) {
+                    if (entry.isIntersecting && entry.target.dataset.slideid != this.lastIntersected) {
+                        // New interesection event, save id and window y
                         this.lastIntersected = entry.target.dataset.slideid;
-                        nextSlide =
-                    }
-                     if (entry.isIntersecting === false && entry.target.dataset.slideid == lastIntersected) {
-                        console.log(entry.target.dataset.slideid + " hidden");
+                        intersectionY = window.scrollY;
+                    } else if (!entry.isIntersecting && entry.target.dataset.slideid == this.lastIntersected) {
+                        //console.log(this.iIndex + ": " + entry.isIntersecting + " " + this.lastIntersected);
                         for (let x = 0; x < slides.length; x++) {
                             if (slides[x].dataset.slideid == lastIntersected) {
                                 // Are we scrolling up or down, set previous or next slide
-                                console.log(window.scrollY + " :: " + intersectionY);
+                                //console.log(window.scrollY + " :: " + intersectionY);
                                 if (window.scrollY < intersectionY && x > 0) {
                                     nextSlide = slides[x - 1];
                                 } else if (window.scrollY > intersectionY && (x + 1) < slides.length) {
@@ -740,48 +741,23 @@ export class StoryMap {
                                 }
                             }
                         }
+                        this.lastIntersected = "";
                     }
-
-                    if (entry.intersectionRatio > 0.4 && entry.target.dataset.slideid) {
-                        // Set this slide to last intersected
-                        lastIntersected = entry.target.dataset.slideid;
-                        intersectionY = window.scrollY;
-
-                    } /*else if (entry.intersectionRatio > 0 && entry.intersectionRatio < 0.3 && entry.target.dataset.slideid == lastIntersected){
-                        let nextSlide = null;
-                        for (let x=0; x < slides.length;x++){
-                            if (slides[x].dataset.slideid == lastIntersected){
-                                // Are we scrolling up or down, set previous or next slide
-                                //console.log(window.scrollY + " :: " + intersectionY);
-                                if (window.scrollY < intersectionY && x > 0){
-                                    nextSlide = slides[x-1];
-                                } else if (window.scrollY > intersectionY && (x+1) < slides.length){
-                                    nextSlide = slides[x+1];
-                                } else{
-                                    nextSlide = slides[x];
-                                }
-
-                            }
-                        }*/
-                    if (nextSlide) {
-                        console.log('trigger: ' + nextSlide.dataset.slideid);
-                        observerTimeouts[nextSlide.dataset.slideid] = setTimeout(
+                });
+                if (nextSlide){
+                    console.log('trigger: ' + nextSlide.dataset.slideid);
+                    observerTimeouts[nextSlide.dataset.slideid] = setTimeout(
                             function () {
                                 nextSlide.dataset.isActive = "true";
                                 this.triggerSlideMapEvents(nextSlide.dataset.slideid);
                             }.bind(this),
                             1000
                         );
-                    } else{
-                        console.log("NO next slide! last: " + lastIntersected);
-                    }
-                    //console.log(lastIntersected);
-                    //this.lastIntersected = lastIntersected;
-
-                });
+                }
+                this.iIndex += 1;
             }.bind(this),
             {
-                threshold: [0.8],
+                threshold: [0.4],
             }
         );
 
@@ -1298,7 +1274,7 @@ export class StoryMap {
                 let subtypeFilters = document.querySelectorAll(this.exploreSelectors.explore_filter);
                 if (subtypeFilters) {
                     for (let f = 0; f < subtypeFilters.length; f++) {
-                        if (subtypeFilters[f].checked){
+                        if (subtypeFilters[f].checked) {
                             exploreFilteringEnabled = true;
                             break;
                         }
