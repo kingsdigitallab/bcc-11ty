@@ -488,7 +488,15 @@
       "id": 32,
       "fid": 25,
       "lines": {},
-      "points": {},
+      "points": {
+        "includes": {
+          "sub_type": [4],
+          "map_source": [8]
+        },
+        "excludes": {
+          "identity": [2, 3]
+        }
+      },
       "polys": {
         "includes": {
           "id": [981]
