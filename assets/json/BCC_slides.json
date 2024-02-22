@@ -487,7 +487,12 @@
     {
       "id": 32,
       "fid": 25,
-      "lines": {},
+      "lines": {
+        "includes": {
+          "sub_type": [5],
+          "map_source": [8]
+        }
+      },
       "points": {
         "includes": {
           "sub_type": [4],
