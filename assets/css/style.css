@@ -638,7 +638,7 @@ nav {
   margin: 0;
 }
 #filter-wrapper .content section header h3 em {
-  color: gray;
+  color: #757575;
   font-size: 0.6em;
 }
 #filter-wrapper .content section ol {
