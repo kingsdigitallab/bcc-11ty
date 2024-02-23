@@ -695,6 +695,7 @@ nav {
 #filter-wrapper .content section ol li :checked + label img {
   border: 1px solid #124d20;
   opacity: 1;
+  background: white;
 }
 #filter-wrapper .content section:first-of-type ol li img {
   border-radius: 0;
