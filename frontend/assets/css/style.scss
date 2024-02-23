@@ -655,20 +655,25 @@ justify-content: space-between;
               }
             input[type="checkbox"][id^="mapcheckbox"] {
               display: none;
-              }
+            }
 
-            :checked + label{
+            :checked+label {
               font-weight: bold;
               background: $darkgreen;
-              color:white;
-            img {
-              //transform: scale(1);
-             border:1px solid $midgreen;
-              opacity:1;
-              background: white;
-              }//img
+              color: white;
 
-                }//:checked + label
+              img {
+                //transform: scale(1);
+                border: 1px solid $midgreen;
+                opacity: 1;
+                background: white;
+              }
+
+              //img
+
+            }
+
+            //:checked + label
 
           }//li
               /**
