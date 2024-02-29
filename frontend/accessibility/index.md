@@ -2,11 +2,11 @@
 title: Accessibility Statement for My Default Site
 ---
 
-This statement applies to the My Default Site site ().
+This statement applies to the BCC: Brightening the Covenant Chain (https://bcc-dev.kdl.kcl.ac.uk/).
 
-This website is run by [King's Digital Lab, King's College London (KDL)](https://kdl.kcl.ac.uk) in collaboration with the [University of Edinburgh](https://www.ed.ac.uk/). We want as many people as possible to be able to use this website. For example, that means you should be able to:
+This website is run by [King's Digital Lab, King's College London (KDL)](https://kdl.kcl.ac.uk). We want as many people as possible to be able to use this website. For example, that means you should be able to:
 
-- zoom in up to 300% without the text spilling off the screen
+- zoom in up to 200% without the text spilling off the screen
 - navigate most of the website using just a keyboard
 - listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
 
@@ -35,16 +35,16 @@ In particular we plan to fix the images issue by the end of October 2022.
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 7 July 2022. It was **last reviewed on 11 July 2022**.
+This statement was prepared on 7 July 2022. It was **last reviewed on 29 February 2024**.
 
-This website was last tested on 7 July 2022. The test was carried out by KDL.
+This website was last tested on 14 February 2024. The test was carried out by KDL.
 
 We used this approach to decide on a sample of pages to test:
 
 - The <a href="/">Homepage</a>
-- The <a href="/books/">Books</a> page
-- The <a href="/about/">About</a> page
-- The <a href="/posts/">Blog &amp; News</a> page
-- The <a href="/credits/">Credits &amp; Acknowledgements</a> page
+- The <a href="/stories/">Map Story</a> page
+- The <a href="/accessibility/">Accessibility Statement</a> page
+
+Note: At the time of testing (14 February 2024) some static pages were not available (About, Team, Recourses, Credits & Acknowledgements)
 
 This page is based on the [sample template](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website) provided by gov.uk.
