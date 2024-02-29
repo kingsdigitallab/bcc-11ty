@@ -37,6 +37,8 @@ We know some part of this website are not fully accessible:
 - The map tooltips remain clickable and appear behind the text layer, which might confuse users. We're working on better management of the text and map layers to ensure clear functionality and content visibility;
 We are aware of missing alternative text and captions of images. The team aims to add them to all images and improve understanding for all users;
 
+- We are aware there are limitations to the functionality and accessibility of the majority of the content on small screens. At this stage, mobile and responsive design have not been the main focus of our development efforts, which means users may encounter some elements and features that do not display or function well on mobile devices or smaller screens. For now, for the best and most comprehensive experience, we recommend accessing our project on a desktop machine. This will ensure users can fully engage with all the features and content as intended;
+
 ## Reporting accessibility problems with this website
 
 Please email Jo.Edge@ed.ac.uk with details of the problems.
