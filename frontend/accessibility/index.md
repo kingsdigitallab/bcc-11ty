@@ -18,7 +18,24 @@ We’ve also made the website text as simple as possible to understand.
 
 We know some part of this website are not fully accessible:
 
-- Dynamic content is handled with [VueJS](https://vuejs.org/) and we are aware that the rendered HTML includes custom tags that don't pass the [W3 Validator](https://validator.w3.org/). This may interfere with assistive technologies. We are still in the process of assessing the site and plan to ensure all important content, if not all, is accessible.
+- The Filter and Legend sections cannot be navigated using keyboard tabbing, making them not accessible for keyboard only users;
+
+- Menu items can be selected with keyboard navigation even when the menu is closed, which may not clearly indicate the navigation position to users;
+
+- The order of keyboard tabbing may confuse some users. For example, users have to navigate through bottom elements on the page first before the main navigation bar receive focus;
+
+- The map currently does not support keyboard interaction, making data points (polygons) and tooltips inaccessible via keyboard. We expect to advise users of this limitation in our map usage instructions and explore solutions to enhance accessibility;
+
+- The navigation bar labels on the top may not fit properly in their tabs in 200% zooming, which could be confusing. It may not be working consistently across all browsers. We expect to make design adjustments for a smoother experience;
+
+- The Filter section may not close properly in 200% zooming, and toggle controls become hard to access due to screen size and zoom settings. Additionally, Map Story, Filter and Legend sections overlap when expanded, making it challenging for users to read both the text and symbols;
+
+- Some map polygons, particularly green circles, are not clearly visible and do not stand out well against the map background. This concern is part of our ongoing design optimization, we aim to improve map visibility and contrast;
+
+- The text selection is currently disabled on Map Story, limiting how users interact with content. We're exploring solutions like offering alternative formats, such as downloadable PDF, for easier access;
+
+- The map tooltips remain clickable and appear behind the text layer, which might confuse users. We're working on better management of the text and map layers to ensure clear functionality and content visibility;
+We are aware of missing alternative text and captions of images. The team aims to add them to all images and improve understanding for all users;
 
 ## Reporting accessibility problems with this website
 
