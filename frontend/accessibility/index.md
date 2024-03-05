@@ -1,5 +1,5 @@
 ---
-title: Accessibility Statement for My Default Site
+title: Accessibility Statement for BCC: Brightening the Covenant Chain
 ---
 
 This statement applies to the BCC: Brightening the Covenant Chain (https://bcc-dev.kdl.kcl.ac.uk/).
