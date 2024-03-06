@@ -16,19 +16,27 @@ We’ve also made the website text as simple as possible to understand.
 
 ## <a id="how"></a>How accessible this website is
 
-We know some part of this website are not fully accessible:
+We know some part of this website are not fully accessible. The issues detailed below apply to the Map Story page, except for the menu issue, which is relevant to the entire website.
 
-- The Filter and Legend sections cannot be navigated using keyboard tabbing, making them not accessible for keyboard only users;
+- Keyboard
 
-- Menu items can be selected with keyboard navigation even when the menu is closed, which may not clearly indicate the navigation position to users;
+  - Menu items can be selected with keyboard navigation even when the menu is closed, which may not clearly indicate the navigation position to users;
 
-- The order of keyboard tabbing may confuse some users. For example, users have to navigate through bottom elements on the page first before the main navigation bar receive focus;
+  - The Filter and Legend sections cannot be navigated using keyboard tabbing, making them not accessible for keyboard only users;
 
-- The map currently does not support keyboard interaction, making data points (polygons) and tooltips inaccessible via keyboard. We expect to advise users of this limitation in our map usage instructions and explore solutions to enhance accessibility;
+  - The order of keyboard tabbing may confuse some users. For example, users have to navigate through bottom elements on the page first before the main navigation bar receive focus;
 
-- The navigation bar labels on the top may not fit properly in their tabs in 200% zooming, which could be confusing. It may not be working consistently across all browsers. We expect to make design adjustments for a smoother experience;
+  - The map currently does not support keyboard interaction, making data points (polygons) and tooltips inaccessible via keyboard. We expect to advise users of this limitation in our map usage instructions and explore solutions to enhance accessibility;
 
-- The Filter section may not close properly in 200% zooming, and toggle controls become hard to access due to screen size and zoom settings. Additionally, Map Story, Filter and Legend sections overlap when expanded, making it challenging for users to read both the text and symbols;
+- Zooming
+
+  - The navigation bar labels on the top may not fit properly in their tabs in 200% zooming, which could be confusing. It may not be working consistently across all browsers. We expect to make design adjustments for a smoother experience;
+
+  - The Filter section may not close properly in 200% zooming, and toggle controls become hard to access due to screen size and zoom settings. Additionally, Map Story, Filter and Legend sections overlap when expanded, making it challenging for users to read both the text and symbols;
+
+- Smaller screen
+
+  - We are aware there are limitations to the functionality and accessibility of the majority of the content on small screens. At this stage, mobile and responsive design have not been the main focus of our development efforts, which means users may encounter some elements and features that do not display or function well on mobile devices or smaller screens. For now, for the best and most comprehensive experience, we recommend accessing our project on a desktop machine. This will ensure users can fully engage with all the features and content as intended;
 
 - Some map polygons, particularly green circles, are not clearly visible and do not stand out well against the map background. This concern is part of our ongoing design optimization, we aim to improve map visibility and contrast;
 
@@ -37,11 +45,9 @@ We know some part of this website are not fully accessible:
 - The map tooltips remain clickable and appear behind the text layer, which might confuse users. We're working on better management of the text and map layers to ensure clear functionality and content visibility;
 We are aware of missing alternative text and captions of images. The team aims to add them to all images and improve understanding for all users;
 
-- We are aware there are limitations to the functionality and accessibility of the majority of the content on small screens. At this stage, mobile and responsive design have not been the main focus of our development efforts, which means users may encounter some elements and features that do not display or function well on mobile devices or smaller screens. For now, for the best and most comprehensive experience, we recommend accessing our project on a desktop machine. This will ensure users can fully engage with all the features and content as intended;
-
 ## Reporting accessibility problems with this website
 
-Please email Jo.Edge@ed.ac.uk with details of the problems.
+Please email paul.caton@kcl.ac.uk with details of the problems.
 
 ## Compliance status
 
@@ -50,7 +56,7 @@ This website is partially compliant with the Web Content Accessibility Guideline
 ## What we’re doing to improve accessibility
 
 KDL looking at fixes and alternatives to the issues listed in the "<a href="#how">How accessible this website is</a>" section.
-In particular we plan to fix the images issue by the end of October 2022.
+In particular we plan to fix the images issue later in 2024.
 
 ## Preparation of this accessibility statement
 
