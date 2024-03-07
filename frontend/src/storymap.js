@@ -789,13 +789,26 @@ export class StoryMap {
     }
 
     onOverviewLinkClick(evt){
-        //console.log('overview: ' +this.observerEnabled);
-        console.log(evt.target);
+        let target = evt.target;
+        if (target.nodeName == "SPAN"){
+            // get the parent
+            target = target.parentElement;
+        }
+        console.log(target.dataset);
+        //if (!target || !target.dataset){return false;}
         this.observerEnabled = false;
-        this.triggerSlideMapEvents(600);
+        let dataset = target.dataset;
+        if (target.dataset){
+            let slideId = dataset.slideid;
+        if (slideId) {
+            console.log(slideId);
+            this.triggerSlideMapEvents(slideId);
+        }
         setTimeout(function(){
             this.observerEnabled = true;
         }.bind(this),500);
+        }
+
         return false;
     }
 

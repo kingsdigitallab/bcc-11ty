@@ -27,12 +27,12 @@ layout: base.liquid
 <div class="mapOverlay">
     <nav>
         <ol>
-            <li><a class="overviewLink" href="#overview">Overview</a></li>
+            <li><a class="overviewLink" href="#overview" >Overview</a></li>
             <li><a class="overviewLink" href="#s-1">1<span>Introduction</span></a></li>
-            <li><a class="overviewLink" href="#s-2">2<span>Homelands</span></a></li>
-            <li><a class="overviewLink" href="#s-3">3<span>Pathways</span></a></li>
-            <li><a class="overviewLink" href="#s-4">4<span>Villagers, Settlers</span></a></li>
-            <li><a class="overviewLink" href="#s-5">5<span>Lines</span></a></li>
+            <li><a class="overviewLink" href="#s-2" data-slideId="500">2<span>Homelands</span></a></li>
+            <li><a class="overviewLink" href="#s-3" data-slideId="600">3<span>Pathways</span></a></li>
+            <li><a class="overviewLink" href="#s-4" data-slideId="700">4<span>Villagers, Settlers</span></a></li>
+            <li><a class="overviewLink" href="#s-5" data-slideId="900">5<span>Lines</span></a></li>
             <li><a class="overviewLink" href="#filters">Explore </a></li>
         </ol>
     </nav>
@@ -65,7 +65,7 @@ layout: base.liquid
         <div class="storyTitleSpacerBelow"></div>
         {% renderFile "./stories/homelands.md", "liquid" %}
     </section>
-    <section id="s-3">
+    <section id="s-3" class="sectionContainer" >
         <div class="storyTitleSpacerAbove"></div>
         <article id="slide_600" data-slideId="600" class="storyTitle mapSlide">
             <h2>Pathways
@@ -76,7 +76,7 @@ layout: base.liquid
          <div class="storyTitleSpacerBelow"></div>
         {% renderFile "./stories/pathways.md", "liquid" %}
     </section>
-    <section id="s-4">
+    <section id="s-4" class="sectionContainer" >
         <div class="storyTitleSpacerAbove" id="s4-start"></div>
         <article class="storyTitle mapSlide" id="slide_700" data-slideId="700" >
             <h2>Villagers, Settlers</h2>
@@ -85,7 +85,7 @@ layout: base.liquid
          <div class="storyTitleSpacerBelow"></div>
         {% renderFile "./stories/villagers_settlers.md", "liquid" %}
     </section>
-    <section id="s-5">
+    <section id="s-5" class="sectionContainer" >
         <div class="storyTitleSpacerAbove" id="s5-start"></div>
         <article class="storyTitle mapSlide" id="slide_900" data-slideId="900" >
             <h2>Lines</h2>
