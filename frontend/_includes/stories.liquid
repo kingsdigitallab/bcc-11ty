@@ -27,13 +27,13 @@ layout: base.liquid
 <div class="mapOverlay">
     <nav>
         <ol>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#s-1">1<span>Introduction</span></a></li>
-            <li><a href="#s-2">2<span>Homelands</span></a></li>
-            <li><a href="#s-3">3<span>Pathways</span></a></li>
-            <li><a href="#s-4">4<span>Villagers, Settlers</span></a></li>
-            <li><a href="#s-5">5<span>Lines</span></a></li>
-            <li><a href="#filters">Explore </a></li>
+            <li><a class="overviewLink" href="#overview">Overview</a></li>
+            <li><a class="overviewLink" href="#s-1">1<span>Introduction</span></a></li>
+            <li><a class="overviewLink" href="#s-2">2<span>Homelands</span></a></li>
+            <li><a class="overviewLink" href="#s-3">3<span>Pathways</span></a></li>
+            <li><a class="overviewLink" href="#s-4">4<span>Villagers, Settlers</span></a></li>
+            <li><a class="overviewLink" href="#s-5">5<span>Lines</span></a></li>
+            <li><a class="overviewLink" href="#filters">Explore </a></li>
         </ol>
     </nav>
 
@@ -55,7 +55,8 @@ layout: base.liquid
         {% renderFile "./stories/introduction.md", "liquid" %}
     </section>
 
-    <section id="s-2">
+    <section id="s-2" class="sectionContainer" >
+
         <div class="storyTitleSpacerAbove" id="s2-start"></div>
         <article id="slide_500" data-slideId="500" class="storyTitle mapSlide">
             <h2>Homelands</h2>

@@ -681,7 +681,6 @@ export class StoryMap {
         };
 
         // Create Layer Switcher
-
         this.L.control
             .layers(baseLayers, {}, {position: "bottomleft", collapsed: false})
             .addTo(this.map);
@@ -689,13 +688,11 @@ export class StoryMap {
         // Initial view
         // This could be changed based on get string etc.
         this.map.setView([lat, lng], zoom);
-
         this.storyFeatureLayerGroup = this.L.layerGroup().addTo(this.map);
 
         await this.loadSlides();
         await this.loadStoryFrames();
         await this.loadFeatures();
-
         this.attachMapEvents();
         this.initStoryFeatureLayers();
 
@@ -714,10 +711,13 @@ export class StoryMap {
         let slideIndex = -1;
         let intersectionY = 0;
         let slides = document.getElementsByClassName("mapSlide");
+        this.observerEnabled = true;
+
         console.log(slides);
 
         let observer = new IntersectionObserver(
             function (entries) {
+                if (!this.observerEnabled) {return;}
                 let nextSlide = null;
                 let lastIntersected = this.lastIntersected;
                 //console.log(entries);
@@ -768,6 +768,13 @@ export class StoryMap {
         // Add intersection observer for filters
         observer.observe(document.getElementById("filters"));
 
+        let overviewLinks = document.getElementsByClassName("overviewLink");
+
+        for (let i=0; i< overviewLinks.length; i++){
+            overviewLinks[i].addEventListener('click', this.onOverviewLinkClick.bind(this));
+        }
+
+
         // Init our d3 intro class and pass relevant layer data
         this.d3Intro = new D3intro(this.storyUris, this.L, this.d3);
         this.d3Intro.homelandsSlide = this.getSlideById(500);
@@ -778,8 +785,18 @@ export class StoryMap {
         this.d3Intro.linesSlide.push(this.getSlideById(901));
         this.d3Intro.linesSlide.push(this.getSlideById(902));
         this.d3Intro.linesSlide.push(this.getSlideById(903));
-
         this.svg = await this.d3Intro.loadD3(this.map);
+    }
+
+    onOverviewLinkClick(evt){
+        //console.log('overview: ' +this.observerEnabled);
+        console.log(evt.target);
+        this.observerEnabled = false;
+        this.triggerSlideMapEvents(600);
+        setTimeout(function(){
+            this.observerEnabled = true;
+        }.bind(this),500);
+        return false;
     }
 
     clearFeatureText() {
