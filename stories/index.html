@@ -1,7 +1,7 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <!-- Built with 11ty - 2024-03-06 16:58 -->
+    <!-- Built with 11ty - 2024-03-07 13:37 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="King's Digital Lab, King's College London">
     <meta name="description" content="">
@@ -13,10 +13,10 @@
 
     <title>Stories Introduction | BCC - Treatied Spaces</title>
 
-    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1709744287">
+    <link rel="stylesheet" href="/bcc-11ty/assets/css/style.css?ts=1709818620">
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet/dist/leaflet.css"  />
     <link rel="stylesheet" href="/bcc-11ty/assets/node_modules/leaflet-dvf/dist/css/dvf.css"  />    
-    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1709744287"></script>
+    <script src="/bcc-11ty/assets/js/navbar-toggle.js?ts=1709818620"></script>
     
     <style>
     .map-label {
@@ -107,13 +107,13 @@
 <div class="mapOverlay">
     <nav>
         <ol>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#s-1">1<span>Introduction</span></a></li>
-            <li><a href="#s-2">2<span>Homelands</span></a></li>
-            <li><a href="#s-3">3<span>Pathways</span></a></li>
-            <li><a href="#s-4">4<span>Villagers, Settlers</span></a></li>
-            <li><a href="#s-5">5<span>Lines</span></a></li>
-            <li><a href="#filters">Explore </a></li>
+            <li><a class="overviewLink" href="#overview" >Overview</a></li>
+            <li><a class="overviewLink" href="#s-1">1<span>Introduction</span></a></li>
+            <li><a class="overviewLink" href="#s-2" data-slideId="500">2<span>Homelands</span></a></li>
+            <li><a class="overviewLink" href="#s-3" data-slideId="600">3<span>Pathways</span></a></li>
+            <li><a class="overviewLink" href="#s-4" data-slideId="700">4<span>Villagers, Settlers</span></a></li>
+            <li><a class="overviewLink" href="#s-5" data-slideId="900">5<span>Lines</span></a></li>
+            <li><a class="overviewLink" href="#filters">Explore </a></li>
         </ol>
     </nav>
 
@@ -155,7 +155,8 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 <div class="article_spacer">&nbsp;</div>
     </section>
 
-    <section id="s-2">
+    <section id="s-2" class="sectionContainer" >
+
         <div class="storyTitleSpacerAbove" id="s2-start"></div>
         <article id="slide_500" data-slideId="500" class="storyTitle mapSlide">
             <h2>Homelands</h2>
@@ -194,7 +195,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 </article>
 <div class="article_spacer">&nbsp;</div>
     </section>
-    <section id="s-3">
+    <section id="s-3" class="sectionContainer" >
         <div class="storyTitleSpacerAbove"></div>
         <article id="slide_600" data-slideId="600" class="storyTitle mapSlide">
             <h2>Pathways
@@ -233,7 +234,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 </article>
 <div class="article_spacer">&nbsp;</div>
     </section>
-    <section id="s-4">
+    <section id="s-4" class="sectionContainer" >
         <div class="storyTitleSpacerAbove" id="s4-start"></div>
         <article class="storyTitle mapSlide" id="slide_700" data-slideId="700" >
             <h2>Villagers, Settlers</h2>
@@ -277,7 +278,7 @@ Indigenous peoples are a constant presence in British maps. When mapmakers portr
 </article>
 <div class="article_spacer">&nbsp;</div>
     </section>
-    <section id="s-5">
+    <section id="s-5" class="sectionContainer" >
         <div class="storyTitleSpacerAbove" id="s5-start"></div>
         <article class="storyTitle mapSlide" id="slide_900" data-slideId="900" >
             <h2>Lines</h2>

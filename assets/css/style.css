@@ -506,7 +506,6 @@ nav {
 }
 .mapOverlay section article.storyTitle {
   padding: 2em;
-  margin-top: 10vh;
   margin-bottom: 0;
 }
 .mapOverlay section article.storyTitle h2 {
@@ -524,6 +523,9 @@ nav {
   font-size: 16px;
   padding-top: 16px;
   font-weight: normal;
+}
+.mapOverlay .sectionContainer {
+  padding-top: 40vh;
 }
 
 #filter-wrapper * {
