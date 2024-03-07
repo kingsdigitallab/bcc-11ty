@@ -1,8 +1,8 @@
 ---
-title: "Accessibility Statement for BCC: Brightening the Covenant Chain"      
+title: "Accessibility Statement for Brightening the Covenant Chain"      
 ---
 
-This statement applies to the BCC: Brightening the Covenant Chain (https://bcc-dev.kdl.kcl.ac.uk/).
+This statement applies to the Brightening the Covenant Chain site (https://bcc-dev.kdl.kcl.ac.uk/).
 
 This website is run by [King's Digital Lab, King's College London (KDL)](https://kdl.kcl.ac.uk). We want as many people as possible to be able to use this website. For example, that means you should be able to:
 
@@ -16,7 +16,7 @@ We’ve also made the website text as simple as possible to understand.
 
 ## <a id="how"></a>How accessible this website is
 
-We know some part of this website are not fully accessible. The issues detailed below apply to the Map Story page, except for the menu issue, which is relevant to the entire website.
+We know some parts of this website are not fully accessible. The issues detailed below apply to the page with the map application, except for the menu issue, which is relevant to the entire website.
 
 - Keyboard
 
@@ -40,7 +40,7 @@ We know some part of this website are not fully accessible. The issues detailed 
 
 - Some map polygons, particularly green circles, are not clearly visible and do not stand out well against the map background. This concern is part of our ongoing design optimization, we aim to improve map visibility and contrast;
 
-- The text selection is currently disabled on Map Story, limiting how users interact with content. We're exploring solutions like offering alternative formats, such as downloadable PDF, for easier access;
+- The text selection is currently disabled in the map application, limiting how users interact with content. We're exploring solutions like offering alternative formats, such as downloadable PDF, for easier access;
 
 - The map tooltips remain clickable and appear behind the text layer, which might confuse users. We're working on better management of the text and map layers to ensure clear functionality and content visibility;
 We are aware of missing alternative text and captions of images. The team aims to add them to all images and improve understanding for all users;
@@ -67,9 +67,8 @@ This website was last tested on 14 February 2024. The test was carried out by KD
 We used this approach to decide on a sample of pages to test:
 
 - The <a href="/">Homepage</a>
-- The <a href="/stories/">Map Story</a> page
+- The <a href="/stories/">map application</a> page
 - The <a href="/accessibility/">Accessibility Statement</a> page
 
-Note: At the time of testing (14 February 2024) some static pages were not available (About, Team, Recourses, Credits & Acknowledgements)
-
+Note: At the time of testing (14 February 2024) some of the proposed static pages (About, Team, Recourses, Credits & Acknowledgements) were not available 
 This page is based on the [sample template](https://www.gov.uk/government/publications/sample-accessibility-statement/sample-accessibility-statement-for-a-fictional-public-sector-website) provided by gov.uk.
