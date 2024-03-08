@@ -51,7 +51,8 @@
       "fid": 10,
       "lines": {
         "includes": {
-          "sub_type": [8]
+          "sub_type": [8],
+          "map_source": [12]
         }
       },
       "points": {
