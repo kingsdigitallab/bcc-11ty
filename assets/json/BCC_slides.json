@@ -334,6 +334,9 @@
         "includes": {
           "sub_type": [4, 10],
           "map_source": [5]
+        },
+        "excludes": {
+          "id": [52832, 52880]
         }
       },
       "polys": {},
@@ -341,7 +344,7 @@
     },
     {
       "id": 23,
-      "fid": 28,
+      "fid": 41,
       "lines": {
         "includes": {
           "sub_type": [13]
@@ -462,7 +465,7 @@
     },
     {
       "id": 30,
-      "fid": 18,
+      "fid": 22,
       "lines": {},
       "points": {},
       "polys": {
@@ -619,7 +622,7 @@
     },
     {
       "id": 40,
-      "fid": 12,
+      "fid": 15,
       "lines": {
         "includes": {
           "sub_type": [3],
