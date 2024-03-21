@@ -151,6 +151,14 @@ export class StoryMap {
             weight: 3,
             fill: false,
         };
+        this.lineLandRouteHighlightStyle = {
+            stroke: true,
+            lineCap: "square",
+            lineJoin: "round",
+            color: "#000000",
+            weight: 6,
+            fill: false,
+        };		
         this.lineSeaRouteStyle = {
             stroke: true,
             dashArray: "7 6",
@@ -162,8 +170,6 @@ export class StoryMap {
         };
         this.lineRiverRouteStyle = {
             stroke: true,
-            //smoothFactor:10,
-            //dashArray: "7 9",
             color: "#2D9BF0",
             lineCap: "square",
             lineJoin: "round",
@@ -203,7 +209,7 @@ export class StoryMap {
             lineCap: "square",
             weight: 2,
             fill: true,
-            opacity: 0.5,
+            opacity: 0.2,
             fillOpacity: 0.25,
         };
         this.polySettlementStyle = {
@@ -236,7 +242,7 @@ export class StoryMap {
             weight: 1,
             fill: true,
             opacity: 0.5,
-            fillOpacity: 0.5,
+            fillOpacity: 0.2,
         };
 
         this.polyRiverRouteStyle = {
@@ -264,8 +270,8 @@ export class StoryMap {
             fillColor: "#ff0000",
             weight: 1,
             fill: true,
-            opacity: 0.5,
-            fillOpacity: 0.5,
+            opacity: 0.25,
+            fillOpacity: 0.2,
         };
         this.polyEuroStyle = {
             stroke: true,
@@ -273,7 +279,7 @@ export class StoryMap {
             weight: 1,
             fill: true,
             opacity: 0.5,
-            fillOpacity: 0.5,
+            fillOpacity: 0.2,
         };
         this.polyAnnoStyle = {
             stroke: true,
@@ -285,7 +291,7 @@ export class StoryMap {
             weight: 1,
             fill: true,
             opacity: 1,
-            fillOpacity: 0.5,
+            fillOpacity: 0.2,
         };
         this.polyToponymStyle = {
             stroke: true,
@@ -627,30 +633,7 @@ export class StoryMap {
             })
             .addTo(this.map);
 
-        // Establish baselayers group
-        /*this.osmLayer = this.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        }).addTo(this.map);*/
 
-        this.overlay = this.L.tileLayer(
-            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}",
-            {
-                minZoom: this.mapMinZoom,
-                maxZoom: this.mapMaxZoom,
-                attribution: "ESRI World Terrain",
-                opacity: 1,
-            }
-        ).addTo(this.map);
-
-        var worldTerrain = this.L.tileLayer(
-            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}",
-            {
-                minZoom: this.mapMinZoom,
-                maxZoom: this.mapMaxZoom,
-                attribution: "ESRI World Terrain",
-                opacity: 1,
-            }
-        );
 
         var worldStreet = this.L.tileLayer(
             "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
@@ -661,6 +644,7 @@ export class StoryMap {
                 opacity: 1,
             }
         );
+		
 
         var bcc = this.L.tileLayer(
             "https://api.mapbox.com/styles/v1/neiljakeman1000/cljyd364o006701pdgs7ec6qa/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmVpbGpha2VtYW4xMDAwIiwiYSI6ImNqcGpoenBtdDA2aTczdnBmYjhsNGc5c2oifQ.vqIAnhyoZnnNeBsaNOzQGw",
@@ -672,12 +656,14 @@ export class StoryMap {
                 attribution: "MapBox BCC",
                 opacity: 1,
             }
-        );
+        ).addTo(this.map);
+		
+		
 
         var baseLayers = {
-            "Clean Terrain": worldTerrain,
-            BCC: bcc,
-            "Modern Open Street Map": worldStreet,
+            //"Clean Terrain": worldTerrain,
+            "BCC": bcc,
+            "ESRI World Street Map": worldStreet,
         };
 
         // Create Layer Switcher
@@ -870,24 +856,38 @@ export class StoryMap {
                 (feature.properties.map_text || feature.properties.norm_text)) ||
             feature.properties.Name
         ) {
-            if (feature.properties.map_text) {
+            if (feature.properties.map_text && [3,7,11].includes(feature.properties.sub_type) ) {
+				// Catching if this is just a text region on the map ...
+                layer.bindPopup(feature.properties.map_text);
+                if (feature.properties.date_yr) {
+                    layer.bindPopup(
+                        "<p style='font-family:Playfair Display,serif'><em>" +'"'
+						+ feature.properties.map_text + '"' + "</em></p>" +
+                        "<strong>" +
+                        this.mapLookup[feature.properties.map_source] +
+                        "</strong>"
+                    );
+                }
+            }
+            else if (feature.properties.map_text) {
                 layer.bindPopup(feature.properties.map_text);
                 if (feature.properties.date_yr) {
                     layer.bindPopup(
                         feature.properties.map_text +
-                        "</br><strong>" +
+                        "<br><strong>" +
                         this.mapLookup[feature.properties.map_source] +
-                        "</stong>"
+                        "</strong>"
                     );
                 }
-            } else if (feature.properties.norm_text) {
+            }			
+			else if (feature.properties.norm_text) {
                 layer.bindPopup(feature.properties.norm_text);
                 if (feature.properties.date_yr) {
                     layer.bindPopup(
                         feature.properties.norm_text +
                         "</br><strong>" +
                         this.mapLookup[feature.properties.map_source] +
-                        "</stong>"
+                        "</strong>"
                     );
                 }
             } else {
@@ -946,48 +946,22 @@ export class StoryMap {
                 switch (feature.properties.sub_type) {
                     case 3:
                         layer.setStyle(this.lineBorderStyle);
-                        layer.setText(feature.properties.norm_text);
+                        //layer.setText(feature.properties.norm_text);
                         break;
                     case 5:
                         layer.setStyle(this.lineLandRouteStyle);
-                        layer.setText(feature.properties.norm_text);
                         break;
                     case 6:
                         layer.setStyle(this.lineSeaRouteStyle);
-                        layer.setText(feature.properties.norm_text);
                         break;
                     case 8:
-                        //this.clonedRiverLayer = cloneLayer(layer)
-                        //this.clonedRiverLayer.setStyle(lineRiverRouteStyleLabel).addTo(storyMap.map);
                         layer.setStyle(this.lineRiverRouteStyle);
-
-                        /* this.textFeatures[feature.properties.id] = {
-                                                                             orientation: testDirection(feature),
-                                                                             text: feature.properties.norm_text
-                                                                         }*/
-
-                        /*layer.setText(feature.properties.norm_text,
-                                                                            {
-                                                                                orientation: testDirection(feature), offset: 5, center: true,
-                                                                                attributes: {
-                                                                                    'fill': 'black',
-                                                                                    'font-family': 'EB Garamond, serif',
-                                                                                    'font-weight': 'bold',
-                                                                                    'font-size': '7px',
-                                                                                    //'textLength': 300,
-                                                                                    //'lengthAdjust': 'spacing',
-                                                                                    'dx': '15%',
-                                                                                }
-                                                                            }
-                                                                        );*/
                         break;
                     case 9:
                         layer.setStyle(this.lineMiscStyle);
-                        layer.setText(feature.properties.norm_text);
                         break;
                     case 10:
                         layer.setStyle(this.lineToponymStyle);
-                        layer.setText(feature.properties.norm_text);
                         break;
                 }
                 break;
