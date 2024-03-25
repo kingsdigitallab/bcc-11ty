@@ -7,7 +7,7 @@ import 'leaflet-textpath';*/
 // https://observablehq.com/@sfu-iat355/intro-to-leaflet-d3-interactivity
 
 export class D3intro {
-    constructor(geometryUris, L, d3) {
+    constructor(geometryUris, L, d3, startingBounds) {
         this.slideIds = {
             500: "homelands",
             600: "pathways1",
@@ -29,128 +29,8 @@ export class D3intro {
         this.svgDrawn = false;
         this.introRunning = false;
         this.geometryUris = geometryUris;
-        this.startingBounds = {
-            homelands: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 12,
-                    Narr_ID: 1,
-                    Seq_ID: 90,
-                    Desc: "Extent of Indigenous references in 12 Mitchell",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-60.375517055951661, 50.495155542044799],
-                                [-60.311892185297758, 27.407898583362975],
-                                [-109.071321137306086, 27.405734834799336],
-                                [-108.827782021299925, 50.546067470988127],
-                                [-60.375517055951661, 50.495155542044799],
-                            ],
-                        ],
-                    ],
-                },
-            },
-            pathways1: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 15,
-                    Narr_ID: null,
-                    Seq_ID: null,
-                    Desc: "smaller_continental",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-64.956051523342381, 48.693292043680088],
-                                [-65.110629444043951, 28.186892930726643],
-                                [-104.228439847563948, 28.299022049289441],
-                                [-104.146277556994463, 48.598142453129832],
-                                [-64.956051523342381, 48.693292043680088],
-                            ],
-                        ],
-                    ],
-                },
-            },
-            pathways2: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 10,
-                    Narr_ID: 1,
-                    Seq_ID: 50,
-                    Desc: "Chesapeake Bay area",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-80.002479839229679, 40.168441182885317],
-                                [-71.788128586561726, 40.178580988048083],
-                                [-71.80139894399737, 37.05857933377866],
-                                [-80.029020554100995, 37.079756393203311],
-                                [-80.002479839229679, 40.168441182885317],
-                            ],
-                        ],
-                    ],
-                },
-            },
-            villagerssettlers: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 12,
-                    Narr_ID: 1,
-                    Seq_ID: 90,
-                    Desc: "Extent of Indigenous references in 12 Mitchell",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-60.375517055951661, 50.495155542044799],
-                                [-60.311892185297758, 27.407898583362975],
-                                [-109.071321137306086, 27.405734834799336],
-                                [-108.827782021299925, 50.546067470988127],
-                                [-60.375517055951661, 50.495155542044799],
-                            ],
-                        ],
-                    ],
-                },
-            },
-            lines: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 11,
-                    Narr_ID: 1,
-                    Seq_ID: 80,
-                    Desc: "Haudenosaunee homelands",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-85.118202630673181, 47.604010232134549],
-                                [-69.193773707891992, 47.639788180258115],
-                                [-69.06107013353548, 39.894094085099951],
-                                [-85.118202630673181, 39.914453926386898],
-                                [-85.118202630673181, 47.604010232134549],
-                            ],
-                        ],
-                    ],
-                },
-            },
-        };
+        this.startingBounds = startingBounds;
+
     }
 
     sleep(ms) {

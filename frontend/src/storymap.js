@@ -158,7 +158,7 @@ export class StoryMap {
             color: "#000000",
             weight: 6,
             fill: false,
-        };		
+        };
         this.lineSeaRouteStyle = {
             stroke: true,
             dashArray: "7 6",
@@ -515,12 +515,22 @@ export class StoryMap {
     initStoryFeatureLayers() {
         for (let s = 0; s < this.slides.length; s++) {
             let slide = this.slides[s];
+            this.shadowFeatures = [];
             slide.layer = this.L.geoJSON(slide.features, {
                 // Stopping style override here
                 //style: this.defaultLineStyle,
                 pointToLayer: this.pointToLayer.bind(this),
                 onEachFeature: this.onEachFeature.bind(this),
             });
+
+            if (this.shadowFeatures && this.shadowFeatures.length > 0) {
+                //console.log(this.shadowFeatures);
+                slide.shadowLayer = this.L.geoJSON(this.shadowFeatures, {
+                    pane: 'lane-lines-pane',
+                    onEachFeature: this.onEachShadowFeature.bind(this),
+                });
+            }
+
         }
     }
 
@@ -607,6 +617,10 @@ export class StoryMap {
                             opacity: 0,
                             fillOpacity: 0,
                         });
+
+                        if (slide.shadowLayer) {
+                            this.storyFeatureLayerGroup.addLayer(slide.shadowLayer);
+                        }
                         this.storyFeatureLayerGroup.addLayer(slide.layer);
                         this.fadeLayerLeaflet(slide.layer, 0, 1, 0.2, 0.01);
                         this.map.off("moveend", slideUpdate);
@@ -634,7 +648,6 @@ export class StoryMap {
             .addTo(this.map);
 
 
-
         var worldStreet = this.L.tileLayer(
             "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
             {
@@ -644,7 +657,7 @@ export class StoryMap {
                 opacity: 1,
             }
         );
-		
+
 
         var bcc = this.L.tileLayer(
             "https://api.mapbox.com/styles/v1/neiljakeman1000/cljyd364o006701pdgs7ec6qa/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmVpbGpha2VtYW4xMDAwIiwiYSI6ImNqcGpoenBtdDA2aTczdnBmYjhsNGc5c2oifQ.vqIAnhyoZnnNeBsaNOzQGw",
@@ -657,8 +670,7 @@ export class StoryMap {
                 opacity: 1,
             }
         ).addTo(this.map);
-		
-		
+
 
         var baseLayers = {
             //"Clean Terrain": worldTerrain,
@@ -674,6 +686,7 @@ export class StoryMap {
         // Initial view
         // This could be changed based on get string etc.
         this.map.setView([lat, lng], zoom);
+        this.map.createPane('lane-lines-pane').style.zIndex = 300;
         this.storyFeatureLayerGroup = this.L.layerGroup().addTo(this.map);
 
         await this.loadSlides();
@@ -703,7 +716,9 @@ export class StoryMap {
 
         let observer = new IntersectionObserver(
             function (entries) {
-                if (!this.observerEnabled) {return;}
+                if (!this.observerEnabled) {
+                    return;
+                }
                 let nextSlide = null;
                 let lastIntersected = this.lastIntersected;
                 //console.log(entries);
@@ -730,15 +745,15 @@ export class StoryMap {
                         this.lastIntersected = "";
                     }
                 });
-                if (nextSlide){
+                if (nextSlide) {
                     console.log('trigger: ' + nextSlide.dataset.slideid);
                     observerTimeouts[nextSlide.dataset.slideid] = setTimeout(
-                            function () {
-                                nextSlide.dataset.isActive = "true";
-                                this.triggerSlideMapEvents(nextSlide.dataset.slideid);
-                            }.bind(this),
-                            1000
-                        );
+                        function () {
+                            nextSlide.dataset.isActive = "true";
+                            this.triggerSlideMapEvents(nextSlide.dataset.slideid);
+                        }.bind(this),
+                        1000
+                    );
                 }
                 this.iIndex += 1;
             }.bind(this),
@@ -756,13 +771,136 @@ export class StoryMap {
 
         let overviewLinks = document.getElementsByClassName("overviewLink");
 
-        for (let i=0; i< overviewLinks.length; i++){
+        for (let i = 0; i < overviewLinks.length; i++) {
             overviewLinks[i].addEventListener('click', this.onOverviewLinkClick.bind(this));
         }
 
+        // todo: This should link to the fids of storyframe once they're correct
+        let oldStartingBounds = {
+            homelands: {
+                type: "Feature",
+                properties: {
+                    id: null,
+                    FID: 12,
+                    Narr_ID: 1,
+                    Seq_ID: 90,
+                    Desc: "Extent of Indigenous references in 12 Mitchell",
+                },
+                geometry: {
+                    type: "MultiPolygon",
+                    coordinates: [
+                        [
+                            [
+                                [-60.375517055951661, 50.495155542044799],
+                                [-60.311892185297758, 27.407898583362975],
+                                [-109.071321137306086, 27.405734834799336],
+                                [-108.827782021299925, 50.546067470988127],
+                                [-60.375517055951661, 50.495155542044799],
+                            ],
+                        ],
+                    ],
+                },
+            },
+            pathways1: {
+                type: "Feature",
+                properties: {
+                    id: null,
+                    FID: 15,
+                    Narr_ID: null,
+                    Seq_ID: null,
+                    Desc: "smaller_continental",
+                },
+                geometry: {
+                    type: "MultiPolygon",
+                    coordinates: [
+                        [
+                            [
+                                [-64.956051523342381, 48.693292043680088],
+                                [-65.110629444043951, 28.186892930726643],
+                                [-104.228439847563948, 28.299022049289441],
+                                [-104.146277556994463, 48.598142453129832],
+                                [-64.956051523342381, 48.693292043680088],
+                            ],
+                        ],
+                    ],
+                },
+            },
+            pathways2: {
+                type: "Feature",
+                properties: {
+                    id: null,
+                    FID: 10,
+                    Narr_ID: 1,
+                    Seq_ID: 50,
+                    Desc: "Chesapeake Bay area",
+                },
+                geometry: {
+                    type: "MultiPolygon",
+                    coordinates: [
+                        [
+                            [
+                                [-80.002479839229679, 40.168441182885317],
+                                [-71.788128586561726, 40.178580988048083],
+                                [-71.80139894399737, 37.05857933377866],
+                                [-80.029020554100995, 37.079756393203311],
+                                [-80.002479839229679, 40.168441182885317],
+                            ],
+                        ],
+                    ],
+                },
+            },
+            villagerssettlers: {
+                type: "Feature",
+                properties: {
+                    id: null,
+                    FID: 12,
+                    Narr_ID: 1,
+                    Seq_ID: 90,
+                    Desc: "Extent of Indigenous references in 12 Mitchell",
+                },
+                geometry: {
+                    type: "MultiPolygon",
+                    coordinates: [
+                        [
+                            [
+                                [-60.375517055951661, 50.495155542044799],
+                                [-60.311892185297758, 27.407898583362975],
+                                [-109.071321137306086, 27.405734834799336],
+                                [-108.827782021299925, 50.546067470988127],
+                                [-60.375517055951661, 50.495155542044799],
+                            ],
+                        ],
+                    ],
+                },
+            },
+            lines: {
+                type: "Feature",
+                properties: {
+                    id: null,
+                    FID: 11,
+                    Narr_ID: 1,
+                    Seq_ID: 80,
+                    Desc: "Haudenosaunee homelands",
+                },
+                geometry: {
+                    type: "MultiPolygon",
+                    coordinates: [
+                        [
+                            [
+                                [-85.118202630673181, 47.604010232134549],
+                                [-69.193773707891992, 47.639788180258115],
+                                [-69.06107013353548, 39.894094085099951],
+                                [-85.118202630673181, 39.914453926386898],
+                                [-85.118202630673181, 47.604010232134549],
+                            ],
+                        ],
+                    ],
+                },
+            },
+        };
 
         // Init our d3 intro class and pass relevant layer data
-        this.d3Intro = new D3intro(this.storyUris, this.L, this.d3);
+        this.d3Intro = new D3intro(this.storyUris, this.L, this.d3, oldStartingBounds );
         this.d3Intro.homelandsSlide = this.getSlideById(500);
         this.d3Intro.pathways1Slide = this.getSlideById(600);
         this.d3Intro.pathways2Slide = this.getSlideById(700);
@@ -774,9 +912,9 @@ export class StoryMap {
         this.svg = await this.d3Intro.loadD3(this.map);
     }
 
-    onOverviewLinkClick(evt){
+    onOverviewLinkClick(evt) {
         let target = evt.target;
-        if (target.nodeName == "SPAN"){
+        if (target.nodeName == "SPAN") {
             // get the parent
             target = target.parentElement;
         }
@@ -784,15 +922,15 @@ export class StoryMap {
         //if (!target || !target.dataset){return false;}
         this.observerEnabled = false;
         let dataset = target.dataset;
-        if (target.dataset){
+        if (target.dataset) {
             let slideId = dataset.slideid;
-        if (slideId) {
-            console.log(slideId);
-            this.triggerSlideMapEvents(slideId);
-        }
-        setTimeout(function(){
-            this.observerEnabled = true;
-        }.bind(this),500);
+            if (slideId) {
+                console.log(slideId);
+                this.triggerSlideMapEvents(slideId);
+            }
+            setTimeout(function () {
+                this.observerEnabled = true;
+            }.bind(this), 500);
         }
 
         return false;
@@ -849,6 +987,35 @@ export class StoryMap {
         );
     }
 
+    /*
+    Adding features to the shadow layer e.g. lines that have a second feature layer
+     */
+    onEachShadowFeature(feature, layer) {
+        switch (feature.geometry.type) {
+            case "MultiLineString":
+                switch (feature.properties.sub_type) {
+                    case 5:
+                        layer.setStyle(this.lineLandRouteHighlightStyle);
+                        layer.bindPopup("This is one of those duplicated lines");
+                        //layer.setText(feature.properties.norm_text);
+                        // Can we instantiate the layer twice here - once with an offset ??
+                        //let lineCopy = JSON.stringify(layer.feature);
+                        // need to get the "feature" info from this cloned object
+                        //let dupLine = JSON.parse(lineCopy);
+                        // Create a new pane to hold the centre lane (z-index < 400)
+                        //this.map.createPane('lane-lines').style.zIndex = 300;
+                        //let dupLayer = new L.geoJSON();
+                        //dupLayer.addData(dupLine);
+                        //dupLayer.addTo(this.map);
+                        //dupLayer.setStyle(this.lineLandRouteHighlightStyle);
+                        // Viewport debugging
+                        //dupLayer.bindPopup("This is one of those duplicated lines");
+                        break;
+                }
+                break;
+        }
+    }
+
     onEachFeature(feature, layer) {
         // does this feature have a property named popupContent?
         if (
@@ -856,20 +1023,19 @@ export class StoryMap {
                 (feature.properties.map_text || feature.properties.norm_text)) ||
             feature.properties.Name
         ) {
-            if (feature.properties.map_text && [3,7,11].includes(feature.properties.sub_type) ) {
-				// Catching if this is just a text region on the map ...
+            if (feature.properties.map_text && [3, 7, 11].includes(feature.properties.sub_type)) {
+                // Catching if this is just a text region on the map ...
                 layer.bindPopup(feature.properties.map_text);
                 if (feature.properties.date_yr) {
                     layer.bindPopup(
-                        "<p style='font-family:Playfair Display,serif'><em>" +'"'
-						+ feature.properties.map_text + '"' + "</em></p>" +
+                        "<p style='font-family:Playfair Display,serif'><em>" + '"'
+                        + feature.properties.map_text + '"' + "</em></p>" +
                         "<strong>" +
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
                     );
                 }
-            }
-            else if (feature.properties.map_text) {
+            } else if (feature.properties.map_text) {
                 layer.bindPopup(feature.properties.map_text);
                 if (feature.properties.date_yr) {
                     layer.bindPopup(
@@ -879,8 +1045,7 @@ export class StoryMap {
                         "</strong>"
                     );
                 }
-            }			
-			else if (feature.properties.norm_text) {
+            } else if (feature.properties.norm_text) {
                 layer.bindPopup(feature.properties.norm_text);
                 if (feature.properties.date_yr) {
                     layer.bindPopup(
@@ -950,6 +1115,20 @@ export class StoryMap {
                         break;
                     case 5:
                         layer.setStyle(this.lineLandRouteStyle);
+                        layer.setText(feature.properties.norm_text);
+                        this.shadowFeatures.push(feature);
+                        // Can we instantiate the layer twice here - once with an offset ??
+                        //let lineCopy = JSON.stringify(layer.feature);
+                        // need to get the "feature" info from this cloned object
+                        //let dupLine = JSON.parse(lineCopy);
+                        // Create a new pane to hold the centre lane (z-index < 400)
+                        //this.map.createPane('lane-lines').style.zIndex = 300;
+                        //let dupLayer = new L.geoJSON();
+                        //dupLayer.addData(dupLine);
+                        //dupLayer.addTo(this.map);
+                        //dupLayer.setStyle(this.lineLandRouteHighlightStyle);
+                        // Viewport debugging
+                        //dupLayer.bindPopup("This is one of those duplicated lines");
                         break;
                     case 6:
                         layer.setStyle(this.lineSeaRouteStyle);

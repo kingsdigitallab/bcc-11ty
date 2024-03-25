@@ -933,13 +933,13 @@ export class StoryMap {
                         // need to get the "feature" info from this cloned object
                         let dupLine = JSON.parse(lineCopy);                     
                         // Create a new pane to hold the centre lane (z-index < 400)
-                        this.map.createPane('lane-lines').style.zIndex = 300;
-                        let dupLayer = new L.geoJSON();
-                        dupLayer.addData(dupLine)
+                        //this.map.createPane('lane-lines').style.zIndex = 300;
+                        /*let dupLayer = new L.geoJSON();
+                        dupLayer.addData(dupLine);
                         dupLayer.addTo(this.map);
                         dupLayer.setStyle(this.lineLandRouteHighlightStyle);
                         // Viewport debugging
-                        dupLayer.bindPopup("This is one of those duplicated lines");
+                        dupLayer.bindPopup("This is one of those duplicated lines");*/
 
                         break;
                     case 6:
