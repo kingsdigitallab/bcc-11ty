@@ -529,7 +529,7 @@ nav {
 #filter-wrapper * {
   overscroll-behavior: contain;
 }
-#filter-wrapper, #filter-button-bottom {
+#filter-wrapper {
   z-index: 999;
   pointer-events: auto;
   >label {
@@ -580,11 +580,20 @@ position:fixed;
             content: '▾';
             @include transform(rotate(180deg)translate(0,-3px));
             position: absolute;
-            right:1em;
+            right:1.1em;
             bottom:0.3em;
             @include transition(all 400ms ease-in); 
           }//&:before
       }//label
+
+      >label.filter-button-bottom {
+        z-index: 0.5;
+        width: 56px; // set a smaller width 
+        height: 2em; 
+        background: grey;
+
+    }
+
     .content {
          position: fixed;
       right:0;
@@ -742,13 +751,103 @@ justify-content: space-between;
             }//&:before
       }//&:hover
 }//input#filter[type="checkbox"]:checked~label.filter
+
+input#legend[type="checkbox"]:checked ~ label.filter-button-bottom{
+  >label {
+    display: block;
+    -moz-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    z-index: 2;
+    cursor: pointer;
+right: 0px;
+bottom: 0;
+left:0;
+margin: auto;
+position:fixed;
+  transform-origin:top center;
+      font-size: 1.2em;
+      background: lighten(lightgray, 12%);
+      color: black;
+      border:1px solid darken(lightgray,7%);
+      width: 60px !important;
+      height: 2em;
+        &:hover{
+          border:1px solid $darkgreen;
+              bottom:12px;
+          @include transition(all 400ms ease-in); 
+            &:after{
+              border: 1px solid lighten(black, 35%);
+              border-right: 1px solid transparent;
+            }
+          ~.content{
+            bottom:-370px; /* content on hover */
+          }
+          &:before {
+            @include transform(rotate(180deg)translate(0,1px));
+          }//&:before
+        }//&:hover
+        
+      h2{
+        font-size: 14px;
+        padding:6px 20px;
+        line-height: 0.2;
+        color:darken(gray,25%);
+        font-weight:normal;
+        text-transform: uppercase;
+      }//h2
+        &:before{
+          content: '▾';
+          @include transform(rotate(180deg)translate(0,-3px));
+          position: absolute;
+          right:1em;
+          bottom:0.3em;
+          @include transition(all 400ms ease-in); 
+        }//&:before
+    }//label
+
+
+          bottom: 0px; // set to the bottom
+          background:$darkgreen;
+          h2{
+          color:rgb(255, 0, 0);
+
+          font-size: 1.2em;
+          background: lighten(lightgray, 12%);
+          //color: black;
+          border:1px solid darken(#132b19,7%);
+          width: 60px !important;
+          height: 2em;
+            &:hover{
+              border:1px solid $darkgreen;
+                  bottom:12px;
+              @include transition(all 400ms ease-in); 
+                &:after{
+                  border: 1px solid lighten(black, 35%);
+                  border-right: 1px solid transparent;
+                }
+              ~.content{
+                bottom:-370px; /* content on hover */
+              }
+              &:before {
+                @include transform(rotate(180deg)translate(0,1px));
+              }//&:before
+            }//&:hover
+            }
+          /* cross icon */
+          &:before {
+            content: '▾';
+            @include transform(rotate(0)translate(0,1px));
+            color:rgb(0, 0, 0);
+          }//&:before
+          &:hover{
+            &:before {
+              transform: translate(0, 3px);
+            }//&:before
+}//&:hover
+
 }//#filter-wrapper
-
-#filter-button-bottom {
-
-
-
-}//#filter-button-bottom
 
 #legend-wrapper {
   z-index: 99;
@@ -771,8 +870,8 @@ position:fixed;
         border:1px solid darken(lightgray,7%);
         width: 120px;
         height: 2em;
-          &:hover{
-            border:1px solid $darkgreen;
+           &:hover{
+             border:1px solid $darkgreen;
                 right:-18px;
                 @include transition(all 400ms ease-in); 
               &:after{
@@ -781,11 +880,11 @@ position:fixed;
               }
             ~.content{
               right:-200px; /* content on hover */
-            }
+            } 
             &:before {
               @include transform(rotate(180deg)translate(0,-1px));
             }//&:before
-          }//&:hover
+          }//&:hover 
           
         h2{
           font-size: 14px;
@@ -845,3 +944,5 @@ position:fixed;
       }//&:hover
 }//input#filter[type="checkbox"]:checked~label.filter
 }//#legend-wrapper
+} 
+}
