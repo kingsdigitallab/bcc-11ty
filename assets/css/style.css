@@ -535,6 +535,7 @@ nav {
 #filter-wrapper {
   z-index: 999;
   pointer-events: auto;
+  /* end .content */
 }
 #filter-wrapper > label {
   display: block;
@@ -608,9 +609,18 @@ nav {
   z-index: 0.5;
   width: 56px;
   height: 2em;
-  background: grey;
+  background: #F2F2F2;
+  color: #124d20;
+  border: 1px solid black;
 }
-#filter-wrapper .content {
+#filter-wrapper > label.filter-button-bottom:not(.filter-button-bottom):hover:before {
+  -moz-transform: rotate(180deg) translate(0, 1px);
+  -o-transform: rotate(180deg) translate(0, 1px);
+  -ms-transform: rotate(180deg) translate(0, 1px);
+  -webkit-transform: rotate(180deg) translate(0, 1px);
+  transform: rotate(180deg) translate(0, 1px);
+}
+#filter-wrapper > label.filter-button-bottom .content {
   position: fixed;
   right: 0;
   left: 0;
@@ -633,7 +643,7 @@ nav {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-#filter-wrapper .content section {
+#filter-wrapper > label.filter-button-bottom .content section {
   width: 45%;
   /**
    * Provide a border when hovered and when the input is checked
@@ -642,42 +652,42 @@ nav {
     transform: scale(2);
   }*/
 }
-#filter-wrapper .content section header {
+#filter-wrapper > label.filter-button-bottom .content section header {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
 }
-#filter-wrapper .content section header h3 {
+#filter-wrapper > label.filter-button-bottom .content section header h3 {
   margin: 0;
 }
-#filter-wrapper .content section header h3 em {
+#filter-wrapper > label.filter-button-bottom .content section header h3 em {
   color: #757575;
   font-size: 0.6em;
 }
-#filter-wrapper .content section ol {
+#filter-wrapper > label.filter-button-bottom .content section ol {
   list-style-type: none;
   max-width: auto;
   margin-left: -40px;
 }
-#filter-wrapper .content section ol li {
+#filter-wrapper > label.filter-button-bottom .content section ol li {
   margin-bottom: 4px;
 }
-#filter-wrapper .content section ol li label {
+#filter-wrapper > label.filter-button-bottom .content section ol li label {
   display: block;
   position: relative;
   cursor: pointer;
   padding: 4px;
   z-index: 2; /* set a lower z-index than the maps */
 }
-#filter-wrapper .content section ol li label span {
+#filter-wrapper > label.filter-button-bottom .content section ol li label span {
   font-size: 18px;
 }
-#filter-wrapper .content section ol li label span em {
+#filter-wrapper > label.filter-button-bottom .content section ol li label span em {
   font-size: 14px;
   margin-left: 4px;
   font-style: normal;
 }
-#filter-wrapper .content section ol li label img {
+#filter-wrapper > label.filter-button-bottom .content section ol li label img {
   height: 40px;
   width: 40px;
   transition-duration: 0.2s;
@@ -685,30 +695,30 @@ nav {
   vertical-align: middle;
   margin-right: 8px;
 }
-#filter-wrapper .content section ol li:hover {
+#filter-wrapper > label.filter-button-bottom .content section ol li:hover {
   background: #e0e0e0;
   opacity: 0.9;
 }
-#filter-wrapper .content section ol input[type=checkbox][id^=checkbox] {
+#filter-wrapper > label.filter-button-bottom .content section ol input[type=checkbox][id^=checkbox] {
   display: none;
 }
-#filter-wrapper .content section ol input[type=checkbox][id^=mapcheckbox] {
+#filter-wrapper > label.filter-button-bottom .content section ol input[type=checkbox][id^=mapcheckbox] {
   display: none;
 }
-#filter-wrapper .content section ol :checked + label {
+#filter-wrapper > label.filter-button-bottom .content section ol :checked + label {
   font-weight: bold;
   background: #132b19;
   color: white;
 }
-#filter-wrapper .content section ol :checked + label img {
+#filter-wrapper > label.filter-button-bottom .content section ol :checked + label img {
   border: 1px solid #124d20;
   opacity: 1;
   background: white;
 }
-#filter-wrapper section:first-of-type ol li {
+#filter-wrapper > label.filter-button-bottom section:first-of-type ol li {
   position: relative;
 }
-#filter-wrapper section:first-of-type ol li img {
+#filter-wrapper > label.filter-button-bottom section:first-of-type ol li img {
   width: 50px;
   height: 50px;
   -webkit-transition: all 300ms ease-in;
@@ -717,10 +727,10 @@ nav {
   -o-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
 }
-#filter-wrapper section:first-of-type ol li:hover {
+#filter-wrapper > label.filter-button-bottom section:first-of-type ol li:hover {
   z-index: 3;
 }
-#filter-wrapper section:first-of-type ol li:hover img {
+#filter-wrapper > label.filter-button-bottom section:first-of-type ol li:hover img {
   -moz-transform: scale(2) translate(95px, 0);
   -o-transform: scale(2) translate(95px, 0);
   -ms-transform: scale(2) translate(95px, 0);
@@ -730,29 +740,25 @@ nav {
   opacity: 1;
   z-index: 3;
 }
-#filter-wrapper section:last-of-type ol li img {
+#filter-wrapper > label.filter-button-bottom section:last-of-type ol li img {
   border-radius: 0;
   border: none;
 }
-
-/* end .content */
-input#filter[type=checkbox] {
+#filter-wrapper input#filter[type=checkbox] {
   display: none;
 }
-
-input#filter[type=checkbox]:checked ~ .content {
+#filter-wrapper input#filter[type=checkbox]:checked ~ .content {
   bottom: 0px; /* content on click */
 }
-
-input#filter[type=checkbox]:checked ~ label.filter-button {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button {
   bottom: 385px;
   background: #132b19;
   /* cross icon */
 }
-input#filter[type=checkbox]:checked ~ label.filter-button h2 {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button h2 {
   color: white;
 }
-input#filter[type=checkbox]:checked ~ label.filter-button:before {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:before {
   content: "▾";
   -moz-transform: rotate(0) translate(0, 1px);
   -o-transform: rotate(0) translate(0, 1px);
@@ -761,124 +767,7 @@ input#filter[type=checkbox]:checked ~ label.filter-button:before {
   transform: rotate(0) translate(0, 1px);
   color: white;
 }
-input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
-  transform: translate(0, 3px);
-}
-
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom {
-  bottom: 0px;
-  background: #132b19;
-  /* cross icon */
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom > label {
-  display: block;
-  -moz-transition: all 200ms ease-in;
-  -webkit-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-  z-index: 2;
-  cursor: pointer;
-  right: 0px;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  position: fixed;
-  transform-origin: top center;
-  font-size: 1.2em;
-  background: #f2f2f2;
-  color: black;
-  border: 1px solid #c1c1c1;
-  width: 60px !important;
-  height: 2em;
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom > label:hover {
-  border: 1px solid #132b19;
-  bottom: 12px;
-  -webkit-transition: all 400ms ease-in;
-  -moz-transition: all 400ms ease-in;
-  -ms-transition: all 400ms ease-in;
-  -o-transition: all 400ms ease-in;
-  transition: all 400ms ease-in;
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom > label:hover:after {
-  border: 1px solid #595959;
-  border-right: 1px solid transparent;
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom > label:hover ~ .content {
-  bottom: -370px; /* content on hover */
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom > label:hover:before {
-  -moz-transform: rotate(180deg) translate(0, 1px);
-  -o-transform: rotate(180deg) translate(0, 1px);
-  -ms-transform: rotate(180deg) translate(0, 1px);
-  -webkit-transform: rotate(180deg) translate(0, 1px);
-  transform: rotate(180deg) translate(0, 1px);
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom > label h2 {
-  font-size: 14px;
-  padding: 6px 20px;
-  line-height: 0.2;
-  color: #404040;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom > label:before {
-  content: "▾";
-  -moz-transform: rotate(180deg) translate(0, -3px);
-  -o-transform: rotate(180deg) translate(0, -3px);
-  -ms-transform: rotate(180deg) translate(0, -3px);
-  -webkit-transform: rotate(180deg) translate(0, -3px);
-  transform: rotate(180deg) translate(0, -3px);
-  position: absolute;
-  right: 1em;
-  bottom: 0.3em;
-  -webkit-transition: all 400ms ease-in;
-  -moz-transition: all 400ms ease-in;
-  -ms-transition: all 400ms ease-in;
-  -o-transition: all 400ms ease-in;
-  transition: all 400ms ease-in;
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom h2 {
-  color: rgb(255, 0, 0);
-  font-size: 1.2em;
-  background: #f2f2f2;
-  border: 1px solid #08120b;
-  width: 60px !important;
-  height: 2em;
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom h2:hover {
-  border: 1px solid #132b19;
-  bottom: 12px;
-  -webkit-transition: all 400ms ease-in;
-  -moz-transition: all 400ms ease-in;
-  -ms-transition: all 400ms ease-in;
-  -o-transition: all 400ms ease-in;
-  transition: all 400ms ease-in;
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom h2:hover:after {
-  border: 1px solid #595959;
-  border-right: 1px solid transparent;
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom h2:hover ~ .content {
-  bottom: -370px; /* content on hover */
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom h2:hover:before {
-  -moz-transform: rotate(180deg) translate(0, 1px);
-  -o-transform: rotate(180deg) translate(0, 1px);
-  -ms-transform: rotate(180deg) translate(0, 1px);
-  -webkit-transform: rotate(180deg) translate(0, 1px);
-  transform: rotate(180deg) translate(0, 1px);
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom:before {
-  content: "▾";
-  -moz-transform: rotate(0) translate(0, 1px);
-  -o-transform: rotate(0) translate(0, 1px);
-  -ms-transform: rotate(0) translate(0, 1px);
-  -webkit-transform: rotate(0) translate(0, 1px);
-  transform: rotate(0) translate(0, 1px);
-  color: rgb(0, 0, 0);
-}
-input#legend[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
   transform: translate(0, 3px);
 }
 
