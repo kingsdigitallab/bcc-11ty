@@ -60,7 +60,7 @@ export class StoryMap {
             fill: "black",
             "font-family": "EB Garamond, serif",
             "font-weight": "bold",
-            dx: "15%",
+			"offset": -10,
         };
         this.initStyles();
         // Map lookup
@@ -144,10 +144,10 @@ export class StoryMap {
         };
         this.lineLandRouteStyle = {
             stroke: true,
-            dashArray: "7 6",
+            //dashArray: "7 6",
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#808080",
+            color: "#FFFFFF",
             weight: 3,
             fill: false,
         };
@@ -156,7 +156,7 @@ export class StoryMap {
             lineCap: "square",
             lineJoin: "round",
             color: "#000000",
-            weight: 6,
+            weight: 5,
             fill: false,
         };
         this.lineSeaRouteStyle = {
