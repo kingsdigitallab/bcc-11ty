@@ -662,7 +662,7 @@ nav {
   position: relative;
   cursor: pointer;
   padding: 4px;
-  z-index: 2;
+  z-index: 2; /* set a lower z-index than the maps */
 }
 #filter-wrapper .content section ol li label span {
   font-size: 18px;
@@ -721,7 +721,6 @@ nav {
   -ms-transform: scale(2) translate(95px, 0);
   -webkit-transform: scale(2) translate(95px, 0);
   transform: scale(2) translate(95px, 0);
-  z-index: 999 !important;
   box-shadow: 1px 1px 3px #666, 0 0 1px #777;
   opacity: 1;
   z-index: 3;
