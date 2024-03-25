@@ -529,8 +529,8 @@ nav {
 #filter-wrapper * {
   overscroll-behavior: contain;
 }
-#filter-wrapper {
-  z-index: 99;
+#filter-wrapper, #filter-button-bottom {
+  z-index: 999;
   pointer-events: auto;
   >label {
       display: block;
@@ -744,6 +744,11 @@ justify-content: space-between;
 }//input#filter[type="checkbox"]:checked~label.filter
 }//#filter-wrapper
 
+#filter-button-bottom {
+
+
+
+}//#filter-button-bottom
 
 #legend-wrapper {
   z-index: 99;
