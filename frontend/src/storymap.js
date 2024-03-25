@@ -594,11 +594,11 @@ export class StoryMap {
             this.storyFeatureLayerGroup.clearLayers();
             this.d3Intro.SectionIntro(this.map, slideid, this.slides);
         } else if (slideid != "explore") {
-            if (this.d3Intro.svgDrawn) {
+            //if (this.d3Intro.svgDrawn) {
                 // Clear the svg overlay so we can replace with layers
                 this.d3Intro.stopAll();
                 this.d3Intro.clearSvg();
-            }
+            //}
             let slide = this.getSlideById(slideid);
             if (slide) {
                 // Clear layers and text
