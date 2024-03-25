@@ -659,7 +659,7 @@ justify-content: space-between;
             &:hover{
                 background:lighten(lightgray,5%);
                 opacity:0.9;
-              :checked + label{
+              //:checked + label{
                 //transform: scale(1);
               }//:checked + label img
             }//&:hover
