@@ -268,7 +268,7 @@ export class StoryMap {
         this.polyNativeStyle = {
             stroke: true,
             fillColor: "#ff0000",
-            weight: 1,
+            weight: 2,
             fill: true,
             opacity: 0.25,
             fillOpacity: 0.2,
@@ -276,7 +276,7 @@ export class StoryMap {
         this.polyEuroStyle = {
             stroke: true,
             fillColor: "#00ff00",
-            weight: 1,
+            weight: 2,
             fill: true,
             opacity: 0.5,
             fillOpacity: 0.2,
@@ -288,10 +288,10 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#808080",
             fillColor: "#808080",
-            weight: 1,
+            weight: 2,
             fill: true,
-            opacity: 1,
-            fillOpacity: 0.2,
+            opacity: 0.3,
+            fillOpacity: 0.1,
         };
         this.polyToponymStyle = {
             stroke: true,
