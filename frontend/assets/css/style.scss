@@ -593,6 +593,23 @@ position:fixed;
         background: #F2F2F2;
         color: #124d20;
         border:1px solid black;
+        
+        h2{
+          font-size: 14px;
+          padding:6px 20px;
+          line-height: 0.2;
+          color:darken(gray,25%);
+          font-weight:normal;
+          text-transform: uppercase;
+        }//h2
+          &:before{
+            content: '▾';
+            @include transform(rotate(0deg)translate(0,-3px));
+            position: absolute;
+            right:0.93em;
+            bottom:0.3em;
+            @include transition(all 400ms ease-in); 
+          }//&:before
       }
 
         .content {
@@ -753,8 +770,28 @@ position:fixed;
             }//&:before
       }//&:hover
 
-}//input#filter[type="checkbox"]:checked~label.filter
+  input#filter[type="checkbox"]:checked~label.filter-button-bottom-7{ //to be deleted
+          bottom: 385px; 
+          background:$darkgreen;
+          h2{
+          color:white;
+          }
+          /* cross icon */
+          &:before {
+            content: '▸';
+            display: inline-block;
+            @include transform(rotate(0)translate(0,1px));
+            color:white;
+          }//&:before
+          &:hover{
+            &:before {
+              transform: translate(0, 3px);
+            }//&:before
+}//&:hover   
 
+
+}//input#filter[type="checkbox"]:checked~label.filter
+}
 //#filter-wrapper
 }
 #legend-wrapper {
