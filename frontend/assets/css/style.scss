@@ -540,53 +540,53 @@ nav {
       transition: all 200ms ease-in;
       z-index: 2;
       cursor: pointer;
-right: 0px;
-bottom: 0;
-left:0;
-margin: auto;
-position:fixed;
-    transform-origin:top center;
-        font-size: 1.2em;
-        background: lighten(lightgray, 12%);
-        color: black;
-        border:1px solid darken(lightgray,7%);
-        width: 120px;
-        height: 2em;
-          &:hover{
-            border:1px solid $darkgreen;
-                bottom:12px;
-            @include transition(all 400ms ease-in); 
-              &:after{
-                border: 1px solid lighten(black, 35%);
-                border-right: 1px solid transparent;
-              }
-            ~.content{
-              bottom:-370px; /* content on hover */
+      right: 0px;
+      bottom: 0;
+      left:0;
+      margin: auto;
+      position:fixed;
+      transform-origin:top center;
+      font-size: 1.2em;
+      background: lighten(lightgray, 12%);
+      color: black;
+      border:1px solid darken(lightgray,7%);
+      width: 120px;
+      height: 2em;
+        &:hover{
+          border:1px solid $darkgreen;
+              bottom:12px;
+          @include transition(all 400ms ease-in); 
+            &:after{
+              border: 1px solid lighten(black, 35%);
+              border-right: 1px solid transparent;
             }
-            &:before {
-              @include transform(rotate(180deg)translate(0,1px));
-            }//&:before
-          }//&:hover
-          
-        h2{
-          font-size: 14px;
-          padding:6px 20px;
-          line-height: 0.2;
-          color:darken(gray,25%);
-          font-weight:normal;
-          text-transform: uppercase;
-        }//h2
-          &:before{
-            content: '▾';
-            @include transform(rotate(180deg)translate(0,-3px));
-            position: absolute;
-            right:0.93em;
-            bottom:0.3em;
-            @include transition(all 400ms ease-in); 
+          ~.content{
+            bottom:-370px; /* content on hover */
+          }
+          &:before {
+            @include transform(rotate(180deg)translate(0,1px));
           }//&:before
-      }//label 
+        }//&:hover
+        
+      h2{
+        font-size: 14px;
+        padding:6px 20px;
+        line-height: 0.2;
+        color:darken(gray,25%);
+        font-weight:normal;
+        text-transform: uppercase;
+      }//h2
+        &:before{
+          content: '▾';
+          @include transform(rotate(180deg)translate(0,-3px));
+          position: absolute;
+          right:0.93em;
+          bottom:0.3em;
+          @include transition(all 400ms ease-in); 
+        }//&:before
+    }//label 
 
-      >label.filter-button-bottom {
+  >label.filter-button-bottom {
         z-index: 1;
         width: 50px; // set a smaller width 
         height: 2em; 
@@ -612,31 +612,31 @@ position:fixed;
           }//&:before
       }
 
-        .content {
-          position: fixed;
-       right:0;
-       left:0;
-       bottom: -425px;
-       overflow:scroll;
-       font-size:14px;
-       line-height: 1.6;
-       width:800px;
-       @include transition(all 400ms ease-in); 
-       background: white;
-       padding: 8px 16px;
-       height:400px;
-       margin: auto;
-       border:1px solid $darkgreen;
-       display:flex;
-       justify-content: space-between;
- flex-wrap: wrap;
+    .content {
+      position: fixed;
+      right:0;
+      left:0;
+      bottom: -425px;
+      overflow:scroll;
+      font-size:14px;
+      line-height: 1.6;
+      width:800px;
+      @include transition(all 400ms ease-in); 
+      background: white;
+      padding: 8px 16px;
+      height:400px;
+      margin: auto;
+      border:1px solid $darkgreen;
+      display:flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
        section{
          //border:1px solid black;
          width:45%;
          header{
-           display:flex;
-           align-items: stretch;
- justify-content: space-between;
+            display:flex;
+            align-items: stretch;
+            justify-content: space-between;
            h3{
              margin:0;
              em{
@@ -699,7 +699,6 @@ position:fixed;
                  opacity: 1;
                  background: white;
                }
- 
                //img
  
              }
@@ -747,53 +746,52 @@ position:fixed;
 
   /* end .content */
     input#filter[type="checkbox"] {
-      display: none;
-  }
-  input#filter[type="checkbox"]:checked~.content{
-      bottom:0px; /* content on click */
-  }
-  input#filter[type="checkbox"]:checked~label.filter-button{
-          bottom: 385px; 
-          background:$darkgreen;
-          h2{
-          color:white;
-          }
-          /* cross icon */
-          &:before {
-            content: '▾';
-            @include transform(rotate(0)translate(0,1px));
+            display: none;
+    }
+    input#filter[type="checkbox"]:checked~.content{
+            bottom:0px; /* content on click */
+    }
+    input#filter[type="checkbox"]:checked~label.filter-button{
+            bottom: 385px; 
+            background:$darkgreen;
+            h2{
             color:white;
-          }//&:before
-          &:hover{
+            }
+            /* cross icon */
             &:before {
-              transform: translate(0, 3px);
+              content: '▾';
+              @include transform(rotate(0)translate(0,1px));
+              color:white;
             }//&:before
-      }//&:hover
-
-  input#filter[type="checkbox"]:checked~label.filter-button-bottom-7{ //to be deleted
-          bottom: 385px; 
-          background:$darkgreen;
-          h2{
-          color:white;
-          }
-          /* cross icon */
-          &:before {
-            content: '▸';
-            display: inline-block;
-            @include transform(rotate(0)translate(0,1px));
-            color:white;
-          }//&:before
-          &:hover{
+            &:hover{
+              &:before {
+                transform: translate(0, 3px);
+              }//&:before
+        }//&:hover
+    }
+    input#filter[type="checkbox"]:checked~label.filter-button-bottom{ //to be deleted
+            bottom: 0px; 
+            background:white;
+            h2{
+            color: #124d20;
+            }
+            /* cross icon */
             &:before {
-              transform: translate(0, 3px);
+              z-index: 1;
+              content: '▾';
+              display: inline-block;
+              @include transform(rotate(0)translate(0,1px));
+              color: #124d20;
             }//&:before
-}//&:hover   
+            &:hover{
+              &:before {
+                transform: translate(0, 3px);
+              }//&:before
+            }//&:hover   
+    }
 
+}//#filter-wrapper
 
-}//input#filter[type="checkbox"]:checked~label.filter
-}
-//#filter-wrapper
-}
 #legend-wrapper {
   z-index: 99;
   pointer-events: auto;
