@@ -787,25 +787,26 @@ nav {
 #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
   transform: translate(0, 3px);
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button input#filter[type=checkbox]:checked ~ label.filter-button-bottom-7 {
-  bottom: 385px;
-  background: #132b19;
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button-bottom {
+  bottom: 0px;
+  background: white;
   /* cross icon */
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button input#filter[type=checkbox]:checked ~ label.filter-button-bottom-7 h2 {
-  color: white;
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button-bottom h2 {
+  color: #124d20;
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button input#filter[type=checkbox]:checked ~ label.filter-button-bottom-7:before {
-  content: "▸";
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button-bottom:before {
+  z-index: 1;
+  content: "▾";
   display: inline-block;
   -moz-transform: rotate(0) translate(0, 1px);
   -o-transform: rotate(0) translate(0, 1px);
   -ms-transform: rotate(0) translate(0, 1px);
   -webkit-transform: rotate(0) translate(0, 1px);
   transform: rotate(0) translate(0, 1px);
-  color: white;
+  color: #124d20;
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button input#filter[type=checkbox]:checked ~ label.filter-button-bottom-7:hover:before {
+#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
   transform: translate(0, 3px);
 }
 
