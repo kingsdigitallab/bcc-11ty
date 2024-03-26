@@ -532,7 +532,7 @@ nav {
 #filter-wrapper {
   z-index: 999;
   pointer-events: auto;
-  >label.filter-button {
+  >label {
       display: block;
       -moz-transition: all 200ms ease-in;
       -webkit-transition: all 200ms ease-in;
@@ -587,197 +587,146 @@ position:fixed;
       }//label 
 
       >label.filter-button-bottom {
-        display: block;
-        -moz-transition: all 200ms ease-in;
-        -webkit-transition: all 200ms ease-in;
-        -o-transition: all 200ms ease-in;
-        transition: all 200ms ease-in;
-        z-index: 2;
-        cursor: pointer;
-        right: 0px;
-        bottom: 0;
-        left:0;
-        margin: auto;
-        position:fixed;
-        transform-origin:top center;
-        font-size: 1.2em;
-          
-        
         z-index: 1;
         width: 50px; // set a smaller width 
         height: 2em; 
         background: #F2F2F2;
         color: #124d20;
         border:1px solid black;
-    
-        /* &:hover{
-          border:1px solid $darkgreen;
-              bottom:0px; // set the button stick to the bottom
-          @include transition(all 400ms ease-in); 
-            &:after{
-              border: 1px solid lighten(black, 35%);
-              border-right: 1px solid transparent;
-            }
-          ~.content{
-            bottom:-370px; /* content on hover */
-          //}
-          //&:before {
-          //  @include transform(rotate(180deg)translate(0,1px)); 
-          //}//&:before 
-        //}//&:hover */
-       
-        h2{
-          font-size: 14px;
-          padding:6px 20px;
-          line-height: 0.2;
-          color:darken(gray,25%);
-          font-weight:normal;
-          text-transform: uppercase;
-        }//h2
-          &:before{
-            content: '▸';
-            //@include transform(rotate(180deg)translate(0,-3px));
-            position: absolute;
-            right:0.93em;
-            bottom:0.3em;
-            //transform: rotate(90deg); /* Rotate the triangle */
-            //display: inline-block;
-            //@include transition(all 400ms ease-in); 
-          }//&:before
-
-    .content {
-         position: fixed;
-      right:0;
-      left:0;
-      bottom: -425px;
-      overflow:scroll;
-      font-size:14px;
-      line-height: 1.6;
-      width:800px;
-      @include transition(all 400ms ease-in); 
-      background: white;
-      padding: 8px 16px;
-      height:400px;
-      margin: auto;
-      border:1px solid $darkgreen;
-      display:flex;
-      justify-content: space-between;
-flex-wrap: wrap;
-      section{
-        //border:1px solid black;
-        width:45%;
-        header{
-          display:flex;
-          align-items: stretch;
-justify-content: space-between;
-          h3{
-            margin:0;
-            em{
-              color:#757575;
-              font-size:0.6em;
-            }
-          }
-        }//header
-        ol{
-            list-style-type: none;
-            max-width: auto;
-            margin-left:-40px;
-          li{
-            margin-bottom:4px;
-            label {
-              display: block;
-              position: relative;
-              cursor: pointer;
-              padding:4px;
-              z-index: 2; /* set a lower z-index than the maps */
-              span{
-                font-size:18px;
-                em{
-                  font-size:14px;
-                  margin-left:4px;
-                  font-style: normal;
-                }
-              }
-              img {
-                height:40px;
-                width: 40px;
-                transition-duration: 0.2s;
-                //border-radius:50%;
-                vertical-align: middle;
-                margin-right:8px;
-              }//img
-            }//label
-            &:hover{
-                background:lighten(lightgray,5%);
-                opacity:0.9;
-              //:checked + label{
-                //transform: scale(1);
-              }//:checked + label img
-            }//&:hover
-            input[type="checkbox"][id^="checkbox"] {
-              display: none;
-              }
-            input[type="checkbox"][id^="mapcheckbox"] {
-              display: none;
-            }
-
-            :checked+label {
-              font-weight: bold;
-              background: $darkgreen;
-              color: white;
-
-              img {
-                transform: scale(1);
-                border: 1px solid $midgreen;
-                opacity: 1;
-                //border-radius: 0;
-                background: white;
-              }
-
-              //img
-
-            }
-
-            //:checked + label
-
-          }//li
-              /**
-               * Provide a border when hovered and when the input is checked
-               */
-          /*:checked + label:before {
-            transform: scale(2);
-          }*/
-        }//ol
-      }//section
-      section:first-of-type{
-        ol {
-          li {
-            position: relative;
-            img{
-          width:50px;
-          height:50px;
-          border-radius:50%;
-          @include transition(all 300ms ease-in); 
-            }
-            &:hover{
-              z-index: 3;
-              img{
-                @include transform(scale(2)translate(95px,0));
-                box-shadow: 1px 1px 3px#666, 0 0 1px #777 ;
-                opacity:1;
-                z-index: 3;
-              }
-            }
-          }
-        }
       }
-         
-      section:last-of-type{
-        ol li img{
-          border-radius: 0;
-          border:none;
-        }
-      }
+
+        .content {
+          position: fixed;
+       right:0;
+       left:0;
+       bottom: -425px;
+       overflow:scroll;
+       font-size:14px;
+       line-height: 1.6;
+       width:800px;
+       @include transition(all 400ms ease-in); 
+       background: white;
+       padding: 8px 16px;
+       height:400px;
+       margin: auto;
+       border:1px solid $darkgreen;
+       display:flex;
+       justify-content: space-between;
+ flex-wrap: wrap;
+       section{
+         //border:1px solid black;
+         width:45%;
+         header{
+           display:flex;
+           align-items: stretch;
+ justify-content: space-between;
+           h3{
+             margin:0;
+             em{
+               color:#757575;
+               font-size:0.6em;
+             }
+           }
+         }//header
+         ol{
+             list-style-type: none;
+             max-width: auto;
+             margin-left:-40px;
+           li{
+             margin-bottom:4px;
+             label {
+               display: block;
+               position: relative;
+               cursor: pointer;
+               padding:4px;
+               z-index: 2; /* set a lower z-index than the maps */
+               span{
+                 font-size:18px;
+                 em{
+                   font-size:14px;
+                   margin-left:4px;
+                   font-style: normal;
+                 }
+               }
+               img {
+                 height:40px;
+                 width: 40px;
+                 transition-duration: 0.2s;
+                 //border-radius:50%;
+                 vertical-align: middle;
+                 margin-right:8px;
+               }//img
+             }//label
+             &:hover{
+                 background:lighten(lightgray,5%);
+                 opacity:0.9;
+               //:checked + label{
+                 //transform: scale(1);
+               }//:checked + label img
+             }//&:hover
+             input[type="checkbox"][id^="checkbox"] {
+               display: none;
+               }
+             input[type="checkbox"][id^="mapcheckbox"] {
+               display: none;
+             }
+ 
+             :checked+label {
+               font-weight: bold;
+               background: $darkgreen;
+               color: white;
+ 
+               img {
+                 //transform: scale(1);
+                 border: 1px solid $midgreen;
+                 opacity: 1;
+                 background: white;
+               }
+ 
+               //img
+ 
+             }
+ 
+             //:checked + label
+ 
+           }//li
+               /**
+                * Provide a border when hovered and when the input is checked
+                */
+           /*:checked + label:before {
+             transform: scale(2);
+           }*/
+         }//ol
+       }//section
+       section:first-of-type{
+         ol {
+           li {
+             position: relative;
+             img{
+           width:50px;
+           height:50px;
+           border-radius:50%;
+           @include transition(all 300ms ease-in); 
+             }
+             &:hover{
+               z-index: 3;
+               img{
+                 @include transform(scale(2)translate(95px,0));
+                 box-shadow: 1px 1px 3px#666, 0 0 1px #777 ;
+                 opacity:1;
+                 z-index: 3;
+               }
+             }
+           }
+         }
+       }
+          
+       section:last-of-type{
+         ol li img{
+           border-radius: 0;
+           border:none;
+         }
+       }
 
   /* end .content */
     input#filter[type="checkbox"] {
@@ -903,5 +852,4 @@ position:fixed;
       }//&:hover
 }//input#filter[type="checkbox"]:checked~label.filter
 }//#legend-wrapper
-}
 }
