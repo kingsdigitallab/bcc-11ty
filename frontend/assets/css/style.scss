@@ -530,7 +530,7 @@ nav {
   overscroll-behavior: contain;
 }
 #filter-wrapper {
-  z-index: 999;
+  z-index: 99;
   pointer-events: auto;
   >label {
       display: block;
@@ -756,7 +756,7 @@ position:fixed;
 }//input#filter[type="checkbox"]:checked~label.filter
 
 //#filter-wrapper
-
+}
 #legend-wrapper {
   z-index: 99;
   pointer-events: auto;
@@ -852,4 +852,3 @@ position:fixed;
       }//&:hover
 }//input#filter[type="checkbox"]:checked~label.filter
 }//#legend-wrapper
-}
