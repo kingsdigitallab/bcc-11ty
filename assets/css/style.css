@@ -533,7 +533,7 @@ nav {
 }
 
 #filter-wrapper {
-  z-index: 999;
+  z-index: 99;
   pointer-events: auto;
   /* end .content */
 }
@@ -763,12 +763,13 @@ nav {
 #filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
   transform: translate(0, 3px);
 }
-#filter-wrapper #legend-wrapper {
+
+#legend-wrapper {
   z-index: 99;
   pointer-events: auto;
   /* end .content */
 }
-#filter-wrapper #legend-wrapper > label {
+#legend-wrapper > label {
   display: block;
   -webkit-transition: all 400ms ease-in;
   -moz-transition: all 400ms ease-in;
@@ -795,7 +796,7 @@ nav {
   width: 120px;
   height: 2em;
 }
-#filter-wrapper #legend-wrapper > label:hover {
+#legend-wrapper > label:hover {
   border: 1px solid #132b19;
   right: -18px;
   -webkit-transition: all 400ms ease-in;
@@ -804,21 +805,21 @@ nav {
   -o-transition: all 400ms ease-in;
   transition: all 400ms ease-in;
 }
-#filter-wrapper #legend-wrapper > label:hover:after {
+#legend-wrapper > label:hover:after {
   border: 1px solid #595959;
   border-right: 1px solid transparent;
 }
-#filter-wrapper #legend-wrapper > label:hover ~ .content {
+#legend-wrapper > label:hover ~ .content {
   right: -200px; /* content on hover */
 }
-#filter-wrapper #legend-wrapper > label:hover:before {
+#legend-wrapper > label:hover:before {
   -moz-transform: rotate(180deg) translate(0, -1px);
   -o-transform: rotate(180deg) translate(0, -1px);
   -ms-transform: rotate(180deg) translate(0, -1px);
   -webkit-transform: rotate(180deg) translate(0, -1px);
   transform: rotate(180deg) translate(0, -1px);
 }
-#filter-wrapper #legend-wrapper > label h2 {
+#legend-wrapper > label h2 {
   font-size: 14px;
   padding: 6px 20px;
   line-height: 0.5;
@@ -826,7 +827,7 @@ nav {
   font-weight: normal;
   text-transform: uppercase;
 }
-#filter-wrapper #legend-wrapper > label:before {
+#legend-wrapper > label:before {
   content: "▾";
   -moz-transform: rotate(180deg) translate(0, -3px);
   -o-transform: rotate(180deg) translate(0, -3px);
@@ -842,7 +843,7 @@ nav {
   -o-transition: all 400ms ease-in;
   transition: all 400ms ease-in;
 }
-#filter-wrapper #legend-wrapper .content {
+#legend-wrapper .content {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -862,21 +863,21 @@ nav {
   margin: auto;
   border: 1px solid #132b19;
 }
-#filter-wrapper #legend-wrapper input#legend[type=checkbox] {
+#legend-wrapper input#legend[type=checkbox] {
   display: none;
 }
-#filter-wrapper #legend-wrapper input#legend[type=checkbox]:checked ~ .content {
+#legend-wrapper input#legend[type=checkbox]:checked ~ .content {
   right: 0px; /* content on click */
 }
-#filter-wrapper #legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button {
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button {
   right: 185px;
   background: #132b19;
   /* cross icon */
 }
-#filter-wrapper #legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button h2 {
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button h2 {
   color: white;
 }
-#filter-wrapper #legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:before {
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:before {
   content: "▾";
   -moz-transform: rotate(0) translate(0, 1px);
   -o-transform: rotate(0) translate(0, 1px);
@@ -885,6 +886,6 @@ nav {
   transform: rotate(0) translate(0, 1px);
   color: white;
 }
-#filter-wrapper #legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:hover:before {
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:hover:before {
   transform: translate(0, 3px);
 }
