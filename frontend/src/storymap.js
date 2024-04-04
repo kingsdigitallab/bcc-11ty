@@ -286,12 +286,13 @@ export class StoryMap {
             dashArray: "10 10",
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#808080",
+            color: "#000000",
             fillColor: "#808080",
+			fill:'url(/bcc-11ty/assets/img/stories/image-writing.png)',
             weight: 2,
-            fill: true,
+            //fill: true,
             opacity: 0.3,
-            fillOpacity: 0.1,
+            //fillOpacity: 0.1,
         };
         this.polyToponymStyle = {
             stroke: true,
@@ -970,7 +971,9 @@ export class StoryMap {
                                     if (this.map.getZoom() >= this.textMinZoomLevel) {
                                         let textAttributes = this.defaultTextAttributes;
                                         textAttributes["font-size"] = TextSize;
-                                        feature.setText(this.textFeatures[featureId].text, {
+										// nullifying text - not sure that this is needed
+										// but leaving code in place incase ...
+                                        feature.setText(null/*this.textFeatures[featureId].text*/, {
                                             orientation: this.textFeatures[featureId].orientation,
                                             offset: 5,
                                             center: true,
@@ -1023,7 +1026,7 @@ export class StoryMap {
                 (feature.properties.map_text || feature.properties.norm_text)) ||
             feature.properties.Name
         ) {
-            if (feature.properties.map_text && [3, 7, 11].includes(feature.properties.sub_type)) {
+            if (feature.properties.map_text && [7, 11].includes(feature.properties.sub_type)) {
                 // Catching if this is just a text region on the map ...
                 layer.bindPopup(feature.properties.map_text);
                 if (feature.properties.date_yr) {
@@ -1115,7 +1118,7 @@ export class StoryMap {
                         break;
                     case 5:
                         layer.setStyle(this.lineLandRouteStyle);
-                        layer.setText(feature.properties.norm_text);
+                        //layer.setText(feature.properties.norm_text);
                         this.shadowFeatures.push(feature);
                         // Can we instantiate the layer twice here - once with an offset ??
                         //let lineCopy = JSON.stringify(layer.feature);
