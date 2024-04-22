@@ -1036,6 +1036,8 @@ export class StoryMap {
                         "<strong>" +
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
+                        // temp adding sub_type and type to popups
+                        + "<p>sub_type:" + feature.properties.sub_type +"</p>"
                     );
                 }
             } else if (feature.properties.map_text) {
@@ -1046,6 +1048,8 @@ export class StoryMap {
                         "<br><strong>" +
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
+                        // temp adding sub_type and type to popups
+                        + "<p>sub_type:" + feature.properties.sub_type +"</p>"
                     );
                 }
             } else if (feature.properties.norm_text) {
@@ -1055,7 +1059,9 @@ export class StoryMap {
                         feature.properties.norm_text +
                         "</br><strong>" +
                         this.mapLookup[feature.properties.map_source] +
-                        "</strong>"
+                        "</strong>" 
+                        // temp adding sub_type and type to popups
+                        + "<p>sub_type:" + feature.properties.sub_type +"</p>"
                     );
                 }
             } else {
