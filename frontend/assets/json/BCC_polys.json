@@ -71,7 +71,7 @@
       "properties": {
         "id": 3883,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -107,7 +107,7 @@
       "properties": {
         "id": 3881,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -139,7 +139,7 @@
       "properties": {
         "id": 3887,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -170,7 +170,7 @@
       "properties": {
         "id": 3885,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -205,7 +205,7 @@
       "properties": {
         "id": 3891,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -236,7 +236,7 @@
       "properties": {
         "id": 3889,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -271,7 +271,7 @@
       "properties": {
         "id": 3874,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -3037,7 +3037,7 @@
       "properties": {
         "id": 3807,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -3102,7 +3102,7 @@
       "properties": {
         "id": 3813,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
@@ -3178,7 +3178,7 @@
       "properties": {
         "id": 3929,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
@@ -3305,7 +3305,7 @@
       "properties": {
         "id": 3931,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
@@ -3345,7 +3345,7 @@
       "properties": {
         "id": 3933,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
@@ -3552,7 +3552,7 @@
       "properties": {
         "id": 3804,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -3948,7 +3948,7 @@
       "properties": {
         "id": 3914,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -4180,7 +4180,7 @@
       "properties": {
         "id": 3939,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -4243,7 +4243,7 @@
       "properties": {
         "id": 3903,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -4425,7 +4425,7 @@
       "properties": {
         "id": 3910,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -4698,7 +4698,7 @@
       "properties": {
         "id": 3908,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -4801,7 +4801,7 @@
       "properties": {
         "id": 3912,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -5048,7 +5048,7 @@
       "properties": {
         "id": 3911,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -5272,7 +5272,7 @@
       "properties": {
         "id": 3895,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
@@ -5391,7 +5391,7 @@
       "properties": {
         "id": 3897,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -5549,7 +5549,7 @@
       "properties": {
         "id": 3896,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -5678,7 +5678,7 @@
       "properties": {
         "id": 3938,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
@@ -5718,7 +5718,7 @@
       "properties": {
         "id": 3898,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -5785,7 +5785,7 @@
       "properties": {
         "id": 3901,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -5941,12 +5941,12 @@
       "properties": {
         "id": 3899,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
         "map_text": "BERGEN CO.",
-        "norm_text": "Bergen Company",
+        "norm_text": "Bergen County",
         "story_link": null,
         "frame_link": null,
         "identity": 1
@@ -6009,7 +6009,7 @@
       "properties": {
         "id": 3877,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -6113,7 +6113,7 @@
       "properties": {
         "id": 3934,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
@@ -6147,7 +6147,7 @@
       "properties": {
         "id": 3878,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -6257,7 +6257,7 @@
       "properties": {
         "id": 3936,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": null,
@@ -6298,7 +6298,7 @@
       "properties": {
         "id": 3880,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 2,
@@ -6429,7 +6429,7 @@
       "properties": {
         "id": 3879,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -6510,7 +6510,7 @@
       "properties": {
         "id": 3884,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -6632,7 +6632,7 @@
       "properties": {
         "id": 3882,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -6842,7 +6842,7 @@
       "properties": {
         "id": 3872,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
@@ -6959,7 +6959,7 @@
       "properties": {
         "id": 3870,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
