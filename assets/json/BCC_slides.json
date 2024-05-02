@@ -5,8 +5,13 @@
       "fid": 33,
       "points": {
         "includes": {
-          "sub_type": [4, 10],
-          "map_source": [12]
+          "sub_type": [
+            4,
+            10
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "features": []
@@ -17,9 +22,15 @@
       "lines": {},
       "points": {
         "includes": {
-          "sub_type": [4],
-          "map_source": [12],
-          "identity": [1]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ],
+          "identity": [
+            1
+          ]
         }
       },
       "features": []
@@ -29,16 +40,24 @@
       "fid": 17,
       "lines": {
         "includes": {
-          "sub_type": [5],
-          "map_source": [12]
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
-      "points": { 
-        "includes": { 
-          "sub_type": [4],  
-          "map_source": [12]
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
         }
-     }, 
+      },
       "features": []
     },
     {
@@ -46,16 +65,25 @@
       "fid": 10,
       "lines": {
         "includes": {
-          "sub_type": [8],
-          "map_source": [12]
+          "sub_type": [
+            8
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4, 10]
+          "sub_type": [
+            4,
+            10
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "features": []
@@ -66,10 +94,15 @@
       "lines": {},
       "points": {
         "includes": {
-          "sub_type": [4, 10]
+          "sub_type": [
+            4,
+            10
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "features": []
@@ -79,35 +112,49 @@
       "fid": 19,
       "lines": {
         "includes": {
-          "sub_type": [13]
+          "sub_type": [
+            13
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4, 10, 12]
+          "sub_type": [
+            4,
+            10,
+            12
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "features": []
     },
     {
       "id": 8,
-      "fid": 20,      
-      "points": { 
-        "includes": { 
-          "id": [50912] 
+      "fid": 20,
+      "points": {
+        "includes": {
+          "id": [
+            50912
+          ]
         }
-     }, 
+      },
       "indigenous": {
         "includes": {
-          "ID": [36124]
+          "ID": [
+            36124
+          ]
         }
       },
       "homelands": {
         "includes": {
-          "ID": [4079]
+          "ID": [
+            4079
+          ]
         }
       },
       "features": []
@@ -119,7 +166,14 @@
       "points": {},
       "polys": {
         "includes": {
-          "id": [4362, 4355, 4145, 4349, 4092, 4356]
+          "id": [
+            4362,
+            4355,
+            4145,
+            4349,
+            4092,
+            4356
+          ]
         }
       },
       "features": []
@@ -131,7 +185,12 @@
       "points": {},
       "polys": {
         "includes": {
-          "id": [4207, 4208, 4224, 4160]
+          "id": [
+            4207,
+            4208,
+            4224,
+            4160
+          ]
         }
       },
       "features": []
@@ -141,12 +200,23 @@
       "fid": 22,
       "polys": {
         "includes": {
-          "id": [4207, 4208, 4224, 4160]
+          "id": [
+            4207,
+            4208,
+            4224,
+            4160
+          ]
         }
       },
       "indigenous": {
         "includes": {
-          "ID": [36681, 35919, 36519, 36677, 34083]
+          "ID": [
+            36681,
+            35919,
+            36519,
+            36677,
+            34083
+          ]
         }
       },
       "features": []
@@ -156,15 +226,21 @@
       "fid": 23,
       "lines": {
         "includes": {
-          "sub_type": [13]
+          "sub_type": [
+            13
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4]
+          "sub_type": [
+            4
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "features": []
@@ -175,13 +251,21 @@
       "lines": {},
       "points": {
         "includes": {
-          "sub_type": [4, 12]
+          "sub_type": [
+            4,
+            12
+          ]
         }
       },
       "polys": {
         "includes": {
-          "sub_type": [7],
-          "map_source": [16, 19]
+          "sub_type": [
+            7
+          ],
+          "map_source": [
+            16,
+            19
+          ]
         },
         "excludes": {}
       },
@@ -192,14 +276,22 @@
       "fid": 35,
       "lines": {
         "includes": {
-          "sub_type": [5],
-          "map_source": [12]
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],  
-          "map_source": [12] 
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "polys": {},
@@ -210,13 +302,20 @@
       "fid": 36,
       "lines": {
         "includes": {
-          "sub_type": [5, 13]
+          "sub_type": [
+            5,
+            13
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],  
-          "map_source": [12] 
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "polys": {},
@@ -227,14 +326,22 @@
       "fid": 24,
       "lines": {
         "includes": {
-          "sub_type": [5],
-          "map_source": [12]
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],  
-          "map_source": [12]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "polys": {},
@@ -245,13 +352,22 @@
       "fid": 38,
       "lines": {
         "includes": {
-           "id": [7832, 7860, 7807, 7841]
+          "id": [
+            7832,
+            7860,
+            7807,
+            7841
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],  
-          "map_source": [12]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "polys": {},
@@ -262,8 +378,12 @@
       "fid": 17,
       "lines": {
         "includes": {
-          "sub_type": [8],
-          "map_source": [19]
+          "sub_type": [
+            8
+          ],
+          "map_source": [
+            19
+          ]
         }
       },
       "points": {},
@@ -275,8 +395,13 @@
       "fid": 35,
       "lines": {
         "includes": {
-          "sub_type": [5, 8],
-          "map_source": [19]
+          "sub_type": [
+            5,
+            8
+          ],
+          "map_source": [
+            19
+          ]
         }
       },
       "points": {},
@@ -288,11 +413,18 @@
       "fid": 26,
       "points": {
         "includes": {
-          "sub_type": [4, 10],
-          "map_source": [5]
+          "sub_type": [
+            4,
+            10
+          ],
+          "map_source": [
+            5
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "polys": {},
@@ -304,11 +436,17 @@
       "lines": {},
       "points": {
         "includes": {
-          "sub_type": [4],
-          "map_source": [1]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            1
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "polys": {
@@ -322,16 +460,26 @@
       "fid": 26,
       "lines": {
         "includes": {
-          "id": [830361]
+          "id": [
+            830361
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4, 10],
-          "map_source": [5]
+          "sub_type": [
+            4,
+            10
+          ],
+          "map_source": [
+            5
+          ]
         },
         "excludes": {
-          "id": [52832, 52880]
+          "id": [
+            52832,
+            52880
+          ]
         }
       },
       "polys": {},
@@ -342,13 +490,19 @@
       "fid": 41,
       "lines": {
         "includes": {
-          "sub_type": [13]
+          "sub_type": [
+            13
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],
-          "identity": [3]
+          "sub_type": [
+            4
+          ],
+          "identity": [
+            3
+          ]
         }
       },
       "polys": {},
@@ -359,13 +513,19 @@
       "fid": 28,
       "lines": {
         "includes": {
-          "sub_type": [13]
+          "sub_type": [
+            13
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],
-          "map_source": [8]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            8
+          ]
         }
       },
       "polys": {},
@@ -376,8 +536,12 @@
       "fid": 33,
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [12]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            12
+          ]
         }
       },
       "points": {},
@@ -389,8 +553,12 @@
       "fid": 28,
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [17]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            17
+          ]
         }
       },
       "points": {},
@@ -402,16 +570,30 @@
       "fid": 29,
       "lines": {
         "includes": {
-          "id": [8210, 6768, 7860, 6746, 6747, 6738]
+          "id": [
+            8210,
+            6768,
+            7860,
+            6746,
+            6747,
+            6738
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],
-          "map_source": [12, 15]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12,
+            15
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "polys": {},
@@ -422,16 +604,43 @@
       "fid": 30,
       "lines": {
         "includes": {
-          "sub_type": [5],
-          "map_source": [19]
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            19
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4, 10, 12]
+          "sub_type": [
+            4,
+            10,
+            12
+          ]
         },
         "excludes": {
-          "map_source": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+          "map_source": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ]
         }
       },
       "polys": {},
@@ -442,17 +651,29 @@
       "fid": 31,
       "lines": {
         "includes": {
-        "sub_type": [5],
-        "map_source": [19]
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            19
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],
-          "map_source": [19]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            19
+          ]
         },
         "excludes": {
-          "identity": [2, 3, 4]
+          "identity": [
+            2,
+            3,
+            4
+          ]
         }
       },
       "polys": {},
@@ -465,8 +686,10 @@
       "points": {},
       "polys": {
         "includes": {
-          "id": [4208]
-        }      
+          "id": [
+            4208
+          ]
+        }
       },
       "features": []
     },
@@ -477,8 +700,12 @@
       "points": {},
       "polys": {
         "includes": {
-          "sub_type": [7],
-          "map_source": [7]
+          "sub_type": [
+            7
+          ],
+          "map_source": [
+            7
+          ]
         }
       },
       "features": []
@@ -488,22 +715,35 @@
       "fid": 25,
       "lines": {
         "includes": {
-          "sub_type": [5],
-          "map_source": [8]
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            8
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],
-          "map_source": [8]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            8
+          ]
         },
         "excludes": {
-          "identity": [2, 3]
+          "identity": [
+            2,
+            3
+          ]
         }
       },
       "polys": {
         "includes": {
-          "id": [981]
+          "id": [
+            981
+          ]
         },
         "excludes": {}
       },
@@ -515,16 +755,26 @@
       "lines": {},
       "points": {
         "includes": {
-          "sub_type": [4],
-          "map_source": [12]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "polys": {
         "includes": {
-          "id": [4207, 4208, 4224]
+          "id": [
+            4207,
+            4208,
+            4224
+          ]
         }
       },
       "features": []
@@ -536,7 +786,12 @@
       "points": {},
       "polys": {
         "includes": {
-          "id": [4063, 4144, 4161, 4164]
+          "id": [
+            4063,
+            4144,
+            4161,
+            4164
+          ]
         }
       },
       "features": []
@@ -546,14 +801,20 @@
       "fid": 39,
       "lines": {
         "includes": {
-          "id": [82666]
+          "id": [
+            82666
+          ]
         }
       },
       "points": {},
       "polys": {
         "includes": {
-          "sub_type": [7],
-          "map_source": [7]
+          "sub_type": [
+            7
+          ],
+          "map_source": [
+            7
+          ]
         }
       },
       "features": []
@@ -563,14 +824,20 @@
       "fid": 39,
       "lines": {
         "includes": {
-          "id": [82666]
+          "id": [
+            82666
+          ]
         }
       },
       "points": {},
       "polys": {
         "includes": {
-          "sub_type": [7],
-          "map_source": [7]
+          "sub_type": [
+            7
+          ],
+          "map_source": [
+            7
+          ]
         }
       },
       "features": []
@@ -580,22 +847,30 @@
       "fid": 39,
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "identity": [1]
+          "sub_type": [
+            3
+          ],
+          "identity": [
+            1
+          ]
         }
       },
       "points": {},
       "polys": {},
       "excludes": {},
       "features": []
-    },    
+    },
     {
       "id": 38,
       "fid": 40,
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [17]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            17
+          ]
         }
       },
       "points": {},
@@ -610,7 +885,9 @@
       "points": {},
       "polys": {
         "includes": {
-          "id": [4378]
+          "id": [
+            4378
+          ]
         }
       },
       "features": []
@@ -620,37 +897,49 @@
       "fid": 15,
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [19]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            19
+          ]
         }
       },
       "points": {
         "includes": {
-          "sub_type": [4],
-          "map_source": [12]
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "polys": {},
       "features": []
     },
-    
     {
       "id": 500,
-      "fid": 15,
+      "fid": 18,
       "points": {},
       "polys": {
         "includes": {
           "id": [
-            4130, 4131, 4161, 4088, 4107, 4101, 4133, 4132, 4104, 4090, 4114,
-            4113, 4109, 4367, 4160, 4356, 4362, 4355, 4361, 4349, 4346, 4092,
-            4097, 4091, 4072, 4138, 4117, 4122, 4135, 4153, 4159, 4156, 4157,
-            4139, 4137, 4134, 4076, 4127, 4116, 4114, 4120, 4102, 4082, 4081,
-            4079, 4197, 4105, 4144, 4067, 4115, 4148, 4126, 4146, 4147, 4089,
-            4129, 4152, 4085, 4087, 4112, 4096, 4086, 4103, 4118, 4110, 4111,
-            4150, 4119, 4060, 4099, 4140, 4084, 4154
+            4092,
+            4362,
+            4117,
+            4134,
+            4137,
+            4079,
+            4081,
+            4346,
+            4072,
+            4133
           ]
         },
         "excludes": {}
@@ -660,11 +949,13 @@
     },
     {
       "id": 600,
-      "fid": 15,
+      "fid": 24,
       "points": {},
       "lines": {
         "includes": {
-          "sub_type": [13]
+          "sub_type": [
+            13
+          ]
         },
         "excludes": {}
       },
@@ -673,18 +964,41 @@
     },
     {
       "id": 700,
-      "fid": 15,
+      "fid": 41,
       "points": {
         "includes": {
-          "sub_type": [12]
+          "sub_type": [
+            12
+          ]
         }
       },
       "lines": {
         "includes": {
           "id": [
-            82980, 82979, 82978, 82977, 82967, 82966, 82981, 83450, 82983,
-            83451, 82983, 82985, 83449, 3082, 82988, 6467, 82970, 6358, 6475,
-            82969, 82970, 82968, 82959, 82451
+            82980,
+            82979,
+            82978,
+            82977,
+            82967,
+            82966,
+            82981,
+            83450,
+            82983,
+            83451,
+            82983,
+            82985,
+            83449,
+            3082,
+            82988,
+            6467,
+            82970,
+            6358,
+            6475,
+            82969,
+            82970,
+            82968,
+            82959,
+            82451
           ]
         },
         "excludes": {}
@@ -697,10 +1011,16 @@
       "fid": 12,
       "points": {
         "includes": {
-          "sub_type": [4, 10, 12]
+          "sub_type": [
+            4,
+            10,
+            12
+          ]
         },
         "excludes": {
-          "identity": [1]
+          "identity": [
+            1
+          ]
         }
       },
       "polys": {
@@ -711,12 +1031,16 @@
     },
     {
       "id": 900,
-      "fid": 15,
+      "fid": 18,
       "points": {},
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [3]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            3
+          ]
         },
         "excludes": {}
       },
@@ -725,12 +1049,16 @@
     },
     {
       "id": 901,
-      "fid": 15,
+      "fid": 18,
       "points": {},
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [7]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            7
+          ]
         },
         "excludes": {}
       },
@@ -739,15 +1067,24 @@
     },
     {
       "id": 902,
-      "fid": 15,
+      "fid": 18,
       "points": {},
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [12]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            12
+          ]
         },
         "excludes": {
-          "id": [6065, 6647, 3834, 82916]
+          "id": [
+            6065,
+            6647,
+            3834,
+            82916
+          ]
         }
       },
       "excludes": {},
@@ -755,12 +1092,34 @@
     },
     {
       "id": 903,
-      "fid": 15,
+      "fid": 18,
       "points": {},
       "lines": {
         "includes": {
-          "sub_type": [3],
-          "map_source": [19]
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            19
+          ]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 1000,
+      "fid": 25,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            19
+          ]
         },
         "excludes": {}
       },
