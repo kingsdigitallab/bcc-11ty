@@ -139,13 +139,35 @@ export class D3intro {
         return pathString;
     }
 
+    getHomelandLabel(id, european){
+        let label = "";
+        if (this.homelandsLabels){
+
+            for (let x=0; x < this.homelandsLabels.length;x++){
+                if (parseInt(this.homelandsLabels[x].id) == parseInt(id)){
+                   // console.log(this.homelandsLabels[x]);
+                    if (european){
+                        label = this.homelandsLabels[x]["Current normalised text"];
+                    }else {
+                        label = this.homelandsLabels[x].Indigenous_name;
+                    }
+                    break;
+                }
+            }
+        }
+
+        return label;
+    }
+
     async drawHomelandsIntro(map, features) {
+
+
         this.svg
             .selectAll(".homelands")
             .data(features)
             .join("path")
             .attr("class", "homelands")
-            .attr("title", (d) => d.properties.norm_text)
+            .attr("title", function(d){ this.getHomelandLabel(d.properties.id, true);}.bind(this))
             .attr("stroke", "black")
             .attr("fill", "none")
             .attr("stroke-width", "0")
@@ -160,21 +182,36 @@ export class D3intro {
                 const centreY = bbox.y + bbox.height / 2;
                 this.svg
                     .append("text") // <-- now add the text element
-                    .text(d.properties.norm_text)
+                    .text(this.getHomelandLabel(d.properties.id, true))
+                    .attr("indigenousLabel", this.getHomelandLabel(d.properties.id, false))
+                    .attr("class", "homelandLabel")
                     .attr("x", centreX)
                     .attr("y", centreY)
                     .attr("fill", "#0804ee")
                     .attr("text-anchor", "middle");
             });
+        await this.sleep(2000);
+
+        // Now do the label transition
+        this.svg.selectAll(".homelandLabel")
+            .transition().delay((d, i) => i * 20).duration(2000).style('opacity', 0).on("end", function(d, i, nodes){
+                nodes[i].innerHTML= nodes[i].getAttribute("indigenousLabel");
+                d3.select(nodes[i]).transition().delay((d, i) => i * 20).duration(2000).style('opacity', 1);
+        });
+
     }
 
     /** Animated intro for the homelands section in D3*/
     async playHomelandsIntro(map) {
 
         if (!this.homelandsLabels) {
-            this.homelandsLabels = await this.loadShapeFile(
+            let homelandsData = await this.loadShapeFile(
                 this.geometryUris.homelands
             );
+            if (homelandsData){
+                this.homelandsLabels = homelandsData.homelandsData;
+            }
+
         }
 
         if (this.homelandsSlide) {
@@ -436,7 +473,17 @@ export class D3intro {
 
         return true;
     }
-
+/*
+this.lineLandRouteStyle = {
+            stroke: true,
+            //dashArray: "7 6",
+            lineCap: "square",
+            lineJoin: "arcs",
+            color: "#FFFFFF",
+            weight: 3,
+            fill: false,
+        };
+ */
     async drawLines(features, duration, colour, majorClass, minorClass) {
         this.svg
             .selectAll("." + minorClass)
@@ -465,7 +512,7 @@ export class D3intro {
         map.flyToBounds(this.L.geoJson(this.startingBounds.lines).getBounds());
 
         let drawDuration = 2500;
-        let colour = "red";
+        let colour = "black";
         let majorClass = "lines";
         let minorClass = "border";
         let frameDelay = 1000;

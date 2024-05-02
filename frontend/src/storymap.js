@@ -60,7 +60,7 @@ export class StoryMap {
             fill: "black",
             "font-family": "EB Garamond, serif",
             "font-weight": "bold",
-			"offset": -10,
+            "offset": -10,
         };
         this.initStyles();
         // Map lookup
@@ -120,8 +120,14 @@ export class StoryMap {
             selectall_features: "selectallFeatures"
         };
 
+        // Explore filters disabled by default
+        this.exploreFiltersDisabled = true;
+        this.exploreFiltersDisabledClass = "filterDisabled";
+        this.filterControlsVisible = false;
+
         // Total map and explore filters currently applied
         this.totalExploreFilters = 7;
+        this.exploreSlideId = 1000;
         this.totalExploreFiltersApplied = 0;
         this.totalMapFilters = 17;
         this.totalMapFiltersApplied = 0;
@@ -288,7 +294,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#000000",
             fillColor: "#808080",
-			fill:'url(/bcc-11ty/assets/img/stories/image-writing.png)',
+            fill: 'url(/bcc-11ty/assets/img/stories/image-writing.png)',
             weight: 2,
             //fill: true,
             opacity: 0.3,
@@ -588,18 +594,29 @@ export class StoryMap {
     async triggerSlideMapEvents(slideid) {
         /* Trigger intros */
         //console.log(slideid);
-        if (this.d3Intro.slideIds[slideid + ""]) {
+
+
+        if (slideid == this.exploreSlideId) {
+            this.storyFeatureLayerGroup.clearLayers();
+            this.loadExploreLayer();
+        } else if (this.d3Intro.slideIds[slideid + ""]) {
             // This slide triggers an animated slide
             // Clear layers
             console.log("Section intro :" + slideid);
             this.storyFeatureLayerGroup.clearLayers();
             this.d3Intro.SectionIntro(this.map, slideid, this.slides);
-        } else if (slideid != "explore") {
-            //if (this.d3Intro.svgDrawn) {
-                // Clear the svg overlay so we can replace with layers
-                this.d3Intro.stopAll();
-                this.d3Intro.clearSvg();
-            //}
+            if (this.filterControlsVisible) {
+                this.toggleFilterControls();
+            }
+        } else if (slideid != this.exploreSlideId) {
+
+            // Clear the svg overlay so we can replace with layers
+            this.d3Intro.stopAll();
+            this.d3Intro.clearSvg();
+            if (this.filterControlsVisible) {
+                this.toggleFilterControls();
+            }
+
             let slide = this.getSlideById(slideid);
             if (slide) {
                 // Clear layers and text
@@ -630,10 +647,8 @@ export class StoryMap {
                 }
                 this.lastSlideDisplayed = slide;
             }
-        } else if (slideid == "explore") {
-            this.storyFeatureLayerGroup.clearLayers();
-            this.loadExploreLayer();
         }
+        return true;
     }
 
     async initMap(lat, lng, zoom) {
@@ -713,7 +728,7 @@ export class StoryMap {
         let slides = document.getElementsByClassName("mapSlide");
         this.observerEnabled = true;
 
-        console.log(slides);
+        //console.log(slides);
 
         let observer = new IntersectionObserver(
             function (entries) {
@@ -733,7 +748,6 @@ export class StoryMap {
                         for (let x = 0; x < slides.length; x++) {
                             if (slides[x].dataset.slideid == lastIntersected) {
                                 // Are we scrolling up or down, set previous or next slide
-                                //console.log(window.scrollY + " :: " + intersectionY);
                                 if (window.scrollY < intersectionY && x > 0) {
                                     nextSlide = slides[x - 1];
                                 } else if (window.scrollY > intersectionY && (x + 1) < slides.length) {
@@ -762,6 +776,15 @@ export class StoryMap {
                 threshold: [0.4],
             }
         );
+
+        // Scroll end listener to catch the end of an over link jump
+        /*document.addEventListener("scrollend", function (e) {
+
+            if (!this.observerEnabled) {
+                console.log("Enabled");
+                this.observerEnabled = true;
+            }
+        });*/
 
         //this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
         for (let s = 0; s < this.slideElements.length; s++) {
@@ -901,7 +924,7 @@ export class StoryMap {
         };
 
         // Init our d3 intro class and pass relevant layer data
-        this.d3Intro = new D3intro(this.storyUris, this.L, this.d3, oldStartingBounds );
+        this.d3Intro = new D3intro(this.storyUris, this.L, this.d3, oldStartingBounds);
         this.d3Intro.homelandsSlide = this.getSlideById(500);
         this.d3Intro.pathways1Slide = this.getSlideById(600);
         this.d3Intro.pathways2Slide = this.getSlideById(700);
@@ -919,23 +942,28 @@ export class StoryMap {
             // get the parent
             target = target.parentElement;
         }
-        console.log(target.dataset);
         //if (!target || !target.dataset){return false;}
         this.observerEnabled = false;
         let dataset = target.dataset;
         if (target.dataset) {
-            let slideId = dataset.slideid;
-            if (slideId) {
-                console.log(slideId);
-                this.triggerSlideMapEvents(slideId);
-            }
-            setTimeout(function () {
-                this.observerEnabled = true;
-            }.bind(this), 500);
-        }
 
-        return false;
+            // In a timeout so we have time to scroll there
+            this.overviewTimeout = setTimeout(function () {
+                 // Make sure it's clear
+                 this.storyFeatureLayerGroup.clearLayers();
+                 // Trigger the d3 slide we've arrived at.
+                 let slideId = dataset.slideid;
+                 if (slideId) {
+                     console.log(slideId);
+                     this.triggerSlideMapEvents(slideId);
+                 }
+                 // re-enable observer
+                 this.observerEnabled = true;
+             }.bind(this), 1500);
+        }
+        return true;
     }
+
 
     clearFeatureText() {
         this.storyFeatureLayerGroup.eachLayer(
@@ -971,8 +999,8 @@ export class StoryMap {
                                     if (this.map.getZoom() >= this.textMinZoomLevel) {
                                         let textAttributes = this.defaultTextAttributes;
                                         textAttributes["font-size"] = TextSize;
-										// nullifying text - not sure that this is needed
-										// but leaving code in place incase ...
+                                        // nullifying text - not sure that this is needed
+                                        // but leaving code in place incase ...
                                         feature.setText(null/*this.textFeatures[featureId].text*/, {
                                             orientation: this.textFeatures[featureId].orientation,
                                             offset: 5,
@@ -988,6 +1016,7 @@ export class StoryMap {
                 //for (let x=0; x< this.storyFeatureLayerGroup.getLayers());
             }.bind(this)
         );
+
     }
 
     /*
@@ -1037,7 +1066,7 @@ export class StoryMap {
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
                         // temp adding sub_type and type to popups
-                        + "<p>sub_type:" + feature.properties.sub_type +"</p>"
+                        + "<p>sub_type:" + feature.properties.sub_type + "</p>"
                     );
                 }
             } else if (feature.properties.map_text) {
@@ -1049,7 +1078,7 @@ export class StoryMap {
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
                         // temp adding sub_type and type to popups
-                        + "<p>sub_type:" + feature.properties.sub_type +"</p>"
+                        + "<p>sub_type:" + feature.properties.sub_type + "</p>"
                     );
                 }
             } else if (feature.properties.norm_text) {
@@ -1059,9 +1088,9 @@ export class StoryMap {
                         feature.properties.norm_text +
                         "</br><strong>" +
                         this.mapLookup[feature.properties.map_source] +
-                        "</strong>" 
+                        "</strong>"
                         // temp adding sub_type and type to popups
-                        + "<p>sub_type:" + feature.properties.sub_type +"</p>"
+                        + "<p>sub_type:" + feature.properties.sub_type + "</p>"
                     );
                 }
             } else {
@@ -1310,28 +1339,34 @@ export class StoryMap {
             selectAllExplore.addEventListener(
                 "click",
                 function (event) {
+                    let status = event.target.checked;
                     this.toggleAllFeaturesEnabled = event.target.checked;
                     this.toggleAll(this.exploreSelectors.explore_filter, event.target.checked);
+                    selectAllExplore.checked = status;
                 }.bind(this)
             );
             selectAllExplore.checked = false;
         }
         //selectallMaps
-        let selectAllMaps = document.getElementById(this.exploreSelectors.selectall_maps)
+        let selectAllMaps = document.getElementById(this.exploreSelectors.selectall_maps);
         if (selectAllMaps) {
             selectAllMaps.addEventListener(
                 "click",
                 function (event) {
+                    let status = event.target.checked;
                     this.toggleAllMapsEnabled = event.target.checked;
                     this.toggleAll(this.exploreSelectors.map_filter, event.target.checked);
+                    selectAllMaps.checked = status;
                 }.bind(this)
             );
             selectAllMaps.checked = false;
         }
 
-
         this.toggleAllFeaturesEnabled = false;
         this.toggleAllMapsEnabled = false;
+
+        let filterWrapper = document.getElementById("filter-wrapper");
+        filterWrapper.style.display = "none";
 
     }
 
@@ -1342,6 +1377,7 @@ export class StoryMap {
     toggleAll(selector, checked) {
 
         let elements = document.querySelectorAll(selector);
+        console.log(elements);
         // Switch to prevent updates on each criteria selected
         Array.prototype.forEach.call(elements, function (el) {
             if (el.checked != checked) {
@@ -1458,7 +1494,7 @@ export class StoryMap {
         // Filter by subtype first
         let filteredFeatures = [];
         let subtypeFeatures = [];
-        //console.log(this.exploreFilterControl.sub_type.length);
+        console.log(this.exploreFilterControl.sub_type);
         if (this.exploreFeatures) {
             let exploreFilteringEnabled = false;
             if (!this.toggleAllFeaturesEnabled) {
@@ -1473,10 +1509,8 @@ export class StoryMap {
                     }
                 }
             }
-            if (this.toggleAllFeaturesEnabled || !exploreFilteringEnabled) {
-                // All or none selected, ignore these criteria
-                subtypeFeatures = this.exploreFeatures;
-            } else {
+            if (!this.exploreFiltersDisabled) {
+
                 this.exploreFeatures.forEach(
                     function (item) {
                         let subtypeIndex = -1;
@@ -1505,7 +1539,8 @@ export class StoryMap {
                 );
             }
         }
-        // Filter what we've done in subtype
+
+        // Filter what we've done in subtype by map
         // todo we need default behaviour so toggle all if explore filter selected
         // but don't filter
         // Otherwise filter
@@ -1516,6 +1551,17 @@ export class StoryMap {
             filteredFeatures = [];
         } else if (this.exploreFilterControl.maps.length > 0 && !this.toggleAllMapsEnabled) {
             // Filter by map
+
+            // If explored filters are disabled, enable them
+            if (this.exploreFiltersDisabled) {
+                let filters = document.getElementById("mapFilters");
+                let removeClass = filters.getAttribute("class").replace(this.exploreFiltersDisabledClass, "");
+                console.log(removeClass);
+                filters.setAttribute("class", removeClass);
+                this.exploreFiltersDisabled = false;
+            }
+            console.log(subtypeFeatures);
+
             let iterateFeatures = subtypeFeatures;
             iterateFeatures.forEach(
                 function (item) {
@@ -1662,57 +1708,60 @@ export class StoryMap {
         }
     }
 
-    /*
-            addFeatureToSlideGroups(featureType, feature) {
-                for (let s = 0; s < this.slides.length; s++) {
-                    // Foreach slide rule
-                    let slide = this.slides[s];
-                    if (slide && feature != null) {
-                        let lineIncludes = null;
-                        let lineExcludes = null;
-                        let polyIncludes = null;
-                        let polyExcludes = null;
-                        let pointIncludes = null;
-                        let pointExcludes  = null;
-                        let indigenousIncludes = null;
-
-                        if (slide.lines) {
-                            lineIncludes = slide.lines.includes;
-                            lineExcludes = slide.lines.excludes;
-                        }
-
-                        if (slide.polys){
-                            polyIncludes = slide.polys.includes;
-                            polyExcludes = slide.polys.excludes;
-                        }
-
-                        if (slide.points != null){
-                            if (slide.points.includes !=null){
-                              pointIncludes = slide.points.includes;
-                               console.log(slide.points.includes.length);
-                            }
-                            if (slide.points.excludes !=null && slide.points.excludes.length > 0){
-                                pointExcludes = slide.points.excludes;
-                            }
-
-
-                        }
-
-                        let includeFeature = this.isFeatureIncluded(
-                            featureType, feature, lineIncludes, lineExcludes,
-                            polyIncludes, polyExcludes,
-                            pointIncludes, pointExcludes, indigenousIncludes
-                        )
-
-                        if (includeFeature) {
-                            slide.features.push(feature);
-                        }
-                    }
-                }
-            }*/
-
     // Explore and filter functionality
 
     loadExploreLayer() {
+        console.log('init explore layer');
+        // Make sure d3 is clear
+        this.d3Intro.stopAll();
+        this.d3Intro.clearSvg();
+        clearTimeout(this.overviewTimeout);
+        this.toggleFilterControls();
+
+        let mapFilters = document.querySelectorAll(this.exploreSelectors.map_filter);
+        if (mapFilters) {
+            for (let f = 0; f < mapFilters.length; f++) {
+                mapFilters[f].checked = false;
+            }
+        }
+
+        // Subtype filters (borders, land routes, etc.)
+        let subtypeFilters = document.querySelectorAll(this.exploreSelectors.explore_filter);
+        if (subtypeFilters) {
+            for (let f = 0; f < subtypeFilters.length; f++) {
+                subtypeFilters[f].checked = false;
+            }
+        }
+
+        //selectallFeatures
+        let selectAllExplore = document.getElementById(this.exploreSelectors.selectall_features);
+        if (selectAllExplore) {
+            selectAllExplore.checked = false;
+        }
+        //selectallMaps
+        let selectAllMaps = document.getElementById(this.exploreSelectors.selectall_maps);
+        if (selectAllMaps) {
+            selectAllMaps.checked = false;
+        }
+
+        this.toggleAllFeaturesEnabled = false;
+        this.toggleAllMapsEnabled = false;
+
+    }
+
+    toggleFilterControls() {
+        let filterWrapper = document.getElementById("filter-wrapper");
+        let filterButton = document.getElementsByClassName("filter-button")[0];
+        if (this.filterControlsVisible) {
+            filterButton.click();
+            filterWrapper.style.display = "none";
+            this.filterControlsVisible = false;
+        } else {
+            // Toggle the filter and make it visible
+            filterWrapper.style.display = "block";
+            filterButton.click();
+            this.filterControlsVisible = true;
+        }
+
     }
 }

@@ -17,6 +17,11 @@ layout: base.liquid
         #filterContainer {
             display: block; /* Initially visible */
         }
+
+        .filterDisabled{
+            pointer-events: none;
+            opacity: 0.2;
+        }
     </style>
 </head>
 <body>
@@ -33,7 +38,8 @@ layout: base.liquid
             <li><a class="overviewLink" href="#s-3" data-slideId="600">3<span>Pathways</span></a></li>
             <li><a class="overviewLink" href="#s-4" data-slideId="700">4<span>Villagers, Settlers</span></a></li>
             <li><a class="overviewLink" href="#s-5" data-slideId="900">5<span>Lines</span></a></li>
-            <li><a class="overviewLink" href="#filters">Explore </a></li>
+            <!--  -->
+            <li><a class="overviewLink" href="#filters" data-slideId="1000" >Explore </a></li>
         </ol>
     </nav>
 
@@ -95,25 +101,39 @@ layout: base.liquid
         {% renderFile "./stories/lines.md", "liquid" %}
     </section>
 
-    <section id="filters">
-        <article class="storyTitle mapSlide">
+      <section id="filters" class="sectionContainer" >
+        <div class="storyTitleSpacerAbove" id="s5-start"></div>
+        <article class="storyTitle mapSlide" id="slide_1000" data-slideId="1000">
             <h2>Explore</h2>
-        </article>
-        <article>
-            <p>Customize your search using the filters below.
+             <p>Customize your search using the filters below.
                 Choose the map images or feature icons to enable the filters you require.
             </p>
         </article>
-         <div class="storyTitleSpacerBelow"></div>
-         <div class="storyTitleSpacerBelow"></div>
+
+        <div class="article_spacer">&nbsp;</div>
          <div class="storyTitleSpacerBelow"></div>
 
     </section>
+    <!--
+     <div class="storyTitleSpacerBelow"></div>
+         <div class="storyTitleSpacerBelow"></div>
+
+    <section id="filters" class="sectionContainer">
+        <article class="storyTitle mapSlide" id="slide_1000" data-slideId="1000">
+            <h2>Explore</h2>
+        </article>
+
+         <div class="storyTitleSpacerBelow"></div>
+         <div class="storyTitleSpacerBelow"></div>
+         <div class="storyTitleSpacerBelow"></div>
+    </section>-->
+
+
 </div>
 
     <div id="filter-wrapper">
         <input type="checkbox" id="filter">
-        <label aria-label="filter list" class="filter-button" for="filter">
+        <label aria-label="filter list" id="filter-button" class="filter-button" for="filter">
           <h2>Filter</h2>
         </label>
 
@@ -230,7 +250,7 @@ layout: base.liquid
                 </ol>
             </section>
 
-            <section>
+            <section id="mapFilters" class="filterDisabled">
                 <header><h3>Features <em><span id="totalExploreFiltersApplied">0</span>/6 Selected</em></h3>
                 <span><input type="checkbox" id="selectallFeatures" name="selectall" value="All">
                 <label for="selectallFeatures">Select All</label></span>
