@@ -293,12 +293,11 @@ export class StoryMap {
             lineCap: "square",
             lineJoin: "arcs",
             color: "#000000",
-            fillColor: "#808080",
+            fillColor: "#80808050",
             fill: 'url(/bcc-11ty/assets/img/stories/image-writing.png)',
             weight: 2,
-            //fill: true,
             opacity: 0.3,
-            //fillOpacity: 0.1,
+            fillOpacity: 1,
         };
         this.polyToponymStyle = {
             stroke: true,
@@ -312,6 +311,49 @@ export class StoryMap {
             opacity: 0.5,
             fillOpacity: 0.5,
         };
+		// New poly styles for sub_type 14
+        this.polyDomainNativeStyle = {
+            stroke: true,
+            lineCap: "square",
+            lineJoin: "arcs",
+            color: "#5D1206",
+			fillOpacity: 0.5,
+            fillColor: "#5D120600", //fill colour completely transparent
+			fill: 'url(/bcc-11ty/assets/img/stories/vertical-hatch-red-5D1206.webp)',
+            weight: 3,
+            opacity: 1,
+		};
+		this.polyDomainHaudenasuaneeStyle = {
+            stroke: true,
+            lineCap: "square",
+            lineJoin: "arcs",
+            color: "#BFBFBF",
+            fillColor: "#BFBFBF00",
+			fill:'url(/bcc-11ty/assets/img/stories/vertical-hatch-gray-BFBFBF.webp)',
+            weight: 3,
+            opacity: 0.3,		
+		};		
+		this.polyDomainEuroStyle = {
+			stroke: true,
+            lineCap: "square",
+            lineJoin: "arcs",
+            color: "#427D67",
+			fillOpacity: 0.5,			
+            fillColor: "#427D6700",
+			fill:'url(/bcc-11ty/assets/img/stories/vertical-hatch-green-427D67.webp)',
+            weight: 3,
+            opacity: 1,
+		};		
+		
+		this.councilFireIcon = L.icon({
+			iconUrl: '/bcc-11ty/assets/img/stories/council-fire-optimised.webp',
+			shadowUrl: '/bcc-11ty/assets/img/stories/council-fire-shadow.webp',
+			iconSize: [20,20],
+			shadowSize: [20, 15],
+			iconAnchor: [10,19],
+			shadowAnchor: [10,14],
+			popupAnchor: [-3,-20]
+		})
     }
 
     async loadShapeFile(shape_url) {
@@ -506,6 +548,12 @@ export class StoryMap {
                             bubblingMouseEvents: true,
                         });
                 }
+            case 12: // Council fire
+                return this.L.marker(latlng, {
+                    icon: this.councilFireIcon,
+                    bubblingMouseEvents: true
+                });
+         			
             default: //other 
                 return this.L.circleMarker(latlng, {
                     radius: 4,
@@ -1116,7 +1164,8 @@ export class StoryMap {
                         layer.setStyle(this.polySeaRouteStyle);
                         break;
                     case 7:
-                        layer.setStyle(this.polyDescriptiveStyle);
+                        //layer.setStyle(this.polyDescriptiveStyle);
+						layer.setStyle(this.polyDomainNativeStyle);
                         break;
                     case 8:
                         layer.setStyle(this.polyRiverRouteStyle);
@@ -1142,6 +1191,22 @@ export class StoryMap {
                                 layer.setStyle(this.polyEuroStyle);
                         }
                         break;
+			        case 14:
+						// new sub_type for geographical features
+                        // Capture Indig vs Haudenasnee
+                        switch (feature.properties.identity) {
+                            case 2:
+                                // Red poly
+                                layer.setStyle(this.polyDomainNativeStyle);
+                                break;
+                            case 3:
+                                //Grey poly (Haudenasuanee)
+                                layer.setStyle(this.polyDomainHaudenasuaneeStyle);
+                                break;
+                            default:
+                                layer.setStyle(this.polyDomainEuroStyle);
+                        }
+                        break;						
                 }
                 break;
             // If lines
