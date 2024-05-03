@@ -1164,8 +1164,8 @@ export class StoryMap {
                         layer.setStyle(this.polySeaRouteStyle);
                         break;
                     case 7:
-                        //layer.setStyle(this.polyDescriptiveStyle);
-						layer.setStyle(this.polyDomainNativeStyle);
+                        layer.setStyle(this.polyDescriptiveStyle);
+						//layer.setStyle(this.polyDomainNativeStyle);
                         break;
                     case 8:
                         layer.setStyle(this.polyRiverRouteStyle);
