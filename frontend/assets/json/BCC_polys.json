@@ -25027,7 +25027,7 @@
       "properties": {
         "id": 4207,
         "feat_type": 5,
-        "sub_type": 7,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 2,
@@ -25175,7 +25175,7 @@
       "properties": {
         "id": 4224,
         "feat_type": 5,
-        "sub_type": 7,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 2,
@@ -25272,7 +25272,7 @@
       "properties": {
         "id": 4208,
         "feat_type": 5,
-        "sub_type": 7,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 2,
@@ -25531,7 +25531,7 @@
     { "type": "Feature", "properties": {
       "id": 4378,
       "feat_type": 5,
-      "sub_type": 7,
+      "sub_type": 14,
       "map_source": 17,
       "date_yr": 1784,
       "accuracy": 2,
