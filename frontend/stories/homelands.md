@@ -17,7 +17,7 @@ The sacred ties between land and people were recited in the Ohén:ton Karihwaté
 ::: slide 7
 **_Our Ancestors came out of this very Ground, and their Children have remained here ever since._**
 
-The land was political. Haudenosaunee oral tradition drew the land and its history together in multiple versions of the story of the formation of the Great League of Peace, and where Deganawidah taught Hiawatha the rituals of the condolence ceremony. As the Onondaga diplomat Canasatego declared at a treaty council in 1744, ‘our Ancestors came out of this very Ground, and their Children have remained here ever since’.
+The land was political. Haudenosaunee oral tradition drew the land and its history together in multiple versions of the story of the formation of the Great League of Peace, and where Deganawidah – born near what is now the Bay of Quinte in eastern Ontario - taught Hiawatha the rituals of the Condolence Ceremony. As the Onondaga diplomat Canasatego declared at a treaty council in 1744, ‘our Ancestors came out of this very Ground, and their Children have remained here ever since’.​
 :::
 
 ::: slide 8  
