@@ -548,7 +548,7 @@ export class StoryMap {
                             bubblingMouseEvents: true,
                         });
                 }
-           
+
             case 12: // Council fire
                 return this.L.marker(latlng, {
                     icon: this.councilFireIcon,
