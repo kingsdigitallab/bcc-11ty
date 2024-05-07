@@ -58,40 +58,72 @@ export class D3intro {
         this.svgDrawn = false;
     }
 
+
     async SectionIntro(map, slideid) {
         //&& !this.introRunning
         console.log("SectoinInto: " + slideid);
         if (this.slideIds[slideid + ""]) {
             let introRun = false;
             this.introRunning = true;
-            console.log(this.svgDrawn);
-            if (this.svgDrawn) {
-                // Clear any existing transitions and elements
-                this.stopAll();
-                this.clearSvg();
-            }
+
+            // Clear any existing transitions and elements
+            this.stopAll();
+            this.clearSvg();
+
+
+            //map.on("moveend", slideUpdate);
+            // Run this when we've reached the story frame
+            let playIntro = async function () {
+                switch (this.slideIds[slideid + ""]) {
+                    case "homelands":
+                        console.log("homelands");
+                        introRun = await this.playHomelandsIntro(map);
+                        break;
+                    case "pathways1":
+                        console.log("pathways1");
+                        introRun = await this.playPathways1Intro(map);
+                        await this.sleep(2000);
+                        this.clearSvg();
+                        introRun = await this.playPathways2Intro(map);
+                        break;
+                    case "pathways2":
+                        console.log("pathways2");
+                        introRun = await this.playPathways2Intro(map);
+                        break;
+                    case "villagerssettlers":
+                        console.log("settlers");
+                        introRun = await this.playvillagerssettlersSlide(map);
+                        break;
+                    case "lines":
+                        console.log("lines");
+                        introRun = await this.playLinesIntro(map);
+                        break;
+                }
+                map.off("moveend", playIntro);
+            }.bind(this);
+            map.on("moveend", playIntro);
+            let bounds = null;
             switch (this.slideIds[slideid + ""]) {
                 case "homelands":
-                    console.log("homelands");
-                    introRun = await this.playHomelandsIntro(map);
+                    bounds = this.startingBounds.homelands;
                     break;
                 case "pathways1":
-                    console.log("pathways1");
-                    introRun = await this.playPathways1Intro(map);
+                    bounds = this.startingBounds.pathways1;
                     break;
                 case "pathways2":
-                    console.log("pathways2");
-                    introRun = await this.playPathways2Intro(map);
+                    bounds = this.startingBounds.pathways2;
                     break;
                 case "villagerssettlers":
-                    console.log("settlers");
-                    introRun = await this.playvillagerssettlersSlide(map);
+                    bounds = this.startingBounds.villagerssettlers;
                     break;
                 case "lines":
-                    console.log("lines");
-                    introRun = await this.playLinesIntro(map);
+                    bounds = this.startingBounds.lines;
                     break;
             }
+            if (bounds) {
+                map.flyToBounds(bounds);
+            }
+
 
             this.svgDrawn = introRun;
         }
@@ -139,16 +171,16 @@ export class D3intro {
         return pathString;
     }
 
-    getHomelandLabel(id, european){
+    getHomelandLabel(id, european) {
         let label = "";
-        if (this.homelandsLabels){
+        if (this.homelandsLabels) {
 
-            for (let x=0; x < this.homelandsLabels.length;x++){
-                if (parseInt(this.homelandsLabels[x].id) == parseInt(id)){
-                   // console.log(this.homelandsLabels[x]);
-                    if (european){
+            for (let x = 0; x < this.homelandsLabels.length; x++) {
+                if (parseInt(this.homelandsLabels[x].id) == parseInt(id)) {
+                    // console.log(this.homelandsLabels[x]);
+                    if (european) {
                         label = this.homelandsLabels[x]["Current normalised text"];
-                    }else {
+                    } else {
                         label = this.homelandsLabels[x].Indigenous_name;
                     }
                     break;
@@ -167,7 +199,9 @@ export class D3intro {
             .data(features)
             .join("path")
             .attr("class", "homelands")
-            .attr("title", function(d){ this.getHomelandLabel(d.properties.id, true);}.bind(this))
+            .attr("title", function (d) {
+                this.getHomelandLabel(d.properties.id, true);
+            }.bind(this))
             .attr("stroke", "black")
             .attr("fill", "none")
             .attr("stroke-width", "0")
@@ -194,9 +228,9 @@ export class D3intro {
 
         // Now do the label transition
         this.svg.selectAll(".homelandLabel")
-            .transition().delay((d, i) => i * 20).duration(2000).style('opacity', 0).on("end", function(d, i, nodes){
-                nodes[i].innerHTML= nodes[i].getAttribute("indigenousLabel");
-                d3.select(nodes[i]).transition().delay((d, i) => i * 20).duration(2000).style('opacity', 1);
+            .transition().delay((d, i) => i * 20).duration(2000).style('opacity', 0).on("end", function (d, i, nodes) {
+            nodes[i].innerHTML = nodes[i].getAttribute("indigenousLabel");
+            d3.select(nodes[i]).transition().delay((d, i) => i * 20).duration(2000).style('opacity', 1);
         });
 
     }
@@ -208,18 +242,18 @@ export class D3intro {
             let homelandsData = await this.loadShapeFile(
                 this.geometryUris.homelands
             );
-            if (homelandsData){
+            if (homelandsData) {
                 this.homelandsLabels = homelandsData.homelandsData;
             }
 
         }
 
         if (this.homelandsSlide) {
-            map.flyToBounds(this.L.geoJson(this.startingBounds.homelands).getBounds());
+            //map.flyToBounds(this.startingBounds.homelands);
             await this.sleep(500);
             await this.drawHomelandsIntro(map, this.homelandsSlide.features);
 
-        } else{
+        } else {
             console.log('homelands slide not present!');
         }
 
@@ -233,7 +267,7 @@ export class D3intro {
      * @return {Promise<void>}
      */
     async playPathways1Intro(map) {
-        map.flyToBounds(this.L.geoJson(this.startingBounds.pathways1).getBounds());
+        //map.flyToBounds(this.startingBounds.pathways1);
         await this.sleep(1500);
 
         if (this.pathways1Slide && this.pathways1Slide.features.length > 0) {
@@ -262,6 +296,9 @@ export class D3intro {
         return true;
     }
 
+    /**
+     Split slides features by shape to display differently in d3
+     */
     static splitFeatures(features) {
         let splitFeatures = {
             points: [],
@@ -288,55 +325,99 @@ export class D3intro {
         return splitFeatures;
     }
 
+    /** Animated reveal of drawn pathway */
+    async drawPathway(feature){
+            await this.svg
+                .selectAll("path.road-" + feature.properties.id)
+                .each(function (d) {
+                    d.totalLength = this.getTotalLength();
+                })
+                .attr("stroke-dashoffset", (d) => d.totalLength)
+                .attr("stroke-dasharray", (d) => d.totalLength)
+                .attr("opacity", 1)
+                .transition()
+                .duration(2000)
+                .attr("stroke-dashoffset", 0)
+                .end();
+    }
+
     /**
      *  Pathways 2 intro (slide 14)
      * @param map
      * @return {Promise<boolean>}
      */
     async playPathways2Intro(map) {
-        map.flyToBounds(this.L.geoJson(this.startingBounds.pathways2).getBounds());
-        await this.sleep(1500);
+        //map.flyToBounds(this.startingBounds.pathways2);
+        //await this.sleep(1500);
+        console.log("pathways2");
 
         if (!this.pathways2Slide || this.pathways2Slide.features.length == 0) {
             return false;
         }
 
-        let splitFeatures = D3intro.splitFeatures(this.pathways2Slide.features);
 
+        let splitFeatures = D3intro.splitFeatures(this.pathways2Slide.features);
         if (splitFeatures.lines && splitFeatures.lines.length > 0) {
             this.svg
-                .selectAll(".road")
-                .data(this.pathways1Slide.features)
+                .selectAll(".roadHighlight")
+                .data(splitFeatures.lines)
                 .join("path")
-                .attr("class", "pathways2 road")
-                .attr("stroke", "brown")
+                .attr("class", (d) => "pathways2 roadHighlist road-" + d.properties.id)
+                .attr("lineCap", "square")
+                .attr("lineJoin", "round")
+                .attr("stroke", "#000000")
+                .attr("weight", "5")
+                .attr("opacity", 0)
                 .attr("fill", "none")
-                .attr("stroke-width", "1")
+                .attr("stroke-width", "5")
                 .attr("d", (d) => this.featureToPath(d));
 
-            await this.svg
-                .selectAll("path.road")
-                .each(function (d) {
-                    d.totalLength = this.getTotalLength();
-                })
-                .attr("stroke-dashoffset", (d) => d.totalLength)
-                .attr("stroke-dasharray", (d) => d.totalLength)
-                .transition()
-                .duration(2500)
-                .attr("stroke-dashoffset", 0)
-                .end();
+            this.svg
+                .selectAll(".road")
+                .data(splitFeatures.lines)
+                .join("path")
+                .attr("class", (d) => "pathways2 road-" + d.properties.id)
+                .attr("lineCap", "square")
+                .attr("lineJoin", "arcs")
+                .attr("stroke", "#FFFFFF")
+                .attr("weight", "3")
+                .attr("opacity", 1)
+                .attr("fill", "none")
+                .attr("stroke-width", "3")
+                .attr("d", (d) => this.featureToPath(d));
+
+
+            // Draw these in order so they look better
+            await this.drawPathway(splitFeatures.lines[0]);
+            await this.drawPathway(splitFeatures.lines[1]);
         }
 
-        if (splitFeatures.points && splitFeatures.points.length > 0) {
+        // Sort the features so they follow the points order in bcc_slides
+        let pointOrder = this.pathways2Slide.points.includes.id;
+
+        let sortedPoints = [];
+        for (let o = 0; o < pointOrder.length; o++) {
+            for (let p = 0; p < splitFeatures.points.length; p++) {
+                if (splitFeatures.points[p].properties.id === pointOrder[o]) {
+                    sortedPoints.push(splitFeatures.points[p]);
+                    break;
+                }
+            }
+        }
+
+        if (sortedPoints && sortedPoints.length > 0) {
+             console.log(sortedPoints);
+            //append('img').attr('src',"/assets/icon.svg")
+            //d3.select('svg').append('svg:image').attr('id', 'wtf2').attr('width','2%').attr('x', 1247).attr('y',292);
             this.svg
-                .selectAll("circle.pathways2")
-                .data(splitFeatures.points)
-                .join("circle")
+                .selectAll("image.pathways2")
+                .data(sortedPoints)
+                .join("svg:image")
                 .attr("class", "pathways2 dipsites")
-                .attr("fill", "red")
-                .attr("stroke", "black")
+                .attr('xlink:href',"/bcc-11ty/assets/img/icons/council-fire.svg")
+                .attr('width', "1%")
                 .attr(
-                    "cx",
+                    "x",
                     (d) =>
                         map.latLngToLayerPoint([
                             d.geometry.coordinates[1],
@@ -344,26 +425,27 @@ export class D3intro {
                         ]).x
                 )
                 .attr(
-                    "cy",
+                    "y",
                     (d) =>
                         map.latLngToLayerPoint([
                             d.geometry.coordinates[1],
                             d.geometry.coordinates[0],
                         ]).y
-                )
-                .attr("r", 20)
+                ).attr("opacity", 0)
                 .transition()
-                .attr("r", 5)
+                .delay((d, i) => i * 500)
+                .attr("opacity", 1)
                 .duration(1000)
                 .end();
+
         }
         return true;
     }
 
     async playvillagerssettlersSlide(map) {
-        map.flyToBounds(
-            this.L.geoJson(this.startingBounds.villagerssettlers).getBounds()
-        );
+        /*map.flyToBounds(
+            this.startingBounds.villagerssettlers
+        );*/
         await this.sleep(1500);
         if (
             !this.villagerssettlersSlide ||
@@ -473,17 +555,18 @@ export class D3intro {
 
         return true;
     }
-/*
-this.lineLandRouteStyle = {
-            stroke: true,
-            //dashArray: "7 6",
-            lineCap: "square",
-            lineJoin: "arcs",
-            color: "#FFFFFF",
-            weight: 3,
-            fill: false,
-        };
- */
+
+    /*
+    this.lineLandRouteStyle = {
+                stroke: true,
+                //dashArray: "7 6",
+                lineCap: "square",
+                lineJoin: "arcs",
+                color: "#FFFFFF",
+                weight: 3,
+                fill: false,
+            };
+     */
     async drawLines(features, duration, colour, majorClass, minorClass) {
         this.svg
             .selectAll("." + minorClass)
@@ -509,7 +592,7 @@ this.lineLandRouteStyle = {
     }
 
     async playLinesIntro(map) {
-        map.flyToBounds(this.L.geoJson(this.startingBounds.lines).getBounds());
+        //map.flyToBounds(this.startingBounds.lines);
 
         let drawDuration = 2500;
         let colour = "black";

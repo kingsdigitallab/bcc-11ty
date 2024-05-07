@@ -138,8 +138,8 @@ export class StoryMap {
     }
 
     initStyles() {
-        // line Styles
 
+        // line Styles
         this.lineBorderStyle = {
             stroke: true,
             dashArray: "3 6",
@@ -506,7 +506,7 @@ export class StoryMap {
                             bubblingMouseEvents: true,
                         });
                 }
-            default: //other 
+            default: //other
                 return this.L.circleMarker(latlng, {
                     radius: 4,
                     fillColor: "#000ff",
@@ -799,137 +799,28 @@ export class StoryMap {
             overviewLinks[i].addEventListener('click', this.onOverviewLinkClick.bind(this));
         }
 
-        // todo: This should link to the fids of storyframe once they're correct
-        let oldStartingBounds = {
-            homelands: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 12,
-                    Narr_ID: 1,
-                    Seq_ID: 90,
-                    Desc: "Extent of Indigenous references in 12 Mitchell",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-60.375517055951661, 50.495155542044799],
-                                [-60.311892185297758, 27.407898583362975],
-                                [-109.071321137306086, 27.405734834799336],
-                                [-108.827782021299925, 50.546067470988127],
-                                [-60.375517055951661, 50.495155542044799],
-                            ],
-                        ],
-                    ],
-                },
-            },
-            pathways1: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 15,
-                    Narr_ID: null,
-                    Seq_ID: null,
-                    Desc: "smaller_continental",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-64.956051523342381, 48.693292043680088],
-                                [-65.110629444043951, 28.186892930726643],
-                                [-104.228439847563948, 28.299022049289441],
-                                [-104.146277556994463, 48.598142453129832],
-                                [-64.956051523342381, 48.693292043680088],
-                            ],
-                        ],
-                    ],
-                },
-            },
-            pathways2: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 10,
-                    Narr_ID: 1,
-                    Seq_ID: 50,
-                    Desc: "Chesapeake Bay area",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-80.002479839229679, 40.168441182885317],
-                                [-71.788128586561726, 40.178580988048083],
-                                [-71.80139894399737, 37.05857933377866],
-                                [-80.029020554100995, 37.079756393203311],
-                                [-80.002479839229679, 40.168441182885317],
-                            ],
-                        ],
-                    ],
-                },
-            },
-            villagerssettlers: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 12,
-                    Narr_ID: 1,
-                    Seq_ID: 90,
-                    Desc: "Extent of Indigenous references in 12 Mitchell",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-60.375517055951661, 50.495155542044799],
-                                [-60.311892185297758, 27.407898583362975],
-                                [-109.071321137306086, 27.405734834799336],
-                                [-108.827782021299925, 50.546067470988127],
-                                [-60.375517055951661, 50.495155542044799],
-                            ],
-                        ],
-                    ],
-                },
-            },
-            lines: {
-                type: "Feature",
-                properties: {
-                    id: null,
-                    FID: 11,
-                    Narr_ID: 1,
-                    Seq_ID: 80,
-                    Desc: "Haudenosaunee homelands",
-                },
-                geometry: {
-                    type: "MultiPolygon",
-                    coordinates: [
-                        [
-                            [
-                                [-85.118202630673181, 47.604010232134549],
-                                [-69.193773707891992, 47.639788180258115],
-                                [-69.06107013353548, 39.894094085099951],
-                                [-85.118202630673181, 39.914453926386898],
-                                [-85.118202630673181, 47.604010232134549],
-                            ],
-                        ],
-                    ],
-                },
-            },
+        let homelandsSlide = this.getSlideById(500);
+        let pathways1Slide = this.getSlideById(600);
+        let pathways2Slide = this.getSlideById(700);
+        let villagerssettlersSlide = this.getSlideById(800);
+        let linesSlide = this.getSlideById(900);
+
+        let StartingBounds = {
+            "homelands": this.getStoryFrameBounds(homelandsSlide.fid),
+            "pathways1": this.getStoryFrameBounds(pathways1Slide.fid),
+            "pathways2": this.getStoryFrameBounds(pathways2Slide.fid),
+            "villagerssettlers": this.getStoryFrameBounds(villagerssettlersSlide.fid),
+            "lines": this.getStoryFrameBounds(linesSlide.fid),
         };
+        console.log(StartingBounds);
 
         // Init our d3 intro class and pass relevant layer data
-        this.d3Intro = new D3intro(this.storyUris, this.L, this.d3, oldStartingBounds);
-        this.d3Intro.homelandsSlide = this.getSlideById(500);
-        this.d3Intro.pathways1Slide = this.getSlideById(600);
-        this.d3Intro.pathways2Slide = this.getSlideById(700);
-        this.d3Intro.villagerssettlersSlide = this.getSlideById(800);
-        this.d3Intro.linesSlide.push(this.getSlideById(900));
+        this.d3Intro = new D3intro(this.storyUris, this.L, this.d3, StartingBounds);
+        this.d3Intro.homelandsSlide = homelandsSlide;
+        this.d3Intro.pathways1Slide = pathways1Slide;
+        this.d3Intro.pathways2Slide = pathways2Slide;
+        this.d3Intro.villagerssettlersSlide = villagerssettlersSlide;
+        this.d3Intro.linesSlide.push(linesSlide);
         this.d3Intro.linesSlide.push(this.getSlideById(901));
         this.d3Intro.linesSlide.push(this.getSlideById(902));
         this.d3Intro.linesSlide.push(this.getSlideById(903));
@@ -942,11 +833,14 @@ export class StoryMap {
             // get the parent
             target = target.parentElement;
         }
-        //if (!target || !target.dataset){return false;}
+        // Clear our svgs and layers
+        this.d3Intro.stopAll();
+        this.d3Intro.clearSvg();
+        this.storyFeatureLayerGroup.clearLayers();
+        
         this.observerEnabled = false;
         let dataset = target.dataset;
         if (target.dataset) {
-
             // In a timeout so we have time to scroll there
             this.overviewTimeout = setTimeout(function () {
                  // Make sure it's clear
@@ -961,6 +855,7 @@ export class StoryMap {
                  this.observerEnabled = true;
              }.bind(this), 1500);
         }
+        //evt.preventDefault();
         return true;
     }
 
@@ -1213,6 +1108,7 @@ export class StoryMap {
                     feature: feature,
                     bounds: bounds,
                 });
+
             }
         }
     }
