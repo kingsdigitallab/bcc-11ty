@@ -25,11 +25,11 @@ export class D3intro {
         // Array here since we have four frames of data
         // for lines
         this.linesSlide = [];
-
         this.svgDrawn = false;
         this.introRunning = false;
         this.geometryUris = geometryUris;
         this.startingBounds = startingBounds;
+        this.animationQueue = [];
 
     }
 
@@ -70,10 +70,10 @@ export class D3intro {
             this.stopAll();
             this.clearSvg();
 
-
             //map.on("moveend", slideUpdate);
             // Run this when we've reached the story frame
             let playIntro = async function () {
+                this.introRunning = true;
                 switch (this.slideIds[slideid + ""]) {
                     case "homelands":
                         console.log("homelands");
@@ -446,7 +446,7 @@ export class D3intro {
         /*map.flyToBounds(
             this.startingBounds.villagerssettlers
         );*/
-        await this.sleep(1500);
+        //await this.sleep(1500);
         if (
             !this.villagerssettlersSlide ||
             this.villagerssettlersSlide.features.length == 0
@@ -529,15 +529,21 @@ export class D3intro {
                     ]).y
             )
             .attr("r", 3);
-
-        this.pulseTransition(villagerspulseSelector);
+        console.log(this.introRunning);
+        /*
+        for (let c = 0; c < cows.length; c++) {
+            promiseArray.push(cows[c].sendCowToHomePen()
+            );
+        }
+        let done = await Promise.all(promiseArray);
+         */
+        
+        await this.pulseTransition(villagerspulseSelector);
         return true;
     }
 
     async pulseTransition(selector) {
-        // .attr("opacity", "0.5")
-        while (this.introRunning) {
-            await this.svg
+             this.svg
                 .selectAll(selector)
                 .attr("r", 3)
                 .attr("opacity", "0")
@@ -551,8 +557,6 @@ export class D3intro {
                 .duration(500)
                 .attr("opacity", "0")
                 .end();
-        }
-
         return true;
     }
 
@@ -592,7 +596,6 @@ export class D3intro {
     }
 
     async playLinesIntro(map) {
-        //map.flyToBounds(this.startingBounds.lines);
 
         let drawDuration = 2500;
         let colour = "black";
@@ -602,16 +605,17 @@ export class D3intro {
 
         if (this.linesSlide && this.linesSlide.length > 0) {
             for (let f = 0; f < this.linesSlide.length; f++) {
-                //console.log(this.linesFeatures[f]);
-                await this.drawLines(
+                if (this.introRunning){
+                    await this.drawLines(
                     this.linesSlide[f].features,
                     drawDuration,
                     colour,
                     majorClass,
                     minorClass
                 );
-
                 await this.sleep(frameDelay);
+                }
+
             }
         }
         return true;
