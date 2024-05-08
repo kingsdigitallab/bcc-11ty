@@ -6,6 +6,8 @@ import 'leaflet-textpath';*/
 
 // https://observablehq.com/@sfu-iat355/intro-to-leaflet-d3-interactivity
 
+import {defaults} from "string-strip-html";
+
 export class D3intro {
     constructor(geometryUris, L, d3, startingBounds) {
         this.slideIds = {
@@ -26,10 +28,10 @@ export class D3intro {
         // for lines
         this.linesSlide = [];
         this.svgDrawn = false;
-        this.introRunning = false;
+        this.introRunning = null;
         this.geometryUris = geometryUris;
         this.startingBounds = startingBounds;
-        this.animationQueue = [];
+
 
     }
 
@@ -48,7 +50,7 @@ export class D3intro {
     }
 
     stopAll() {
-        this.introRunning = false;
+        this.introRunning = null;
         // todo stop path drawing transition
         this.svg.selectAll("*").interrupt();
     }
@@ -64,7 +66,7 @@ export class D3intro {
         console.log("SectoinInto: " + slideid);
         if (this.slideIds[slideid + ""]) {
             let introRun = false;
-            this.introRunning = true;
+
 
             // Clear any existing transitions and elements
             this.stopAll();
@@ -73,18 +75,28 @@ export class D3intro {
             //map.on("moveend", slideUpdate);
             // Run this when we've reached the story frame
             let playIntro = async function () {
-                this.introRunning = true;
+
                 switch (this.slideIds[slideid + ""]) {
                     case "homelands":
                         console.log("homelands");
+                        this.introRunning = "homelands";
                         introRun = await this.playHomelandsIntro(map);
                         break;
                     case "pathways1":
+                        this.introRunning = "pathways1";
                         console.log("pathways1");
                         introRun = await this.playPathways1Intro(map);
                         await this.sleep(2000);
-                        this.clearSvg();
-                        introRun = await this.playPathways2Intro(map);
+                        console.log("running: " + this.introRunning);
+                        // If we haven't been interrupted, go on to second intro
+                        if (this.introRunning == "pathways1") {
+                            this.svg.selectAll("*").interrupt();
+                            this.clearSvg();
+                            this.introRunning = "pathways2";
+                            //console.log(this.introRunning);
+                            introRun = await this.playPathways2Intro(map);
+                        }
+
                         break;
                     case "pathways2":
                         console.log("pathways2");
@@ -92,12 +104,16 @@ export class D3intro {
                         break;
                     case "villagerssettlers":
                         console.log("settlers");
+                        this.introRunning = "villagerssettlers";
                         introRun = await this.playvillagerssettlersSlide(map);
                         break;
                     case "lines":
                         console.log("lines");
+                        this.introRunning = "lines";
                         introRun = await this.playLinesIntro(map);
                         break;
+                    case defaults:
+                        this.introRunning = null;
                 }
                 map.off("moveend", playIntro);
             }.bind(this);
@@ -268,9 +284,12 @@ export class D3intro {
      */
     async playPathways1Intro(map) {
         //map.flyToBounds(this.startingBounds.pathways1);
+        if (this.introRunning != "pathways1") {
+            return false;
+        }
         await this.sleep(1500);
 
-        if (this.pathways1Slide && this.pathways1Slide.features.length > 0) {
+        if (this.introRunning == "pathways1" && this.pathways1Slide && this.pathways1Slide.features.length > 0) {
             this.svg
                 .selectAll(".river")
                 .data(this.pathways1Slide.features)
@@ -326,7 +345,8 @@ export class D3intro {
     }
 
     /** Animated reveal of drawn pathway */
-    async drawPathway(feature){
+    async drawPathway(feature) {
+        if (this.introRunning == "pathways2") {
             await this.svg
                 .selectAll("path.road-" + feature.properties.id)
                 .each(function (d) {
@@ -339,6 +359,8 @@ export class D3intro {
                 .duration(2000)
                 .attr("stroke-dashoffset", 0)
                 .end();
+        }
+        return true;
     }
 
     /**
@@ -350,11 +372,13 @@ export class D3intro {
         //map.flyToBounds(this.startingBounds.pathways2);
         //await this.sleep(1500);
         console.log("pathways2");
+        if (this.introRunning != "pathways2") {
+            return false;
+        }
 
         if (!this.pathways2Slide || this.pathways2Slide.features.length == 0) {
             return false;
         }
-
 
         let splitFeatures = D3intro.splitFeatures(this.pathways2Slide.features);
         if (splitFeatures.lines && splitFeatures.lines.length > 0) {
@@ -392,52 +416,56 @@ export class D3intro {
             await this.drawPathway(splitFeatures.lines[1]);
         }
 
-        // Sort the features so they follow the points order in bcc_slides
-        let pointOrder = this.pathways2Slide.points.includes.id;
+        // Check we're still running
+        console.log(this.introRunning);
+        if (this.introRunning == "pathways2") {
+            // Sort the features so they follow the points order in bcc_slides
+            let pointOrder = this.pathways2Slide.points.includes.id;
 
-        let sortedPoints = [];
-        for (let o = 0; o < pointOrder.length; o++) {
-            for (let p = 0; p < splitFeatures.points.length; p++) {
-                if (splitFeatures.points[p].properties.id === pointOrder[o]) {
-                    sortedPoints.push(splitFeatures.points[p]);
-                    break;
+            let sortedPoints = [];
+            for (let o = 0; o < pointOrder.length; o++) {
+                for (let p = 0; p < splitFeatures.points.length; p++) {
+                    if (splitFeatures.points[p].properties.id === pointOrder[o]) {
+                        sortedPoints.push(splitFeatures.points[p]);
+                        break;
+                    }
                 }
             }
-        }
 
-        if (sortedPoints && sortedPoints.length > 0) {
-             console.log(sortedPoints);
-            //append('img').attr('src',"/assets/icon.svg")
-            //d3.select('svg').append('svg:image').attr('id', 'wtf2').attr('width','2%').attr('x', 1247).attr('y',292);
-            this.svg
-                .selectAll("image.pathways2")
-                .data(sortedPoints)
-                .join("svg:image")
-                .attr("class", "pathways2 dipsites")
-                .attr('xlink:href',"/bcc-11ty/assets/img/icons/council-fire.svg")
-                .attr('width', "1%")
-                .attr(
-                    "x",
-                    (d) =>
-                        map.latLngToLayerPoint([
-                            d.geometry.coordinates[1],
-                            d.geometry.coordinates[0],
-                        ]).x
-                )
-                .attr(
-                    "y",
-                    (d) =>
-                        map.latLngToLayerPoint([
-                            d.geometry.coordinates[1],
-                            d.geometry.coordinates[0],
-                        ]).y
-                ).attr("opacity", 0)
-                .transition()
-                .delay((d, i) => i * 500)
-                .attr("opacity", 1)
-                .duration(1000)
-                .end();
+            if (sortedPoints && sortedPoints.length > 0) {
+                console.log(sortedPoints);
+                //append('img').attr('src',"/assets/icon.svg")
+                //d3.select('svg').append('svg:image').attr('id', 'wtf2').attr('width','2%').attr('x', 1247).attr('y',292);
+                this.svg
+                    .selectAll("image.pathways2")
+                    .data(sortedPoints)
+                    .join("svg:image")
+                    .attr("class", "pathways2 dipsites")
+                    .attr('xlink:href', "/bcc-11ty/assets/img/icons/council-fire.svg")
+                    .attr('width', "1%")
+                    .attr(
+                        "x",
+                        (d) =>
+                            map.latLngToLayerPoint([
+                                d.geometry.coordinates[1],
+                                d.geometry.coordinates[0],
+                            ]).x
+                    )
+                    .attr(
+                        "y",
+                        (d) =>
+                            map.latLngToLayerPoint([
+                                d.geometry.coordinates[1],
+                                d.geometry.coordinates[0],
+                            ]).y
+                    ).attr("opacity", 0)
+                    .transition()
+                    .delay((d, i) => i * 500)
+                    .attr("opacity", 1)
+                    .duration(1000)
+                    .end();
 
+            }
         }
         return true;
     }
@@ -537,13 +565,14 @@ export class D3intro {
         }
         let done = await Promise.all(promiseArray);
          */
-        
-        await this.pulseTransition(villagerspulseSelector);
+
+        this.pulseTransition(villagerspulseSelector);
         return true;
     }
 
     async pulseTransition(selector) {
-             this.svg
+        while (this.introRunning == "villagerssettlers") {
+            await this.svg
                 .selectAll(selector)
                 .attr("r", 3)
                 .attr("opacity", "0")
@@ -557,6 +586,8 @@ export class D3intro {
                 .duration(500)
                 .attr("opacity", "0")
                 .end();
+        }
+
         return true;
     }
 
@@ -572,27 +603,30 @@ export class D3intro {
             };
      */
     async drawLines(features, duration, colour, majorClass, minorClass) {
-        this.svg
-            .selectAll("." + minorClass)
-            .data(features)
-            .join("path")
-            .attr("class", majorClass + " " + minorClass)
-            .attr("stroke", colour)
-            .attr("fill", "none")
-            .attr("stroke-width", "1")
-            .attr("d", (d) => this.featureToPath(d));
+        if (this.introRunning == "lines") {
+            this.svg
+                .selectAll("." + minorClass)
+                .data(features)
+                .join("path")
+                .attr("class", majorClass + " " + minorClass)
+                .attr("stroke", colour)
+                .attr("fill", "none")
+                .attr("stroke-width", "1")
+                .attr("d", (d) => this.featureToPath(d));
 
-        return this.svg
-            .selectAll("path." + minorClass)
-            .each(function (d) {
-                d.totalLength = this.getTotalLength();
-            })
-            .attr("stroke-dashoffset", (d) => d.totalLength)
-            .attr("stroke-dasharray", (d) => d.totalLength)
-            .transition()
-            .duration(duration)
-            .attr("stroke-dashoffset", 0)
-            .end();
+            return this.svg
+                .selectAll("path." + minorClass)
+                .each(function (d) {
+                    d.totalLength = this.getTotalLength();
+                })
+                .attr("stroke-dashoffset", (d) => d.totalLength)
+                .attr("stroke-dasharray", (d) => d.totalLength)
+                .transition()
+                .duration(duration)
+                .attr("stroke-dashoffset", 0)
+                .end();
+        }
+
     }
 
     async playLinesIntro(map) {
@@ -603,19 +637,21 @@ export class D3intro {
         let minorClass = "border";
         let frameDelay = 1000;
 
-        if (this.linesSlide && this.linesSlide.length > 0) {
+        if (this.linesSlide && this.linesSlide.length > 0 && this.introRunning == "lines") {
             for (let f = 0; f < this.linesSlide.length; f++) {
-                if (this.introRunning){
+                console.log('line '+ f);
+                if (this.introRunning == "lines") {
                     await this.drawLines(
-                    this.linesSlide[f].features,
-                    drawDuration,
-                    colour,
-                    majorClass,
-                    minorClass
-                );
-                await this.sleep(frameDelay);
+                        this.linesSlide[f].features,
+                        drawDuration,
+                        colour,
+                        majorClass,
+                        minorClass
+                    );
+                    await this.sleep(frameDelay);
+                } else {
+                    break;
                 }
-
             }
         }
         return true;

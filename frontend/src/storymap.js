@@ -660,7 +660,7 @@ export class StoryMap {
         } else if (slideid != this.exploreSlideId) {
 
             // Clear the svg overlay so we can replace with layers
-            this.d3Intro.stopAll();
+            this.d3Intro.stopAll(this.map);
             this.d3Intro.clearSvg();
             if (this.filterControlsVisible) {
                 this.toggleFilterControls();
@@ -883,7 +883,7 @@ export class StoryMap {
             target = target.parentElement;
         }
         // Clear our svgs and layers
-        this.d3Intro.stopAll();
+        this.d3Intro.stopAll(this.map);
         this.d3Intro.clearSvg();
         this.storyFeatureLayerGroup.clearLayers();
 
@@ -1674,7 +1674,7 @@ export class StoryMap {
     loadExploreLayer() {
         console.log('init explore layer');
         // Make sure d3 is clear
-        this.d3Intro.stopAll();
+        this.d3Intro.stopAll(this.map);
         this.d3Intro.clearSvg();
         clearTimeout(this.overviewTimeout);
         this.toggleFilterControls();
