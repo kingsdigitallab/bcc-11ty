@@ -234,18 +234,18 @@ export class D3intro {
                     .attr("class", "homelandLabel")
                     .attr("x", centreX)
                     .attr("y", centreY)
+                    .attr("opacity", 1)
                     .attr("fill", "#0804ee")
-                    .attr("text-anchor", "middle");
+                    .attr("text-anchor", "middle")
+                    .transition()
+                    .delay((d, i) => i * 20 + 2000)
+                    .duration(2000)
+                    .style('opacity', 0).on("end", function (d, i, nodes) {
+                    // Now do the label transition
+                    nodes[i].innerHTML = nodes[i].getAttribute("indigenousLabel");
+                    d3.select(nodes[i]).transition().delay((d, i) => i * 20).duration(2000).style('opacity', 1);
+                });
             });
-        await this.sleep(2000);
-
-        // Now do the label transition
-        this.svg.selectAll(".homelandLabel")
-            .transition().delay((d, i) => i * 20).duration(2000).style('opacity', 0).on("end", function (d, i, nodes) {
-            nodes[i].innerHTML = nodes[i].getAttribute("indigenousLabel");
-            d3.select(nodes[i]).transition().delay((d, i) => i * 20).duration(2000).style('opacity', 1);
-        });
-
     }
 
     /** Animated intro for the homelands section in D3*/
@@ -568,22 +568,28 @@ export class D3intro {
     }
 
     async pulseTransition(selector) {
-        while (this.introRunning == "villagerssettlers") {
-            await this.svg
-                .selectAll(selector)
-                .attr("r", 3)
-                .attr("opacity", "0")
-                .attr("fill", "black")
-                .transition()
-                .duration(1000)
-                .attr("r", 10)
-                .attr("opacity", "0.5")
-                .styleTween("fill", () => this.d3.interpolateRgb("black", "red"))
-                .transition()
-                .duration(500)
-                .attr("opacity", "0")
-                .end();
-        }
+
+        this.svg
+            .selectAll(selector)
+            .attr("r", 3)
+            .attr("opacity", "0")
+            .attr("fill", "black")
+            .transition()
+            .delay(1000)
+            .duration(1000)
+            .attr("r", 10)
+            .attr("opacity", "0.5")
+            .styleTween("fill", () => this.d3.interpolateRgb("black", "red"))
+            .transition()
+            .duration(500)
+            .attr("opacity", "0")
+            .on('end', function () {
+                if (this.introRunning == "villagerssettlers") {
+                    // Call it again
+                    this.pulseTransition(selector);
+                }
+            }.bind(this));
+
 
         return true;
     }
@@ -656,7 +662,7 @@ export class D3intro {
                     .selectAll("path." + minorClass + f)
                     .each(function (d) {
                         d.totalLength = this.getTotalLength();
-                        let delay = (f > 0? frameDelay:0);
+                        let delay = (f > 0 ? frameDelay : 0);
                         d.drawDelay = (drawDuration + delay) * f;
                     })
                     .attr("stroke-dashoffset", (d) => d.totalLength)
@@ -667,7 +673,7 @@ export class D3intro {
                     .attr("stroke-dashoffset", 0)
                     .on("end", function (d, i, nodes) {
                         // Clear previous lines (except for the last one)
-                        if (f != (this.linesSlide.length - 1)){
+                        if (f != (this.linesSlide.length - 1)) {
                             this.d3.selectAll("path." + minorClass + f)
                                 .transition()
                                 .attr('opacity', 0)
