@@ -31,7 +31,7 @@ export class D3intro {
         this.introRunning = null;
         this.geometryUris = geometryUris;
         this.startingBounds = startingBounds;
-
+        this.triggered = 0;
 
     }
 
@@ -63,15 +63,13 @@ export class D3intro {
 
     async SectionIntro(map, slideid) {
         //&& !this.introRunning
-        console.log("SectoinInto: " + slideid);
+        console.log("Section Intro counter: " + this.triggered);
+        this.triggered += 1;
         if (this.slideIds[slideid + ""]) {
             let introRun = false;
-
-
             // Clear any existing transitions and elements
             this.stopAll();
             this.clearSvg();
-
             //map.on("moveend", slideUpdate);
             // Run this when we've reached the story frame
             let playIntro = async function () {
@@ -96,7 +94,6 @@ export class D3intro {
                             //console.log(this.introRunning);
                             introRun = await this.playPathways2Intro(map);
                         }
-
                         break;
                     case "pathways2":
                         console.log("pathways2");
@@ -635,25 +632,53 @@ export class D3intro {
         let colour = "black";
         let majorClass = "lines";
         let minorClass = "border";
-        let frameDelay = 1000;
+        let frameDelay = 2500;
 
         if (this.linesSlide && this.linesSlide.length > 0 && this.introRunning == "lines") {
+            // Draw all the lines
             for (let f = 0; f < this.linesSlide.length; f++) {
-                console.log('line '+ f);
-                if (this.introRunning == "lines") {
-                    await this.drawLines(
-                        this.linesSlide[f].features,
-                        drawDuration,
-                        colour,
-                        majorClass,
-                        minorClass
-                    );
-                    await this.sleep(frameDelay);
-                } else {
-                    break;
-                }
+                this.svg
+                    .selectAll("." + minorClass)
+                    .data(this.linesSlide[f].features)
+                    .join("path")
+                    .attr("class", majorClass + " " + minorClass + f)
+                    .attr("stroke", colour)
+                    .attr("opacity", 1)
+                    .attr("fill", "none")
+                    .attr("stroke-width", "1")
+                    .attr("d", (d) => this.featureToPath(d));
+
+
+            }
+            // Start all the draw animations
+            for (let f = 0; f < this.linesSlide.length; f++) {
+                this.svg
+                    .selectAll("path." + minorClass + f)
+                    .each(function (d) {
+                        d.totalLength = this.getTotalLength();
+                        let delay = (f > 0? frameDelay:0);
+                        d.drawDelay = (drawDuration + delay) * f;
+                    })
+                    .attr("stroke-dashoffset", (d) => d.totalLength)
+                    .attr("stroke-dasharray", (d) => d.totalLength)
+                    .transition()
+                    .delay((d) => d.drawDelay)
+                    .duration(drawDuration)
+                    .attr("stroke-dashoffset", 0)
+                    .on("end", function (d, i, nodes) {
+                        // Clear previous lines (except for the last one)
+                        if (f != (this.linesSlide.length - 1)){
+                            this.d3.selectAll("path." + minorClass + f)
+                                .transition()
+                                .attr('opacity', 0)
+                                .duration(frameDelay * 0.5);
+                        }
+
+                    }.bind(this));
+
             }
         }
+
         return true;
     }
 }
