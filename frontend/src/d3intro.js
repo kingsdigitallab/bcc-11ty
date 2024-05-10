@@ -83,21 +83,23 @@ export class D3intro {
                     case "pathways1":
                         this.introRunning = "pathways1";
                         console.log("pathways1");
-                        introRun = await this.playPathways1Intro(map);
-                        await this.sleep(2000);
-                        console.log("running: " + this.introRunning);
+                        introRun = await this.playPathways1Intro(
+                            map, true, true, 2500, 1500, 1000
+                        );
+                        //introRun = await this.playPathways2Intro(map, startDelay);
+                        /*console.log("running: " + this.introRunning);
                         // If we haven't been interrupted, go on to second intro
                         if (this.introRunning == "pathways1") {
                             this.svg.selectAll("*").interrupt();
                             this.clearSvg();
                             this.introRunning = "pathways2";
                             //console.log(this.introRunning);
-                            introRun = await this.playPathways2Intro(map);
-                        }
+                            introRun = await this.playPathways2Intro(map, startDelay);
+                        }*/
                         break;
                     case "pathways2":
                         console.log("pathways2");
-                        introRun = await this.playPathways2Intro(map);
+                        introRun = await this.playPathways2Intro(map, 0);
                         break;
                     case "villagerssettlers":
                         console.log("settlers");
@@ -279,13 +281,12 @@ export class D3intro {
      * @param map our leaflet map
      * @return {Promise<void>}
      */
-    async playPathways1Intro(map) {
+    async playPathways1Intro(map, playPathways2, fadeout, drawDuration, fadeoutDelay, fadeoutDuration) {
         //map.flyToBounds(this.startingBounds.pathways1);
         if (this.introRunning != "pathways1") {
             return false;
         }
-        await this.sleep(1500);
-
+        let fadeCounter = 0;
         if (this.introRunning == "pathways1" && this.pathways1Slide && this.pathways1Slide.features.length > 0) {
             this.svg
                 .selectAll(".river")
@@ -295,9 +296,10 @@ export class D3intro {
                 .attr("stroke", "blue")
                 .attr("fill", "none")
                 .attr("stroke-width", "1.5")
+                .attr('opacity', 1)
                 .attr("d", (d) => this.featureToPath(d));
 
-            await this.svg
+            this.svg
                 .selectAll("path.river")
                 .each(function (d) {
                     d.totalLength = this.getTotalLength();
@@ -305,9 +307,26 @@ export class D3intro {
                 .attr("stroke-dashoffset", (d) => d.totalLength)
                 .attr("stroke-dasharray", (d) => d.totalLength)
                 .transition()
-                .duration(2500)
+                .duration(drawDuration)
                 .attr("stroke-dashoffset", 0)
-                .end();
+                .on("end", function (d, i, nodes) {
+                    // Clear previous lines (except for the last one)
+                    if (fadeCounter >= (nodes.length - 1)) {
+                        this.d3.selectAll(".river")
+                            .transition()
+                            .attr('opacity', 0)
+                            .delay(fadeoutDelay)
+                            .duration(fadeoutDuration);
+                        if (playPathways2) {
+                            this.playPathways2Intro(map, fadeoutDelay + fadeoutDuration);
+                        }
+
+
+                    } else {
+                        fadeCounter += 1;
+                    }
+                }.bind(this));
+
         }
         return true;
     }
@@ -332,7 +351,6 @@ export class D3intro {
                         break;
                     case "Point":
                         splitFeatures.points.push(features[f]);
-
                         break;
                 }
             }
@@ -341,22 +359,28 @@ export class D3intro {
         return splitFeatures;
     }
 
-    /** Animated reveal of drawn pathway */
-    async drawPathway(feature) {
-        if (this.introRunning == "pathways2") {
-            await this.svg
-                .selectAll("path.road-" + feature.properties.id)
-                .each(function (d) {
-                    d.totalLength = this.getTotalLength();
-                })
-                .attr("stroke-dashoffset", (d) => d.totalLength)
-                .attr("stroke-dasharray", (d) => d.totalLength)
-                .attr("opacity", 1)
-                .transition()
-                .duration(2000)
-                .attr("stroke-dashoffset", 0)
-                .end();
-        }
+    /**
+     * Animated reveal of drawn pathway
+     * @param feature to draw
+     * @param duration duration of drawing
+     * @param delay before we start the transition
+     * @return {Promise<boolean>}
+     */
+    async drawPathway(feature, duration, delay) {
+        this.svg
+            .selectAll("path.road-" + feature.properties.id)
+            .each(function (d) {
+                d.totalLength = this.getTotalLength();
+            })
+            .attr("stroke-dashoffset", (d) => d.totalLength)
+            .attr("stroke-dasharray", (d) => d.totalLength)
+            .attr("opacity", 1)
+            .transition()
+            .delay(delay)
+            .duration(duration)
+            .attr("stroke-dashoffset", 0)
+            .end();
+
         return true;
     }
 
@@ -365,13 +389,10 @@ export class D3intro {
      * @param map
      * @return {Promise<boolean>}
      */
-    async playPathways2Intro(map) {
+    async playPathways2Intro(map, startDelay) {
         //map.flyToBounds(this.startingBounds.pathways2);
-        //await this.sleep(1500);
+        let pathwayDuration = 2000;
         console.log("pathways2");
-        if (this.introRunning != "pathways2") {
-            return false;
-        }
 
         if (!this.pathways2Slide || this.pathways2Slide.features.length == 0) {
             return false;
@@ -409,61 +430,59 @@ export class D3intro {
 
 
             // Draw these in order so they look better
-            await this.drawPathway(splitFeatures.lines[0]);
-            await this.drawPathway(splitFeatures.lines[1]);
+            this.drawPathway(splitFeatures.lines[0], pathwayDuration, startDelay);
+            this.drawPathway(splitFeatures.lines[1], pathwayDuration, startDelay + pathwayDuration);
+
         }
 
-        // Check we're still running
-        console.log(this.introRunning);
-        if (this.introRunning == "pathways2") {
-            // Sort the features so they follow the points order in bcc_slides
-            let pointOrder = this.pathways2Slide.points.includes.id;
+        // Sort the features so they follow the points order in bcc_slides
+        let pointOrder = this.pathways2Slide.points.includes.id;
 
-            let sortedPoints = [];
-            for (let o = 0; o < pointOrder.length; o++) {
-                for (let p = 0; p < splitFeatures.points.length; p++) {
-                    if (splitFeatures.points[p].properties.id === pointOrder[o]) {
-                        sortedPoints.push(splitFeatures.points[p]);
-                        break;
-                    }
+        let sortedPoints = [];
+        for (let o = 0; o < pointOrder.length; o++) {
+            for (let p = 0; p < splitFeatures.points.length; p++) {
+                if (splitFeatures.points[p].properties.id === pointOrder[o]) {
+                    sortedPoints.push(splitFeatures.points[p]);
+                    break;
                 }
             }
-
-            if (sortedPoints && sortedPoints.length > 0) {
-                console.log(sortedPoints);
-                //append('img').attr('src',"/assets/icon.svg")
-                //d3.select('svg').append('svg:image').attr('id', 'wtf2').attr('width','2%').attr('x', 1247).attr('y',292);
-                this.svg
-                    .selectAll("image.pathways2")
-                    .data(sortedPoints)
-                    .join("svg:image")
-                    .attr("class", "pathways2 dipsites")
-                    .attr('xlink:href', "/bcc-11ty/assets/img/icons/council-fire.svg")
-                    .attr('width', "1%")
-                    .attr(
-                        "x",
-                        (d) =>
-                            map.latLngToLayerPoint([
-                                d.geometry.coordinates[1],
-                                d.geometry.coordinates[0],
-                            ]).x
-                    )
-                    .attr(
-                        "y",
-                        (d) =>
-                            map.latLngToLayerPoint([
-                                d.geometry.coordinates[1],
-                                d.geometry.coordinates[0],
-                            ]).y
-                    ).attr("opacity", 0)
-                    .transition()
-                    .delay((d, i) => i * 500)
-                    .attr("opacity", 1)
-                    .duration(1000)
-                    .end();
-
-            }
         }
+
+        if (sortedPoints && sortedPoints.length > 0) {
+            console.log(sortedPoints);
+            //append('img').attr('src',"/assets/icon.svg")
+            //d3.select('svg').append('svg:image').attr('id', 'wtf2').attr('width','2%').attr('x', 1247).attr('y',292);
+            this.svg
+                .selectAll("image.pathways2")
+                .data(sortedPoints)
+                .join("svg:image")
+                .attr("class", "pathways2 dipsites")
+                .attr('xlink:href', "/bcc-11ty/assets/img/icons/council-fire.svg")
+                .attr('width', "1%")
+                .attr(
+                    "x",
+                    (d) =>
+                        map.latLngToLayerPoint([
+                            d.geometry.coordinates[1],
+                            d.geometry.coordinates[0],
+                        ]).x
+                )
+                .attr(
+                    "y",
+                    (d) =>
+                        map.latLngToLayerPoint([
+                            d.geometry.coordinates[1],
+                            d.geometry.coordinates[0],
+                        ]).y
+                ).attr("opacity", 0)
+                .transition()
+                .delay((d, i) => startDelay + i * 500)
+                .attr("opacity", 1)
+                .duration(1000);
+
+
+        }
+
         return true;
     }
 
@@ -483,7 +502,7 @@ export class D3intro {
             this.villagerssettlersSlide.features
         );
         //console.log(splitFeatures.points);
-        await this.svg
+        this.svg
             .selectAll("circle.villagerssettlers")
             .data(splitFeatures.points)
             .join("circle")
@@ -513,8 +532,8 @@ export class D3intro {
             .attr("r", 20)
             .transition()
             .attr("r", 3)
-            .duration(1000)
-            .end();
+            .duration(1000);
+            
 
         let dipsites = [];
         for (let p = 0; p < splitFeatures.points.length; p++) {
@@ -554,15 +573,6 @@ export class D3intro {
                     ]).y
             )
             .attr("r", 3);
-        console.log(this.introRunning);
-        /*
-        for (let c = 0; c < cows.length; c++) {
-            promiseArray.push(cows[c].sendCowToHomePen()
-            );
-        }
-        let done = await Promise.all(promiseArray);
-         */
-
         this.pulseTransition(villagerspulseSelector);
         return true;
     }
