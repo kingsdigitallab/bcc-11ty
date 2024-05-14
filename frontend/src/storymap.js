@@ -142,7 +142,7 @@ export class StoryMap {
         // line Styles
         this.lineBorderStyle = {
             stroke: true,
-            dashArray: "3 6",
+            //dashArray: "3 6",
             lineCap: "square",
             color: "#000000",
             weight: 2.5,
