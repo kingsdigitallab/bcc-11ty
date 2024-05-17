@@ -509,9 +509,9 @@ export class D3intro {
             .attr("class", "villagerssettlers")
             .attr("fill", function (d) {
                 if (d.properties && d.properties.sub_type == 12) {
-                    return "red";
+                    return "#5d1206";//"red";
                 }
-                return "green";
+                return "#427d67";//"green";
             })
             .attr(
                 "cx",
@@ -533,7 +533,7 @@ export class D3intro {
             .transition()
             .attr("r", 3)
             .duration(1000);
-            
+
 
         let dipsites = [];
         for (let p = 0; p < splitFeatures.points.length; p++) {

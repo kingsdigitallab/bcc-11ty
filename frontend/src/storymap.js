@@ -121,15 +121,15 @@ export class StoryMap {
         };
 
         // Explore filters disabled by default
-        this.exploreFiltersDisabled = true;
+        this.exploreFiltersEnabled = false;
         this.exploreFiltersDisabledClass = "filterDisabled";
         this.filterControlsVisible = false;
 
         // Total map and explore filters currently applied
-        this.totalExploreFilters = 7;
+        this.totalExploreFilters = document.querySelectorAll(this.exploreSelectors.explore_filter).length;;
         this.exploreSlideId = 1000;
         this.totalExploreFiltersApplied = 0;
-        this.totalMapFilters = 17;
+        this.totalMapFilters = document.querySelectorAll(this.exploreSelectors.map_filter).length;
         this.totalMapFiltersApplied = 0;
         // This is all the subtypes used in explore
         this.exploreFeatureSubtypes = [10, 4, 12, 13, 3, 12];
@@ -311,49 +311,49 @@ export class StoryMap {
             opacity: 0.5,
             fillOpacity: 0.5,
         };
-		// New poly styles for sub_type 14
+        // New poly styles for sub_type 14
         this.polyDomainNativeStyle = {
             stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
             color: "#5D1206",
-			fillOpacity: 0.5,
+            fillOpacity: 0.5,
             fillColor: "#5D120600", //fill colour completely transparent
-			fill: 'url(/bcc-11ty/assets/img/stories/vertical-hatch-red-5D1206.webp)',
+            fill: 'url(/bcc-11ty/assets/img/stories/vertical-hatch-red-5D1206.webp)',
             weight: 3,
             opacity: 1,
-		};
-		this.polyDomainHaudenasuaneeStyle = {
+        };
+        this.polyDomainHaudenasuaneeStyle = {
             stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
             color: "#BFBFBF",
             fillColor: "#BFBFBF00",
-			fill:'url(/bcc-11ty/assets/img/stories/vertical-hatch-gray-BFBFBF.webp)',
+            fill: 'url(/bcc-11ty/assets/img/stories/vertical-hatch-gray-BFBFBF.webp)',
             weight: 3,
             opacity: 0.3,
-		};
-		this.polyDomainEuroStyle = {
-			stroke: true,
+        };
+        this.polyDomainEuroStyle = {
+            stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
             color: "#427D67",
-			fillOpacity: 0.5,
+            fillOpacity: 0.5,
             fillColor: "#427D6700",
-			fill:'url(/bcc-11ty/assets/img/stories/vertical-hatch-green-427D67.webp)',
+            fill: 'url(/bcc-11ty/assets/img/stories/vertical-hatch-green-427D67.webp)',
             weight: 3,
             opacity: 1,
-		};
+        };
 
-		this.councilFireIcon = L.icon({
-			iconUrl: '/bcc-11ty/assets/img/stories/council-fire-optimised.webp',
-			shadowUrl: '/bcc-11ty/assets/img/stories/council-fire-shadow.webp',
-			iconSize: [20,20],
-			shadowSize: [20, 15],
-			iconAnchor: [10,19],
-			shadowAnchor: [10,14],
-			popupAnchor: [-3,-20]
-		})
+        this.councilFireIcon = L.icon({
+            iconUrl: '/bcc-11ty/assets/img/stories/council-fire-optimised.webp',
+            shadowUrl: '/bcc-11ty/assets/img/stories/council-fire-shadow.webp',
+            iconSize: [20, 20],
+            shadowSize: [20, 15],
+            iconAnchor: [10, 19],
+            shadowAnchor: [10, 14],
+            popupAnchor: [-3, -20]
+        })
     }
 
     async loadShapeFile(shape_url) {
@@ -892,17 +892,17 @@ export class StoryMap {
         if (target.dataset) {
             // In a timeout so we have time to scroll there
             this.overviewTimeout = setTimeout(function () {
-                 // Make sure it's clear
-                 this.storyFeatureLayerGroup.clearLayers();
-                 // Trigger the d3 slide we've arrived at.
-                 let slideId = dataset.slideid;
-                 if (slideId) {
-                     console.log(slideId);
-                     this.triggerSlideMapEvents(slideId);
-                 }
-                 // re-enable observer
-                 this.observerEnabled = true;
-             }.bind(this), 1500);
+                // Make sure it's clear
+                this.storyFeatureLayerGroup.clearLayers();
+                // Trigger the d3 slide we've arrived at.
+                let slideId = dataset.slideid;
+                if (slideId) {
+                    console.log(slideId);
+                    this.triggerSlideMapEvents(slideId);
+                }
+                // re-enable observer
+                this.observerEnabled = true;
+            }.bind(this), 1500);
         }
         return true;
     }
@@ -1060,7 +1060,7 @@ export class StoryMap {
                         break;
                     case 7:
                         layer.setStyle(this.polyDescriptiveStyle);
-						//layer.setStyle(this.polyDomainNativeStyle);
+                        //layer.setStyle(this.polyDomainNativeStyle);
                         break;
                     case 8:
                         layer.setStyle(this.polyRiverRouteStyle);
@@ -1086,8 +1086,8 @@ export class StoryMap {
                                 layer.setStyle(this.polyEuroStyle);
                         }
                         break;
-			        case 14:
-						// new sub_type for geographical features
+                    case 14:
+                        // new sub_type for geographical features
                         // Capture Indig vs Haudenasnee
                         switch (feature.properties.identity) {
                             case 2:
@@ -1455,7 +1455,7 @@ export class StoryMap {
         // Filter by subtype first
         let filteredFeatures = [];
         let subtypeFeatures = [];
-        console.log(this.exploreFilterControl.sub_type);
+        //console.log(this.exploreFilterControl.sub_type);
         if (this.exploreFeatures) {
             let exploreFilteringEnabled = false;
             if (!this.toggleAllFeaturesEnabled) {
@@ -1470,8 +1470,7 @@ export class StoryMap {
                     }
                 }
             }
-            if (!this.exploreFiltersDisabled) {
-
+            if (this.exploreFiltersEnabled) {
                 this.exploreFeatures.forEach(
                     function (item) {
                         let subtypeIndex = -1;
@@ -1507,19 +1506,22 @@ export class StoryMap {
         // Otherwise filter
         if (this.toggleAllMapsEnabled) {
             filteredFeatures = subtypeFeatures;
+            if (!this.exploreFiltersEnabled) {
+                this.toggleExploreFilters(true);
+            }
         } else if (this.exploreFilterControl.maps.length == 0 && !this.toggleAllMapsEnabled) {
             // In this case, no maps selected, show nothing
+            console.log('none');
             filteredFeatures = [];
+            if (this.exploreFiltersEnabled) {
+                this.toggleExploreFilters(false);
+            }
         } else if (this.exploreFilterControl.maps.length > 0 && !this.toggleAllMapsEnabled) {
             // Filter by map
 
             // If explored filters are disabled, enable them
-            if (this.exploreFiltersDisabled) {
-                let filters = document.getElementById("mapFilters");
-                let removeClass = filters.getAttribute("class").replace(this.exploreFiltersDisabledClass, "");
-                console.log(removeClass);
-                filters.setAttribute("class", removeClass);
-                this.exploreFiltersDisabled = false;
+            if (!this.exploreFiltersEnabled) {
+                this.toggleExploreFilters(true);
             }
             console.log(subtypeFeatures);
 
@@ -1548,8 +1550,27 @@ export class StoryMap {
             });
             this.storyFeatureLayerGroup.addLayer(this.exploreFeaturesLayer);
         }
+    }
 
+    /**
+     * Toggles whether the features filter pane can be used, reset all choices each time
+     * @param toggle
+     */
+    toggleExploreFilters(toggle) {
+        let exploreFilters = document.getElementById("featureFilters");
 
+        if (toggle) {
+            // Remove disable class
+            exploreFilters.classList.remove(this.exploreFiltersDisabledClass);
+        } else {
+            exploreFilters.classList.add(this.exploreFiltersDisabledClass);
+        }
+        // reset all explore feature filters
+        document.querySelectorAll(this.exploreSelectors.explore_filter).forEach(
+            function (item) {
+                item.checked = false;
+            });
+        this.exploreFiltersEnabled = toggle;
     }
 
     /** Apply filter logic to feature of one type
