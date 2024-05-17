@@ -292,9 +292,9 @@ export class StoryMap {
             dashArray: "10 10",
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#000000",
-            fillColor: "#80808050",
-            fill: 'url(/bcc-11ty/assets/img/stories/image-writing.png)',
+            color: "#8C8C8C",
+            fillColor: "#8C8C8C00",
+            fill: 'url(/bcc-11ty/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
             weight: 2,
             opacity: 0.3,
             fillOpacity: 1,
@@ -311,36 +311,36 @@ export class StoryMap {
             opacity: 0.5,
             fillOpacity: 0.5,
         };
-        // New poly styles for sub_type 14
+		// New poly styles for sub_type 14
         this.polyDomainNativeStyle = {
             stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#5D1206",
-            fillOpacity: 0.5,
-            fillColor: "#5D120600", //fill colour completely transparent
-            fill: 'url(/bcc-11ty/assets/img/stories/vertical-hatch-red-5D1206.webp)',
+            color: "#D96526",
+			fillOpacity: 0.5,
+            fillColor: "#D9652600", //fill colour completely transparent
+			fill: 'url(/bcc-11ty/assets/img/stories/vertical_hatch_orange_D96526.webp)',
             weight: 3,
             opacity: 1,
-        };
-        this.polyDomainHaudenasuaneeStyle = {
+		};
+		this.polyDomainHaudenasuaneeStyle = {
             stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#BFBFBF",
-            fillColor: "#BFBFBF00",
-            fill: 'url(/bcc-11ty/assets/img/stories/vertical-hatch-gray-BFBFBF.webp)',
+            color: "#8C8C8C",
+            fillColor: "#8C8C8C00",
+			fill:'url(/bcc-11ty/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
             weight: 3,
             opacity: 0.3,
-        };
-        this.polyDomainEuroStyle = {
-            stroke: true,
+		};
+		this.polyDomainEuroStyle = {
+			stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#427D67",
-            fillOpacity: 0.5,
-            fillColor: "#427D6700",
-            fill: 'url(/bcc-11ty/assets/img/stories/vertical-hatch-green-427D67.webp)',
+            color: "#8D33CC",
+			fillOpacity: 0.5,
+            fillColor: "#8D33CC00",
+			fill:'url(/bcc-11ty/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
             weight: 3,
             opacity: 1,
         };
