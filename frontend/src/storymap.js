@@ -316,10 +316,10 @@ export class StoryMap {
             stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#D96526",
+            color: "#f8600e",
 			fillOpacity: 0.5,
-            fillColor: "#D9652600", //fill colour completely transparent
-			fill: 'url(/bcc-11ty/assets/img/stories/vertical_hatch_orange_D96526.webp)',
+            fillColor: "#f8600e00", //fill colour completely transparent
+			fill: 'url(/bcc-11ty/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
             weight: 3,
             opacity: 1,
 		};
@@ -1143,7 +1143,14 @@ export class StoryMap {
                 }
                 break;
             default:
-                layer.setStyle(this.defaultLineStyle);
+                switch (feature.properties.Slug){
+                    case "catawba":
+                        layer.setStyle(this.polyDomainNativeStyle);
+                        break;
+                    default:
+                        layer.setStyle(this.polyDomainHaudenasuaneeStyle);
+                }
+                //layer.setStyle(this.defaultLineStyle);
         }
     }
 
