@@ -273,7 +273,9 @@ export class StoryMap {
         };
         this.polyNativeStyle = {
             stroke: true,
-            fillColor: "#ff0000",
+            fillColor: "#f8600e",
+            dashArray: "7 6",
+            color: "f8600e",
             weight: 2,
             fill: true,
             opacity: 0.25,
@@ -1009,7 +1011,7 @@ export class StoryMap {
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
                         // temp adding sub_type and type to popups
-                        + "<p>sub_type:" + feature.properties.sub_type + "</p>"
+                        //+ "<p>sub_type:" + feature.properties.sub_type + "</p>"
                     );
                 }
             } else if (feature.properties.map_text) {
@@ -1021,7 +1023,7 @@ export class StoryMap {
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
                         // temp adding sub_type and type to popups
-                        + "<p>sub_type:" + feature.properties.sub_type + "</p>"
+                        //+ "<p>sub_type:" + feature.properties.sub_type + "</p>"
                     );
                 }
             } else if (feature.properties.norm_text) {
