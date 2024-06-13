@@ -7,7 +7,7 @@
     <label class="menu" role="button" for="menu">Menu</label>
     <ol>
       <li> <a href="#overview">Overview</a></li>
-      <li> <a href="#stories">Stories  </a>
+      <li> <a href="stories/">Stories  </a>
         <ol>
           <li><a href="#s-intro">Introduction</a></li>
           <li><a href="#s-1">Homelands</a></li>
@@ -22,13 +22,13 @@
       <li> <a href="#mappage">Maps</a></li>
       <li> <a href="#resources">Resources</a></li>
     </ol>
-    <!--            
-      <ul>
-          {% for entry in navPages %}
-          <li class="{% if page.url | contains: entry.url %}is-active{% endif %}">
-            <a href="{{ entry.url | url}}">{{ entry.title }}</a>
-          </li>
-          {% endfor %}
-      </ul>-->
+
+      {% comment %}<ul>{% endcomment %}
+          {% comment %}{% for entry in navPages %}{% endcomment %}
+          {% comment %}<li class="{% if page.url | contains: entry.url %}is-active{% endif %}">{% endcomment %}
+            {% comment %}<a href="{{ entry.url | url}}">{{ entry.title }}</a>{% endcomment %}
+          {% comment %}</li>{% endcomment %}
+          {% comment %}{% endfor %}{% endcomment %}
+      {% comment %}</ul>{% endcomment %}
   </div>
 </nav>

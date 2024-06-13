@@ -1,14 +1,17 @@
 ---
 layout: base.liquid
 ---
-
-<section class="section">
-      <div class="container">
-        <h1 class="title">
-          {{ title }}
-        </h1>
-        <div class="content {{ tags }}">
-          {{ content }}
+<div class="container">
+    {% include "header" %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                {{ title }}
+            </h1>
+            <div class="content {{ tags }}">
+                {{ content }}
+            </div>
         </div>
-      </div>
     </section>
+    {% include "footer" %}
+</div>

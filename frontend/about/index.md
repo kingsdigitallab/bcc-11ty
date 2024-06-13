@@ -1,5 +1,6 @@
 ---
 title: About the project
+layout: page.liquid
 eleventyNavigation:
   key: About
   order: 3

@@ -4,7 +4,7 @@ permalink: /
 eleventyNavigation:
   key: Home
   order: 1
-layout: base.liquid
+layout: home.liquid
 ---
 
 ## Our homepage

@@ -4,7 +4,7 @@ pageImageWebPath: "/assets/img/logos/KCL-square.svg"
 title: BCC
 ---
 <html lang="en-GB">
-  <head>
+<head>
     <meta charset="utf-8">
     <!-- Built with 11ty - {{ "now" | date: "%Y-%m-%d %H:%M" }} -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,67 +22,64 @@ title: BCC
     <title>{{ title }} | {{ metadata.title }}</title>
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}?ts={{ "now" | date: "%s" }}">
-    <link rel="stylesheet" href="{{ '/assets/node_modules/leaflet/dist/leaflet.css' | url }}"  />
-    <link rel="stylesheet" href="{{ '/assets/node_modules/leaflet-dvf/dist/css/dvf.css' | url }}"  />    
+    <link rel="stylesheet" href="{{ '/assets/node_modules/leaflet/dist/leaflet.css' | url }}"/>
+    <link rel="stylesheet" href="{{ '/assets/node_modules/leaflet-dvf/dist/css/dvf.css' | url }}"/>
     <script src="{{ '/assets/js/navbar-toggle.js' | url }}?ts={{ "now" | date: "%s" }}"></script>
-    
+
     <style>
-    .map-label {
-        background-color: #fff0 !important; 
-        border: #fff0 !important;
-        font-family: 'EB Garamond, serif' !important;
-        font-weight: bold !important;
-        box-shadow: none !important;
-        font-size: 16px !important;
-        opacity: 1 !important;
-        border-left-color: #f000 !important;
-    }
-    
-    .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-right:before, .leaflet-tooltip-left:before {
-        border: none !important;
-    }
+        .map-label {
+            background-color: #fff0 !important;
+            border: #fff0 !important;
+            font-family: 'EB Garamond, serif' !important;
+            font-weight: bold !important;
+            box-shadow: none !important;
+            font-size: 16px !important;
+            opacity: 1 !important;
+            border-left-color: #f000 !important;
+        }
+
+        .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-right:before, .leaflet-tooltip-left:before {
+            border: none !important;
+        }
     </style>
-  </head>
-  <body class="{{ body_class }}">
-    {% include "header.html" %}
-
+</head>
+<body class="{{ body_class }}">
     {{ content }}
-    {% include "footer.html" %}
-  </body>
-  <script>
-//*** Active class on menu when in section ***//
-// Get all sections that have an ID defined
-const sections = document.querySelectorAll("[id]");
+</body>
+<script>
+    //*** Active class on menu when in section ***//
+    // Get all sections that have an ID defined
+    const sections = document.querySelectorAll("[id]");
 
-// Add an event listener listening for scroll
-window.addEventListener("scroll", navHighlighter);
+    // Add an event listener listening for scroll
+    window.addEventListener("scroll", navHighlighter);
 
-function navHighlighter() {
-  // Get current scroll position
-  let scrollY = window.pageYOffset;
+    function navHighlighter() {
+        // Get current scroll position
+        let scrollY = window.pageYOffset;
 
-  // Now we loop through sections to get height, top and ID values for each
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 150;
-    sectionId = current.getAttribute("id");
+        // Now we loop through sections to get height, top and ID values for each
+        sections.forEach((current) => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 150;
+            sectionId = current.getAttribute("id");
 
-    /*
-    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
-    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
-    */
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelectorAll("ol a[href*=" + sectionId + "]")
-        .forEach((el) => el.classList.add("active"));
-    } else { 
-      document //*** END Active class on menu when in section ***//
-        .querySelectorAll("ol a[href*=" + sectionId + "]")
-        .forEach((el) => el.classList.remove("active"));
+            /*
+            - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
+            - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+            */
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document
+                    .querySelectorAll("ol a[href*=" + sectionId + "]")
+                    .forEach((el) => el.classList.add("active"));
+            } else {
+                document //*** END Active class on menu when in section ***//
+                    .querySelectorAll("ol a[href*=" + sectionId + "]")
+                    .forEach((el) => el.classList.remove("active"));
+            }
+        });
     }
-  });
-}
 
 
-  </script>
+</script>
 </html>

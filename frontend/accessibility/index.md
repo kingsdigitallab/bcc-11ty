@@ -1,5 +1,8 @@
 ---
-title: "Accessibility Statement for Brightening the Covenant Chain"      
+title: "Accessibility Statement for Brightening the Covenant Chain"     
+eleventyNavigation:
+  key: Accessibility
+  order: 5 
 ---
 
 This statement applies to the Brightening the Covenant Chain site (https://bcc-dev.kdl.kcl.ac.uk/).
