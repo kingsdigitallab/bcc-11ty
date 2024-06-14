@@ -1,21 +1,21 @@
 /*
 Error: Invalid US-ASCII character "\xE2"
-        on line 914 of style.scss
+        on line 915 of style.scss
 
-909:       text-transform: uppercase;
-910:     }
-911: 
-912:     //h2
-913:     &:before {
-914:       content: '▾';
-915:       @include transform(rotate(180deg) translate(0, -3px));
-916:       position: absolute;
-917:       right: 0.93em;
-918:       bottom: 0.3em;
-919:       @include transition(all 400ms ease-in);
+910:       text-transform: uppercase;
+911:     }
+912: 
+913:     //h2
+914:     &:before {
+915:       content: '▾';
+916:       @include transform(rotate(180deg) translate(0, -3px));
+917:       position: absolute;
+918:       right: 0.93em;
+919:       bottom: 0.3em;
+920:       @include transition(all 400ms ease-in);
 
 Backtrace:
-style.scss:914
+style.scss:915
 /Users/ehall/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/sass-3.7.4/lib/sass/util.rb:1090:in `rescue in block in find_encoding_error'
 /Users/ehall/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/sass-3.7.4/lib/sass/util.rb:1087:in `block in find_encoding_error'
 /Users/ehall/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `each'
@@ -37,4 +37,4 @@ style.scss:914
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 914 of style.scss\A \A 909:       text-transform: uppercase;\A 910:     }\A 911: \A 912:     //h2\A 913:     &:before {\A 914:       content: '▾';\A 915:       @include transform(rotate(180deg) translate(0, -3px));\A 916:       position: absolute;\A 917:       right: 0.93em;\A 918:       bottom: 0.3em;\A 919:       @include transition(all 400ms ease-in);"; }
+  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 915 of style.scss\A \A 910:       text-transform: uppercase;\A 911:     }\A 912: \A 913:     //h2\A 914:     &:before {\A 915:       content: '▾';\A 916:       @include transform(rotate(180deg) translate(0, -3px));\A 917:       position: absolute;\A 918:       right: 0.93em;\A 919:       bottom: 0.3em;\A 920:       @include transition(all 400ms ease-in);"; }
