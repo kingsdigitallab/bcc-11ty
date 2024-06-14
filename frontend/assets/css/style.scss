@@ -103,7 +103,7 @@ div.quicklink .info-button {
 
 .footer {
   position: fixed;
-    bottom: 1;
+  bottom: 1;
 }
 
 .footer hr {
@@ -189,16 +189,17 @@ div.footer-bottom div.develop {
     background-size: cover;
     min-height: 30vw;
     align-items: center;
+    justify-content:center;
   }
 
   .quicklink-text {
-  padding: 10%;
-  max-height: 5vw;
-}
+    padding: 10%;
+    max-height: 5vw;
+  }
 
-.quicklink-spacer {
-  margin-right: 5%;
-}
+  .quicklink-spacer {
+    margin-right: 5%;
+  }
 
 }
 
