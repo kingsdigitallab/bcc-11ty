@@ -94,6 +94,11 @@ div.quicklink .info-button {
   color: #FFF;
 }
 
+.footer {
+  position: fixed;
+  bottom: 1;
+}
+
 .footer hr {
   background: var(--Primary-Variant-1, #124D20);
 }
