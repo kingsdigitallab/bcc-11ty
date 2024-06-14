@@ -27,6 +27,10 @@ title: BCC
     <script src="{{ '/assets/js/navbar-toggle.js' | url }}?ts={{ "now" | date: "%s" }}"></script>
 
     <style>
+
+
+
+
         .map-label {
             background-color: #fff0 !important;
             border: #fff0 !important;
@@ -44,7 +48,10 @@ title: BCC
     </style>
 </head>
 <body class="{{ body_class }}">
-    {{ content }}
+{% include "header" %}
+{{ content }}
+{% include "footer" %}
+
 </body>
 <script>
     //*** Active class on menu when in section ***//

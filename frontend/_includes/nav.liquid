@@ -1,33 +1,36 @@
 {% assign navPages = collections.all | eleventyNavigation %}
 
-<a id="sitetitle" href="/">Movement and Common World in Early America</a>
+<a id="sitetitle" href="/">Movement and Common World in Early America <span class="subtitle">Homelands, Pathways and the Peoples of the Northeast</span></a>
 <nav>
   <div id="mainmenu">
     <input id="menu" type="checkbox"/>
     <label class="menu" role="button" for="menu">Menu</label>
     <ol>
-      <li> <a href="#overview">Overview</a></li>
-      <li> <a href="stories/">Stories  </a>
-        <ol>
-          <li><a href="#s-intro">Introduction</a></li>
-          <li><a href="#s-1">Homelands</a></li>
-          <li><a href="#s-2">Villagers, Settlers</a></li>
-          <li><a href="#s-3">Pathways</a></li>
-          <li><a href="#s-4">Borders</a></li>
-        </ol>
-      </li>
-      <li> <a href="#filters">Filters </a></li>
-      <li> <a href="#about">About</a></li>
-      <li> <a href="#team">Team</a></li>
-      <li> <a href="#mappage">Maps</a></li>
-      <li> <a href="#resources">Resources</a></li>
+      {% for entry in navPages %}
+        <li class="{% if page.url | contains: entry.url %}is-active{% endif %}">
+          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+        </li>
+      {%  endfor %}
+      {% comment %}<li> <a href="#overview">Overview</a></li>{% endcomment %}
+      {% comment %}<li> <a href="stories/">Stories  </a>{% endcomment %}
+        {% comment %}<ol>{% endcomment %}
+          {% comment %}<li><a href="#s-intro">Introduction</a></li>{% endcomment %}
+          {% comment %}<li><a href="#s-1">Homelands</a></li>{% endcomment %}
+          {% comment %}<li><a href="#s-2">Villagers, Settlers</a></li>{% endcomment %}
+          {% comment %}<li><a href="#s-3">Pathways</a></li>{% endcomment %}
+          {% comment %}<li><a href="#s-4">Borders</a></li>{% endcomment %}
+        {% comment %}</ol>{% endcomment %}
+      {% comment %}</li>{% endcomment %}
+      {% comment %}<li> <a href="#filters">Filters </a></li>{% endcomment %}
+      {% comment %}<li> <a href="#about">About</a></li>{% endcomment %}
+      {% comment %}<li> <a href="#team">Team</a></li>{% endcomment %}
+      {% comment %}<li> <a href="#mappage">Maps</a></li>{% endcomment %}
+      {% comment %}<li> <a href="#resources">Resources</a></li>{% endcomment %}
     </ol>
 
       {% comment %}<ul>{% endcomment %}
           {% comment %}{% for entry in navPages %}{% endcomment %}
-          {% comment %}<li class="{% if page.url | contains: entry.url %}is-active{% endif %}">{% endcomment %}
-            {% comment %}<a href="{{ entry.url | url}}">{{ entry.title }}</a>{% endcomment %}
-          {% comment %}</li>{% endcomment %}
+
           {% comment %}{% endfor %}{% endcomment %}
       {% comment %}</ul>{% endcomment %}
   </div>

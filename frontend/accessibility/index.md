@@ -1,5 +1,6 @@
 ---
-title: "Accessibility Statement for Brightening the Covenant Chain"     
+title: "Accessibility Statement for Brightening the Covenant Chain"
+layout: page.liquid
 eleventyNavigation:
   key: Accessibility
   order: 5 

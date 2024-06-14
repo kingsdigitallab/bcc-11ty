@@ -1,8 +1,11 @@
 // Extra stuff in applying Lucie's templates
+
+
 div.logo {
   padding-left: 1em;
 }
-div.logo.kcl-logo img{
+
+div.logo.kcl-logo img {
   width: 50%;
 }
 
@@ -11,12 +14,101 @@ div.logo img {
   height: auto;
 }
 
+.subtitle {
+  color: #FFF;
+  font-family: Petrona;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+}
+
+
+.info-box {
+  border: 1px solid #000;
+  opacity: 0.93;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 2%;
+
+  color: #000;
+  font-family: "Playfair Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 170%;
+}
+
+.quicklink-container {
+  margin: 3%;
+}
+
+.quicklink {
+  text-align: center;
+  background: #FFF;
+  color: #000;
+  font-family: "Playfair Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%; /* 28.8px */
+  border-top: 5px solid #124D20;
+}
+
+.quicklink-text {
+  padding: 10%;
+  max-height: 5vw;
+}
+
+.quicklink-spacer {
+  margin-right: 5%;
+}
+
+div.quicklink .info-button {
+  color: #000;
+  border: 1.5px solid var(--Primary-Variant-1, #124D20);
+  background: #FFF;
+
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.info-button {
+  background: var(--Primary-1, #132B19);
+  text-align: center;
+
+  color: #FFF;
+  font-family: "Playfair Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-top: 5%;
+}
+
+.info-button a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 1%;
+}
+
+.info-button a:hover {
+  background: var(--Primary-1, #132B19);
+  color: #FFF;
+}
+
+
 .footer {
 
 }
-.footer hr{
+
+.footer hr {
   background: var(--Primary-Variant-1, #124D20);
 }
+
 header {
 
 }
@@ -40,6 +132,74 @@ div.footer-bottom div.develop {
   font-weight: 600;
   line-height: normal;
   text-align: center;
+}
+
+
+// Mobile changes
+@media only screen and (max-width: 600px) {
+  .home-hero {
+    width: auto;
+    background: url('../img/homepage-hero-600.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
+    background-size: cover;
+    min-height: 30vw;
+    display: flex;
+    align-items: center;
+  }
+}
+
+//tablets, large phones
+@media (min-width: 601px) and (max-width: 1200px) {
+  .home-hero {
+    width: auto;
+    background: url('../img/homepage-hero-900.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
+    background-size: cover;
+    min-height: 50em;
+    display: flex;
+    align-items: center;
+  }
+
+  .quicklink {
+    text-align: center;
+    background: #FFF;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 28.8px */
+    border-top: 5px solid #124D20;
+  }
+
+  .quicklink-text {
+    padding: 10%;
+    min-height: 20vw;
+    max-height: 20vw;
+  }
+
+  .quicklink-spacer {
+    margin-right: 3%;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .home-hero {
+    width: auto;
+    background: url('../img/homepage-hero-1920.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
+    background-size: cover;
+    min-height: 30vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .quicklink-text {
+  padding: 10%;
+  max-height: 5vw;
+}
+
+.quicklink-spacer {
+  margin-right: 5%;
+}
+
 }
 
 //Colours

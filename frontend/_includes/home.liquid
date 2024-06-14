@@ -1,8 +1,50 @@
 ---
-layout: page.liquid
+layout: base.liquid
 ---
 <section class="section">
-        <div class="content {{ tags }}">
-          {{ content }}
+    <div class="container">
+        <div class="w3-row has-text-centered w3-padding-small home-hero">
+            <div class="w3-col s3 m4 l4">&nbsp;</div>
+            <div class="w3-col s6 m4 l4 info-box">
+                Movement and Common Worlds is an interactive map platform which uses data garnered from historical maps
+                to illustrate evolving European conceptions of the political and spatial worlds of the American
+                Northeast. As part of Brightening the Covenant Chain, our kinetic map helps tell a more nuanced and
+                complex story than popular history has hitherto told about colonial settlement among - and the Crown's
+                relations with - the powerful indigenous nations of the Iroquois Confederacy.
+                <br/>
+                <div class="info-button"><a href="#">GO TO MAP</a></div>
+            </div>
+
+            <div class="content {{ tags }}">
+                {{ content }}
+            </div>
+        </div>
+        <div class="w3-row has-text-centered w3-padding-small quicklink-container">
+             <div class="w3-col s3 m1 l1">&nbsp;</div>
+            <div class="w3-col s6 m3 l3 quicklink  quicklink-spacer">
+                <div class="quicklink-text">
+                    Scroll through illustrated narratives which explain and expand on the historical contexts of the map
+                    data.
+
+                </div>
+                <div class="info-button"><a href="#">Stories</a></div>
+            </div>
+
+            <div class="w3-col s6 m3 l3 quicklink quicklink-spacer">
+                <div class="quicklink-text">
+                    Select a historical map source and choose what features to display.
+
+                </div>
+                <div class="info-button"><a href="#">Explore</a></div>
+            </div>
+
+            <div class="w3-col s6 m3 l3 quicklink">
+                <div class="quicklink-text">
+                    Find out more about the themes and topics of M&CW with links to related websites and suggestions for further reading.
+
+                </div>
+                <div class="info-button"><a href="#">Resources</a></div>
+            </div>
+
         </div>
 </section>

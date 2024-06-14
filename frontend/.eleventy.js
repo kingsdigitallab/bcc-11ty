@@ -114,7 +114,7 @@ module.exports = function (config) {
         let metadata = await Image(src, {
             widths: [300, 600, "auto"],
             outputDir: '_site/assets/img',
-            urlPath: 'assets/img',
+            urlPath: '/bcc-11ty/assets/img',
             formats: ["webp", "jpeg"],
         });
 
