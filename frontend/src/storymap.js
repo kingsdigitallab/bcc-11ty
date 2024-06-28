@@ -298,7 +298,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-            fill: 'url(/bcc-11ty/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
+            fill: 'url(/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
             weight: 2,
             opacity: 0.3,
             fillOpacity: 1,
@@ -323,7 +323,7 @@ export class StoryMap {
             color: "#f8600e",
 			fillOpacity: 0.5,
             fillColor: "#f8600e00", //fill colour completely transparent
-			fill: 'url(/bcc-11ty/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
+			fill: 'url(/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
             weight: 3,
             opacity: 1,
 		};
@@ -333,7 +333,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-			fill:'url(/bcc-11ty/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
+			fill:'url(/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
             weight: 3,
             opacity: 0.3,
 		};
@@ -344,14 +344,14 @@ export class StoryMap {
             color: "#8D33CC",
 			fillOpacity: 0.5,
             fillColor: "#8D33CC00",
-			fill:'url(/bcc-11ty/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
+			fill:'url(/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
             weight: 3,
             opacity: 1,
         };
 
         this.councilFireIcon = L.icon({
-            iconUrl: '/bcc-11ty/assets/img/stories/council-fire-optimised.webp',
-            shadowUrl: '/bcc-11ty/assets/img/stories/council-fire-shadow.webp',
+            iconUrl: '/assets/img/stories/council-fire-optimised.webp',
+            shadowUrl: '/assets/img/stories/council-fire-shadow.webp',
             iconSize: [20, 20],
             shadowSize: [20, 15],
             iconAnchor: [10, 19],

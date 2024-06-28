@@ -114,7 +114,7 @@ module.exports = function (config) {
         let metadata = await Image(src, {
             widths: [300, 600, "auto"],
             outputDir: '_site/assets/img',
-            urlPath: '/bcc-11ty/assets/img',
+            urlPath: '/assets/img',
             formats: ["webp", "jpeg"],
         });
 
@@ -208,7 +208,8 @@ module.exports = function (config) {
         "excerpt",
         (s) => stripHtml.stripHtml(s).result.substring(0, 200) + "..."
     );
+    // pathPrefix: "/bcc-11ty/",
     return {
-        pathPrefix: "/bcc-11ty/",
+
     };
 };
