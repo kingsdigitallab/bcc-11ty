@@ -88,6 +88,8 @@ export class StoryMap {
 
         // Explore/filter variables
 
+        // Quicklink has for disabling stories
+        this.exploreHash = '#s6-end'
         this.exploreFilterControl = {
             id: 0,
             fid: 0, // We should look at this
@@ -777,7 +779,14 @@ export class StoryMap {
         let slideIndex = -1;
         let intersectionY = 0;
         let slides = document.getElementsByClassName("mapSlide");
+
         this.observerEnabled = true;
+        // If we're getting here via the explore link don't enable
+
+        if (window.location && window.location.hash == this.exploreHash){
+            this.observerEnabled = false;
+        }
+
 
         //console.log(slides);
 
