@@ -86269,7 +86269,7 @@
         "identity": 1
       },
       "geometry": {
-        "type": "MultiPolygon",
+        "type": "Point",
         "coordinates": [-88.76207902281605,
         29.872693081533782]
       }
