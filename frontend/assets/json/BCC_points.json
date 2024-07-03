@@ -85915,6 +85915,26 @@
         "type": "Point",
         "coordinates": [-72.14585359855107, 42.500330502461736]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3952,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 5,
+        "date_yr": 1677,
+        "accuracy": 1,
+        "map_text": "The:WineHills=",
+        "norm_text": "The Wine Hills",
+        "story_link": 4,
+        "frame_link": null,
+        "identity": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.29720248600294, 43.96015900359916]
+      }
     }
   ]
 }
