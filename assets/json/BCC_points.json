@@ -85895,6 +85895,26 @@
         "type": "Point",
         "coordinates": [-70.36772188434826, 41.320405519172624]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3431,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 5,
+        "date_yr": 1677,
+        "accuracy": 2,
+        "map_text": "Wainsei Hill ≡",
+        "norm_text": "Wainsei Hill",
+        "story_link": 1,
+        "frame_link": null,
+        "identity": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.14585359855107, 42.500330502461736]
+      }
     }
   ]
 }
