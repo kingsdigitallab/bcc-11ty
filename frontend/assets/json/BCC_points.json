@@ -85855,6 +85855,26 @@
         "type": "Point",
         "coordinates": [-79.67590649212916, 47.51132181201481]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3970,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 3,
+        "date_yr": 1676,
+        "accuracy": 1,
+        "map_text": "Soyle Isle",
+        "norm_text": "Soyle Isle",
+        "story_link": 2,
+        "frame_link": null,
+        "identity": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.25148510542253, 41.56212344562289]
+      }
     }
   ]
 }
