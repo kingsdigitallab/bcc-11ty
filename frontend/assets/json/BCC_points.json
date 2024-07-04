@@ -85935,6 +85935,26 @@
         "type": "Point",
         "coordinates": [-71.29720248600294, 43.96015900359916]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3962,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 3,
+        "date_yr": 1676,
+        "accuracy": 2,
+        "map_text": "Iefferyes Ledge",
+        "norm_text": "Iefferyes Ledge",
+        "story_link": 2,
+        "frame_link": null,
+        "identity": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.05980619890528, 43.07227045452586]
+      }
     }
   ]
 }
