@@ -85955,6 +85955,46 @@
         "type": "Point",
         "coordinates": [-70.05980619890528, 43.07227045452586]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3956,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 3,
+        "date_yr": 1676,
+        "accuracy": 2,
+        "map_text": "Isle of Sholes",
+        "norm_text": "Isle of Sholes",
+        "story_link": 2,
+        "frame_link": null,
+        "identity": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.61360789748694, 42.987458057387954]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3978,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 3,
+        "date_yr": 1676,
+        "accuracy": 2,
+        "map_text": "Elizabeths Isle",
+        "norm_text": "Elizabeths Isle",
+        "story_link": 2,
+        "frame_link": null,
+        "identity": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.81189091315721, 41.47998102831891]
+      }
     }
   ]
 }
