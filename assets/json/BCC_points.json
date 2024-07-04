@@ -86035,6 +86035,46 @@
         "type": "Point",
         "coordinates": [-70.96957743792844, 42.3370366985979]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3986,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 3,
+        "date_yr": 1676,
+        "accuracy": 2,
+        "map_text": "THE SOUNDS",
+        "norm_text": "The Sounds",
+        "story_link": null,
+        "frame_link": null,
+        "identity": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.91434385214446, 41.13662621171966]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3427,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 3,
+        "date_yr": 1676,
+        "accuracy": 2,
+        "map_text": "Caskow Bay",
+        "norm_text": "Caskow Bay",
+        "story_link": null,
+        "frame_link": null,
+        "identity": 2
+      },
+      "geometry": {
+        "type": "Points",
+        "coordinates": [-70.05978257001625, 43.72583005985496]
+      }
     }
   ]
 }
