@@ -1,7 +1,16 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 div.logo {
   padding-left: 1em;
+  max-width: 20%;
 }
 
 div.logo.kcl-logo img {
@@ -11,6 +20,8 @@ div.logo.kcl-logo img {
 div.logo img {
   width: 50%;
   height: auto;
+  display: block;
+  margin: auto;
 }
 
 .subtitle {
@@ -43,7 +54,8 @@ div.logo img {
 .quicklink {
   text-align: center;
   background: rgba(18, 77, 32, 0.1);
-  padding-bottom: 5%;
+  padding-bottom: 1%;
+  width: 20%;
   color: #000;
   font-family: "Playfair Display";
   font-size: 16px;
@@ -96,12 +108,17 @@ div.quicklink .info-button {
 }
 
 .footer {
-  margin-top: 5%;
   bottom: 1;
 }
 
 .footer hr {
   background: var(--Primary-Variant-1, #124D20);
+}
+
+div.home-container {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.container {
@@ -158,6 +175,7 @@ div.footer-bottom div.develop {
     font-weight: 400;
     line-height: 180%; /* 28.8px */
     border-top: 5px solid #124D20;
+    padding-bottom: 2%;
   }
   .quicklink-text {
     padding: 10%;
