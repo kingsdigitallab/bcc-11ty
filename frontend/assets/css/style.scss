@@ -73,6 +73,7 @@ div.logo img {
 .quicklink-text {
   padding: 10%;
   height: 5vw;
+  font-size: 100%;
 }
 
 .quicklink-spacer {
@@ -201,7 +202,7 @@ div.footer-bottom div.develop {
   .quicklink-text {
     padding: 10%;
     height: 20vw;
-
+    font-size: 100%;
   }
 
   .quicklink-spacer {
@@ -227,6 +228,14 @@ div.logo img {
   }
 }
 
+@media only screen and (min-width: 1601px) {
+ .quicklink-text {
+
+    font-size: 120%;
+  }
+
+}
+
 @media only screen and (min-width: 1201px) {
   .home-hero {
     width: auto;
@@ -240,6 +249,7 @@ div.logo img {
   .quicklink-text {
     padding: 10%;
     height: 10vw;
+
   }
 
   .quicklink-spacer {
