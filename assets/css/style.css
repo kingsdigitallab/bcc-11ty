@@ -68,7 +68,7 @@ div.logo img {
 
 .quicklink-text {
   padding: 10%;
-  max-height: 5vw;
+  height: 5vw;
 }
 
 .quicklink-spacer {
@@ -110,6 +110,7 @@ div.quicklink .info-button {
 
 .footer {
   bottom: 1;
+  margin-top: 5%;
 }
 
 .footer hr {
@@ -180,8 +181,7 @@ div.footer-bottom div.develop {
   }
   .quicklink-text {
     padding: 10%;
-    min-height: 20vw;
-    max-height: 20vw;
+    height: 20vw;
   }
   .quicklink-spacer {
     margin-right: 3%;
@@ -213,7 +213,7 @@ div.footer-bottom div.develop {
   }
   .quicklink-text {
     padding: 10%;
-    max-height: 5vw;
+    height: 10vw;
   }
   .quicklink-spacer {
     margin-right: 5%;
