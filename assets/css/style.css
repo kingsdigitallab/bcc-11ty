@@ -69,6 +69,7 @@ div.logo img {
 .quicklink-text {
   padding: 10%;
   height: 5vw;
+  font-size: 100%;
 }
 
 .quicklink-spacer {
@@ -182,6 +183,7 @@ div.footer-bottom div.develop {
   .quicklink-text {
     padding: 10%;
     height: 20vw;
+    font-size: 100%;
   }
   .quicklink-spacer {
     margin-right: 3%;
@@ -200,6 +202,11 @@ div.footer-bottom div.develop {
   }
   .footer-credits {
     font-size: 80%;
+  }
+}
+@media only screen and (min-width: 1601px) {
+  .quicklink-text {
+    font-size: 120%;
   }
 }
 @media only screen and (min-width: 1201px) {
