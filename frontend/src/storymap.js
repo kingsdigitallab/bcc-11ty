@@ -144,9 +144,9 @@ export class StoryMap {
         // line Styles
         this.lineBorderStyle = {
             stroke: true,
-            //dashArray: "3 6",
+            dashArray: "5 5",
             lineCap: "square",
-            color: "#000000",
+            color: "#696969",
             weight: 2.5,
             fill: false,
         };
@@ -155,7 +155,7 @@ export class StoryMap {
             //dashArray: "7 6",
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#FFFFFF",
+            color: "#696969",
             weight: 3,
             fill: false,
         };
@@ -178,7 +178,7 @@ export class StoryMap {
         };
         this.lineRiverRouteStyle = {
             stroke: true,
-            color: "#2D9BF0",
+            color: "#0059a2",
             lineCap: "square",
             lineJoin: "round",
             weight: 2,
@@ -209,6 +209,42 @@ export class StoryMap {
         };
 
         // Poly Styles
+        
+        this.indigenousAreaStyle = {
+            stroke: true,
+            color: "#028090",
+            fillColor: "#028090",
+            lineCap: "square",
+            weight: 2,
+            fill: true,
+            opacity: 1,
+            fillOpacity: 0.3,
+        };
+        
+         this.europeanAreaStyle = {
+            stroke: true,
+            color: "#360568",
+            fillColor: "#360568",
+            lineCap: "square",
+            weight: 2,
+            fill: true,
+            opacity: 1,
+            fillOpacity: 0.3,
+        };
+
+        this.haudenosauneeAreaStyle = {
+            stroke: true,
+            lineCap: "square",
+            color: "#028090",
+            fillColor: "#02809000",
+            fill: 'url(/assets/img/stories/haudenosaunee-hatch-30-pc-fill-turquoise.webp)',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 1,
+        };           
+        
+       
+        
         this.polyBorderStyle = {
             stroke: true,
             dashArray: "4 6",
@@ -350,12 +386,9 @@ export class StoryMap {
         };
 
         this.councilFireIcon = L.icon({
-            iconUrl: '/assets/img/stories/council-fire-optimised.webp',
-            shadowUrl: '/assets/img/stories/council-fire-shadow.webp',
-            iconSize: [20, 20],
-            shadowSize: [20, 15],
-            iconAnchor: [10, 19],
-            shadowAnchor: [10, 14],
+            iconUrl: '/assets/img/stories/council-fire.webp',
+            iconSize: [20, 39],
+            iconAnchor: [10, 38],
             popupAnchor: [-3, -20]
         });
 		
@@ -1086,14 +1119,14 @@ export class StoryMap {
                         switch (feature.properties.identity) {
                             case 2:
                                 // Red poly
-                                layer.setStyle(this.polyNativeStyle);
+                                layer.setStyle(this.indigenousAreaStyle);
                                 break;
                             case 3:
                                 //Grey poly (Haudenasuanee)
-                                layer.setStyle(this.polyAnnoStyle);
+                                layer.setStyle(this.haudenosauneeAreaStyle);
                                 break;
                             default:
-                                layer.setStyle(this.polyEuroStyle);
+                                layer.setStyle(this.europeanAreaStyle);
                         }
                         break;
                     case 14:
@@ -1102,14 +1135,14 @@ export class StoryMap {
                         switch (feature.properties.identity) {
                             case 2:
                                 // Red poly
-                                layer.setStyle(this.polyDomainNativeStyle);
+                                layer.setStyle(this.indigenousAreaStyle);
                                 break;
                             case 3:
                                 //Grey poly (Haudenasuanee)
-                                layer.setStyle(this.polyDomainHaudenasuaneeStyle);
+                                layer.setStyle(this.haudenosauneeAreaStyle);
                                 break;
                             default:
-                                layer.setStyle(this.polyDomainEuroStyle);
+                                layer.setStyle(this.europeanAreaStyle);
                         }
                         break;
                 }
@@ -1121,6 +1154,10 @@ export class StoryMap {
                         layer.setStyle(this.lineBorderStyle);
                         //layer.setText(feature.properties.norm_text);
                         break;
+                    case 4:
+                        layer.setStyle(this.lineLandRouteStyle);
+                        //layer.setText(feature.properties.norm_text);
+                        this.shadowFeatures.push(feature);                        
                     case 5:
                         layer.setStyle(this.lineLandRouteStyle);
                         //layer.setText(feature.properties.norm_text);
