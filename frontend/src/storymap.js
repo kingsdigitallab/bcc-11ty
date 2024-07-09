@@ -357,6 +357,25 @@ export class StoryMap {
             iconAnchor: [10, 19],
             shadowAnchor: [10, 14],
             popupAnchor: [-3, -20]
+        });
+		
+        this.indigenousSettlementIcon = L.icon({
+            iconUrl: '/assets/img/stories/cross_purple.webp',
+            shadowUrl: '/assets/img/stories/cross_shadow.webp',
+            iconSize: [20, 20],
+            shadowSize: [20, 20],
+            iconAnchor: [10, 19],
+            shadowAnchor: [10, 19],
+            popupAnchor: [-3, -20]
+        });
+        this.europeanSettlementIcon = L.icon({
+            iconUrl: '/assets/img/stories/cross_turquoise.webp',
+            shadowUrl: '/assets/img/stories/cross_shadow.webp',
+            iconSize: [20, 20],
+            shadowSize: [20, 20],
+            iconAnchor: [10, 19],
+            shadowAnchor: [10, 19],
+            popupAnchor: [-3, -20]
         })
     }
 
@@ -427,36 +446,21 @@ export class StoryMap {
                     fillOpacity: 1,
                     bubblingMouseEvents: true,
                 });
-            // Settlement : Squares - dark green - point up
             case 4:
                 // Capture Indig vs Haudenasnee
                 switch (feature.properties.identity) {
                     case 1:
-                        // European - Red Square
-                        return new this.L.RegularPolygonMarker(latlng, {
-                            numberOfSides: 4,
-                            rotation: -45,
-                            radius: 6,
-                            //this.L.Path style options
-                            fill: true,
-                            fillColor: "#7A0707",
-                            color: "#7A0707",
-                            weight: 0.5,
-                            fillOpacity: 1,
-                            stroke: true,
-                            bubblingMouseEvents: true,
-                        });
-                    // Default - Indigenous Red circle - everything else
+                        // European - purple cross
+							return this.L.marker(latlng, {
+								icon: this.europeanSettlementIcon,
+								bubblingMouseEvents: true
+							});
+                    // Default - Indigenous turq cross - everything else
                     default:
-                        return this.L.circleMarker(latlng, {
-                            radius: 5,
-                            fillColor: "#7A0707",
-                            color: "#7A0707",
-                            weight: 0.5,
-                            opacity: 1,
-                            fillOpacity: 1,
-                            bubblingMouseEvents: true,
-                        });
+							return this.L.marker(latlng, {
+								icon: this.indigenousSettlementIcon,
+								bubblingMouseEvents: true
+							});
                 }
             // Land route -
             case 5:
@@ -528,31 +532,26 @@ export class StoryMap {
                 // Capture Indig vs Haudenasnee
                 switch (feature.properties.identity) {
                     case 1: //European - green sq, white centre
-                        return new this.L.RegularPolygonMarker(latlng, {
-                            numberOfSides: 4,
-                            rotation: -45,
-                            radius: 7,
-                            //this.L.Path style options
-                            fill: true,
-                            fillColor: "#FFFFFF",
-                            color: "#48A795",
-                            weight: 2.5,
-                            fillOpacity: 1,
-                            stroke: true,
-                            bubblingMouseEvents: true,
-                        });
-                    default: //indigenouns - green circle,white centre
                         return this.L.circleMarker(latlng, {
                             radius: 6,
-                            fillColor: "#FFFFFF",
-                            color: "#48A795",
+                            fillColor: "#360568",
+                            color: "#360568",
+                            weight: 2.5,
+                            opacity: 1,
+                            fillOpacity: 1,
+                            bubblingMouseEvents: true,
+                        });
+                    default: //indigenous  - green circle,white centre
+                        return this.L.circleMarker(latlng, {
+                            radius: 6,
+                            fillColor: "#028090",
+                            color: "#028090",
                             weight: 2.5,
                             opacity: 1,
                             fillOpacity: 1,
                             bubblingMouseEvents: true,
                         });
                 }
-
             case 12: // Council fire
                 return this.L.marker(latlng, {
                     icon: this.councilFireIcon,
