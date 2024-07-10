@@ -1690,7 +1690,7 @@
       "properties": {
         "id": 3942,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 3,
         "date_yr": 1676,
         "accuracy": null,
@@ -1755,7 +1755,7 @@
       "properties": {
         "id": 3937,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 3,
         "date_yr": 1676,
         "accuracy": null,
@@ -1787,7 +1787,7 @@
       "properties": {
         "id": 3941,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 3,
         "date_yr": 1676,
         "accuracy": null,
@@ -1818,7 +1818,7 @@
       "properties": {
         "id": 3940,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 3,
         "date_yr": 1676,
         "accuracy": null,
@@ -1855,7 +1855,7 @@
       "properties": {
         "id": 3943,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 3,
         "date_yr": 1676,
         "accuracy": null,
@@ -1992,7 +1992,7 @@
       "properties": {
         "id": 3930,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 3,
         "date_yr": 1676,
         "accuracy": null,
@@ -2153,7 +2153,7 @@
       "properties": {
         "id": 3932,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 3,
         "date_yr": 1676,
         "accuracy": null,
@@ -2218,7 +2218,7 @@
       "properties": {
         "id": 3935,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 3,
         "date_yr": 1676,
         "accuracy": null,
@@ -7760,7 +7760,7 @@
       "properties": {
         "id": 3836,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 9,
         "date_yr": 1754,
         "accuracy": 3,
@@ -7794,7 +7794,7 @@
       "properties": {
         "id": 3835,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 9,
         "date_yr": 1754,
         "accuracy": 3,
@@ -7961,7 +7961,7 @@
       "properties": {
         "id": 3830,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -8167,7 +8167,7 @@
       "properties": {
         "id": 2695,
         "feat_type": 3,
-        "sub_type": 4,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -8501,8 +8501,8 @@
       "type": "Feature",
       "properties": {
         "id": 4165,
-        "feat_type": 3,
-        "sub_type": 11,
+        "feat_type": 5,
+        "sub_type": 14,
         "map_source": 9,
         "date_yr": 1754,
         "accuracy": null,
@@ -8532,8 +8532,8 @@
       "type": "Feature",
       "properties": {
         "id": 4170,
-        "feat_type": 3,
-        "sub_type": 11,
+        "feat_type": 5,
+        "sub_type": 14,
         "map_source": 9,
         "date_yr": 1754,
         "accuracy": null,
@@ -8562,8 +8562,8 @@
       "type": "Feature",
       "properties": {
         "id": 4168,
-        "feat_type": 3,
-        "sub_type": 11,
+        "feat_type": 5,
+        "sub_type": 14,
         "map_source": 9,
         "date_yr": 1754,
         "accuracy": null,
@@ -9930,7 +9930,7 @@
       "properties": {
         "id": 3436,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -9963,7 +9963,7 @@
       "properties": {
         "id": 2755,
         "feat_type": 3,
-        "sub_type": 4,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -9996,7 +9996,7 @@
       "properties": {
         "id": 2756,
         "feat_type": 3,
-        "sub_type": 4,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -10312,7 +10312,7 @@
       "properties": {
         "id": 3905,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 9,
         "date_yr": 1754,
         "accuracy": null,
@@ -10537,7 +10537,7 @@
       "properties": {
         "id": 3893,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 9,
         "date_yr": 1754,
         "accuracy": null,
@@ -11130,7 +11130,7 @@
       "properties": {
         "id": 2819,
         "feat_type": 3,
-        "sub_type": 4,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -11192,7 +11192,7 @@
       "properties": {
         "id": 3873,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -11418,7 +11418,7 @@
       "properties": {
         "id": 3875,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -11521,7 +11521,7 @@
       "properties": {
         "id": 3868,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -11552,7 +11552,7 @@
       "properties": {
         "id": 3867,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -11618,7 +11618,7 @@
       "properties": {
         "id": 3869,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -11650,7 +11650,7 @@
       "properties": {
         "id": 3871,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -11858,7 +11858,7 @@
       "properties": {
         "id": 3866,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12058,7 +12058,7 @@
       "properties": {
         "id": 3853,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12089,7 +12089,7 @@
       "properties": {
         "id": 3858,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12119,7 +12119,7 @@
       "properties": {
         "id": 3856,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12149,7 +12149,7 @@
       "properties": {
         "id": 3440,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12188,7 +12188,7 @@
       "properties": {
         "id": 3860,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12218,7 +12218,7 @@
       "properties": {
         "id": 3863,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12248,7 +12248,7 @@
       "properties": {
         "id": 3862,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12278,7 +12278,7 @@
       "properties": {
         "id": 3846,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12340,7 +12340,7 @@
       "properties": {
         "id": 3850,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -12372,7 +12372,7 @@
       "properties": {
         "id": 3848,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -14481,7 +14481,7 @@
       "properties": {
         "id": 3926,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -14575,7 +14575,7 @@
       "properties": {
         "id": 3803,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -14606,7 +14606,7 @@
       "properties": {
         "id": 3928,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -14639,7 +14639,7 @@
       "properties": {
         "id": 3919,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -14671,7 +14671,7 @@
       "properties": {
         "id": 3918,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -14705,7 +14705,7 @@
       "properties": {
         "id": 3921,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -14738,7 +14738,7 @@
       "properties": {
         "id": 3920,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -14799,7 +14799,7 @@
       "properties": {
         "id": 3922,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15049,7 +15049,7 @@
       "properties": {
         "id": 3913,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15079,7 +15079,7 @@
       "properties": {
         "id": 3915,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15140,7 +15140,7 @@
       "properties": {
         "id": 3917,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15170,7 +15170,7 @@
       "properties": {
         "id": 3916,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15201,7 +15201,7 @@
       "properties": {
         "id": 3902,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15231,7 +15231,7 @@
       "properties": {
         "id": 3900,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15262,7 +15262,7 @@
       "properties": {
         "id": 3904,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15326,7 +15326,7 @@
       "properties": {
         "id": 3907,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15357,7 +15357,7 @@
       "properties": {
         "id": 3906,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15420,7 +15420,7 @@
       "properties": {
         "id": 3909,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15451,7 +15451,7 @@
       "properties": {
         "id": 3886,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15485,7 +15485,7 @@
       "properties": {
         "id": 3439,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15517,7 +15517,7 @@
       "properties": {
         "id": 3890,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15548,7 +15548,7 @@
       "properties": {
         "id": 3888,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15578,7 +15578,7 @@
       "properties": {
         "id": 3894,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -15700,7 +15700,7 @@
       "properties": {
         "id": 3876,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17084,7 +17084,7 @@
       "properties": {
         "id": 3854,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17169,7 +17169,7 @@
       "properties": {
         "id": 3857,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17199,7 +17199,7 @@
       "properties": {
         "id": 3855,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17232,7 +17232,7 @@
       "properties": {
         "id": 3861,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17262,7 +17262,7 @@
       "properties": {
         "id": 3859,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17296,7 +17296,7 @@
       "properties": {
         "id": 3843,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17332,7 +17332,7 @@
       "properties": {
         "id": 3842,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17362,7 +17362,7 @@
       "properties": {
         "id": 3845,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17393,7 +17393,7 @@
       "properties": {
         "id": 3844,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17424,7 +17424,7 @@
       "properties": {
         "id": 3849,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17458,7 +17458,7 @@
       "properties": {
         "id": 3847,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17491,7 +17491,7 @@
       "properties": {
         "id": 3852,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17522,7 +17522,7 @@
       "properties": {
         "id": 3851,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17556,7 +17556,7 @@
       "properties": {
         "id": 3834,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17591,7 +17591,7 @@
       "properties": {
         "id": 3833,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17622,7 +17622,7 @@
       "properties": {
         "id": 3837,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17690,7 +17690,7 @@
       "properties": {
         "id": 3839,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17720,7 +17720,7 @@
       "properties": {
         "id": 3838,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17754,7 +17754,7 @@
       "properties": {
         "id": 3841,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17787,7 +17787,7 @@
       "properties": {
         "id": 3840,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17817,7 +17817,7 @@
       "properties": {
         "id": 3825,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17848,7 +17848,7 @@
       "properties": {
         "id": 3824,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17883,7 +17883,7 @@
       "properties": {
         "id": 3827,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17916,7 +17916,7 @@
       "properties": {
         "id": 3826,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17950,7 +17950,7 @@
       "properties": {
         "id": 3829,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -17980,7 +17980,7 @@
       "properties": {
         "id": 3828,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18012,7 +18012,7 @@
       "properties": {
         "id": 3832,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18044,7 +18044,7 @@
       "properties": {
         "id": 3831,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18076,7 +18076,7 @@
       "properties": {
         "id": 3819,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18137,7 +18137,7 @@
       "properties": {
         "id": 3820,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18168,7 +18168,7 @@
       "properties": {
         "id": 3821,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18198,7 +18198,7 @@
       "properties": {
         "id": 3823,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18232,7 +18232,7 @@
       "properties": {
         "id": 3822,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18269,7 +18269,7 @@
       "properties": {
         "id": 3812,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18310,7 +18310,7 @@
       "properties": {
         "id": 3811,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18341,7 +18341,7 @@
       "properties": {
         "id": 3815,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18374,7 +18374,7 @@
       "properties": {
         "id": 3814,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18404,7 +18404,7 @@
       "properties": {
         "id": 3817,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18434,7 +18434,7 @@
       "properties": {
         "id": 3816,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18467,7 +18467,7 @@
       "properties": {
         "id": 3818,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18781,7 +18781,7 @@
       "properties": {
         "id": 3805,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18821,7 +18821,7 @@
       "properties": {
         "id": 3809,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18860,7 +18860,7 @@
       "properties": {
         "id": 3806,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18897,7 +18897,7 @@
       "properties": {
         "id": 3923,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18934,7 +18934,7 @@
       "properties": {
         "id": 3925,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18967,7 +18967,7 @@
       "properties": {
         "id": 3924,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -18999,7 +18999,7 @@
       "properties": {
         "id": 3927,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": null,
@@ -22569,7 +22569,7 @@
       "properties": {
         "id": 4320,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22599,7 +22599,7 @@
       "properties": {
         "id": 4322,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22629,7 +22629,7 @@
       "properties": {
         "id": 4324,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22659,7 +22659,7 @@
       "properties": {
         "id": 4326,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22689,7 +22689,7 @@
       "properties": {
         "id": 4327,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22721,7 +22721,7 @@
       "properties": {
         "id": 4329,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22753,7 +22753,7 @@
       "properties": {
         "id": 4331,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22785,7 +22785,7 @@
       "properties": {
         "id": 4333,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22817,7 +22817,7 @@
       "properties": {
         "id": 4335,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22847,7 +22847,7 @@
       "properties": {
         "id": 4336,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22879,7 +22879,7 @@
       "properties": {
         "id": 4341,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22910,7 +22910,7 @@
       "properties": {
         "id": 4344,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -22940,7 +22940,7 @@
       "properties": {
         "id": 4347,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -23030,7 +23030,7 @@
       "properties": {
         "id": 4352,
         "feat_type": 3,
-        "sub_type": 4,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
@@ -23060,7 +23060,7 @@
       "properties": {
         "id": 4353,
         "feat_type": 5,
-        "sub_type": 4,
+        "sub_type": 14,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 3,
