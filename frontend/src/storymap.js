@@ -155,7 +155,7 @@ export class StoryMap {
             //dashArray: "7 6",
             lineCap: "square",
             lineJoin: "arcs",
-            color: "#696969",
+            color: "#FFFFFF",
             weight: 3,
             fill: false,
         };
@@ -1134,11 +1134,9 @@ export class StoryMap {
                         // Capture Indig vs Haudenasnee
                         switch (feature.properties.identity) {
                             case 2:
-                                // Red poly
                                 layer.setStyle(this.indigenousAreaStyle);
                                 break;
                             case 3:
-                                //Grey poly (Haudenasuanee)
                                 layer.setStyle(this.haudenosauneeAreaStyle);
                                 break;
                             default:
@@ -1192,10 +1190,10 @@ export class StoryMap {
             default:
                 switch (feature.properties.Slug){
                     case "catawba":
-                        layer.setStyle(this.polyDomainNativeStyle);
+                        layer.setStyle(this.indigenousAreaStyle);
                         break;
                     default:
-                        layer.setStyle(this.polyDomainHaudenasuaneeStyle);
+                        layer.setStyle(this.haudenosauneeAreaStyle);
                 }
                 //layer.setStyle(this.defaultLineStyle);
         }
