@@ -4,25 +4,16 @@
       "id": 2,
       "fid": 33,
       "lines": {},
-      "points": {},
-      "polys": {
-        "includes": {
-          "id": [
-            4221,
-            4164,
-            4150,
-            4092,
-            4257
-          ]
-        }
-      }, 
-      "indigenous": {
-        "includes": {
-          "ID": [
-            36124,
-            36519
-          ]
-        }
+      "points": {
+        "includes": { 
+          "sub_type": [ 
+            4, 
+            10 
+          ], 
+          "map_source": [ 
+            12 
+          ] 
+        } 
       },
       "features": []
     },
