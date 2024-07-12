@@ -4,15 +4,17 @@
       "id": 2,
       "fid": 33,
       "lines": {},
-      "points": {
+      "polys": {
         "includes": { 
           "sub_type": [ 
-            4, 
-            10 
+            11 
           ], 
           "map_source": [ 
             12 
-          ] 
+          ],
+          "identity": [
+            2
+          ]
         } 
       },
       "features": []
