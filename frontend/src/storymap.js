@@ -393,7 +393,7 @@ export class StoryMap {
         });
 		
         this.indigenousSettlementIcon = L.icon({
-            iconUrl: '/assets/img/stories/cross_purple.webp',
+            iconUrl: '/assets/img/stories/cross_turquoise.webp',
             shadowUrl: '/assets/img/stories/cross_shadow.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
@@ -402,7 +402,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanSettlementIcon = L.icon({
-            iconUrl: '/assets/img/stories/cross_turquoise.webp',
+            iconUrl: '/assets/img/stories/cross_purple.webp',
             shadowUrl: '/assets/img/stories/cross_shadow.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
