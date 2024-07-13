@@ -20262,7 +20262,7 @@
       "properties": {
         "id": 4221,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 11,
         "map_source": 19,
         "date_yr": 1796,
         "accuracy": 3,
@@ -20270,7 +20270,7 @@
         "norm_text": "Lands of the Six Nations",
         "story_link": null,
         "frame_link": null,
-        "identity": 2
+        "identity": 3
       },
       "geometry": {
         "type": "MultiPolygon",
