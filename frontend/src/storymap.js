@@ -282,7 +282,7 @@ export class StoryMap {
         };
         this.polyDescriptiveStyle = {
             stroke: true,
-            fillColor: "#ff0000",
+            fillColor: "#696969",
             weight: 1,
             fill: true,
             opacity: 0.5,
