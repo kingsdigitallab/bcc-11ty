@@ -1416,8 +1416,11 @@ export class StoryMap {
                 this.exploreFilterControl.maps.splice(index, 1);
                 if (this.totalMapFiltersApplied > 0) {
                     this.totalMapFiltersApplied -= 1;
+
+                    this.toggleAllMapsEnabled = false;
                 }
             }
+
             if (!this.toggleAllFeaturesEnabled) {
                 this.applyExploreFilters();
                 // Update filter counts for map and explore
@@ -1556,6 +1559,7 @@ export class StoryMap {
         // todo we need default behaviour so toggle all if explore filter selected
         // but don't filter
         // Otherwise filter
+        
         if (this.toggleAllMapsEnabled) {
             filteredFeatures = subtypeFeatures;
             if (!this.exploreFiltersEnabled) {
