@@ -74,7 +74,7 @@ export class StoryMap {
             7: "Burghers, 1738",
             8: "Evans, 1752",
             9: "n/a",
-            10: "Herbert, 1755",
+            10: "n/a",
             11: "Moll, 1755",
             12: "Mitchell, 1755",
             13: "Bowen, 1772",
