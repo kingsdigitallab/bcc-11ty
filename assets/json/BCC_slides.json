@@ -1023,15 +1023,10 @@
         "includes": {
           "sub_type": [
             4,
-            10,
             12
           ]
         },
-        "excludes": {
-          "identity": [
-            1
-          ]
-        }
+        "excludes": {}
       },
       "polys": {
         "includes": {},
