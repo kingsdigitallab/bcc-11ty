@@ -197,7 +197,7 @@ export class StoryMap {
         };
         this.lineMiscStyle = {
             stroke: true,
-            color: "#ffffff",
+            color: "#000000",
             weight: 4,
             fill: false,
         };
