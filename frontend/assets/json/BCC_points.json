@@ -22980,7 +22980,10 @@
         "frame_link": null,
         "identity": 1
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-55.90891912186349, 48.716521060597245]
+      }
     },
     {
       "type": "Feature",
