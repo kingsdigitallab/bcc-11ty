@@ -86757,6 +86757,66 @@
         "type": "Point",
         "coordinates": [-87.06821346613495, 47.14274533500085]
       }
-    }
+    },
+    {
+            "type": "Feature",
+            "properties": {
+              "id": 3864,
+              "feat_type": 5,
+              "sub_type": 10,
+              "map_source": 12,
+              "date_yr": 1755,
+              "accuracy": null,
+              "map_text": "NOVA SCOTIA",
+              "norm_text": "Nova Scotia",
+              "story_link": null,
+              "frame_link": null,
+              "identity": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-63.345748463526135, 45.55387880824833]
+            }
+          },
+    {
+            "type": "Feature",
+            "properties": {
+              "id": 3865,
+              "feat_type": 5,
+              "sub_type": 10,
+              "map_source": 12,
+              "date_yr": 1755,
+              "accuracy": null,
+              "map_text": "ACADIA",
+              "norm_text": "Acadia",
+              "story_link": null,
+              "frame_link": null,
+              "identity": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-66.35793122440411, 45.76147332404025]
+            }
+          },
+    {
+            "type": "Feature",
+            "properties": {
+              "id": 3810,
+              "feat_type": 5,
+              "sub_type": 10,
+              "map_source": 12,
+              "date_yr": 1755,
+              "accuracy": null,
+              "map_text": "ISLE of CAPE BRETON",
+              "norm_text": "Isle of Cape Breton",
+              "story_link": null,
+              "frame_link": null,
+              "identity": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [-61.01500130166781, 46.4632434439788]
+            }
+          }
   ]
 }
