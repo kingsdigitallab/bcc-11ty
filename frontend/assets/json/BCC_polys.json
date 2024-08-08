@@ -15630,6 +15630,36 @@
       }
     },
     {
+            "type": "Feature",
+            "properties": {
+              "id": 3892,
+              "feat_type": 5,
+              "sub_type": 14,
+              "map_source": 12,
+              "date_yr": 1755,
+              "accuracy": null,
+              "map_text": "Pr. Edward Cty.",
+              "norm_text": "Prince Edward County",
+              "story_link": null,
+              "frame_link": null,
+              "identity": 1
+            },
+            "geometry": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [-78.615418662612726, 37.026482485799242],
+                    [-78.743534726255078, 37.575314991115079],
+                    [-78.63944042454564, 37.618667848541726],
+                    [-78.511324360903302, 37.047788327978282],
+                    [-78.615418662612726, 37.026482485799242]
+                  ]
+                ]
+              ]
+            }
+          },
+    {
       "type": "Feature",
       "properties": {
         "id": 3206,
