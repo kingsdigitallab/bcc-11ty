@@ -86817,6 +86817,46 @@
               "type": "Point",
               "coordinates": [-61.01500130166781, 46.4632434439788]
             }
-          }
+          },
+          {
+      "type": "Feature",
+      "properties": {
+        "id": 6636,
+        "feat_type": 1,
+        "sub_type": 10,
+        "map_source": 12,
+        "date_yr": 1755,
+        "accuracy": 3,
+        "map_text": "Matchigamichi L.",
+        "norm_text": "Matchigamichi Lake",
+        "story_link": 1,
+        "frame_link": null,
+        "identity": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-66.360211644590535, 51.04198148220366]
+      }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+          "id": 987654321,
+          "feat_type": 1,
+          "sub_type": 10,
+          "map_source": 12,
+          "date_yr": 1755,
+          "accuracy": 3,
+          "map_text": "Poguatanquaton",
+          "norm_text": "Poguatanquaton",
+          "story_link": 1,
+          "frame_link": null,
+          "identity": 2
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-75.22297926769924, 38.200633717075334]
+        }
+      }
   ]
 }
