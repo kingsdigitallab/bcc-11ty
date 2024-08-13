@@ -243,7 +243,16 @@ export class StoryMap {
             fillOpacity: 1,
         };           
         
-       
+       this.europeanAnnoStyle = {
+		    stroke: true,
+            lineCap: "square",
+            color: "#028090",
+            fillColor: "#02809000",
+            fill: 'url(/assets/img/stories/diagonal_hatching_purple.webp)',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 1,		   
+	   };
         
         this.polyBorderStyle = {
             stroke: true,
@@ -1117,6 +1126,9 @@ export class StoryMap {
                     case 11:
                         // Capture Indig vs Haudenasnee
                         switch (feature.properties.identity) {
+							case 1:
+							    layer.setStyle(this.europeanAnnoStyle);
+								break;
                             case 2:
                                 // Red poly
                                 layer.setStyle(this.indigenousAreaStyle);
