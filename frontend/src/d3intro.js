@@ -457,7 +457,7 @@ export class D3intro {
                 .data(sortedPoints)
                 .join("svg:image")
                 .attr("class", "pathways2 dipsites")
-                .attr('xlink:href', "/bcc-11ty/assets/img/icons/council-fire.svg")
+                .attr('xlink:href', "/assets/img/icons/council-fire.svg")
                 .attr('width', "1%")
                 .attr(
                     "x",
