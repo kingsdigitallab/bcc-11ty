@@ -246,8 +246,8 @@ export class StoryMap {
        this.europeanAnnoStyle = {
 		    stroke: true,
             lineCap: "square",
-            color: "#028090",
-            fillColor: "#02809000",
+            color: "#370568",
+            fillColor: "#37056800",
             fill: 'url(/assets/img/stories/diagonal_hatching_purple.webp)',
             weight: 2,
             opacity: 1,
