@@ -243,49 +243,45 @@ layout: base.liquid
             <ol>
 
                 <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
-                           data-filtervalue='{"sub_type":10, "identity":[2]}'
+                           data-filtervalue='{"sub_type":4, "identity":[2]}'
                            class="explore_filter" id="checkbox1"/>
                     <label for="checkbox1">
-                        <img src="https://static.thenounproject.com/png/717161-200.png" alt=""/><span>Placenames (Indigenous)</span>
-                    </label>
-                </li>
-                <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
-                           data-filtervalue='{"sub_type":10, "identity":[1]}'
-                           class="explore_filter" id="checkbox2"/>
-                    <label for="checkbox2">
-                        <img
-                                src="https://static.thenounproject.com/png/1779673-200.png" alt=""/><span>Placenames (European)</span>
-                    </label>
-                </li>
-                <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
-                           data-filtervalue='{"sub_type":4, "identity":[2]}'
-                           class="explore_filter" id="checkbox3"/>
-                    <label for="checkbox3">
-                        <img src="https://static.thenounproject.com/png/3957514-200.png" alt=""/><span>Settlements (Indigenous)</span>
+                        <img src="{{ '/assets/img/stories/circle_turquoise.webp' | url }}" alt=""/><span>Settlements (Indigenous)</span>
                     </label>
                 </li>
                 <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
                            data-filtervalue='{"sub_type":4, "identity":[1]}'
-                           class="explore_filter" id="checkbox4"/>
-                    <label for="checkbox4">
-                        <img src="https://static.thenounproject.com/png/1461154-200.png" alt=""/><span>Settlements (European)</span>
+                           class="explore_filter" id="checkbox2"/>
+                    <label for="checkbox2">
+                        <img src="{{ '/assets/img/stories/circle_purple.webp' | url }}" alt=""/><span>Settlements (European)</span>
                     </label>
                 </li>
                 <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
-                           data-filtervalue='{"sub_type":8, "identity":[0]}'
-                           class="explore_filter" id="checkbox5"/>
-                    <label for="checkbox5">
-                        <img
-                                src="https://static.thenounproject.com/png/2615726-200.png" alt=""/><span>Rivers</span>
+                           data-filtervalue='{"sub_type":10, "identity":[2]}'
+                           class="explore_filter" id="checkbox3"/>
+                    <label for="checkbox3">
+                        <img src="{{ '/assets/img/stories/cross_turquoise.webp' | url }}" alt=""/><span>Placenames (Indigenous)</span>
+                    </label>
+                </li>
+                <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
+                           data-filtervalue='{"sub_type":10, "identity":[1]}'
+                           class="explore_filter" id="checkbox4"/>
+                    <label for="checkbox4">
+                        <img src="{{ '/assets/img/stories/cross_purple.webp' | url }}" alt=""/><span>Placenames (European)</span>
                     </label>
                 </li>
                 <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
                            data-filtervalue='{"sub_type":12, "identity":[0]}'
-                           class="explore_filter" id="checkbox8"/>
-                    <label for="checkbox8">
-                        <img
-                                src="https://static.thenounproject.com/png/2631029-200.png"
-                                alt=""/><span>Council Fires</span>
+                           class="explore_filter" id="checkbox5"/>
+                    <label for="checkbox5">
+                        <img src="{{ '/assets/img/stories/council-fire.webp' | url }}" alt=""/><span>Council Fires</span>
+                    </label>
+                </li>
+                <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
+                           data-filtervalue='{"sub_type":8, "identity":[0]}'
+                           class="explore_filter" id="checkbox6"/>
+                    <label for="checkbox6">
+                        <img src="{{ '/assets/img/stories/principal_rivers.webp' | url }}" alt=""/><span>Rivers</span>
                     </label>
                 </li>
             </ol>
@@ -307,50 +303,62 @@ layout: base.liquid
 
 <table>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/circle_turquoise.webp' | url }}"></img></td>
     <td>Settlement (Indigenous)</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/circle_purple.webp' | url }}"></img></td>
     <td>Settlement (European)</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/cross_turquoise.webp' | url }}"></img></td>
     <td>Placename (Indigenous)</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/cross_purple.webp' | url }}"></img></td>
     <td>Placename (European)</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;opacity:0.3;" src="{{ '/assets/img/stories/region_turquoise.webp' | url }}"></img></td>
     <td>Annotation (Indigenous-related)</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/haudenosaunee-hatch-30-pc-fill-turquoise.webp' | url }}"></img></td>
     <td>Annotation (Haudenosaunee-related)</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/diagonal_hatching_purple.webp' | url }}"></img></td>
     <td>Annotation (European-related)</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;opacity:0.3" src="{{ '/assets/img/stories/region_purple.webp' | url }}"></img></td>
     <td>Colonial domain</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/principal_rivers.webp' | url }}"></img></td>
     <td>River</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/pathways.webp' | url }}"></img></td>
     <td>Pathway</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/boundary.webp' | url }}"></img></td>
     <td>Boundary</td>
   </tr>
   <tr>
+    <td>&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/council-fire.webp' | url }}"></img></td>
     <td>Council fire</td>
   </tr>
