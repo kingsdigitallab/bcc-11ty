@@ -128,13 +128,14 @@ export class StoryMap {
         this.filterControlsVisible = false;
 
         // Total map and explore filters currently applied
-        this.totalExploreFilters = document.querySelectorAll(this.exploreSelectors.explore_filter).length;;
+        this.totalExploreFilters = document.querySelectorAll(this.exploreSelectors.explore_filter).length;
+        ;
         this.exploreSlideId = 1000;
         this.totalExploreFiltersApplied = 0;
         this.totalMapFilters = document.querySelectorAll(this.exploreSelectors.map_filter).length;
         this.totalMapFiltersApplied = 0;
         // This is all the subtypes used in explore
-        this.exploreFeatureSubtypes = [10, 4, 12, 13, 3, 12];
+        this.exploreFeatureSubtypes = [10, 4, 12, 13, 3, 12, 8];
         this.exploreFeatures = [];
         this.initExploreFilters();
     }
@@ -209,7 +210,7 @@ export class StoryMap {
         };
 
         // Poly Styles
-        
+
         this.indigenousAreaStyle = {
             stroke: true,
             color: "#028090",
@@ -220,8 +221,8 @@ export class StoryMap {
             opacity: 1,
             fillOpacity: 0.3,
         };
-        
-         this.europeanAreaStyle = {
+
+        this.europeanAreaStyle = {
             stroke: true,
             color: "#360568",
             fillColor: "#360568",
@@ -241,19 +242,19 @@ export class StoryMap {
             weight: 2,
             opacity: 1,
             fillOpacity: 1,
-        };           
-        
-       this.europeanAnnoStyle = {
-		    stroke: true,
+        };
+
+        this.europeanAnnoStyle = {
+            stroke: true,
             lineCap: "square",
             color: "#370568",
             fillColor: "#37056800",
             fill: 'url(/assets/img/stories/diagonal_hatching_purple.webp)',
             weight: 2,
             opacity: 1,
-            fillOpacity: 1,		   
-	   };
-        
+            fillOpacity: 1,
+        };
+
         this.polyBorderStyle = {
             stroke: true,
             dashArray: "4 6",
@@ -360,36 +361,36 @@ export class StoryMap {
             opacity: 0.5,
             fillOpacity: 0.5,
         };
-		// New poly styles for sub_type 14
+        // New poly styles for sub_type 14
         this.polyDomainNativeStyle = {
             stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
             color: "#f8600e",
-			fillOpacity: 0.5,
+            fillOpacity: 0.5,
             fillColor: "#f8600e00", //fill colour completely transparent
-			fill: 'url(/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
+            fill: 'url(/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
             weight: 3,
             opacity: 1,
-		};
-		this.polyDomainHaudenasuaneeStyle = {
+        };
+        this.polyDomainHaudenasuaneeStyle = {
             stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-			fill:'url(/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
+            fill: 'url(/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
             weight: 3,
             opacity: 0.3,
-		};
-		this.polyDomainEuroStyle = {
-			stroke: true,
+        };
+        this.polyDomainEuroStyle = {
+            stroke: true,
             lineCap: "square",
             lineJoin: "arcs",
             color: "#8D33CC",
-			fillOpacity: 0.5,
+            fillOpacity: 0.5,
             fillColor: "#8D33CC00",
-			fill:'url(/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
+            fill: 'url(/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
             weight: 3,
             opacity: 1,
         };
@@ -400,7 +401,7 @@ export class StoryMap {
             iconAnchor: [10, 38],
             popupAnchor: [-3, -20]
         });
-		
+
         this.indigenousSettlementIcon = L.icon({
             iconUrl: '/assets/img/stories/cross_turquoise.webp',
             shadowUrl: '/assets/img/stories/cross_shadow.webp',
@@ -493,16 +494,16 @@ export class StoryMap {
                 switch (feature.properties.identity) {
                     case 1:
                         // European - purple cross
-							return this.L.marker(latlng, {
-								icon: this.europeanSettlementIcon,
-								bubblingMouseEvents: true
-							});
+                        return this.L.marker(latlng, {
+                            icon: this.europeanSettlementIcon,
+                            bubblingMouseEvents: true
+                        });
                     // Default - Indigenous turq cross - everything else
                     default:
-							return this.L.marker(latlng, {
-								icon: this.indigenousSettlementIcon,
-								bubblingMouseEvents: true
-							});
+                        return this.L.marker(latlng, {
+                            icon: this.indigenousSettlementIcon,
+                            bubblingMouseEvents: true
+                        });
                 }
             // Land route -
             case 5:
@@ -824,12 +825,9 @@ export class StoryMap {
         this.observerEnabled = true;
         // If we're getting here via the explore link don't enable
 
-        if (window.location && window.location.hash == this.exploreHash){
+        if (window.location && window.location.hash == this.exploreHash) {
             this.observerEnabled = false;
         }
-
-
-        //console.log(slides);
 
         let observer = new IntersectionObserver(
             function (entries) {
@@ -838,14 +836,14 @@ export class StoryMap {
                 }
                 let nextSlide = null;
                 let lastIntersected = this.lastIntersected;
-                //console.log(entries);
+
                 entries.forEach((entry) => {
                     if (entry.isIntersecting && entry.target.dataset.slideid != this.lastIntersected) {
                         // New interesection event, save id and window y
                         this.lastIntersected = entry.target.dataset.slideid;
                         intersectionY = window.scrollY;
                     } else if (!entry.isIntersecting && entry.target.dataset.slideid == this.lastIntersected) {
-                        //console.log(this.iIndex + ": " + entry.isIntersecting + " " + this.lastIntersected);
+
                         for (let x = 0; x < slides.length; x++) {
                             if (slides[x].dataset.slideid == lastIntersected) {
                                 // Are we scrolling up or down, set previous or next slide
@@ -862,7 +860,7 @@ export class StoryMap {
                     }
                 });
                 if (nextSlide) {
-                    console.log('trigger: ' + nextSlide.dataset.slideid);
+
                     observerTimeouts[nextSlide.dataset.slideid] = setTimeout(
                         function () {
                             nextSlide.dataset.isActive = "true";
@@ -913,7 +911,6 @@ export class StoryMap {
             "villagerssettlers": this.getStoryFrameBounds(villagerssettlersSlide.fid),
             "lines": this.getStoryFrameBounds(linesSlide.fid),
         };
-        console.log(StartingBounds);
 
         // Init our d3 intro class and pass relevant layer data
         this.d3Intro = new D3intro(this.storyUris, this.L, this.d3, StartingBounds);
@@ -949,7 +946,7 @@ export class StoryMap {
                 // Trigger the d3 slide we've arrived at.
                 let slideId = dataset.slideid;
                 if (slideId) {
-                    console.log(slideId);
+
                     this.triggerSlideMapEvents(slideId);
                 }
                 // re-enable observer
@@ -1126,9 +1123,9 @@ export class StoryMap {
                     case 11:
                         // Capture Indig vs Haudenasnee
                         switch (feature.properties.identity) {
-							case 1:
-							    layer.setStyle(this.europeanAnnoStyle);
-								break;
+                            case 1:
+                                layer.setStyle(this.europeanAnnoStyle);
+                                break;
                             case 2:
                                 // Red poly
                                 layer.setStyle(this.indigenousAreaStyle);
@@ -1167,7 +1164,7 @@ export class StoryMap {
                     case 4:
                         layer.setStyle(this.lineLandRouteStyle);
                         //layer.setText(feature.properties.norm_text);
-                        this.shadowFeatures.push(feature);                        
+                        this.shadowFeatures.push(feature);
                     case 5:
                         layer.setStyle(this.lineLandRouteStyle);
                         //layer.setText(feature.properties.norm_text);
@@ -1200,14 +1197,14 @@ export class StoryMap {
                 }
                 break;
             default:
-                switch (feature.properties.Slug){
+                switch (feature.properties.Slug) {
                     case "catawba":
                         layer.setStyle(this.indigenousAreaStyle);
                         break;
                     default:
                         layer.setStyle(this.haudenosauneeAreaStyle);
                 }
-                //layer.setStyle(this.defaultLineStyle);
+            //layer.setStyle(this.defaultLineStyle);
         }
     }
 
@@ -1248,7 +1245,7 @@ export class StoryMap {
      */
     async loadFeatures() {
         if (this.storyUris && this.storyUris.lines) {
-            // console.log(storyFeatures);
+
             let storyFeatures = await this.loadShapes([this.storyUris.lines]);
 
             for (let f = 0; f < storyFeatures.length; f++) {
@@ -1277,14 +1274,14 @@ export class StoryMap {
 
     /** Add a single criteria value to our search filters */
     addSubtypeFilter(subtypeValue, filterValue, include) {
-
+        console.log("addsubtypefilter:" + subtypeValue +"," +filterValue);
         if (
             this.exploreFilterControl.sub_type &&
             this.exploreFilterControl.sub_type.length >= filterValue
         ) {
             const index =
                 this.exploreFilterControl.sub_type[subtypeValue].indexOf(filterValue);
-            //console.log("index: " + index);
+
             if (include && index < 0) {
                 this.exploreFilterControl.sub_type[subtypeValue].push(filterValue);
                 this.totalExploreFiltersApplied += 1;
@@ -1402,7 +1399,7 @@ export class StoryMap {
     toggleAll(selector, checked) {
 
         let elements = document.querySelectorAll(selector);
-        console.log(elements);
+
         // Switch to prevent updates on each criteria selected
         Array.prototype.forEach.call(elements, function (el) {
             if (el.checked != checked) {
@@ -1433,11 +1430,11 @@ export class StoryMap {
                 }
             }
 
-            if (!this.toggleAllFeaturesEnabled) {
-                this.applyExploreFilters();
-                // Update filter counts for map and explore
-                this.updateFilterCounts();
-            }
+            //if (!this.toggleAllFeaturesEnabled) {
+            this.applyExploreFilters();
+            // Update filter counts for map and explore
+            this.updateFilterCounts();
+            // }
 
         }
     }
@@ -1478,6 +1475,7 @@ export class StoryMap {
     updateToggleAllElement(selector, checked) {
         if (this.toggleAllFeaturesEnabled && checked != this.toggleAllFeaturesEnabled) {
             this.toggleAllEnabled = false;
+            this.toggleAllFeaturesEnabled = false;
             let toggleAll = document.getElementById(selector);
             if (toggleAll) {
                 toggleAll.checked = false;
@@ -1495,15 +1493,18 @@ export class StoryMap {
                 let subtypeValue = values.sub_type;
 
                 // Add identities
-                for (let t = 0; t < values.identity.length; t++) {
-                    this.addSubtypeFilter(
-                        subtypeValue,
-                        values.identity[t],
-                        e.target.checked
-                    );
+                if (values.identity) {
+                    for (let t = 0; t < values.identity.length; t++) {
+                        this.addSubtypeFilter(
+                            subtypeValue,
+                            values.identity[t],
+                            e.target.checked
+                        );
+                    }
                 }
-            }
 
+            }
+            console.log('ToggleAll: ' + this.toggleAllFeaturesEnabled);
             if (!this.toggleAllFeaturesEnabled) {
                 this.applyExploreFilters();
                 // Update filter counts for map and explore
@@ -1518,12 +1519,14 @@ export class StoryMap {
      * @return filters in slide format
      */
     applyExploreFilters() {
+
         this.storyFeatureLayerGroup.clearLayers();
         // Filter by subtype first
         let filteredFeatures = [];
         let subtypeFeatures = [];
-        //console.log(this.exploreFilterControl.sub_type);
+
         if (this.exploreFeatures) {
+            console.log(this.exploreFeatures);
             let exploreFilteringEnabled = false;
             if (!this.toggleAllFeaturesEnabled) {
                 // Check if any feature criteria are enabled
@@ -1537,6 +1540,7 @@ export class StoryMap {
                     }
                 }
             }
+
             if (this.exploreFiltersEnabled) {
                 this.exploreFeatures.forEach(
                     function (item) {
@@ -1550,15 +1554,17 @@ export class StoryMap {
                         } else if (item.properties && item.properties.sub_type) {
                             subtypeIndex = item.properties.sub_type;
                         }
+
                         // If we've got an identity e.g. European and a subtype OR just a subtype (0 in criteria)
                         if (
                             subtypeIndex >= 0 &&
                             item.properties &&
                             this.exploreFilterControl.sub_type.length > subtypeIndex) {
+
                             if (
                                 (item.properties.identity && this.exploreFilterControl.sub_type[subtypeIndex].indexOf(item.properties.identity) > -1) ||
                                 (this.exploreFilterControl.sub_type[subtypeIndex].indexOf(0) > -1)
-                            ) {
+                             ){
                                 subtypeFeatures.push(item);
                             }
                         }
@@ -1571,7 +1577,7 @@ export class StoryMap {
         // todo we need default behaviour so toggle all if explore filter selected
         // but don't filter
         // Otherwise filter
-        
+
         if (this.toggleAllMapsEnabled) {
             filteredFeatures = subtypeFeatures;
             if (!this.exploreFiltersEnabled) {
@@ -1579,7 +1585,6 @@ export class StoryMap {
             }
         } else if (this.exploreFilterControl.maps.length == 0 && !this.toggleAllMapsEnabled) {
             // In this case, no maps selected, show nothing
-            console.log('none');
             filteredFeatures = [];
             if (this.exploreFiltersEnabled) {
                 this.toggleExploreFilters(false);
@@ -1591,7 +1596,7 @@ export class StoryMap {
             if (!this.exploreFiltersEnabled) {
                 this.toggleExploreFilters(true);
             }
-            console.log(subtypeFeatures);
+
 
             let iterateFeatures = subtypeFeatures;
             iterateFeatures.forEach(
@@ -1607,9 +1612,8 @@ export class StoryMap {
                 }.bind(this)
             );
         }
-
+        console.log(filteredFeatures);
         if (filteredFeatures && filteredFeatures.length > 0) {
-
             // ONLY show the layer if we've got something at the end.
             this.exploreFeaturesLayer = this.L.geoJSON(filteredFeatures, {
                 //style: this.defaultLineStyle,

@@ -140,6 +140,7 @@ div.container {
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 24px;
 }
 
 div.footer-bottom {
@@ -177,6 +178,7 @@ div.footer-bottom div.develop {
   max-width: 1200px;
     padding-left: 5%;
     padding-right: 5%;
+
 }
   .home-hero {
     width: auto;
@@ -660,7 +662,7 @@ nav {
     width: 100%;
     position: relative;
     margin: 0;
-    padding: 0;
+    padding: 0 24px;
 
     h1 a {
       margin-top: 10em;
@@ -1377,7 +1379,8 @@ nav {
 }
 
 img {
-  vertical-align: middle
+  vertical-align: middle;
+  max-width: 100%;
 }
 
 a {
@@ -1897,6 +1900,9 @@ a {
   }
   .w3-dropdown-hover.w3-mobile, .w3-dropdown-hover.w3-mobile .w3-btn, .w3-dropdown-hover.w3-mobile .w3-button, .w3-dropdown-click.w3-mobile, .w3-dropdown-click.w3-mobile .w3-btn, .w3-dropdown-click.w3-mobile .w3-button {
     width: 100%
+  }
+  section{
+    padding: 0;
   }
 }
 
