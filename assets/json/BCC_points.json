@@ -6285,7 +6285,7 @@
       "properties": {
         "id": 3040,
         "feat_type": 4,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 3,
         "date_yr": 1676,
         "map_text": "Wine Iesigan",
@@ -6293,7 +6293,7 @@
         "accuracy": 2,
         "story_link": 1,
         "frame_link": null,
-        "identity": null
+        "identity": 2
       },
       "geometry": {
         "type": "Point",
@@ -6883,26 +6883,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 3137,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 3,
-        "date_yr": 1676,
-        "map_text": "Sauco River",
-        "norm_text": "Sauco River",
-        "accuracy": 2,
-        "story_link": 3,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-70.310550362057199, 43.479764115820238]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 52588,
         "feat_type": 1,
         "sub_type": 10,
@@ -6925,7 +6905,7 @@
       "properties": {
         "id": 3139,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 3,
         "date_yr": 1676,
         "map_text": "Great Bay",
@@ -6933,7 +6913,7 @@
         "accuracy": 2,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -7345,7 +7325,7 @@
       "properties": {
         "id": 3163,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 3,
         "date_yr": 1676,
         "map_text": "The Straights",
@@ -7353,7 +7333,7 @@
         "accuracy": null,
         "story_link": 3,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -7565,15 +7545,15 @@
       "properties": {
         "id": 3195,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 3,
         "date_yr": 1676,
-        "map_text": "Fisherspoint",
-        "norm_text": "Fisherspoint",
+        "map_text": "Fishers point",
+        "norm_text": "Fishers point",
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -7585,39 +7565,19 @@
       "properties": {
         "id": 3196,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 3,
         "date_yr": 1676,
-        "map_text": "Eastreach",
-        "norm_text": "Eastreach",
+        "map_text": "East reach",
+        "norm_text": "East reach",
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
         "coordinates": [-73.740414971818993, 42.469363084314139]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 3198,
-        "feat_type": 2,
-        "sub_type": 7,
-        "map_source": 3,
-        "date_yr": 1676,
-        "map_text": null,
-        "norm_text": null,
-        "accuracy": null,
-        "story_link": null,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-73.669266236035085, 43.622693122962488]
       }
     },
     {
@@ -7685,15 +7645,15 @@
       "properties": {
         "id": 3203,
         "feat_type": 0,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 3,
         "date_yr": 1676,
-        "map_text": "Tantes Kanter",
-        "norm_text": "Tantes Kanter",
+        "map_text": "Tames Kanter",
+        "norm_text": "Tames Kanter",
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -8805,7 +8765,7 @@
       "properties": {
         "id": 3264,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Deep Run",
@@ -8813,7 +8773,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -9345,7 +9305,7 @@
       "properties": {
         "id": 3291,
         "feat_type": 4,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Autiétium C.",
@@ -9353,7 +9313,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -9505,7 +9465,7 @@
       "properties": {
         "id": 3302,
         "feat_type": 4,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "SmallFalls",
@@ -9525,7 +9485,7 @@
       "properties": {
         "id": 3303,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -9545,7 +9505,7 @@
       "properties": {
         "id": 3304,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -9905,7 +9865,7 @@
       "properties": {
         "id": 3323,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Still",
@@ -9925,7 +9885,7 @@
       "properties": {
         "id": 3324,
         "feat_type": 4,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Rapid",
@@ -9945,7 +9905,7 @@
       "properties": {
         "id": 3325,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "ARipling",
@@ -9965,7 +9925,7 @@
       "properties": {
         "id": 3326,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -10025,7 +9985,7 @@
       "properties": {
         "id": 3329,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "SaltPits",
@@ -10185,7 +10145,7 @@
       "properties": {
         "id": 3337,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Long Fall",
@@ -10225,7 +10185,7 @@
       "properties": {
         "id": 3339,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "rapid",
@@ -10305,7 +10265,7 @@
       "properties": {
         "id": 3343,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "ARipling",
@@ -10365,7 +10325,7 @@
       "properties": {
         "id": 3347,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "rapid",
@@ -10525,7 +10485,7 @@
       "properties": {
         "id": 3359,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Generally rapid",
@@ -10565,7 +10525,7 @@
       "properties": {
         "id": 3362,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Rapid",
@@ -10605,7 +10565,7 @@
       "properties": {
         "id": 3581,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Overgot",
@@ -10613,7 +10573,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -10705,7 +10665,7 @@
       "properties": {
         "id": 3373,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -10765,7 +10725,7 @@
       "properties": {
         "id": 3376,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -10965,7 +10925,7 @@
       "properties": {
         "id": 3577,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Cohóes Fall",
@@ -10973,7 +10933,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -11065,7 +11025,7 @@
       "properties": {
         "id": 3397,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "The Overflough",
@@ -11525,7 +11485,7 @@
       "properties": {
         "id": 3421,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "CrumElbow",
@@ -11533,7 +11493,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -11845,7 +11805,7 @@
       "properties": {
         "id": 3437,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Anthony's Nose",
@@ -11853,7 +11813,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -11865,7 +11825,7 @@
       "properties": {
         "id": 3438,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Sarah's Pt.",
@@ -11873,7 +11833,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -11925,7 +11885,7 @@
       "properties": {
         "id": 3441,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Haverstraw-Bay",
@@ -11933,7 +11893,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -12322,7 +12282,7 @@
       "properties": {
         "id": 3463,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -13122,7 +13082,7 @@
       "properties": {
         "id": 3507,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -13402,7 +13362,7 @@
       "properties": {
         "id": 3522,
         "feat_type": 0,
-        "sub_type": 8,
+        "sub_type": 4,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Changewater",
@@ -13410,7 +13370,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -13462,7 +13422,7 @@
       "properties": {
         "id": 3525,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -13522,7 +13482,7 @@
       "properties": {
         "id": 3528,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Dela ware Bay",
@@ -13530,7 +13490,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -13562,7 +13522,7 @@
       "properties": {
         "id": 3530,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -14182,7 +14142,7 @@
       "properties": {
         "id": 3582,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Still Water",
@@ -14262,7 +14222,7 @@
       "properties": {
         "id": 3596,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "LittleFall",
@@ -14270,7 +14230,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -14295,26 +14255,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [-75.038270378607578, 41.415145911426642]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 3599,
-        "feat_type": 3,
-        "sub_type": 8,
-        "map_source": 8,
-        "date_yr": 1752,
-        "map_text": "Vis-kill",
-        "norm_text": "Vis-Kill",
-        "accuracy": null,
-        "story_link": null,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-74.933747394988856, 41.489024416035818]
       }
     },
     {
@@ -14502,7 +14442,7 @@
       "properties": {
         "id": 3612,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "St. Anthony's Falls",
@@ -14510,7 +14450,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -84162,89 +84102,9 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 55370,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "R. Nashua",
-        "norm_text": "River Nashua",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-71.718685244530008, 42.281144457707569]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55372,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Mohawks R.",
-        "norm_text": "Mohawk River",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-74.272976950286974, 42.980624405854229]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55373,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Schoharie Cr.",
-        "norm_text": "Schoharie Creek",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-74.60527787788007, 42.456908200612183]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55374,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Mahawks Branch",
-        "norm_text": "Mahawks Branch",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-75.445460773014318, 41.977375875617071]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 55375,
         "feat_type": 4,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Tulpehocken",
@@ -84264,7 +84124,7 @@
       "properties": {
         "id": 55376,
         "feat_type": 4,
-        "sub_type": 8,
+        "sub_type": 4,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Salisbury",
@@ -84284,7 +84144,7 @@
       "properties": {
         "id": 55377,
         "feat_type": 4,
-        "sub_type": 8,
+        "sub_type": 4,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Dover",
@@ -84297,166 +84157,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [-75.542952373435014, 39.08239858340837]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55378,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Octorara Cr.",
-        "norm_text": "Octoraro Creek",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-76.020663176770057, 39.704992442069525]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55379,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "R. Susquehanna",
-        "norm_text": "River Susquehanna",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-76.221499368175444, 39.763665461538075]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55380,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Conestoga Cr.",
-        "norm_text": "Conestoga Creek",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-75.99425849664857, 40.017749051416899]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55381,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Peque Cr.",
-        "norm_text": "Pequea Creek",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-76.09542089209404, 39.9044609269489]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55382,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Codoras Cr.",
-        "norm_text": "Codorus Creek",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-76.541156361926625, 39.74833305165992]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55383,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Gr. Conewaga Cr.",
-        "norm_text": "Great Conewago Creek",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-76.941975269219895, 39.86311665332979]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55384,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Juniata R.",
-        "norm_text": "Juniata River",
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-77.79345471849453, 40.317560654702568]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 55385,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": null,
-        "norm_text": null,
-        "accuracy": 2,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-78.158863943132872, 41.145407027137018]
       }
     },
     {
