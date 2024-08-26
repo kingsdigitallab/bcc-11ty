@@ -2369,46 +2369,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 122,
-        "feat_type": 4,
-        "sub_type": 7,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Long fall",
-        "norm_text": "Long fall",
-        "accuracy": 3,
-        "story_link": 3,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-79.356075217553126, 46.944305452449612]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 123,
-        "feat_type": 4,
-        "sub_type": 7,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Long Fall",
-        "norm_text": "Long Fall",
-        "accuracy": 3,
-        "story_link": 3,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-74.76570281363513, 45.005774011552937]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 50634,
         "feat_type": 1,
         "sub_type": 4,
@@ -2451,7 +2411,7 @@
       "properties": {
         "id": 126,
         "feat_type": 4,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Rapide Plat",
@@ -2851,7 +2811,7 @@
       "properties": {
         "id": 150,
         "feat_type": 4,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Bottom of the Lake",
@@ -3626,46 +3586,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 194,
-        "feat_type": 2,
-        "sub_type": 7,
-        "map_source": 5,
-        "date_yr": 1677,
-        "map_text": null,
-        "norm_text": null,
-        "accuracy": 1,
-        "story_link": null,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-72.581273619283166, 43.120663840982019]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 195,
-        "feat_type": 2,
-        "sub_type": 7,
-        "map_source": 5,
-        "date_yr": 1677,
-        "map_text": null,
-        "norm_text": null,
-        "accuracy": 1,
-        "story_link": null,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-72.227412661346889, 42.783654501160257]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 51069,
         "feat_type": 5,
         "sub_type": 4,
@@ -3721,6 +3641,46 @@
       "geometry": {
         "type": "Point",
         "coordinates": [-70.500348993284007, 43.840684143363539]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 194,
+        "feat_type": 2,
+        "sub_type": 7,
+        "map_source": 5,
+        "date_yr": 1677,
+        "map_text": null,
+        "norm_text": null,
+        "accuracy": 1,
+        "story_link": null,
+        "frame_link": null,
+        "identity": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.581273619283166, 43.120663840982019]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 195,
+        "feat_type": 2,
+        "sub_type": 7,
+        "map_source": 5,
+        "date_yr": 1677,
+        "map_text": null,
+        "norm_text": null,
+        "accuracy": 1,
+        "story_link": null,
+        "frame_link": null,
+        "identity": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.227412661346889, 42.783654501160257]
       }
     },
     {
@@ -9465,7 +9425,7 @@
       "properties": {
         "id": 3302,
         "feat_type": 4,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "SmallFalls",
@@ -9485,7 +9445,7 @@
       "properties": {
         "id": 3303,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -9505,7 +9465,7 @@
       "properties": {
         "id": 3304,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -9865,7 +9825,7 @@
       "properties": {
         "id": 3323,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Still",
@@ -9885,7 +9845,7 @@
       "properties": {
         "id": 3324,
         "feat_type": 4,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Rapid",
@@ -9905,7 +9865,7 @@
       "properties": {
         "id": 3325,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "ARipling",
@@ -9925,7 +9885,7 @@
       "properties": {
         "id": 3326,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -10145,7 +10105,7 @@
       "properties": {
         "id": 3337,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Long Fall",
@@ -10185,7 +10145,7 @@
       "properties": {
         "id": 3339,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "rapid",
@@ -10265,7 +10225,7 @@
       "properties": {
         "id": 3343,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "ARipling",
@@ -10325,7 +10285,7 @@
       "properties": {
         "id": 3347,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "rapid",
@@ -10485,7 +10445,7 @@
       "properties": {
         "id": 3359,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Generally rapid",
@@ -10525,7 +10485,7 @@
       "properties": {
         "id": 3362,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Rapid",
@@ -10665,7 +10625,7 @@
       "properties": {
         "id": 3373,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -10725,7 +10685,7 @@
       "properties": {
         "id": 3376,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -11025,7 +10985,7 @@
       "properties": {
         "id": 3397,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "The Overflough",
@@ -12282,7 +12242,7 @@
       "properties": {
         "id": 3463,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -13082,7 +13042,7 @@
       "properties": {
         "id": 3507,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -13422,7 +13382,7 @@
       "properties": {
         "id": 3525,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -13522,7 +13482,7 @@
       "properties": {
         "id": 3530,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Falls",
@@ -14142,7 +14102,7 @@
       "properties": {
         "id": 3582,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Still Water",
@@ -16479,7 +16439,7 @@
       "properties": {
         "id": 3721,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Bottom of the Lake",
@@ -16487,7 +16447,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -16519,7 +16479,7 @@
       "properties": {
         "id": 3718,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Middle of the Lake",
@@ -16527,7 +16487,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -17017,26 +16977,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 3747,
-        "feat_type": 4,
-        "sub_type": 8,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Carehannon",
-        "norm_text": "Carehannon",
-        "accuracy": null,
-        "story_link": null,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-79.548778768830957, 40.987563087530106]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 50519,
         "feat_type": 1,
         "sub_type": 4,
@@ -17259,7 +17199,7 @@
       "properties": {
         "id": 3760,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Sources of the Ohio according to the Indians",
@@ -17267,7 +17207,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 2
       },
       "geometry": {
         "type": "Point",
@@ -18239,7 +18179,7 @@
       "properties": {
         "id": 3816,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "3 Forks",
@@ -18247,7 +18187,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -18259,7 +18199,7 @@
       "properties": {
         "id": 3817,
         "feat_type": 3,
-        "sub_type": 8,
+        "sub_type": 7,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Full of Coals",
@@ -26170,7 +26110,7 @@
       "properties": {
         "id": 4260,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Lakes said to have no outlet",
@@ -40624,7 +40564,7 @@
       "properties": {
         "id": 53127,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Rapid & Rocky",
@@ -43824,7 +43764,7 @@
       "properties": {
         "id": 53295,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Rocky Landing",
@@ -60704,7 +60644,7 @@
       "properties": {
         "id": 54160,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "137 feet FALLS",
@@ -61524,7 +61464,7 @@
       "properties": {
         "id": 54201,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Falls",
@@ -61804,7 +61744,7 @@
       "properties": {
         "id": 54216,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "English's Ferry",
@@ -62624,7 +62564,7 @@
       "properties": {
         "id": 54258,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Rapids",
@@ -73604,7 +73544,7 @@
       "properties": {
         "id": 54889,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 6,
         "date_yr": 1720,
         "map_text": "Cataracts",
