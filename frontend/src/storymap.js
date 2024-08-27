@@ -529,7 +529,7 @@ export class StoryMap {
                     bubblingMouseEvents: true,
                 });
 
-            // Descriptive - white squares
+            // Descriptive - grey squares
             case 7:
                 return new this.L.RegularPolygonMarker(latlng, {
                     numberOfSides: 4,
@@ -537,7 +537,7 @@ export class StoryMap {
                     radius: 5,
                     //this.L.Path style options
                     fill: true,
-                    fillColor: "#ffffff",
+                    fillColor: "#696969",
                     color: "#000000",
                     weight: 0.5,
                     fillOpacity: 1,
