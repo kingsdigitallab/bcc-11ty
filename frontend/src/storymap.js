@@ -547,13 +547,17 @@ export class StoryMap {
 
             //River route
             case 8:
-                return this.L.circleMarker(latlng, {
-                    radius: 4,
-                    fillColor: "#ff00ff",
-                    color: "#000",
+                return new this.L.RegularPolygonMarker(latlng, {
+                    numberOfSides: 4,
+                    rotation: -45,
+                    radius: 5,
+                    //this.L.Path style options
+                    fill: true,
+                    fillColor: "#0059a2",
+                    color: "#000000",
                     weight: 0.5,
-                    opacity: 1,
                     fillOpacity: 1,
+                    stroke: true,
                     bubblingMouseEvents: true,
                 });
 
