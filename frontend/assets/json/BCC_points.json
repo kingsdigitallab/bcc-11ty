@@ -9585,7 +9585,7 @@
       "properties": {
         "id": 3310,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 4,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Cherry Valley",
@@ -9593,7 +9593,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -9745,7 +9745,7 @@
       "properties": {
         "id": 3319,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Canoes may come from this Lakewith a Fresh to Pensa.",
@@ -10745,7 +10745,7 @@
       "properties": {
         "id": 3379,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Burnet's Hills",
@@ -10753,7 +10753,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -10765,7 +10765,7 @@
       "properties": {
         "id": 3380,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Dismal Vale",
@@ -10773,7 +10773,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -10785,7 +10785,7 @@
       "properties": {
         "id": 3381,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Magnolia H.",
@@ -10793,7 +10793,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -11665,7 +11665,7 @@
       "properties": {
         "id": 3432,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Butter H",
@@ -11673,7 +11673,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -11705,7 +11705,7 @@
       "properties": {
         "id": 3434,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "West Pt.",
@@ -11713,7 +11713,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -11725,7 +11725,7 @@
       "properties": {
         "id": 3435,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Matler's Rock",
@@ -11733,7 +11733,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -11805,7 +11805,7 @@
       "properties": {
         "id": 3439,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Thunder H.",
@@ -11813,7 +11813,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -13822,7 +13822,7 @@
       "properties": {
         "id": 3590,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "YDusseumarur",
@@ -13830,7 +13830,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -13842,7 +13842,7 @@
       "properties": {
         "id": 3549,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Flying Hills",
@@ -13850,7 +13850,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -13882,7 +13882,7 @@
       "properties": {
         "id": 3551,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Oley Hills",
@@ -13890,7 +13890,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -13922,7 +13922,7 @@
       "properties": {
         "id": 3553,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "s Hills",
@@ -13930,7 +13930,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -14022,7 +14022,7 @@
       "properties": {
         "id": 3558,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Flatkill",
@@ -14202,7 +14202,7 @@
       "properties": {
         "id": 3598,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 8,
         "date_yr": 1752,
         "map_text": "Leghawaacsein",
@@ -14210,7 +14210,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 2
       },
       "geometry": {
         "type": "Point",
@@ -19673,7 +19673,7 @@
       "properties": {
         "id": 3901,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Meadow Mtn.",
@@ -19681,7 +19681,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -20510,7 +20510,7 @@
       "properties": {
         "id": 52391,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Here Mr. La Salle settled in 1685 in discovering the Missisipi",
@@ -20670,7 +20670,7 @@
       "properties": {
         "id": 51714,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Here Mr. La Salle was killed in 1687",
@@ -20678,7 +20678,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -22770,7 +22770,7 @@
       "properties": {
         "id": 4075,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 9,
         "date_yr": 1754,
         "map_text": "Wart Mountain",
@@ -22778,7 +22778,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -23570,7 +23570,7 @@
       "properties": {
         "id": 4120,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 9,
         "date_yr": 1754,
         "map_text": "BRUSHY MOUNTAINS",
@@ -23578,7 +23578,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -27388,23 +27388,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 4329,
-        "feat_type": 3,
-        "sub_type": 7,
-        "map_source": 12,
-        "date_yr": 1755,
-        "map_text": "Edisto Bluff",
-        "norm_text": "Edisto Bluff",
-        "accuracy": null,
-        "story_link": null,
-        "frame_link": null,
-        "identity": null
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 50924,
         "feat_type": 5,
         "sub_type": 4,
@@ -27907,7 +27890,7 @@
       "properties": {
         "id": 4357,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Mt. Ararat",
@@ -27915,7 +27898,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -36367,7 +36350,7 @@
       "properties": {
         "id": 4863,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Mt. Lewis",
@@ -36375,7 +36358,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -38004,7 +37987,7 @@
       "properties": {
         "id": 4953,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 12,
         "date_yr": 1755,
         "map_text": "Happy Gap",
@@ -38012,7 +37995,7 @@
         "accuracy": null,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -40404,7 +40387,7 @@
       "properties": {
         "id": 53118,
         "feat_type": 2,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "1^1/2 m Portage.",
@@ -45004,7 +44987,7 @@
       "properties": {
         "id": 53359,
         "feat_type": 1,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Monks Corner",
@@ -45012,7 +44995,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -45464,7 +45447,7 @@
       "properties": {
         "id": 53384,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Hell Hole Swamp",
@@ -45472,7 +45455,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -45484,7 +45467,7 @@
       "properties": {
         "id": 53385,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "White Oak",
@@ -45492,7 +45475,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -46824,7 +46807,7 @@
       "properties": {
         "id": 53455,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Great Alligator Dismal Swamp",
@@ -46832,7 +46815,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -46924,7 +46907,7 @@
       "properties": {
         "id": 53460,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Dismal Swamp",
@@ -46932,7 +46915,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -50604,7 +50587,7 @@
       "properties": {
         "id": 53648,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Wrights Ferry",
@@ -53964,7 +53947,7 @@
       "properties": {
         "id": 53821,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Tripes hill",
@@ -53972,31 +53955,11 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
         "coordinates": [-74.107371018991145, 42.994684923904693]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 53822,
-        "feat_type": 1,
-        "sub_type": 10,
-        "map_source": 19,
-        "date_yr": 1796,
-        "map_text": "Mohock River",
-        "norm_text": "Mohawk River",
-        "accuracy": 3,
-        "story_link": null,
-        "frame_link": null,
-        "identity": 2
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-73.884873641484276, 42.854986489314634]
       }
     },
     {
@@ -54164,7 +54127,7 @@
       "properties": {
         "id": 53831,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Wind Gap",
@@ -54172,7 +54135,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -54284,7 +54247,7 @@
       "properties": {
         "id": 53837,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 8,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Portage",
@@ -54744,7 +54707,7 @@
       "properties": {
         "id": 53860,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "White Plains",
@@ -54752,7 +54715,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -57384,7 +57347,7 @@
       "properties": {
         "id": 53995,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "White Hills",
@@ -57392,7 +57355,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -63044,7 +63007,7 @@
       "properties": {
         "id": 54283,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Cumberland Mountains",
@@ -63052,7 +63015,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -63564,7 +63527,7 @@
       "properties": {
         "id": 54310,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Free Stone Gap",
@@ -63572,7 +63535,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
@@ -63584,7 +63547,7 @@
       "properties": {
         "id": 54311,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 10,
         "map_source": 19,
         "date_yr": 1796,
         "map_text": "Muscle Shoals",
@@ -63592,7 +63555,7 @@
         "accuracy": 3,
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "Point",
