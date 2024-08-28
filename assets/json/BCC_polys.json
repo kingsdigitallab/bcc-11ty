@@ -19872,7 +19872,7 @@
         "norm_text": "The first Settlement of the English on the River Ohio was at and about Allegheny 30 Years ago. Since which they have extended their Settlements from Shenango to Pickawillany",
         "story_link": 4,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -24056,7 +24056,7 @@
         "norm_text": "The English have Factories & Settlements in all the Towns of the Creek Indians of any note except Albamas; which was usurped by the French in 1715 but established by the English 28 years before.",
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -24106,7 +24106,7 @@
         "id": 2756,
         "feat_type": 3,
         "sub_type": 11,
-        "map_source": 12,
+        "map_source": 7,
         "date_yr": 1755,
         "accuracy": null,
         "map_text": "from the Ohio",
@@ -26399,7 +26399,7 @@
         "norm_text": "Most of the Settlements formerly marked on this Road are said to be abandoned",
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -43940,7 +43940,7 @@
         "norm_text": "A Map of the United States exhibiting Post Roads & Distances, by Abrham Bradley Jr. The first sheet comprehending the Nine Northern States, with parts of Virginia and the territoriy north of Ohio.",
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -43997,7 +43997,7 @@
         "norm_text": "Battle August 10th 1794 [depicting postions of British Garrison, Indians, U.S. Army]",
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -45750,7 +45750,7 @@
         "norm_text": "Wandering Indians",
         "story_link": 2,
         "frame_link": null,
-        "identity": null
+        "identity": 2
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -47196,7 +47196,7 @@
       "properties": {
         "id": 4285,
         "feat_type": 3,
-        "sub_type": 11,
+        "sub_type": 7,
         "map_source": 6,
         "date_yr": 1720,
         "accuracy": 4,
