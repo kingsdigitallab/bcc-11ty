@@ -4,11 +4,11 @@
       "id": 2,
       "fid": 33,
       "lines": {},
-      "points": {
+      "points": {},
+      "polys": {
         "includes": { 
           "sub_type": [ 
             7,
-            8,
             11 
           ]
         } 
