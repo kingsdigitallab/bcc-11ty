@@ -135,7 +135,7 @@ export class StoryMap {
         this.totalMapFilters = document.querySelectorAll(this.exploreSelectors.map_filter).length;
         this.totalMapFiltersApplied = 0;
         // This is all the subtypes used in explore
-        this.exploreFeatureSubtypes = [10, 4, 12, 13, 3, 12, 8];
+        this.exploreFeatureSubtypes = [10, 4, 12, 13, 3, 12, 8, 11, 14, 7];
         this.exploreFeatures = [];
         this.initExploreFilters();
     }
