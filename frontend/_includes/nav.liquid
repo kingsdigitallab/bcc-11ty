@@ -1,9 +1,10 @@
 {% assign navPages = collections.all | eleventyNavigation %}
 
-<a id="sitetitle" href="/">Movement and Common World in Early America <span class="subtitle">Homelands, Pathways and the Peoples of the Northeast</span></a>
+<a id="sitetitle" href="/">Movement and Common World in Early America<br/> <span class="subtitle">Homelands, Pathways and the Peoples of the Northeast</span></a>
 <nav>
   <div id="mainmenu">
     <input id="menu" type="checkbox"/>
+      <!--<img src="{{ '/assets/img/icons/font-awesome/bars-solid.svg' | url  }}"/>-->
     <label class="menu" role="button" for="menu">Menu</label>
     <ol>
       {% for entry in navPages %}

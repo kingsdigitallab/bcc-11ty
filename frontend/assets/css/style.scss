@@ -22,7 +22,7 @@ div.logo.kcl-logo img {
 div.logo img {
   width: 50%;
   height: auto;
-  display:block;
+  display: block;
   margin: auto;
 }
 
@@ -58,7 +58,7 @@ div.logo img {
 
 .quicklink {
   text-align: center;
-  background: rgb(18,77,32, 0.1);
+  background: rgb(18, 77, 32, 0.1);
   padding-bottom: 1%;
   width: 20%;
   color: #000;
@@ -128,10 +128,11 @@ div.quicklink .info-button {
 }
 
 header {
-
+  height: 6%;
 }
+
 div.home-container {
- max-width: 1920px;
+  max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -158,107 +159,6 @@ div.footer-bottom div.develop {
   text-align: center;
 }
 
-
-// Mobile changes
-@media only screen and (max-width: 600px) {
-  .home-hero {
-    width: auto;
-    background: url('../img/homepage-hero-600.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
-    background-size: cover;
-    min-height: 30vw;
-    display: flex;
-    align-items: center;
-  }
-}
-
-//tablets, large phones
-@media (min-width: 601px) and (max-width: 1200px) {
-
-  div.container {
-  max-width: 1200px;
-    padding-left: 5%;
-    padding-right: 5%;
-
-}
-  .home-hero {
-    width: auto;
-    background: url('../img/homepage-hero-900.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
-    background-size: cover;
-    min-height: 50em;
-    display: flex;
-    align-items: center;
-  }
-
-  .quicklink {
-    text-align: center;
-    color: #000;
-    font-family: "Playfair Display";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 180%; /* 28.8px */
-    border-top: 5px solid #124D20;
-    padding-bottom: 2%;
-  }
-
-  .quicklink-text {
-    padding: 10%;
-    height: 20vw;
-    font-size: 100%;
-  }
-
-  .quicklink-spacer {
-    margin-right: 3%;
-  }
-
-  div.logo {
-    width: 20%;
-  }
-
-  div.logo.kcl-logo img {
-  width: 80%;
-}
-
-div.logo img {
-  width: 80%;
-  height: auto;
-  display:block;
-  margin: auto;
-}
-  .footer-credits{
-    font-size: 80%;
-  }
-}
-
-@media only screen and (min-width: 1601px) {
- .quicklink-text {
-
-    font-size: 120%;
-  }
-
-}
-
-@media only screen and (min-width: 1201px) {
-  .home-hero {
-    width: auto;
-    background: url('../img/homepage-hero-1920.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
-    background-size: cover;
-    min-height: 30vw;
-    align-items: center;
-    justify-content:center;
-  }
-
-  .quicklink-text {
-    padding: 10%;
-    height: 10vw;
-
-  }
-
-  .quicklink-spacer {
-    margin-right: 5%;
-  }
-
-}
 
 //Colours
 $darkgreen: #132b19;
@@ -346,7 +246,7 @@ a#sitetitle {
   position: fixed;
   width: 100%;
   background: $darkgreen;
-  height: 44px;
+  height: 6%;
   z-index: 9;
   font-size: 22px;
   border-bottom: 4px solid darken($lightgreen, 20%);
@@ -1901,7 +1801,7 @@ a {
   .w3-dropdown-hover.w3-mobile, .w3-dropdown-hover.w3-mobile .w3-btn, .w3-dropdown-hover.w3-mobile .w3-button, .w3-dropdown-click.w3-mobile, .w3-dropdown-click.w3-mobile .w3-btn, .w3-dropdown-click.w3-mobile .w3-button {
     width: 100%
   }
-  section{
+  section {
     padding: 0;
   }
 }
@@ -2455,4 +2355,180 @@ a {
 
 .w3-hover-none:hover {
   box-shadow: none !important
+}
+
+
+//tablets, large phones
+@media (min-width: 601px) and (max-width: 1200px) {
+
+  header {
+    height: 5%;
+  }
+  a#sitetitle {
+    height: 5%;
+  }
+
+  div.container {
+    max-width: 1200px;
+    padding-left: 5%;
+    padding-right: 5%;
+
+  }
+  .home-hero {
+    width: auto;
+    background: url('../img/homepage-hero-900.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
+    background-size: cover;
+    min-height: 50em;
+    display: flex;
+    align-items: center;
+  }
+
+  .quicklink {
+    text-align: center;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 28.8px */
+    border-top: 5px solid #124D20;
+    padding-bottom: 2%;
+  }
+
+  .quicklink-text {
+    padding: 10%;
+    height: 20vw;
+    font-size: 100%;
+  }
+
+  .quicklink-spacer {
+    margin-right: 3%;
+  }
+
+  div.logo {
+    width: 20%;
+  }
+
+  div.logo.kcl-logo img {
+    width: 80%;
+  }
+
+  div.logo img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  .footer-credits {
+    font-size: 80%;
+
+  }
+}
+
+@media only screen and (min-width: 1601px) {
+  .quicklink-text {
+
+    font-size: 120%;
+  }
+
+}
+
+@media only screen and (min-width: 1201px) {
+  .home-hero {
+    width: auto;
+    background: url('../img/homepage-hero-1920.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
+    background-size: cover;
+    min-height: 30vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quicklink-text {
+    padding: 10%;
+    height: 10vw;
+
+  }
+
+  .quicklink-spacer {
+    margin-right: 5%;
+  }
+
+}
+
+
+// Mobile changes
+@media only screen and (max-width: 600px) {
+  .home-hero {
+    width: auto;
+    background: url('../img/homepage-hero-600.jpg') lightgray -0.36px 0px / 100.056% 121.087% no-repeat;
+    background-size: cover;
+    min-height: 30vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .info-box {
+    line-height: 150%;
+    font-size: 14px;
+  }
+
+  a#sitetitle {
+    padding-left: 1%;
+    font-size: 15px;
+
+  }
+
+  a#sitetitle span.subtitle {
+    font-size: 10px;
+  }
+  #mainmenu label.menu {
+    padding-right: 1%;
+    top: 0;
+    right: 1%;
+    //width:12%;
+    font-size: 12px;
+  }
+  div.quicklink-text {
+    font-size: 14px;
+    line-height: 120%;
+    padding: 5%;
+  }
+  div.home-container .flex-container {
+    display: block;
+  }
+
+  footer .flex-container {
+    //display: block;
+  }
+  div.logo, div.kcl-logo {
+    padding-left: 0;
+    width: 25%;
+    text-align: center;
+  }
+
+  div.logo.kcl-logo img {
+    width: 100%;
+  }
+
+  div.logo h4 {
+    font-size: 12px;
+  }
+  footer.footer {
+    margin-top: 0;
+  }
+  .footer-credits {
+    font-size: 8px;
+    text-align: center;
+  }
+  div.footer-bottom div.develop {
+    font-size: 11px;
+  }
+  div.container {
+    font-size: 80%;
+
+  }
+  div.container p{
+    line-height: 150%;
+  }
+
 }
