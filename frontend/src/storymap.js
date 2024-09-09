@@ -89,11 +89,13 @@ export class StoryMap {
         // Explore/filter variables
 
         // Quicklink has for disabling stories
-        this.exploreHash = '#s6-end'
+        this.exploreHash = '#s6-end';
         this.exploreFilterControl = {
             id: 0,
             fid: 0, // We should look at this
-            sub_type: [[], [], [], [], [], [], [], [], [], [], [], [], [], []],
+            // This is hacky, and relies on having as many entries as numbers
+            // So we can fill out the form as sub types are selected
+            sub_type: [[], [], [], [], [], [], [], [], [], [], [], [], [], [], []],
             maps: [],
             features: [],
 
@@ -630,7 +632,7 @@ export class StoryMap {
             });
 
             if (this.shadowFeatures && this.shadowFeatures.length > 0) {
-                //console.log(this.shadowFeatures);
+
                 slide.shadowLayer = this.L.geoJSON(this.shadowFeatures, {
                     pane: 'lane-lines-pane',
                     onEachFeature: this.onEachShadowFeature.bind(this),
@@ -692,7 +694,7 @@ export class StoryMap {
      */
     async triggerSlideMapEvents(slideid) {
         /* Trigger intros */
-        //console.log(slideid);
+
 
 
         if (slideid == this.exploreSlideId) {
@@ -880,14 +882,7 @@ export class StoryMap {
             }
         );
 
-        // Scroll end listener to catch the end of an over link jump
-        /*document.addEventListener("scrollend", function (e) {
 
-            if (!this.observerEnabled) {
-                console.log("Enabled");
-                this.observerEnabled = true;
-            }
-        });*/
 
         //this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
         for (let s = 0; s < this.slideElements.length; s++) {
@@ -1279,8 +1274,10 @@ export class StoryMap {
     /** Add a single criteria value to our search filters */
     addSubtypeFilter(subtypeValue, filterValue, include) {
         console.log("addsubtypefilter:" + subtypeValue +"," +filterValue);
+        console.log(this.exploreFilterControl.sub_type);
         if (
             this.exploreFilterControl.sub_type &&
+            this.exploreFilterControl.sub_type[subtypeValue] &&
             this.exploreFilterControl.sub_type.length >= filterValue
         ) {
             const index =
@@ -1508,7 +1505,7 @@ export class StoryMap {
                 }
 
             }
-            console.log('ToggleAll: ' + this.toggleAllFeaturesEnabled);
+
             if (!this.toggleAllFeaturesEnabled) {
                 this.applyExploreFilters();
                 // Update filter counts for map and explore
@@ -1530,7 +1527,7 @@ export class StoryMap {
         let subtypeFeatures = [];
 
         if (this.exploreFeatures) {
-            console.log(this.exploreFeatures);
+
             let exploreFilteringEnabled = false;
             if (!this.toggleAllFeaturesEnabled) {
                 // Check if any feature criteria are enabled
@@ -1616,8 +1613,9 @@ export class StoryMap {
                 }.bind(this)
             );
         }
-        console.log(filteredFeatures);
+
         if (filteredFeatures && filteredFeatures.length > 0) {
+            console.log(filteredFeatures);
             // ONLY show the layer if we've got something at the end.
             this.exploreFeaturesLayer = this.L.geoJSON(filteredFeatures, {
                 //style: this.defaultLineStyle,
