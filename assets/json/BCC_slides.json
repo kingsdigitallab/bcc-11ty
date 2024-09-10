@@ -6,21 +6,21 @@
       "lines": {
         "includes": {
           "sub_type": [
-            5
+            3
           ]
           }
       },
       "points": {
         "includes": {
           "sub_type": [
-            5
+            3
           ]
           }
         },
       "polys": {
         "includes": { 
           "sub_type": [ 
-            5
+            3
           ]
         } 
       },
