@@ -3,13 +3,22 @@
     {
       "id": 2,
       "fid": 33,
-      "lines": {},
-      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5
+          ]
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            5
+          ]
+        },
       "polys": {
         "includes": { 
           "sub_type": [ 
-            7,
-            11 
+            5
           ]
         } 
       },
