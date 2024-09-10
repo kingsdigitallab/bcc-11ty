@@ -8,12 +8,14 @@
           "sub_type": [
             5
           ]
+          }
       },
       "points": {
         "includes": {
           "sub_type": [
             5
           ]
+          }
         },
       "polys": {
         "includes": { 
