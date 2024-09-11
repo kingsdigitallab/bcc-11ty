@@ -40,6 +40,7 @@ div.logo img {
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 2%;
+  margin-top: 20%;
   color: #000;
   font-family: "Playfair Display";
   font-size: 16px;
@@ -175,11 +176,11 @@ a#sitetitle {
   color: white;
   text-decoration: none;
   padding-left: 1%;
-  padding-bottom: 2%;
   display: block;
   position: fixed;
   width: 100%;
   background: #132b19;
+  line-height: 120%;
   height: 5%;
   z-index: 9;
   font-size: 22px;
