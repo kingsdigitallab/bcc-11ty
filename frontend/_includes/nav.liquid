@@ -1,38 +1,25 @@
 {% assign navPages = collections.all | eleventyNavigation %}
-
-<a id="sitetitle" href="/">Movement and Common World in Early America<br/> <span class="subtitle">Homelands, Pathways and the Peoples of the Northeast</span></a>
 <nav>
-  <div id="mainmenu">
-    <input id="menu" type="checkbox"/>
-      <!--<img src="{{ '/assets/img/icons/font-awesome/bars-solid.svg' | url  }}"/>-->
-    <label class="menu" role="button" for="menu">Menu</label>
-    <ol>
-      {% for entry in navPages %}
-        <li class="{% if page.url | contains: entry.url %}is-active{% endif %}">
-          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-        </li>
-      {%  endfor %}
-      {% comment %}<li> <a href="#overview">Overview</a></li>{% endcomment %}
-      {% comment %}<li> <a href="stories/">Stories  </a>{% endcomment %}
-        {% comment %}<ol>{% endcomment %}
-          {% comment %}<li><a href="#s-intro">Introduction</a></li>{% endcomment %}
-          {% comment %}<li><a href="#s-1">Homelands</a></li>{% endcomment %}
-          {% comment %}<li><a href="#s-2">Villagers, Settlers</a></li>{% endcomment %}
-          {% comment %}<li><a href="#s-3">Pathways</a></li>{% endcomment %}
-          {% comment %}<li><a href="#s-4">Borders</a></li>{% endcomment %}
-        {% comment %}</ol>{% endcomment %}
-      {% comment %}</li>{% endcomment %}
-      {% comment %}<li> <a href="#filters">Filters </a></li>{% endcomment %}
-      {% comment %}<li> <a href="#about">About</a></li>{% endcomment %}
-      {% comment %}<li> <a href="#team">Team</a></li>{% endcomment %}
-      {% comment %}<li> <a href="#mappage">Maps</a></li>{% endcomment %}
-      {% comment %}<li> <a href="#resources">Resources</a></li>{% endcomment %}
-    </ol>
+    <div id="mainmenu">
+        <div>
+        <a id="sitetitle" href="/">Movement and Common World in Early America<br/> <span class="subtitle">Homelands, Pathways and the Peoples of the Northeast</span></a>
+        </div>
+        <input id="menu" type="checkbox"/>
+        <!--<img src="{{ '/assets/img/icons/font-awesome/bars-solid.svg' | url }}"/>-->
+        <label class="menu" role="button" for="menu">Menu</label>
+        <ol>
+            {% for entry in navPages %}
+                <li class="{% if page.url | contains: entry.url %}is-active{% endif %}">
+                    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+                </li>
+            {% endfor %}
 
-      {% comment %}<ul>{% endcomment %}
-          {% comment %}{% for entry in navPages %}{% endcomment %}
+        </ol>
 
-          {% comment %}{% endfor %}{% endcomment %}
-      {% comment %}</ul>{% endcomment %}
-  </div>
+        {% comment %}<ul>{% endcomment %}
+        {% comment %}{% for entry in navPages %}{% endcomment %}
+
+        {% comment %}{% endfor %}{% endcomment %}
+        {% comment %}</ul>{% endcomment %}
+    </div>
 </nav>
