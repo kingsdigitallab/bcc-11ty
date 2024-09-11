@@ -131,7 +131,7 @@ export class StoryMap {
 
         // Total map and explore filters currently applied
         this.totalExploreFilters = document.querySelectorAll(this.exploreSelectors.explore_filter).length;
-        ;
+        this.shadowFeatures = [];
         this.exploreSlideId = 1000;
         this.totalExploreFiltersApplied = 0;
         this.totalMapFilters = document.querySelectorAll(this.exploreSelectors.map_filter).length;
@@ -623,7 +623,7 @@ export class StoryMap {
     initStoryFeatureLayers() {
         for (let s = 0; s < this.slides.length; s++) {
             let slide = this.slides[s];
-            this.shadowFeatures = [];
+            this.shadowFeatures.length = 0;
             slide.layer = this.L.geoJSON(slide.features, {
                 // Stopping style override here
                 //style: this.defaultLineStyle,
@@ -632,7 +632,6 @@ export class StoryMap {
             });
 
             if (this.shadowFeatures && this.shadowFeatures.length > 0) {
-
                 slide.shadowLayer = this.L.geoJSON(this.shadowFeatures, {
                     pane: 'lane-lines-pane',
                     onEachFeature: this.onEachShadowFeature.bind(this),
@@ -1164,7 +1163,9 @@ export class StoryMap {
                         layer.setStyle(this.lineLandRouteStyle);
                         //layer.setText(feature.properties.norm_text);
                         this.shadowFeatures.push(feature);
+                        break;
                     case 5:
+
                         layer.setStyle(this.lineLandRouteStyle);
                         //layer.setText(feature.properties.norm_text);
                         this.shadowFeatures.push(feature);
@@ -1274,7 +1275,6 @@ export class StoryMap {
     /** Add a single criteria value to our search filters */
     addSubtypeFilter(subtypeValue, filterValue, include) {
         console.log("addsubtypefilter:" + subtypeValue +"," +filterValue);
-        console.log(this.exploreFilterControl.sub_type);
         if (
             this.exploreFilterControl.sub_type &&
             this.exploreFilterControl.sub_type[subtypeValue] &&
@@ -1492,7 +1492,8 @@ export class StoryMap {
             const values = JSON.parse(dataset.filtervalue);
             if (values.sub_type) {
                 let subtypeValue = values.sub_type;
-
+                //if (parseInt(subtypeValue)
+                console.log(subtypeValue +" :: "+values.identity);
                 // Add identities
                 if (values.identity) {
                     for (let t = 0; t < values.identity.length; t++) {
@@ -1616,6 +1617,8 @@ export class StoryMap {
 
         if (filteredFeatures && filteredFeatures.length > 0) {
             console.log(filteredFeatures);
+            console.log(this.shadowFeatures);
+            this.shadowFeatures.length = 0;
             // ONLY show the layer if we've got something at the end.
             this.exploreFeaturesLayer = this.L.geoJSON(filteredFeatures, {
                 //style: this.defaultLineStyle,
@@ -1623,6 +1626,17 @@ export class StoryMap {
                 onEachFeature: this.onEachFeature.bind(this),
             });
             this.storyFeatureLayerGroup.addLayer(this.exploreFeaturesLayer);
+            this.exploreFeaturesShadowLayer = null;
+            if (this.shadowFeatures && this.shadowFeatures.length > 0) {
+                this.exploreFeaturesShadowLayer = this.L.geoJSON(this.shadowFeatures, {
+                    pane: 'lane-lines-pane',
+                    onEachFeature: this.onEachShadowFeature.bind(this),
+                });
+            }
+            if (this.exploreFeaturesShadowLayer){
+                this.storyFeatureLayerGroup.addLayer(this.exploreFeaturesShadowLayer);
+            }
+
         }
     }
 
