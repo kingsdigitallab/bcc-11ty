@@ -11,7 +11,7 @@
       "properties": {
         "id": 2,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 4,
@@ -19,7 +19,7 @@
         "norm_text": "By the several Conquests here mentioned, the Territories of the Six Nations extend to the Limits here laid down; which they have been in Possession of about 100 Years.",
         "story_link": null,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1618,7 +1618,7 @@
       "properties": {
         "id": 34,
         "feat_type": 3,
-        "sub_type": 7,
+        "sub_type": 11,
         "map_source": 12,
         "date_yr": 1755,
         "accuracy": 4,
@@ -1626,7 +1626,7 @@
         "norm_text": "The Extent of the French Conquests and Settlements, before their late Enroachment on Crown Point.",
         "story_link": 2,
         "frame_link": null,
-        "identity": null
+        "identity": 1
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -7213,7 +7213,7 @@
       "properties": {
         "id": 3939,
         "feat_type": 5,
-        "sub_type": 14,
+        "sub_type": 11,
         "map_source": 8,
         "date_yr": 1752,
         "accuracy": 3,
