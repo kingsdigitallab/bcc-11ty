@@ -36,6 +36,36 @@ div.logo img {
 
 }
 
+.homelandLabel {
+  color: #FFF !important;
+  font-family: Petrona, serif;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+
+}
+
+
+.highlight-euro {
+  border-radius: 1em 0 1em 0;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(255, 20, 0, 0.2),
+    rgba(255, 20, 0, 0.7) 95%,
+    rgba(255, 20, 0, 0.1)
+  );
+}
+
+.highlight-indig {
+  border-radius: 1em 0 1em 0;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(255, 20, 0, 0.2),
+    rgba(255, 20, 0, 0.7) 95%,
+    rgba(255, 20, 0, 0.1)
+  );
+}
 
 .info-box {
   border: 1px solid #000;
