@@ -487,10 +487,6 @@ export class D3intro {
     }
 
     async playvillagerssettlersSlide(map) {
-        /*map.flyToBounds(
-            this.startingBounds.villagerssettlers
-        );*/
-        //await this.sleep(1500);
         if (
             !this.villagerssettlersSlide ||
             this.villagerssettlersSlide.features.length == 0
