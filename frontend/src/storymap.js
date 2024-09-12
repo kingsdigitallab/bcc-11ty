@@ -1019,19 +1019,6 @@ export class StoryMap {
                     case 5:
                         layer.setStyle(this.lineLandRouteHighlightStyle);
                         layer.bindPopup("This is one of those duplicated lines");
-                        //layer.setText(feature.properties.norm_text);
-                        // Can we instantiate the layer twice here - once with an offset ??
-                        //let lineCopy = JSON.stringify(layer.feature);
-                        // need to get the "feature" info from this cloned object
-                        //let dupLine = JSON.parse(lineCopy);
-                        // Create a new pane to hold the centre lane (z-index < 400)
-                        //this.map.createPane('lane-lines').style.zIndex = 300;
-                        //let dupLayer = new L.geoJSON();
-                        //dupLayer.addData(dupLine);
-                        //dupLayer.addTo(this.map);
-                        //dupLayer.setStyle(this.lineLandRouteHighlightStyle);
-                        // Viewport debugging
-                        //dupLayer.bindPopup("This is one of those duplicated lines");
                         break;
                 }
                 break;
@@ -1055,8 +1042,6 @@ export class StoryMap {
                         "<strong>" +
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
-                        // temp adding sub_type and type to popups
-                        //+ "<p>sub_type:" + feature.properties.sub_type + "</p>"
                     );
                 }
             } else if (feature.properties.map_text) {
@@ -1067,8 +1052,6 @@ export class StoryMap {
                         "<br><strong>" +
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
-                        // temp adding sub_type and type to popups
-                        //+ "<p>sub_type:" + feature.properties.sub_type + "</p>"
                     );
                 }
             } else if (feature.properties.norm_text) {
@@ -1079,8 +1062,6 @@ export class StoryMap {
                         "</br><strong>" +
                         this.mapLookup[feature.properties.map_source] +
                         "</strong>"
-                        // temp adding sub_type and type to popups
-                        + "<p>sub_type:" + feature.properties.sub_type + "</p>"
                     );
                 }
             } else {
@@ -1119,7 +1100,7 @@ export class StoryMap {
                         layer.setStyle(this.polyToponymStyle);
                         break;
                     case 11:
-                        // Capture Indig vs Haudenasnee
+                        // Capture Indig vs Haudenasaunee
                         switch (feature.properties.identity) {
                             case 1:
                                 layer.setStyle(this.europeanAnnoStyle);
@@ -1129,7 +1110,7 @@ export class StoryMap {
                                 layer.setStyle(this.indigenousAreaStyle);
                                 break;
                             case 3:
-                                //Grey poly (Haudenasuanee)
+                                //Grey poly (Haudenasaunee)
                                 layer.setStyle(this.haudenosauneeAreaStyle);
                                 break;
                             default:
@@ -1137,8 +1118,7 @@ export class StoryMap {
                         }
                         break;
                     case 14:
-                        // new sub_type for geographical features
-                        // Capture Indig vs Haudenasnee
+                        // Capture Indig vs Haudenasaunee
                         switch (feature.properties.identity) {
                             case 2:
                                 layer.setStyle(this.indigenousAreaStyle);
@@ -1157,30 +1137,15 @@ export class StoryMap {
                 switch (feature.properties.sub_type) {
                     case 3:
                         layer.setStyle(this.lineBorderStyle);
-                        //layer.setText(feature.properties.norm_text);
                         break;
                     case 4:
                         layer.setStyle(this.lineLandRouteStyle);
-                        //layer.setText(feature.properties.norm_text);
                         this.shadowFeatures.push(feature);
                         break;
                     case 5:
 
                         layer.setStyle(this.lineLandRouteStyle);
-                        //layer.setText(feature.properties.norm_text);
                         this.shadowFeatures.push(feature);
-                        // Can we instantiate the layer twice here - once with an offset ??
-                        //let lineCopy = JSON.stringify(layer.feature);
-                        // need to get the "feature" info from this cloned object
-                        //let dupLine = JSON.parse(lineCopy);
-                        // Create a new pane to hold the centre lane (z-index < 400)
-                        //this.map.createPane('lane-lines').style.zIndex = 300;
-                        //let dupLayer = new L.geoJSON();
-                        //dupLayer.addData(dupLine);
-                        //dupLayer.addTo(this.map);
-                        //dupLayer.setStyle(this.lineLandRouteHighlightStyle);
-                        // Viewport debugging
-                        //dupLayer.bindPopup("This is one of those duplicated lines");
                         break;
                     case 6:
                         layer.setStyle(this.lineSeaRouteStyle);
@@ -1204,7 +1169,6 @@ export class StoryMap {
                     default:
                         layer.setStyle(this.haudenosauneeAreaStyle);
                 }
-            //layer.setStyle(this.defaultLineStyle);
         }
     }
 
