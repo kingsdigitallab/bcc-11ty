@@ -43177,7 +43177,7 @@
       "properties": {
         "id": 4342,
         "feat_type": 5,
-        "sub_type": 7,
+        "sub_type": 11,
         "map_source": 19,
         "date_yr": 1796,
         "accuracy": 3,
@@ -43222,7 +43222,7 @@
       "properties": {
         "id": 4343,
         "feat_type": 5,
-        "sub_type": 7,
+        "sub_type": 11,
         "map_source": 19,
         "date_yr": 1796,
         "accuracy": 3,
@@ -50947,7 +50947,7 @@
       "properties": {
         "id": 4377,
         "feat_type": 5,
-        "sub_type": 7,
+        "sub_type": 11,
         "map_source": 1,
         "date_yr": 1590,
         "accuracy": 2,
