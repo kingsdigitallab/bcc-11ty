@@ -750,6 +750,8 @@ export class StoryMap {
         return true;
     }
 
+
+
     async initMap(lat, lng, zoom) {
         this.map = this.L.map("basemap", {
             scrollWheelZoom: false,
@@ -781,10 +783,10 @@ export class StoryMap {
                 window.scrollBy({
                     top: delta,
                     left: 0,
-                    behavior: "smooth"
+                    behavior: "instant"
                 });
                 //window.scrollBy(0, delta);
-                //lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
+                lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
                 scrollActive = false;
                 scrollActivateTimeout = setTimeout(function () {
                     scrollActive = true;
@@ -794,6 +796,20 @@ export class StoryMap {
         });
         el.addEventListener("touchend", function (e) {
             console.log('touchmoveend');
+            // Final scroll
+            console.log(e);
+            if (e.changedTouches.length > 0){
+                const delta = -1 * (e.changedTouches[0].screenY - lastTouch[1]) * touchScrollSpeed;
+                //console.log('wtf: ' + delta);
+                console.log('touchend ' + delta.toString());
+                window.scrollBy({
+                    top: delta,
+                    left: 0,
+                    behavior: "instant"
+                });
+            }
+
+
             scrollStart = false;
             clearTimeout(scrollActivateTimeout);
         });
