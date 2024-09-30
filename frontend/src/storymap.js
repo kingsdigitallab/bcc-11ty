@@ -788,7 +788,7 @@ export class StoryMap {
                 scrollActive = false;
                 scrollActivateTimeout = setTimeout(function () {
                     scrollActive = true;
-                }, 200);
+                }, 5);
             }
             e.stopPropagation();
         });
