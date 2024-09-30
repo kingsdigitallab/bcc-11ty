@@ -10,6 +10,8 @@ const markdownItContainer = require("markdown-it-container");
 const {EleventyRenderPlugin} = require("@11ty/eleventy");
 const stripHtml = require("string-strip-html");
 const markdownIt = require("markdown-it");
+const markdownItAttrs = require('markdown-it-attrs');
+
 
 // Image shortcode
 async function imageShortcode(src, alt, classNames, sizes) {
@@ -173,7 +175,14 @@ module.exports = function (config) {
             }
         },
         marker: ":",
-    });
+    }).use(
+        markdownItAttrs, {
+            // optional, these are default options
+            leftDelimiter: '{',
+            rightDelimiter: '}',
+            allowedAttributes: []  // empty array = all attributes are allowed
+        });
+
 
     config.setLibrary("md", md);
     config.addPlugin(EleventyRenderPlugin);
@@ -209,7 +218,5 @@ module.exports = function (config) {
         (s) => stripHtml.stripHtml(s).result.substring(0, 200) + "..."
     );
     // pathPrefix: "/bcc-11ty/",
-    return {
-
-    };
+    return {};
 };
