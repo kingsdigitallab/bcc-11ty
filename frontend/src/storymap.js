@@ -695,7 +695,6 @@ export class StoryMap {
         /* Trigger intros */
 
 
-
         if (slideid == this.exploreSlideId) {
             this.storyFeatureLayerGroup.clearLayers();
             this.loadExploreLayer();
@@ -755,7 +754,38 @@ export class StoryMap {
         this.map = this.L.map("basemap", {
             scrollWheelZoom: false,
             zoomControl: false,
+
         });
+
+        // Solve the narrative scrolling issue on tablet/mobile by using touch events
+        const el = document.getElementById("basemap");
+        const touchScrollSpeed = 200;
+        let lastTouch = [0, 0];
+        let scrollActive = false;
+        el.addEventListener("touchstart", function (e) {
+            lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
+            setTimeout(function () {
+                scrollActive = true;
+            }, 50);
+        });
+        el.addEventListener("touchmove", function (e) {
+            if (e.touches.length > 0 && lastTouch.length > 1 && scrollActive) {
+                const delta = e.touches[0].screenY - lastTouch[1];
+                console.log(delta);
+                window.scrollBy(0, touchScrollSpeed * delta);
+                lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
+                scrollActive = false;
+                setTimeout(function () {
+                    scrollActive = true;
+                }, 50);
+            }
+            e.stopPropagation();
+        });
+
+        /*
+        el.addEventListener("touchend", handleEnd);
+        el.addEventListener("touchcancel", handleCancel);
+        */
 
         this.L.control
             .zoom({
@@ -880,7 +910,6 @@ export class StoryMap {
                 threshold: [0.4],
             }
         );
-
 
 
         //this.storyFeatureLayerGroup.addLayer(this.allFeaturesLayer);
@@ -1238,7 +1267,7 @@ export class StoryMap {
 
     /** Add a single criteria value to our search filters */
     addSubtypeFilter(subtypeValue, filterValue, include) {
-        console.log("addsubtypefilter:" + subtypeValue +"," +filterValue);
+        console.log("addsubtypefilter:" + subtypeValue + "," + filterValue);
         if (
             this.exploreFilterControl.sub_type &&
             this.exploreFilterControl.sub_type[subtypeValue] &&
@@ -1457,7 +1486,7 @@ export class StoryMap {
             if (values.sub_type) {
                 let subtypeValue = values.sub_type;
                 //if (parseInt(subtypeValue)
-                console.log(subtypeValue +" :: "+values.identity);
+                console.log(subtypeValue + " :: " + values.identity);
                 // Add identities
                 if (values.identity) {
                     for (let t = 0; t < values.identity.length; t++) {
@@ -1530,7 +1559,7 @@ export class StoryMap {
                             if (
                                 (item.properties.identity && this.exploreFilterControl.sub_type[subtypeIndex].indexOf(item.properties.identity) > -1) ||
                                 (this.exploreFilterControl.sub_type[subtypeIndex].indexOf(0) > -1)
-                             ){
+                            ) {
                                 subtypeFeatures.push(item);
                             }
                         }
@@ -1597,7 +1626,7 @@ export class StoryMap {
                     onEachFeature: this.onEachShadowFeature.bind(this),
                 });
             }
-            if (this.exploreFeaturesShadowLayer){
+            if (this.exploreFeaturesShadowLayer) {
                 this.storyFeatureLayerGroup.addLayer(this.exploreFeaturesShadowLayer);
             }
 
