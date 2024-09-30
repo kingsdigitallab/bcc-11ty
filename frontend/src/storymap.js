@@ -759,7 +759,7 @@ export class StoryMap {
 
         // Solve the narrative scrolling issue on tablet/mobile by using touch events
         const el = document.getElementById("basemap");
-        const touchScrollSpeed = 200;
+        const touchScrollSpeed = 100;
         let lastTouch = [0, 0];
         let scrollActive = false;
         el.addEventListener("touchstart", function (e) {
