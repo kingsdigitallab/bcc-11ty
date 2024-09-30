@@ -759,31 +759,46 @@ export class StoryMap {
 
         // Solve the narrative scrolling issue on tablet/mobile by using touch events
         const el = document.getElementById("basemap");
-        const touchScrollSpeed = 100;
+        const touchScrollSpeed = 10;
         let lastTouch = [0, 0];
-        let scrollActive = false;
+        let scrollActive = false; // Allow scroll to happen (timeout)
+        let scrollStart = false;
+        let scrollActivateTimeout = null;
         el.addEventListener("touchstart", function (e) {
-            lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
-            setTimeout(function () {
+            if (!scrollStart) {
+                console.log('touchmovestart');
+                lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
                 scrollActive = true;
-            }, 50);
+                scrollStart = true;
+            }
+
         });
         el.addEventListener("touchmove", function (e) {
             if (e.touches.length > 0 && lastTouch.length > 1 && scrollActive) {
-                const delta = e.touches[0].screenY - lastTouch[1];
-                console.log(delta);
-                window.scrollBy(0, touchScrollSpeed * delta);
+                const delta = -1 * (e.touches[0].screenY - lastTouch[1]) * touchScrollSpeed;
+                //console.log('wtf: ' + delta);
+                console.log('touchmove ' + delta.toString());
+                window.scrollBy({
+                    top: delta,
+                    left: 0,
+                    behavior: "smooth"
+                });
+                //window.scrollBy(0, delta);
                 lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
                 scrollActive = false;
-                setTimeout(function () {
+                scrollActivateTimeout = setTimeout(function () {
                     scrollActive = true;
-                }, 50);
+                }, 200);
             }
             e.stopPropagation();
         });
-
+        el.addEventListener("touchend", function (e) {
+            console.log('touchmoveend');
+            scrollStart = false;
+            clearTimeout(scrollActivateTimeout);
+        });
         /*
-        el.addEventListener("touchend", handleEnd);
+
         el.addEventListener("touchcancel", handleCancel);
         */
 
