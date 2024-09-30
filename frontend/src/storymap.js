@@ -761,7 +761,7 @@ export class StoryMap {
 
         // Solve the narrative scrolling issue on tablet/mobile by using touch events
         const el = document.getElementById("basemap");
-        const touchScrollSpeed = 2;
+        const touchScrollSpeed = 1;
         let lastTouch = [0, 0];
         let scrollActive = false; // Allow scroll to happen (timeout)
         let scrollStart = false;
@@ -786,11 +786,11 @@ export class StoryMap {
                     behavior: "instant"
                 });
                 //window.scrollBy(0, delta);
-                lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
+                lastTouch = [e.touches[0].screenX, e.touches[0].screenY+ delta];
                 scrollActive = false;
                 scrollActivateTimeout = setTimeout(function () {
                     scrollActive = true;
-                }, 5);
+                }, 50);
             }
             e.stopPropagation();
         });
