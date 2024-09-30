@@ -784,7 +784,7 @@ export class StoryMap {
                     behavior: "smooth"
                 });
                 //window.scrollBy(0, delta);
-                lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
+                //lastTouch = [e.touches[0].screenX, e.touches[0].screenY];
                 scrollActive = false;
                 scrollActivateTimeout = setTimeout(function () {
                     scrollActive = true;
