@@ -53,21 +53,6 @@ $seafoam: #b2d2a4;
 
 // Extra stuff in applying Lucie's templates
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.map_page_image{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-}
-
 .subtitle {
   color: #FFF;
   font-size: 16px;
@@ -1476,14 +1461,17 @@ footer{
   a#sitetitle {
     padding-left: 1%;
     font-size: 17px;
+    span{
+      width:70%;
+      display: block;
+    }
   }
 
-  a#sitetitle span.subtitle {
+  a#sitetitle .subtitle {
     font-size: 13px;
   }
   #mainmenu label.menu {
     padding-right: 1%;
-    right: 1%;
     padding: 0.3em 0.5em;
     font-size: 17px;
     &:before{
