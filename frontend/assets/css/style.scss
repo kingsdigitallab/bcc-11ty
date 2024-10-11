@@ -68,23 +68,6 @@ $seafoam: #b2d2a4;
   width: 60%;
 }
 
-div.logo {
-  padding-left: 1em;
-  width: 15%;
-  text-align: center;
-}
-
-div.logo.kcl-logo img {
-  width: 20%;
-}
-
-div.logo img {
-  width: 50%;
-  height: auto;
-  display: block;
-  margin: auto;
-}
-
 .subtitle {
   color: #FFF;
   font-size: 16px;
@@ -169,43 +152,8 @@ div.logo img {
 // position: fixed;
 // margin-top: 5%;
 
-.footer {
-  bottom: 1;
-  margin-top: 5%;
-}
-
-.footer hr {
-  background: var(--Primary-Variant-1, #124D20);
-}
 
 
-div.home-container {
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div.container {
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 24px;
-}
-
-div.footer-bottom {
-  background: var(--Primary-1, #132B19);
-  width: 100%;
-}
-
-div.footer-bottom div.develop {
-  color: #FFF;
-  font-family: "Jost", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-align: center;
-}
 
 
 
@@ -1390,7 +1338,33 @@ nav {
 
 //#legend-wrapper
 
+footer{
+  border-top:1px solid $darkgreen;
+  padding:2% 5%;
+  display: flex;
+  width: 100%;
+  align-content: space-between;
+  .logos{
+    display: flex;
+    .logo{
+      margin:0 4%;
+      img{
+        width:auto;
+        height: 7vw;
+        max-height:70px;
+      }
+      &:first-of-type{
+        img{
+          height: 9vw;
+        max-height:90px;
+        }
+      }
+    }
+  }
+  .info{
 
+  }
+}
 
 
 @media only screen and (max-width: 1200px) {
@@ -1451,57 +1425,8 @@ nav {
       font-size: 14px;
     }
   }
-  div.quicklink-text {
-    font-size: 14px;
-    line-height: 120%;
-    padding: 5%;
-  }
-  div.home-container .flex-container {
-    display: block;
-  }
 
-  footer .flex-container {
-    //display: block;
-  }
-  div.logo, div.kcl-logo {
-    padding-left: 0;
-    width: 25%;
-    text-align: center;
-  }
 
-  div.logo.kcl-logo img {
-    width: 100%;
-  }
-
-  div.logo h4 {
-    font-size: 12px;
-  }
-  footer.footer {
-    margin-top: 0;
-  }
-  .footer-credits {
-    font-size: 8px;
-    text-align: center;
-  }
-  div.footer-bottom div.develop {
-    font-size: 11px;
-  }
-  div.container {
-    font-size: 80%;
-
-  }
-  div.container p {
-    line-height: 150%;
-  }
-  /*div#mainmenu label.menu {
-    display: block;
-    background-color: #fff;
-    position: absolute;
-    height: 2px;
-    width: 30px;
-    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: 1;
-  }*/
 
 
 }
