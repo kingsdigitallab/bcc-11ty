@@ -315,7 +315,7 @@ nav {
   opacity: 0.93;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 2%;
+  padding: 4%;
   color: #000;
   font-family: "Jost", sans-serif;
   font-size: 18px;
@@ -334,19 +334,18 @@ nav {
   cursor: pointer;
 }
 .home-hero .info-box a button {
-  border: 2px solid #124d20;
+  border: 1px solid #124d20;
   max-width: 250px;
   width: 100%;
   text-align: center;
   background-color: #132b19;
   color: white;
   margin: 1.5em 3% 0 3%;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
-  padding: 1em;
+  padding: 0.7em 1em;
   text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 700;
+  font-weight: 200;
   -webkit-transition: all 300ms ease-in;
   -moz-transition: all 300ms ease-in;
   -ms-transition: all 300ms ease-in;
@@ -371,7 +370,7 @@ nav {
 }
 .home-section .card {
   width: 30%;
-  border-top: 5px solid #132b19;
+  border-top: 5px solid #124d20;
   background-color: #f1f1f1;
   padding: 2em;
   font-size: 18px;
@@ -389,7 +388,7 @@ nav {
   margin-top: auto;
 }
 .home-section .card a button {
-  border: 2px solid #124d20;
+  border: 1px solid #124d20;
   -webkit-transition: all 300ms ease-in;
   -moz-transition: all 300ms ease-in;
   -ms-transition: all 300ms ease-in;
@@ -397,12 +396,12 @@ nav {
   transition: all 300ms ease-in;
   background-color: white;
   color: #132b19;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
   width: 100%;
   text-transform: uppercase;
-  padding: 1em;
-  font-weight: 700;
+  padding: 0.7em 1em;
+  font-weight: 200;
 }
 .home-section .card a:hover {
   opacity: 1;
