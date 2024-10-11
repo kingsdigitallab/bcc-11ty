@@ -1430,7 +1430,7 @@ footer{
       margin-top: 20px;
       display:block;
       ul{
-        margin:0;
+        margin:0 0 0 -40px;
       }
     }
   }
@@ -1493,7 +1493,7 @@ footer{
 
   footer{
     display: block;
-    background:lightgray;
+    padding-top:20px;
     .logos{
       width:100%;
       display: block;
@@ -1509,6 +1509,9 @@ footer{
           }
         }
       }
+    }
+    .info{
+      margin-top:40px;
     }
   }
 
