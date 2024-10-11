@@ -87,12 +87,9 @@ div.logo img {
 
 .subtitle {
   color: #FFF;
-  font-family: Petrona;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-
+  font-weight: 200;
 }
 
 .homelandLabel {
@@ -287,11 +284,11 @@ a#sitetitle {
   position: fixed;
   width: 100%;
   background: $darkgreen;
-  line-height: 120%;
-  height: 5%;
   z-index: 9;
   font-size: 22px;
   border-bottom: 4px solid darken($lightgreen, 20%);
+  padding-bottom: 0.1em;
+  line-height: 1.2;
 }
 
 // a#sitetitle
@@ -375,11 +372,12 @@ nav {
     @include transition(all 250ms ease-in);
     cursor: pointer;
     position: fixed;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.5em;
     background: transparent;
     top: 0;
     right: 0;
-    font-size: 1.2em;
+    font-size: 20px;
+    font-weight: 300;
     color: white;
     z-index: 9999;
   }
@@ -400,16 +398,20 @@ nav {
     @include transition(all 400ms ease-in);
     /* cross icon */
     &:before {
-      content: "X";
+      content: "✖";
       position: fixed;
-      right: -1em;
-      top: 0.3em;
+      right: -1.8em;
+      top: 0.6em;
       height: 1.7em;
       width: 1.7em;
       text-align: center;
+      /* font-weight: 100; */
       color: white;
       cursor: pointer;
-      font-size: 1.3em;
+      font-size: 20px;
+    }
+    &:hover{
+      
     }
   }
 }
@@ -2403,12 +2405,7 @@ a {
 //tablets, large phones
 @media (min-width: 601px) and (max-width: 1200px) {
 
-  header {
-    height: 5%;
-  }
-  a#sitetitle {
-    height: 5%;
-  }
+
 
   div.container {
     max-width: 1200px;
@@ -2516,7 +2513,7 @@ a {
 
   a#sitetitle {
     padding-left: 1%;
-    font-size: 15px;
+    font-size: 20px;
 
   }
 
