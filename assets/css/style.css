@@ -221,6 +221,7 @@ nav {
   border-bottom: 4px solid #4b5d04;
   background: #132b19;
   padding-bottom: 0.1em;
+  z-index: 9;
 }
 
 #mainmenu {
