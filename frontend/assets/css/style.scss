@@ -124,12 +124,11 @@ div.logo img {
 }
 
 .info-box {
-  border: 1px solid #000;
   opacity: 0.93;
   background: #FFF;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 2%;
-margin-top: 20%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  padding: 5% 2%;
+  margin-top: 20%;
   color: #000;
   font-family: "Jost", sans-serif;
   font-size: 16px;
@@ -179,10 +178,6 @@ margin-top: 20%;
   background: var(--Primary-Variant-1, #124D20);
 }
 
-header {
-  height: 5%;
-
-}
 
 div.home-container {
   max-width: 1920px;
@@ -395,7 +390,8 @@ nav {
   background-size: cover;
   display: flex;
   align-items: center;
-  height: 70vh;
+  height: 70vw;
+  max-height:50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -409,11 +405,11 @@ nav {
     padding: 2%;
     color: #000;
     font-family: "Jost", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 500;
-    margin-top: 1vw;
-    width:calc(750px - 50vw);
+    font-weight: 400;
+    margin-top: 20vw;
+    width:calc(100% - 50vw);
     min-width:400px; /* let's have a minimum boundary */
     max-width:90%; /* and a maximum boundary */
     text-align: center;
@@ -422,22 +418,73 @@ nav {
       text-decoration: none;
       text-align: center;
       cursor: pointer;
-      .info-button{
-        border:1px solid $midgreen;
-        display: inline-block;
-        width:49%;
+      button{
+        border:2px solid $midgreen;
+        max-width:250px;
+        width:100%;
         text-align: center;
         background-color: $darkgreen;
         color: white;
-        margin-top:1.5em;
+        margin:1.5em 3% 0 3%;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 1em;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+        @include transition(all 300ms ease-in);
       }
       &:hover{
         opacity: 1;
         background-color: white;
         color:$darkgreen;
-        .info-button{
+        button{
           background-color: white;
           color: $darkgreen;
+        }
+      }
+    }
+  }
+}
+.home-section{
+  display: flex;
+  justify-content: space-between;
+  margin:5% auto;
+  max-width:1400px;
+  .card{
+    width: 30%;
+    border-top: 5px solid $darkgreen;
+    background-color: #f1f1f1;
+    padding:2em;
+    font-size:18px;
+    text-align: center;
+    display:flex; 
+    flex-direction:column;
+    margin: 0 2%;
+    img{
+      width: 100%;
+      object-fit: cover;
+      max-height: 15vw;
+    }
+    a {
+      margin-top: auto;
+      button{
+        border:2px solid $midgreen;
+        @include transition(all 300ms ease-in);
+        background-color: white;
+        color: $darkgreen;
+        font-size: 14px;
+        cursor: pointer;
+        width:100%;
+        text-transform: uppercase;
+        padding:1em;
+        font-weight: 700;
+      }
+      &:hover{
+        opacity:1;
+        button{
+          background-color: $darkgreen;
+          color: white;
         }
       }
     }
