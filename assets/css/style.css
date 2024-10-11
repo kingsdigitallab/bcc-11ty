@@ -1,38 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 /*** MIXINS ***/
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.map_page_image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-}
-
-div.logo {
-  padding-left: 1em;
-  width: 15%;
-  text-align: center;
-}
-
-div.logo.kcl-logo img {
-  width: 20%;
-}
-
-div.logo img {
-  width: 50%;
-  height: auto;
-  display: block;
-  margin: auto;
-}
-
 .subtitle {
   color: #FFF;
   font-size: 16px;
@@ -57,20 +25,6 @@ div.logo img {
 .highlight-indig {
   border-radius: 1em 0 1em 0;
   background-image: linear-gradient(-100deg, rgba(255, 20, 0, 0.2), rgba(255, 20, 0, 0.7) 95%, rgba(255, 20, 0, 0.1));
-}
-
-.info-box {
-  opacity: 0.93;
-  background: #FFF;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
-  padding: 5% 2%;
-  margin-top: 20%;
-  color: #000;
-  font-family: "Jost", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 170%;
 }
 
 .quicklink-container {
@@ -99,43 +53,6 @@ div.logo img {
 
 .quicklink-spacer {
   margin-right: 5%;
-}
-
-.footer {
-  bottom: 1;
-  margin-top: 5%;
-}
-
-.footer hr {
-  background: var(--Primary-Variant-1, #124D20);
-}
-
-div.home-container {
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div.container {
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 24px;
-}
-
-div.footer-bottom {
-  background: var(--Primary-1, #132B19);
-  width: 100%;
-}
-
-div.footer-bottom div.develop {
-  color: #FFF;
-  font-family: "Jost", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-align: center;
 }
 
 html {
@@ -414,8 +331,7 @@ nav {
 #basemap {
   z-index: 0 !important;
   position: fixed;
-  top: 44px;
-  height: calc(100% - 44px);
+  height: 100vh;
   width: 100%;
 }
 
@@ -1201,6 +1117,98 @@ nav {
   transform: translate(0, 3px);
 }
 
+footer {
+  border-top: 1px solid #132b19;
+  padding: 2%;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+footer .logos {
+  display: flex;
+  width: 80%;
+}
+footer .logos h4 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 1.2;
+}
+footer .logos h4 span {
+  font-weight: 200;
+}
+footer .logos .logo {
+  margin: 0 4%;
+  width: 100%;
+  text-align: center;
+}
+footer .logos .logo img {
+  width: auto;
+  height: 70px;
+}
+footer .logos .logo:first-of-type img {
+  height: 80px;
+}
+footer .info {
+  display: flex;
+  width: 20%;
+  min-width: 300px;
+}
+footer .info ul {
+  margin: 0 0 0 5%;
+}
+footer .info ul li {
+  list-style-type: none;
+}
+footer .info ul li a {
+  color: #124d20;
+  text-decoration: none;
+}
+footer .info ul li:last-of-type {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1200px) {
+  footer {
+    display: block;
+  }
+  footer .logos {
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+  footer .logos h4 {
+    flex-basis: 100%;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  footer .logos .logo {
+    width: 33.3%;
+    text-align: center;
+    margin: 0;
+  }
+  footer .logos .logo img {
+    width: auto;
+    height: 7vw;
+    min-height: 50px;
+  }
+  footer .logos .logo:first-of-type img {
+    height: 8vw;
+    min-height: 60px;
+  }
+  footer .info {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+  }
+  footer .info ul {
+    margin: 0 0 0 -40px;
+  }
+}
 @media only screen and (max-width: 600px) {
   .home-hero {
     max-height: 100vh;
@@ -1235,60 +1243,40 @@ nav {
     padding-left: 1%;
     font-size: 17px;
   }
-  a#sitetitle span.subtitle {
+  a#sitetitle span {
+    width: 70%;
+    display: block;
+  }
+  a#sitetitle .subtitle {
     font-size: 13px;
   }
   #mainmenu label.menu {
     padding-right: 1%;
-    right: 1%;
     padding: 0.3em 0.5em;
     font-size: 17px;
   }
   #mainmenu label.menu:before {
     font-size: 14px;
   }
-  div.quicklink-text {
-    font-size: 14px;
-    line-height: 120%;
-    padding: 5%;
-  }
-  div.home-container .flex-container {
+  footer {
     display: block;
+    padding-top: 20px;
   }
-  div.logo, div.kcl-logo {
-    padding-left: 0;
-    width: 25%;
-    text-align: center;
-  }
-  div.logo.kcl-logo img {
+  footer .logos {
     width: 100%;
-  }
-  div.logo h4 {
-    font-size: 12px;
-  }
-  footer.footer {
-    margin-top: 0;
-  }
-  .footer-credits {
-    font-size: 8px;
-    text-align: center;
-  }
-  div.footer-bottom div.develop {
-    font-size: 11px;
-  }
-  div.container {
-    font-size: 80%;
-  }
-  div.container p {
-    line-height: 150%;
-  }
-  /*div#mainmenu label.menu {
     display: block;
-    background-color: #fff;
-    position: absolute;
-    height: 2px;
-    width: 30px;
-    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: 1;
-  }*/
+  }
+  footer .logos .logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  footer .logos .logo img {
+    height: 60px;
+  }
+  footer .logos .logo:first-of-type img {
+    height: 70px;
+  }
+  footer .info {
+    margin-top: 40px;
+  }
 }
