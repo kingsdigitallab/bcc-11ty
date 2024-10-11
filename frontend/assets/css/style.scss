@@ -281,23 +281,24 @@ a#sitetitle {
   text-decoration: none;
   padding-left: 1%;
   display: block;
-  position: fixed;
-  width: 100%;
-  background: $darkgreen;
   z-index: 9;
   font-size: 22px;
-  border-bottom: 4px solid darken($lightgreen, 20%);
-  padding-bottom: 0.1em;
   line-height: 1.2;
+  @include transition(all 250ms ease-in);
+  &:hover{
+    opacity: 0.8;
+  }
 }
-
 // a#sitetitle
 
 // NAV
 nav {
-  height: 3em;
   top: 0;
-  //border-bottom:0.1em solid gray;
+  position: fixed;
+  width: 100%;
+  border-bottom: 4px solid darken($lightgreen, 20%);
+  background: $darkgreen;
+  padding-bottom: 0.1em;
 }
 
 //nav
@@ -380,6 +381,9 @@ nav {
     font-weight: 300;
     color: white;
     z-index: 9999;
+    &:hover{
+      opacity: 0.8;
+    }
   }
 
   input#menu[type="checkbox"] {
@@ -409,9 +413,6 @@ nav {
       color: white;
       cursor: pointer;
       font-size: 20px;
-    }
-    &:hover{
-      
     }
   }
 }
