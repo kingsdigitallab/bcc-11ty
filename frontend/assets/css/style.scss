@@ -2514,19 +2514,20 @@ a {
 
   a#sitetitle {
     padding-left: 1%;
-    font-size: 20px;
-
+    font-size: 17px;
   }
 
   a#sitetitle span.subtitle {
-    font-size: 10px;
+    font-size: 13px;
   }
   #mainmenu label.menu {
     padding-right: 1%;
-    top: 0;
     right: 1%;
-    //width:12%;
-    font-size: 12px;
+    padding: 0.3em 0.5em;
+    font-size: 17px;
+    &:before{
+      font-size: 14px;
+    }
   }
   div.quicklink-text {
     font-size: 14px;
