@@ -340,9 +340,6 @@ nav {
   height: calc(100% - 44px);
   width: 100%;
 }
-#basemap .leaflet-map-pane {
-  filter: grayscale(22%) sepia(10%) saturate(92%) contrast(92%);
-}
 
 .mapOverlay {
   z-index: 1 !important;
