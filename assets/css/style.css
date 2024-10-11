@@ -60,11 +60,10 @@ div.logo img {
 }
 
 .info-box {
-  border: 1px solid #000;
   opacity: 0.93;
   background: #FFF;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 2%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  padding: 5% 2%;
   margin-top: 20%;
   color: #000;
   font-family: "Jost", sans-serif;
@@ -109,10 +108,6 @@ div.logo img {
 
 .footer hr {
   background: var(--Primary-Variant-1, #124D20);
-}
-
-header {
-  height: 5%;
 }
 
 div.home-container {
@@ -307,7 +302,8 @@ nav {
   background-size: cover;
   display: flex;
   align-items: center;
-  height: 70vh;
+  height: 70vw;
+  max-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -322,11 +318,11 @@ nav {
   padding: 2%;
   color: #000;
   font-family: "Jost", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 500;
-  margin-top: 1vw;
-  width: calc(750px - 50vw);
+  font-weight: 400;
+  margin-top: 20vw;
+  width: calc(100% - 50vw);
   min-width: 400px; /* let's have a minimum boundary */
   max-width: 90%; /* and a maximum boundary */
   text-align: center;
@@ -337,23 +333,83 @@ nav {
   text-align: center;
   cursor: pointer;
 }
-.home-hero .info-box a .info-button {
-  border: 1px solid #124d20;
-  display: inline-block;
-  width: 49%;
+.home-hero .info-box a button {
+  border: 2px solid #124d20;
+  max-width: 250px;
+  width: 100%;
   text-align: center;
   background-color: #132b19;
   color: white;
-  margin-top: 1.5em;
+  margin: 1.5em 3% 0 3%;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 1em;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 .home-hero .info-box a:hover {
   opacity: 1;
   background-color: white;
   color: #132b19;
 }
-.home-hero .info-box a:hover .info-button {
+.home-hero .info-box a:hover button {
   background-color: white;
   color: #132b19;
+}
+
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 5% auto;
+  max-width: 1400px;
+}
+.home-section .card {
+  width: 30%;
+  border-top: 5px solid #132b19;
+  background-color: #f1f1f1;
+  padding: 2em;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 2%;
+}
+.home-section .card img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 15vw;
+}
+.home-section .card a {
+  margin-top: auto;
+}
+.home-section .card a button {
+  border: 2px solid #124d20;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+  background-color: white;
+  color: #132b19;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 1em;
+  font-weight: 700;
+}
+.home-section .card a:hover {
+  opacity: 1;
+}
+.home-section .card a:hover button {
+  background-color: #132b19;
+  color: white;
 }
 
 #basemap {
