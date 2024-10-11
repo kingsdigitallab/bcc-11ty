@@ -261,6 +261,7 @@ nav {
   display: block;
   line-height: 1;
   color: white;
+  cursor: pointer;
 }
 #mainmenu > ol > li:last-of-type {
   padding-bottom: 50vh;
