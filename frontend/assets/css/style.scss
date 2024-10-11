@@ -1340,35 +1340,100 @@ nav {
 
 footer{
   border-top:1px solid $darkgreen;
-  padding:2% 5%;
+  padding:2%;
   display: flex;
   width: 100%;
-  align-content: space-between;
+  justify-content: space-evenly;
+  max-width: 1400px;
+  margin: 0 auto;
   .logos{
     display: flex;
+    width:80%;
+    h4{
+      margin:0;
+      text-transform: uppercase;
+      font-size:22px;
+      line-height: 1.2;
+      span{
+        font-weight: 200;
+      }
+    }
     .logo{
       margin:0 4%;
+      width:100%;
+      text-align: center;
       img{
         width:auto;
-        height: 7vw;
-        max-height:70px;
+        height: 70px;
       }
       &:first-of-type{
         img{
-          height: 9vw;
-        max-height:90px;
+          height: 80px;
         }
       }
     }
   }
   .info{
-
+    display: flex;
+    width:20%;
+    min-width:300px;
+    ul {
+      margin: 0 0 0 5%;
+      li{
+      list-style-type: none;
+      a{
+        color:$midgreen;
+        text-decoration: none;
+      }
+      &:last-of-type{
+        font-size:14px;
+      }
+    }
+  }
   }
 }
 
 
 @media only screen and (max-width: 1200px) {
-
+  footer{
+    display: block;
+    .logos{
+      width:100%;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: space-evenly;
+      h4{
+        flex-basis: 100%;
+        font-size:18px;
+        margin-bottom:30px;
+      }
+      .logo{
+        width:33.3%;
+        text-align: center;
+        margin:0;
+        img{
+          width:auto;
+          height: 7vw;
+          min-height:50px;
+        }
+        &:first-of-type{
+          img{
+            height: 8vw;
+            min-height:60px;
+          }
+        }
+      }
+    }
+    .info{
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      display:block;
+      ul{
+        margin:0;
+      }
+    }
+  }
 
 
 }
@@ -1426,7 +1491,26 @@ footer{
     }
   }
 
-
+  footer{
+    display: block;
+    background:lightgray;
+    .logos{
+      width:100%;
+      display: block;
+      .logo{
+        width:100%;
+        margin-bottom:10px;
+        img{
+        height:60px;
+        }
+        &:first-of-type{
+          img{
+            height: 70px;
+          }
+        }
+      }
+    }
+  }
 
 
 }
