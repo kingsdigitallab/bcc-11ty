@@ -462,8 +462,7 @@ nav {
       //counter-reset: li;
       display: flex;
       margin-left: -40px;
-      height: 2em;
-
+      margin-bottom:0;
       > li {
         width: 33.33%;
         cursor: pointer;
@@ -471,7 +470,6 @@ nav {
         list-style-type: none;
         border-top: 0.1em solid lighten(gray, 10%);
         margin: 0 0.5em;
-        padding-bottom: 4em;
         @include transition(all 300ms ease-in);
 
         &:hover {
@@ -491,7 +489,7 @@ nav {
           text-decoration: none;
           color: darken(gray, 15%);
           display: block;
-          padding: 1em 0 1em 0;
+          padding: 1em 0 0 0;
           line-height: 1;
           margin-top: -0.9em;
           text-transform: uppercase;
@@ -1372,6 +1370,16 @@ footer{
 
 
 @media only screen and (max-width: 1200px) {
+
+  .mapOverlay nav > ol > li {
+    width:15%;
+  > a span {
+    //opacity: 0;
+    //display: none;
+    }
+  }
+
+
   footer{
     display: block;
     .logos{
@@ -1411,9 +1419,23 @@ footer{
       }
     }
   }
-
-
 }
+
+@media only screen and (max-width: 700px) {
+  .mapOverlay nav > ol {
+  > li {
+    width:10%;
+    margin: 0 1%;
+    &:first-of-type, &:last-of-type{
+      min-width:100px;
+    }
+  > a span {
+    display: none;
+    }
+    }
+  }
+}//@media only screen and (max-width: 700px) 
+
 
 
 // Mobile changes
@@ -1497,3 +1519,19 @@ footer{
 
 
 }
+
+@media only screen and (max-width: 500px) {
+  .mapOverlay nav > ol {
+  > li {
+    &:first-of-type, &:last-of-type{
+      min-width:70px;
+      a{
+        font-size:13px;
+      }
+    }
+  > a span {
+    display: none;
+    }
+    }
+  }
+}//@media only screen and (max-width: 300px) 
