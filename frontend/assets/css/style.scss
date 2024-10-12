@@ -1422,7 +1422,8 @@ footer{
 }
 
 @media only screen and (max-width: 700px) {
-  .mapOverlay nav > ol {
+  .mapOverlay{ 
+    nav > ol {
   > li {
     width:10%;
     margin: 0 1%;
@@ -1434,6 +1435,14 @@ footer{
     }
     }
   }
+  section{
+    article{
+      min-width:250px;
+    }
+  }
+
+  }
+  
 }//@media only screen and (max-width: 700px) 
 
 
@@ -1532,6 +1541,21 @@ footer{
   > a span {
     display: none;
     }
+    }
+  }
+  .mapOverlay{
+    section{
+      padding: 0 1%;
+      article{
+        font-size:16px;
+        &.storyTitle {
+          padding: 20px 2%;
+          h2{
+          font-size:22px;
+          padding:10px 0;
+        }
+      }
+      }
     }
   }
 }//@media only screen and (max-width: 300px) 
