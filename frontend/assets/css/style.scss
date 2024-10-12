@@ -423,7 +423,7 @@ nav {
 #basemap {
   z-index: 0 !important;
   position: fixed;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 50px);
   width: 100%;
   //.leaflet-map-pane
 }
@@ -1220,7 +1220,7 @@ nav {
       }
 
       ~ .content {
-        right: -200px; /* content on hover */
+        right: -230px; /* content on hover */
       }
 
       &:before {
@@ -1259,17 +1259,20 @@ nav {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -225px;
+    right: -255px;
     overflow: scroll;
     font-size: 14px;
     line-height: 1.6;
-    width: 220px;
+    width: 250px;
     @include transition(all 400ms ease-in);
     background: white;
-    padding: 8px 0;
-    height: 400px;
+    padding: 16px 0 8px 0;
+    height: 425px;
     margin: auto;
     border: 1px solid $darkgreen;
+    img{
+      padding:0 10px 0 5px;
+    }
   }
 
   /* end .content */
@@ -1282,7 +1285,7 @@ nav {
   }
 
   input#legend[type="checkbox"]:checked ~ label.legend-button {
-    right: 185px;
+    right: 220px;
     background: $darkgreen;
 
     h2 {
