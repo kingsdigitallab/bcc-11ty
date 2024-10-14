@@ -3,55 +3,45 @@ layout: base.liquid
 ---
 <section class="section">
     <div class="home-container">
-        <div class="w3-row has-text-centered w3-padding-small home-hero">
-            <div class="w3-col s1 m4 l4">&nbsp;</div>
-            <div class="w3-col s10 m4 l4 info-box">
-                Movement and Common Worlds is an interactive map platform which uses data garnered from historical maps
-                to illustrate evolving European conceptions of the political and spatial worlds of the American
-                Northeast. As part of Brightening the Covenant Chain, our kinetic map helps tell a more nuanced and
-                complex story than popular history has hitherto told about colonial settlement among - and the Crown's
-                relations with - the powerful indigenous nations of the Iroquois Confederacy.
+        <div class="home-hero">
+            <div class="info-box">
+                An interactive map platform, using data garnered from historical maps, illustrates evolving European conceptions of the political and spatial worlds of the American
+                Northeast. 
                 <br/>
-                <h2 class="w3-hide-medium w3-hide-large">The interactive map cannot be viewed on mobile-sized screens</h2>
-                <h4 class="w3-hide-medium w3-hide-large">Pleas view this site on a tablet or larger, or click below to learn more about the project</h4>
-                <div class="info-button w3-hide-small"><a href="{{ "stories/" | url }}">GO TO MAP</a></div>
-                <div class="info-button w3-hide-medium w3-hide-large"><a href="{{ "about/" | url }}">Learn More</a></div>
+                <a href="{{ "about/" | url }}"><button>About</button></a>
+                <a href="{{ "stories/" | url }}"><button>Stories</button></a>
+                
             </div>
 
             <div class="content {{ tags }}">
                 {{ content }}
             </div>
+    
         </div>
-        <div class="w3-row has-text-centered w3-padding-small">
-            <div class="w3-col s10 m10 w3-hide-medium w3-hide-large">
-                <h2>
-                </h2>
-            </div>
-        </div>
-        <div class="w3-row has-text-centered w3-padding-small flex-container quicklink-container w3-hide-small">
+        <div class="home-section">
 
-            <div class="w3-col s10 m4 l3 quicklink quicklink-spacer">
-                <div class="quicklink-text">
+            <div class="card">
+                <p>
                     Scroll through illustrated narratives which explain and expand on the historical contexts of the
                     map
                     data.
-                </div>
-                <div class="info-button"><a href="{{ "stories/" | url }}">Stories</a></div>
+                </p>
+                <a href="{{ "stories/" | url }}"><button>Stories</button></a>
 
             </div>
 
-            <div class="w3-col s10 m4 l3 quicklink quicklink-spacer">
-                <div class="quicklink-text">
+            <div class="card">
+                <p>
                     Select historical map sources and choose what features to display.
-                </div>
-                <div class="info-button"><a href="{{ "stories/#s6-end" | url }}">Explore</a></div>
+                </p>
+                <a href="{{ "stories/#s6-end" | url }}"><button>Explore</button></a>
             </div>
 
-            <div class="w3-col s6 m4 l3 quicklink">
-                <div class="quicklink-text">
-                    Find out more about the themes and topics of M&CW with links to related websites and further reading.
-                </div>
-                <div class="info-button"><a href="{{ "resources/" | url }}">Resources</a></div>
+            <div class="card">
+                <p>
+                    Find out more about the themes and topics linking to related websites and further reading.
+                </p>
+                <a href="{{ "resources/" | url }}"><button>Resources</button></a>
             </div>
 
         </div>

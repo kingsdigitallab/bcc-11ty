@@ -101,7 +101,7 @@ layout: base.liquid
         {% renderFile "./stories/lines.md", "liquid" %}
     </section>
 
-    <section id="filters" class="sectionContainer">
+    <section id="s6-end" class="sectionContainer">
         <div class="storyTitleSpacerAbove" id="s6-start"></div>
         <article class="storyTitle mapSlide" id="slide_1000" data-slideId="1000">
             <h2>Explore</h2>
@@ -131,7 +131,7 @@ layout: base.liquid
                 <span><input type="checkbox" id="selectallMaps" name="selectall" value="All">
                 <label for="selectallMaps">Select All</label></span>
             </header>
-            <ol>
+            <ol class="maps">
                 <li><input type="checkbox" data-featuretype="all" data-criteria="map_source" data-filtervalue="1"
                            class="map_selector" id="mapcheckbox1"/>
                     <label for="mapcheckbox1">
@@ -199,7 +199,7 @@ layout: base.liquid
                 <label for="selectallFeatures">Select All</label></span>
             </header>
 
-            <ol>
+            <ol class="icons">
 
                 <li><input type="checkbox" data-featuretype="all" data-criteria="map_filter"
                            data-filtervalue='{"sub_type":4, "identity":[2]}'
@@ -313,37 +313,37 @@ layout: base.liquid
   <tr>
     <td>&nbsp;&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/cross_turquoise.webp' | url }}"></img></td>
-    <td>Settlement (Indigenous)</td>
+    <td>Settlement <span>(Indigenous)</span></td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/cross_purple.webp' | url }}"></img></td>
-    <td>Settlement (European)</td>
+    <td>Settlement <span>(European)</span></td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/circle_turquoise.webp' | url }}"></img></td>
-    <td>Placename (Indigenous)</td>
+    <td>Placename <span>(Indigenous)</span></td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/circle_purple.webp' | url }}"></img></td>
-    <td>Placename (European)</td>
+    <td>Placename <span>(European)</span></td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;</td>
     <td><img style="height: 1em;opacity:0.3;" src="{{ '/assets/img/stories/region_turquoise.webp' | url }}"></img></td>
-    <td>Annotation (Indigenous-related)</td>
+    <td>Annotation <span>(Indigenous)</span></td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/haudenosaunee-hatch-30-pc-fill-turquoise.webp' | url }}"></img></td>
-    <td>Annotation (Haudenosaunee-related)</td>
+    <td>Annotation <span>(Haudenosaunee-related)</span></td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;</td>
     <td><img style="height: 1em;" src="{{ '/assets/img/stories/diagonal_hatching_purple.webp' | url }}"></img></td>
-    <td>Annotation (European-related)</td>
+    <td>Annotation <span>(European)</span></td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;</td>
