@@ -331,7 +331,7 @@ nav {
 #basemap {
   z-index: 0 !important;
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 50px);
   width: 100%;
 }
 
@@ -362,19 +362,20 @@ nav {
   z-index: 99;
   pointer-events: auto;
   background: #f2f2f2;
-  height: 3.5em;
-  top: 5%;
+  top: 0;
   border-bottom: 0;
   position: fixed;
-  width: 60%;
-  margin: 0 20%;
+  width: calc(90% - 80px);
+  margin: 0 auto;
   border: 1px solid #124d20;
-  border-top: 0;
+  border-top: 1px solid transparent;
+  position: sticky;
+  top: 0;
 }
 .mapOverlay nav > ol {
   display: flex;
   margin-left: -40px;
-  height: 2em;
+  margin-bottom: 0;
 }
 .mapOverlay nav > ol > li {
   width: 33.33%;
@@ -383,7 +384,6 @@ nav {
   list-style-type: none;
   border-top: 0.1em solid #9a9a9a;
   margin: 0 0.5em;
-  padding-bottom: 4em;
   -webkit-transition: all 300ms ease-in;
   -moz-transition: all 300ms ease-in;
   -ms-transition: all 300ms ease-in;
@@ -429,22 +429,22 @@ nav {
   border-top: 1px solid #124d20;
 }
 .mapOverlay nav > ol > li:nth-child(1) a, .mapOverlay nav > ol > li:nth-child(7) a {
-  font-size: 0.9em;
+  font-size: 16px;
   line-height: 1.5;
 }
 .mapOverlay nav > ol > li > a {
   text-decoration: none;
   color: #5a5a5a;
   display: block;
-  padding: 1em 0 1em 0;
+  padding: 1em 0 0 0;
   line-height: 1;
   margin-top: -0.9em;
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 16px;
 }
 .mapOverlay nav > ol > li > a span {
   display: block;
-  font-size: 0.6em;
+  font-size: 14px;
   text-transform: none;
 }
 .mapOverlay nav > ol > li > a:hover {
@@ -475,10 +475,13 @@ nav {
   max-height: 1000px;
 }
 .mapOverlay section {
-  width: 100%;
+  width: 100vw;
   position: relative;
   margin: 0;
   padding: 0 24px;
+}
+.mapOverlay section:first-of-type {
+  margin-top: 25vw;
 }
 .mapOverlay section h1 a {
   margin-top: 10em;
@@ -489,16 +492,20 @@ nav {
   padding-bottom: 75vh;
 }
 .mapOverlay section article {
-  width: 70%;
+  width: calc(1550px - 50vw);
+  min-width: 550px; /* let's have a minimum boundary */
+  max-width: 100%; /* and a maximum boundary */
+  margin: auto;
   background: rgba(255, 255, 255, 0.9);
   padding: 16px 32px;
-  margin: 0 15% 0 15%;
   text-align: justify;
+  box-shadow: 1px 1px 1px lightgray;
+  font-size: 20px;
 }
 .mapOverlay section article blockquote p {
   font-style: italic;
   line-height: 1.3;
-  font-size: 1.1em;
+  font-size: 20px;
   border-left: 0.5em solid #cfe3c6;
   padding-left: 0.5em;
 }
@@ -867,6 +874,9 @@ nav {
   max-width: auto;
   margin-left: -40px;
 }
+#filter-wrapper .content section ol.icons li img {
+  width: 15px;
+}
 #filter-wrapper .content section ol li {
   margin-bottom: 4px;
 }
@@ -1037,7 +1047,7 @@ nav {
   border-right: 1px solid transparent;
 }
 #legend-wrapper > label:hover ~ .content {
-  right: -200px; /* content on hover */
+  right: -230px; /* content on hover */
 }
 #legend-wrapper > label:hover:before {
   -moz-transform: rotate(180deg) translate(0, -1px);
@@ -1074,21 +1084,24 @@ nav {
   position: fixed;
   top: 0;
   bottom: 0;
-  right: -225px;
+  right: -255px;
   overflow: scroll;
   font-size: 14px;
   line-height: 1.6;
-  width: 220px;
+  width: 250px;
   -webkit-transition: all 400ms ease-in;
   -moz-transition: all 400ms ease-in;
   -ms-transition: all 400ms ease-in;
   -o-transition: all 400ms ease-in;
   transition: all 400ms ease-in;
   background: white;
-  padding: 8px 0;
-  height: 400px;
+  padding: 16px 0 8px 0;
+  height: 425px;
   margin: auto;
   border: 1px solid #132b19;
+}
+#legend-wrapper .content img {
+  padding: 0 10px 0 5px;
 }
 #legend-wrapper input#legend[type=checkbox] {
   display: none;
@@ -1097,7 +1110,7 @@ nav {
   right: 0px; /* content on click */
 }
 #legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button {
-  right: 185px;
+  right: 220px;
   background: #132b19;
   /* cross icon */
 }
@@ -1171,6 +1184,9 @@ footer .info ul li:last-of-type {
 }
 
 @media only screen and (max-width: 1200px) {
+  .mapOverlay nav > ol > li {
+    width: 15%;
+  }
   footer {
     display: block;
   }
@@ -1207,6 +1223,21 @@ footer .info ul li:last-of-type {
   }
   footer .info ul {
     margin: 0 0 0 -40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .mapOverlay nav > ol > li {
+    width: 10%;
+    margin: 0 1%;
+  }
+  .mapOverlay nav > ol > li:first-of-type, .mapOverlay nav > ol > li:last-of-type {
+    min-width: 100px;
+  }
+  .mapOverlay nav > ol > li > a span {
+    display: none;
+  }
+  .mapOverlay section article {
+    min-width: 250px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -1278,5 +1309,33 @@ footer .info ul li:last-of-type {
   }
   footer .info {
     margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .mapOverlay nav > ol > li:first-of-type, .mapOverlay nav > ol > li:last-of-type {
+    min-width: 70px;
+  }
+  .mapOverlay nav > ol > li:first-of-type a, .mapOverlay nav > ol > li:last-of-type a {
+    font-size: 13px;
+  }
+  .mapOverlay nav > ol > li > a span {
+    display: none;
+  }
+  .mapOverlay section {
+    padding: 0 1%;
+  }
+  .mapOverlay section article {
+    font-size: 16px;
+    padding: 16px 3%;
+  }
+  .mapOverlay section article.storyTitle {
+    padding: 20px 2%;
+  }
+  .mapOverlay section article.storyTitle h2 {
+    font-size: 22px;
+    padding: 10px 0;
+  }
+  .mapOverlay img {
+    padding: 0;
   }
 }
