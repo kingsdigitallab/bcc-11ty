@@ -1224,7 +1224,7 @@ nav {
       }
 
       ~ .content {
-        right: -230px; /* content on hover */
+        right: -270px; /* content on hover */
       }
 
       &:before {
@@ -1263,19 +1263,25 @@ nav {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -255px;
+    right: -305px;
     overflow: scroll;
     font-size: 14px;
     line-height: 1.6;
-    width: 250px;
+    width: 290px;
     @include transition(all 400ms ease-in);
     background: white;
-    padding: 16px 0 8px 0;
-    height: 425px;
+    padding: 15px 0 8px 0;
+    height: 360px;
     margin: auto;
-    border: 1px solid $darkgreen;
+    border: 1px solid $midgreen;
     img{
       padding:0 10px 0 5px;
+    }
+    table{
+      span{
+        font-size:14px;
+        font-style: italic;
+      }
     }
   }
 
@@ -1289,7 +1295,7 @@ nav {
   }
 
   input#legend[type="checkbox"]:checked ~ label.legend-button {
-    right: 220px;
+    right: 260px;
     background: $darkgreen;
 
     h2 {
