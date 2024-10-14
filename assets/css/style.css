@@ -1047,7 +1047,7 @@ nav {
   border-right: 1px solid transparent;
 }
 #legend-wrapper > label:hover ~ .content {
-  right: -230px; /* content on hover */
+  right: -270px; /* content on hover */
 }
 #legend-wrapper > label:hover:before {
   -moz-transform: rotate(180deg) translate(0, -1px);
@@ -1084,24 +1084,28 @@ nav {
   position: fixed;
   top: 0;
   bottom: 0;
-  right: -255px;
+  right: -305px;
   overflow: scroll;
   font-size: 14px;
   line-height: 1.6;
-  width: 250px;
+  width: 290px;
   -webkit-transition: all 400ms ease-in;
   -moz-transition: all 400ms ease-in;
   -ms-transition: all 400ms ease-in;
   -o-transition: all 400ms ease-in;
   transition: all 400ms ease-in;
   background: white;
-  padding: 16px 0 8px 0;
-  height: 425px;
+  padding: 15px 0 8px 0;
+  height: 360px;
   margin: auto;
-  border: 1px solid #132b19;
+  border: 1px solid #124d20;
 }
 #legend-wrapper .content img {
   padding: 0 10px 0 5px;
+}
+#legend-wrapper .content table span {
+  font-size: 14px;
+  font-style: italic;
 }
 #legend-wrapper input#legend[type=checkbox] {
   display: none;
@@ -1110,7 +1114,7 @@ nav {
   right: 0px; /* content on click */
 }
 #legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button {
-  right: 220px;
+  right: 260px;
   background: #132b19;
   /* cross icon */
 }
