@@ -1107,7 +1107,7 @@ nav {
   transition: all 400ms ease-in;
   background: white;
   padding: 15px 0 8px 0;
-  height: 360px;
+  height: 440px;
   margin: auto;
   border: 1px solid #124d20;
 }
@@ -1117,6 +1117,9 @@ nav {
 #legend-wrapper .content table span {
   font-size: 14px;
   font-style: italic;
+}
+#legend-wrapper .content table tr {
+  line-height: 1.7;
 }
 #legend-wrapper input#legend[type=checkbox] {
   display: none;
