@@ -70,6 +70,15 @@ body {
   margin: 0 auto;
   font-family: "Jost", sans-serif;
 }
+body .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font-size: 18px;
+}
+body .container a {
+  color: #132b19;
+}
 
 a:hover {
   opacity: 0.7;
@@ -330,10 +339,11 @@ nav {
 }
 
 #basemap {
-  z-index: 0 !important;
+  z-index: -9 !important;
   position: fixed;
-  height: calc(100vh - 50px);
+  height: 100vh;
   width: 100%;
+  top: 0;
 }
 
 .mapOverlay {
@@ -1246,6 +1256,9 @@ footer .info ul li:last-of-type {
   }
 }
 @media only screen and (max-width: 600px) {
+  body .container {
+    padding: 0 1%;
+  }
   .home-hero {
     max-height: 100vh;
     height: 100vh;
