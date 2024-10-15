@@ -145,6 +145,15 @@ body {
   padding: 0;
   margin: 0 auto;
   font-family: "Jost", sans-serif;
+  .container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+    font-size:18px;
+    a{
+      color: $dark-green;
+    }
+  }
 }
 
 a {
@@ -1463,7 +1472,11 @@ footer{
 
 // Mobile changes
 @media only screen and (max-width: 600px) {
-
+  body {
+    .container{
+      padding: 0 1%;
+    }
+  }
   .home-hero{
     max-height:100vh;
     height:100vh;
