@@ -89,7 +89,7 @@ export class StoryMap {
         // Explore/filter variables
 
         // Quicklink has for disabling stories
-        this.exploreHash = '#s6-end';
+        this.exploreHash = '#s-6';
         this.exploreFilterControl = {
             id: 0,
             fid: 0, // We should look at this
@@ -125,6 +125,7 @@ export class StoryMap {
         };
 
         // Explore filters disabled by default
+        this.exploreFiltersElementId = "filter-wrapper";
         this.exploreFiltersEnabled = false;
         this.exploreFiltersDisabledClass = "filterDisabled";
         this.filterControlsVisible = false;
@@ -893,6 +894,7 @@ export class StoryMap {
 
         if (window.location && window.location.hash == this.exploreHash) {
             this.observerEnabled = false;
+
         }
 
         let observer = new IntersectionObserver(
@@ -948,7 +950,7 @@ export class StoryMap {
             observer.observe(this.slideElements[s]);
         }
         // Add intersection observer for filters
-        observer.observe(document.getElementById("filters"));
+        observer.observe(document.getElementById(this.exploreFiltersElementId));
 
         let overviewLinks = document.getElementsByClassName("overviewLink");
 
@@ -981,6 +983,10 @@ export class StoryMap {
         this.d3Intro.linesSlide.push(this.getSlideById(902));
         this.d3Intro.linesSlide.push(this.getSlideById(903));
         this.svg = await this.d3Intro.loadD3(this.map);
+
+        if (window.location && window.location.hash == this.exploreHash) {
+           this.loadExploreLayer();
+        }
     }
 
     onOverviewLinkClick(evt) {
@@ -1810,7 +1816,14 @@ export class StoryMap {
         this.d3Intro.stopAll(this.map);
         this.d3Intro.clearSvg();
         clearTimeout(this.overviewTimeout);
-        this.toggleFilterControls();
+        document.getElementById("s-6").scrollIntoView(false);
+        setTimeout(function (){
+            this.toggleFilterControls();
+            setTimeout(function (){
+                document.getElementById("s-7").scrollIntoView();
+            }.bind(this),2000);
+        }.bind(this), 1000);
+
 
         let mapFilters = document.querySelectorAll(this.exploreSelectors.map_filter);
         if (mapFilters) {
