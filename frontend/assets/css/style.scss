@@ -1012,12 +1012,14 @@ nav {
         margin-left: -40px;
         &.icons{
           li img{
-            width:15px;
+            width:18px;
+            height:18px;
+            margin-bottom: 6px;
           }
         }
         li {
           margin-bottom: 4px;
-
+          border:1px solid white;
           label {
             display: block;
             position: relative;
@@ -1048,7 +1050,7 @@ nav {
 
           //label
           &:hover {
-            background: lighten(lightgray, 5%);
+            background: lighten(lightgray, 4%);
             opacity: 0.9;
             //:checked + label{
             //transform: scale(1);
@@ -1067,15 +1069,11 @@ nav {
         }
 
         :checked + label {
-          font-weight: bold;
-          background: $darkgreen;
-          color: white;
-
+          background: lighten(lightgray, 12%);
+          border:1px solid $darkgreen;
           img {
             //transform: scale(1);
-            border: 1px solid $midgreen;
             opacity: 1;
-            background: white;
           }
 
           //img
