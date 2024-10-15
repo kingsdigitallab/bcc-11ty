@@ -12,4 +12,5 @@ bounds:
     lng: -73.10852050781251
     zoom: 7
 story_id: 1
+exclude_footer: true
 ---

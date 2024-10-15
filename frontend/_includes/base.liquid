@@ -47,8 +47,11 @@ title: BCC
 <body class="{{ body_class }}">
 {% include "header" %}
 {{ content }}
-{% include "footer" %}
+{% if exclude_footer %}
 
+{% else %}
+    {% include "footer" %}
+{% endif %}
 </body>
 <script>
     //*** Active class on menu when in section ***//
