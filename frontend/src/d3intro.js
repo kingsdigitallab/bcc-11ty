@@ -237,7 +237,7 @@ export class D3intro {
                     .attr("x", centreX)
                     .attr("y", centreY)
                     .attr("opacity", 1)
-                    .attr("fill", "#0804ee")
+                    .attr("fill", "#132b19")
                     .attr("text-anchor", "middle")
                     .transition()
                     .delay((d, i) => i * 20 + 2000)

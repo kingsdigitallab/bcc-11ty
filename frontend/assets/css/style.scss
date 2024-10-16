@@ -61,12 +61,7 @@ $seafoam: #b2d2a4;
 
 .homelandLabel {
   color: #FFF !important;
-  font-family: Petrona, serif;
-  font-style: italic;
   font-size: 20px;
-  font-weight: 600;
-  line-height: normal;
-
 }
 
 
@@ -1143,9 +1138,9 @@ nav {
   }
 
   input#filter[type="checkbox"]:checked ~ label.filter-button {
-    bottom: 385px;
+    bottom: 399px;
     background: $darkgreen;
-
+    border: 1px solid $darkgreen;
     h2 {
       color: white;
     }
@@ -1224,7 +1219,7 @@ nav {
     border: 1px solid darken(lightgray, 7%);
     width: 120px;
     height: 2em;
-
+    z-index: 99;
     &:hover {
       border: 1px solid $darkgreen;
       right: -18px;
@@ -1249,9 +1244,9 @@ nav {
     //&:hover
 
     h2 {
-      font-size: 14px;
-      padding: 6px 20px;
-      line-height: 0.5;
+      font-size: 16px;
+      padding: 7px 16px;
+      line-height: 0;
       color: darken(gray, 25%);
       font-weight: normal;
       text-transform: uppercase;
@@ -1262,7 +1257,7 @@ nav {
       content: '▾';
       @include transform(rotate(180deg) translate(0, -3px));
       position: absolute;
-      right: 1em;
+      right: 0.8em;
       bottom: 0.3em;
       @include transition(all 400ms ease-in);
     }
@@ -1311,7 +1306,7 @@ nav {
   }
 
   input#legend[type="checkbox"]:checked ~ label.legend-button {
-    right: 260px;
+    right: 267px;
     background: $darkgreen;
 
     h2 {
@@ -1397,6 +1392,9 @@ footer{
   }
 }
 
+path.leaflet-interactive{
+  fill-opacity: 0.3;
+}
 
 @media only screen and (max-width: 1200px) {
 

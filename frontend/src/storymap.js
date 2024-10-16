@@ -216,42 +216,42 @@ export class StoryMap {
 
         this.indigenousAreaStyle = {
             stroke: true,
-            color: "#028090",
-            fillColor: "#028090",
+            color: "#4b5d04",
+            fillColor: "#4b5d04",
             lineCap: "square",
             weight: 2,
             fill: true,
             opacity: 1,
-            fillOpacity: 0.3,
+            fillOpacity: 0.1,
         };
 
         this.europeanAreaStyle = {
             stroke: true,
-            color: "#360568",
-            fillColor: "#360568",
+            color: "#e29e21 ",
+            fillColor: "#e29e21 ",
             lineCap: "square",
             weight: 2,
             fill: true,
-            opacity: 1,
-            fillOpacity: 0.3,
+            opacity: 0.5,
+            fillOpacity: 0.1,
         };
 
         this.haudenosauneeAreaStyle = {
             stroke: true,
             lineCap: "square",
-            color: "#028090",
-            fillColor: "#02809000",
+            color: "#4b5d04",
+            fillColor: "#4b5d04",
             fill: 'url(/assets/img/stories/haudenosaunee-hatch-30-pc-fill-turquoise.webp)',
             weight: 2,
-            opacity: 1,
+            opacity: 0.5,
             fillOpacity: 1,
         };
 
         this.europeanAnnoStyle = {
             stroke: true,
             lineCap: "square",
-            color: "#370568",
-            fillColor: "#37056800",
+            color: "#e29e21",
+            fillColor: "#e29e21",
             fill: 'url(/assets/img/stories/diagonal_hatching_purple.webp)',
             weight: 2,
             opacity: 1,
@@ -295,6 +295,7 @@ export class StoryMap {
         };
         this.polyDescriptiveStyle = {
             stroke: true,
+            color: "#696969",
             fillColor: "#696969",
             weight: 1,
             fill: true,
@@ -398,14 +399,14 @@ export class StoryMap {
             opacity: 1,
         };
 
-        this.councilFireIcon = L.icon({
-            //iconUrl: '/assets/img/stories/council-fire.webp',
-            iconSize: [20, 39],
-            iconAnchor: [10, 38],
+        this.councilFireIcon = this.L.icon({
+            iconUrl: '/assets/img/stories/council-fire.webp',
+            iconSize: [22, 22],
+            iconAnchor: [11, 21],
             popupAnchor: [-3, -20]
         });
 
-        this.indigenousSettlementIcon = L.icon({
+        this.indigenousSettlementIcon = this.L.icon({
             iconUrl: '/assets/img/stories/cross_turquoise.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
@@ -413,8 +414,24 @@ export class StoryMap {
             shadowAnchor: [10, 19],
             popupAnchor: [-3, -20]
         });
-        this.europeanSettlementIcon = L.icon({
+        this.europeanSettlementIcon = this.L.icon({
             iconUrl: '/assets/img/stories/cross_purple.webp',
+            iconSize: [20, 20],
+            shadowSize: [20, 20],
+            iconAnchor: [10, 19],
+            shadowAnchor: [10, 19],
+            popupAnchor: [-3, -20]
+        })
+        this.indigenousPlacenameIcon = this.L.icon({
+            iconUrl: '/assets/img/stories/circle_turquoise.webp',
+            iconSize: [20, 20],
+            shadowSize: [20, 20],
+            iconAnchor: [10, 19],
+            shadowAnchor: [10, 19],
+            popupAnchor: [-3, -20]
+        });
+        this.europeanPlacenameIcon = this.L.icon({
+            iconUrl: '/assets/img/stories/circle_purple.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -579,26 +596,17 @@ export class StoryMap {
             case 10:
                 // Capture Indig vs Haudenasnee
                 switch (feature.properties.identity) {
-                    case 1: //European - green sq, white centre
-                        return this.L.circleMarker(latlng, {
-                            radius: 6,
-                            fillColor: "#360568",
-                            color: "#360568",
-                            weight: 2.5,
-                            opacity: 1,
-                            fillOpacity: 1,
-                            bubblingMouseEvents: true,
+                    case 1: //European - green sq, white centre (yellow square)
+                        return this.L.marker(latlng, {
+                            icon: this.europeanPlacenameIcon,
+                            bubblingMouseEvents: true
                         });
-                    default: //indigenous  - green circle,white centre
-                        return this.L.circleMarker(latlng, {
-                            radius: 6,
-                            fillColor: "#028090",
-                            color: "#028090",
-                            weight: 2.5,
-                            opacity: 1,
-                            fillOpacity: 1,
-                            bubblingMouseEvents: true,
+                    default: //indigenous  - green circle,white centre (green square)
+                        return this.L.marker(latlng, {
+                            icon: this.indigenousPlacenameIcon,
+                            bubblingMouseEvents: true
                         });
+                        
                 }
             case 12: // Council fire
                 return this.L.marker(latlng, {
