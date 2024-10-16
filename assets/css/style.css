@@ -1121,10 +1121,10 @@ input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
 }
 #legend-wrapper .content img {
   padding: 0 10px 0 5px;
+  height: 18px;
 }
 #legend-wrapper .content table span {
   font-size: 14px;
-  font-style: italic;
 }
 #legend-wrapper .content table tr {
   line-height: 1.7;
