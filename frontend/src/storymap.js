@@ -241,9 +241,9 @@ export class StoryMap {
             lineCap: "square",
             color: "#4b5d04",
             //fillColor: "#4b5d04",
-            fill: 'url(/assets/img/stories/hatch-yellow.webp)',
+            fill: 'url(/assets/img/stories/hatch-green.webp)',
             weight: 2,
-            opacity: 0.5,
+            opacity: 1,
             fillOpacity: 1,
         };
 
@@ -252,7 +252,7 @@ export class StoryMap {
             lineCap: "square",
             color: "#e29e21",
             //fillColor: "#e29e21",
-            fill: 'url(/assets/img/stories/hatch-grey.webp)',
+            fill: 'url(/assets/img/stories/hatch-yellow.webp)',
             weight: 2,
             opacity: 1,
             fillOpacity: 1,
@@ -407,22 +407,6 @@ export class StoryMap {
         });
 
         this.indigenousSettlementIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/cross_turquoise.webp',
-            iconSize: [20, 20],
-            shadowSize: [20, 20],
-            iconAnchor: [10, 19],
-            shadowAnchor: [10, 19],
-            popupAnchor: [-3, -20]
-        });
-        this.europeanSettlementIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/cross_purple.webp',
-            iconSize: [20, 20],
-            shadowSize: [20, 20],
-            iconAnchor: [10, 19],
-            shadowAnchor: [10, 19],
-            popupAnchor: [-3, -20]
-        })
-        this.indigenousPlacenameIcon = this.L.icon({
             iconUrl: '/assets/img/stories/circle_turquoise.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
@@ -430,8 +414,24 @@ export class StoryMap {
             shadowAnchor: [10, 19],
             popupAnchor: [-3, -20]
         });
-        this.europeanPlacenameIcon = this.L.icon({
+        this.europeanSettlementIcon = this.L.icon({
             iconUrl: '/assets/img/stories/circle_purple.webp',
+            iconSize: [20, 20],
+            shadowSize: [20, 20],
+            iconAnchor: [10, 19],
+            shadowAnchor: [10, 19],
+            popupAnchor: [-3, -20]
+        })
+        this.indigenousPlacenameIcon = this.L.icon({
+            iconUrl: '/assets/img/stories/cross_turquoise.webp',
+            iconSize: [20, 20],
+            shadowSize: [20, 20],
+            iconAnchor: [10, 19],
+            shadowAnchor: [10, 19],
+            popupAnchor: [-3, -20]
+        });
+        this.europeanPlacenameIcon = this.L.icon({
+            iconUrl: '/assets/img/stories/cross_purple.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
