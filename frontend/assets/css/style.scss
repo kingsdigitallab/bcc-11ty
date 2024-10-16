@@ -912,7 +912,7 @@ nav {
     //&:hover
 
     h2 {
-      font-size: 14px;
+      font-size: 16px;
       padding: 6px 20px;
       line-height: 0.2;
       color: darken(gray, 25%);
@@ -972,7 +972,7 @@ nav {
     left: 0;
     bottom: -425px;
     overflow: scroll;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.5;
     width: 800px;
     @include transition(all 400ms ease-in);
@@ -999,7 +999,10 @@ nav {
 
           em {
             color: #757575;
-            font-size: 0.6em;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            }
           }
         }
       }
