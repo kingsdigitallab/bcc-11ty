@@ -1252,6 +1252,15 @@ footer .info ul li:last-of-type {
     margin: 0 0 0 -40px;
   }
 }
+@media only screen and (max-width: 800px) {
+  #filter-wrapper .content {
+    width: 95%;
+    max-width: 400px;
+  }
+  #filter-wrapper .content section {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 700px) {
   .mapOverlay nav > ol > li {
     width: 10%;
@@ -1317,7 +1326,7 @@ footer .info ul li:last-of-type {
     font-size: 17px;
   }
   #mainmenu label.menu:before {
-    font-size: 14px;
+    font-size: 14px !important;
   }
   footer {
     display: block;
