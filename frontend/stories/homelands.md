@@ -1,7 +1,5 @@
 ::: slide 5
 
-## 1. Homelands
-
 American history begins with the deep history of the land and its peoples as they existed long before the arrival of Europeans. British explorers were often professional soldiers who made coastal landings and moved up the dozens of rivers that led inland. They claimed possession of these spaces according to legal arguments that gave ownership of empty land to whoever occupied and ‘improved’ it. But they soon learned that the land was not empty. The Indigenous name of the place they called ‘Virginia’ is Tsenacommacah: the densely inhabited land.
 
 ![Virginia](../assets/img/stories/5-White-1590a.jpg)
