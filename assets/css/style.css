@@ -10,11 +10,7 @@
 
 .homelandLabel {
   color: #FFF !important;
-  font-family: Petrona, serif;
-  font-style: italic;
   font-size: 20px;
-  font-weight: 600;
-  line-height: normal;
 }
 
 .highlight-euro {
@@ -978,8 +974,9 @@ input#filter[type=checkbox]:checked ~ .content {
 }
 
 input#filter[type=checkbox]:checked ~ label.filter-button {
-  bottom: 385px;
+  bottom: 399px;
   background: #132b19;
+  border: 1px solid #132b19;
   /* cross icon */
 }
 input#filter[type=checkbox]:checked ~ label.filter-button h2 {
@@ -1052,6 +1049,7 @@ input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
   border: 1px solid #c1c1c1;
   width: 120px;
   height: 2em;
+  z-index: 99;
 }
 #legend-wrapper > label:hover {
   border: 1px solid #132b19;
@@ -1077,9 +1075,9 @@ input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
   transform: rotate(180deg) translate(0, -1px);
 }
 #legend-wrapper > label h2 {
-  font-size: 14px;
-  padding: 6px 20px;
-  line-height: 0.5;
+  font-size: 16px;
+  padding: 7px 16px;
+  line-height: 0;
   color: #404040;
   font-weight: normal;
   text-transform: uppercase;
@@ -1092,7 +1090,7 @@ input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
   -webkit-transform: rotate(180deg) translate(0, -3px);
   transform: rotate(180deg) translate(0, -3px);
   position: absolute;
-  right: 1em;
+  right: 0.8em;
   bottom: 0.3em;
   -webkit-transition: all 400ms ease-in;
   -moz-transition: all 400ms ease-in;
@@ -1138,7 +1136,7 @@ input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
   right: 0px; /* content on click */
 }
 #legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button {
-  right: 260px;
+  right: 267px;
   background: #132b19;
   /* cross icon */
 }
@@ -1209,6 +1207,10 @@ footer .info ul li a {
 }
 footer .info ul li:last-of-type {
   font-size: 14px;
+}
+
+path.leaflet-interactive {
+  fill-opacity: 0.3;
 }
 
 @media only screen and (max-width: 1200px) {
