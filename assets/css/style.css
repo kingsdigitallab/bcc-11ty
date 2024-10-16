@@ -878,7 +878,7 @@ nav {
 }
 #filter-wrapper .content section header h3 em {
   color: #757575;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   font-style: normal;
 }
@@ -904,7 +904,7 @@ nav {
   z-index: 2; /* set a lower z-index than the maps */
 }
 #filter-wrapper .content ol li label span {
-  font-size: 17px;
+  font-size: 18px;
 }
 #filter-wrapper .content ol li label span em {
   font-size: 16px;
