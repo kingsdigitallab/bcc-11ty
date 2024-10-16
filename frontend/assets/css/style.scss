@@ -1445,6 +1445,17 @@ footer{
   }
 }
 
+@media only screen and (max-width: 800px) {
+  #filter-wrapper .content {
+    width:95%;
+    max-width:400px;
+    section{
+      width:100%;
+    }
+  }
+}
+
+
 @media only screen and (max-width: 700px) {
   .mapOverlay{ 
     nav > ol {
@@ -1526,7 +1537,7 @@ footer{
     padding: 0.3em 0.5em;
     font-size: 17px;
     &:before{
-      font-size: 14px;
+      font-size: 14px !important;
     }
   }
 
