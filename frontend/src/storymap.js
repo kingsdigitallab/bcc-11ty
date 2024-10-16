@@ -216,8 +216,8 @@ export class StoryMap {
 
         this.indigenousAreaStyle = {
             stroke: true,
-            color: "#4b5d04", //green
-            fillColor: "#4b5d04",
+            color: "#028090",
+            fillColor: "#028090",
             lineCap: "square",
             weight: 2,
             fill: true,
@@ -227,8 +227,8 @@ export class StoryMap {
 
         this.europeanAreaStyle = {
             stroke: true,
-            color: "#e29e21",//yellow
-            fillColor: "#e29e21",
+            color: "#360568",
+            fillColor: "#360568",
             lineCap: "square",
             weight: 2,
             fill: true,
@@ -239,8 +239,8 @@ export class StoryMap {
         this.haudenosauneeAreaStyle = {
             stroke: true,
             lineCap: "square",
-            color: "#4b5d04",
-            fillColor: "#4b5d04",
+            color: "#028090",
+            fillColor: "#02809000",
             fill: 'url(/assets/img/stories/haudenosaunee-hatch-30-pc-fill-turquoise.webp)',
             weight: 2,
             opacity: 1,
@@ -594,8 +594,8 @@ export class StoryMap {
                     default: //indigenous  - green circle,white centre
                         return this.L.circleMarker(latlng, {
                             radius: 6,
-                            fillColor: "#4b5d04",
-                            color: "#4b5d04",
+                            fillColor: "#028090",
+                            color: "#028090",
                             weight: 2.5,
                             opacity: 1,
                             fillOpacity: 1,

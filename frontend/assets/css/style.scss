@@ -473,6 +473,7 @@ nav {
       display: flex;
       margin-left: -40px;
       margin-bottom:0;
+      padding-bottom: 5px;
       > li {
         width: 33.33%;
         cursor: pointer;
@@ -517,7 +518,7 @@ nav {
           }
 
           &.active {
-            border-top: 18px solid $darkgreen;
+            border-top: 15px solid $darkgreen;
             color: black;
             font-weight: bold;
             @include transition(all 300ms ease-in);
@@ -1197,7 +1198,7 @@ nav {
     //&:hover
   }
 
-}
+
 
 //#filter-wrapper
 
@@ -1400,10 +1401,6 @@ footer{
 
   .mapOverlay nav > ol > li {
     width:15%;
-  > a span {
-    //opacity: 0;
-    //display: none;
-    }
   }
 
 
