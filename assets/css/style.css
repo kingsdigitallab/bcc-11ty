@@ -387,6 +387,7 @@ nav {
   display: flex;
   margin-left: -40px;
   margin-bottom: 0;
+  padding-bottom: 5px;
 }
 .mapOverlay nav > ol > li {
   width: 33.33%;
@@ -462,7 +463,7 @@ nav {
   color: #124d20;
 }
 .mapOverlay nav > ol > li > a.active {
-  border-top: 18px solid #132b19;
+  border-top: 15px solid #132b19;
   color: black;
   font-weight: bold;
   -webkit-transition: all 300ms ease-in;
@@ -733,7 +734,6 @@ nav {
 #filter-wrapper {
   z-index: 99;
   pointer-events: auto;
-  /* end .content */
 }
 #filter-wrapper > label {
   display: block;
@@ -780,7 +780,7 @@ nav {
   transform: rotate(180deg) translate(0, 1px);
 }
 #filter-wrapper > label h2 {
-  font-size: 14px;
+  font-size: 16px;
   padding: 6px 20px;
   line-height: 0.2;
   color: #404040;
@@ -842,7 +842,7 @@ nav {
   left: 0;
   bottom: -425px;
   overflow: scroll;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
   width: 800px;
   -webkit-transition: all 400ms ease-in;
@@ -858,15 +858,15 @@ nav {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-#filter-wrapper .content section {
-  width: 45%;
   /**
    * Provide a border when hovered and when the input is checked
    */
   /*:checked + label:before {
     transform: scale(2);
   }*/
+}
+#filter-wrapper .content section {
+  width: 45%;
 }
 #filter-wrapper .content section header {
   display: flex;
@@ -878,65 +878,68 @@ nav {
 }
 #filter-wrapper .content section header h3 em {
   color: #757575;
-  font-size: 0.6em;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
 }
-#filter-wrapper .content section ol {
+#filter-wrapper .content ol {
   list-style-type: none;
   max-width: auto;
   margin-left: -40px;
 }
-#filter-wrapper .content section ol.icons li img {
+#filter-wrapper .content ol.icons li img {
   width: 18px;
   height: 18px;
   margin-bottom: 6px;
 }
-#filter-wrapper .content section ol li {
+#filter-wrapper .content ol li {
   margin-bottom: 4px;
   border: 1px solid white;
 }
-#filter-wrapper .content section ol li label {
+#filter-wrapper .content ol li label {
   display: block;
   position: relative;
   cursor: pointer;
   padding: 4px;
   z-index: 2; /* set a lower z-index than the maps */
 }
-#filter-wrapper .content section ol li label span {
+#filter-wrapper .content ol li label span {
   font-size: 17px;
 }
-#filter-wrapper .content section ol li label span em {
+#filter-wrapper .content ol li label span em {
   font-size: 16px;
   margin-left: 4px;
   font-style: normal;
 }
-#filter-wrapper .content section ol li label img {
+#filter-wrapper .content ol li label img {
   height: 50px;
   width: 50px;
   transition-duration: 0.2s;
   vertical-align: middle;
   margin-right: 8px;
 }
-#filter-wrapper .content section ol li:hover {
+#filter-wrapper .content ol li:hover {
   background: #dddddd;
   opacity: 0.9;
 }
-#filter-wrapper .content section ol input[type=checkbox][id^=checkbox] {
+#filter-wrapper .content ol input[type=checkbox][id^=checkbox] {
   display: none;
 }
-#filter-wrapper .content section ol input[type=checkbox][id^=mapcheckbox] {
+#filter-wrapper .content ol input[type=checkbox][id^=mapcheckbox] {
   display: none;
 }
-#filter-wrapper .content section ol :checked + label {
+#filter-wrapper .content ol :checked + label {
   background: #f2f2f2;
   border: 1px solid #132b19;
 }
-#filter-wrapper .content section ol :checked + label img {
+#filter-wrapper .content ol :checked + label img {
   opacity: 1;
 }
-#filter-wrapper section:first-of-type ol li {
+
+section:first-of-type ol li {
   position: relative;
 }
-#filter-wrapper section:first-of-type ol li img {
+section:first-of-type ol li img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -946,10 +949,10 @@ nav {
   -o-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
 }
-#filter-wrapper section:first-of-type ol li:hover {
+section:first-of-type ol li:hover {
   z-index: 3;
 }
-#filter-wrapper section:first-of-type ol li:hover img {
+section:first-of-type ol li:hover img {
   -moz-transform: scale(2) translate(100px, 0);
   -o-transform: scale(2) translate(100px, 0);
   -ms-transform: scale(2) translate(100px, 0);
@@ -959,25 +962,30 @@ nav {
   opacity: 1;
   z-index: 3;
 }
-#filter-wrapper section:last-of-type ol li img {
+
+section:last-of-type ol li img {
   border-radius: 0;
   border: none;
 }
-#filter-wrapper input#filter[type=checkbox] {
+
+/* end .content */
+input#filter[type=checkbox] {
   display: none;
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ .content {
+
+input#filter[type=checkbox]:checked ~ .content {
   bottom: 0px; /* content on click */
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button {
+
+input#filter[type=checkbox]:checked ~ label.filter-button {
   bottom: 385px;
   background: #132b19;
   /* cross icon */
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button h2 {
+input#filter[type=checkbox]:checked ~ label.filter-button h2 {
   color: white;
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:before {
+input#filter[type=checkbox]:checked ~ label.filter-button:before {
   content: "▾";
   -moz-transform: rotate(0) translate(0, 1px);
   -o-transform: rotate(0) translate(0, 1px);
@@ -986,18 +994,19 @@ nav {
   transform: rotate(0) translate(0, 1px);
   color: white;
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
+input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
   transform: translate(0, 3px);
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button-bottom {
+
+input#filter[type=checkbox]:checked ~ label.filter-button-bottom {
   bottom: 0px;
   background: white;
   /* cross icon */
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button-bottom h2 {
+input#filter[type=checkbox]:checked ~ label.filter-button-bottom h2 {
   color: #124d20;
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button-bottom:before {
+input#filter[type=checkbox]:checked ~ label.filter-button-bottom:before {
   z-index: 1;
   content: "▾";
   display: inline-block;
@@ -1008,7 +1017,7 @@ nav {
   transform: rotate(0) translate(0, 1px);
   color: #124d20;
 }
-#filter-wrapper input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
+input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
   transform: translate(0, 3px);
 }
 
