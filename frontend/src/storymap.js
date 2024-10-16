@@ -399,7 +399,7 @@ export class StoryMap {
         };
 
         this.councilFireIcon = L.icon({
-            iconUrl: '/assets/img/stories/council-fire.webp',
+            //iconUrl: '/assets/img/stories/council-fire.webp',
             iconSize: [20, 39],
             iconAnchor: [10, 38],
             popupAnchor: [-3, -20]
@@ -407,7 +407,6 @@ export class StoryMap {
 
         this.indigenousSettlementIcon = L.icon({
             iconUrl: '/assets/img/stories/cross_turquoise.webp',
-            shadowUrl: '/assets/img/stories/cross_shadow.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -416,7 +415,6 @@ export class StoryMap {
         });
         this.europeanSettlementIcon = L.icon({
             iconUrl: '/assets/img/stories/cross_purple.webp',
-            shadowUrl: '/assets/img/stories/cross_shadow.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
