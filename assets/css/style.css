@@ -1119,6 +1119,7 @@ input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
   height: 440px;
   margin: auto;
   border: 1px solid #124d20;
+  z-index: 9;
 }
 #legend-wrapper .content img {
   padding: 0 10px 0 5px;
