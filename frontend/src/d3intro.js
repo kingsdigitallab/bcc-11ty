@@ -501,7 +501,7 @@ export class D3intro {
         this.svg
             .selectAll("circle.villagerssettlers")
             .data(splitFeatures.points)
-            .join("circle")
+            .join("square")
             .attr("class", "villagerssettlers")
             .attr("fill", function (d) {
                 if (d.properties && d.properties.sub_type == 12) {
