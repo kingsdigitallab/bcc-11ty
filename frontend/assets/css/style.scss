@@ -140,10 +140,14 @@ body {
   margin: 0 auto;
   font-family: "Jost", sans-serif;
   .container{
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
     font-size:18px;
+    img{
+      width:100%;
+      height:auto;
+    }
     a{
       color: $darkgreen;
     }
@@ -187,6 +191,8 @@ nav {
 
 //nav
 #mainmenu {
+  max-width: 1400px;
+  margin: 0 auto;
   .active {
     color: darken($lightgreen, 5%);
     border-left: 0.1em solid darken($lightgreen, 5%);
