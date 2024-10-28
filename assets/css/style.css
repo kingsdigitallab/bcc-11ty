@@ -1,0 +1,1389 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+/*** MIXINS ***/
+.subtitle {
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 200;
+}
+
+.homelandLabel {
+  color: #FFF !important;
+  font-size: 20px;
+}
+
+.highlight-euro {
+  border-radius: 1em 0 1em 0;
+  background-image: linear-gradient(-100deg, rgba(255, 20, 0, 0.2), rgba(255, 20, 0, 0.7) 95%, rgba(255, 20, 0, 0.1));
+}
+
+.highlight-indig {
+  border-radius: 1em 0 1em 0;
+  background-image: linear-gradient(-100deg, rgba(255, 20, 0, 0.2), rgba(255, 20, 0, 0.7) 95%, rgba(255, 20, 0, 0.1));
+}
+
+.quicklink-container {
+  margin: 3%;
+}
+
+.quicklink {
+  text-align: center;
+  background: rgba(18, 77, 32, 0.1);
+  padding-bottom: 1%;
+  width: 20%;
+  color: #000;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%; /* 28.8px */
+  border-top: 5px solid #124D20;
+}
+
+.quicklink-text {
+  padding: 10%;
+  height: 5vw;
+  font-size: 100%;
+}
+
+.quicklink-spacer {
+  margin-right: 5%;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  font-family: "Jost", sans-serif;
+}
+body .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font-size: 18px;
+}
+body .container img {
+  width: 100%;
+  height: auto;
+}
+body .container a {
+  color: #132b19;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a#sitetitle {
+  color: white;
+  text-decoration: none;
+  padding-left: 1%;
+  display: block;
+  z-index: 9;
+  font-size: 22px;
+  line-height: 1.2;
+  -webkit-transition: all 250ms ease-in;
+  -moz-transition: all 250ms ease-in;
+  -ms-transition: all 250ms ease-in;
+  -o-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+a#sitetitle:hover {
+  opacity: 0.8;
+}
+
+nav {
+  top: 0;
+  width: 100%;
+  border-bottom: 4px solid #4b5d04;
+  background: #132b19;
+  padding-bottom: 0.1em;
+  z-index: 9;
+}
+
+#mainmenu {
+  max-width: 1400px;
+  margin: 0 auto;
+  /* end ol*/
+}
+#mainmenu .active {
+  color: #86a707;
+  border-left: 0.1em solid #86a707;
+  padding-left: 0.5em;
+}
+#mainmenu > ol {
+  position: fixed;
+  z-index: 999;
+  height: 100vh;
+  width: 18em;
+  top: 0;
+  right: -100vw;
+  margin: 0;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+  background: #1f1f1f;
+  padding: 5em 0 0 3em;
+  line-height: 1.4;
+  overflow: scroll;
+  text-align: left;
+}
+#mainmenu > ol > li {
+  display: block;
+  margin-bottom: 1em;
+}
+#mainmenu > ol > li > a {
+  font-size: 1.6em;
+  text-decoration: none;
+  display: block;
+  line-height: 1;
+  color: white;
+  cursor: pointer;
+}
+#mainmenu > ol > li:last-of-type {
+  padding-bottom: 50vh;
+}
+#mainmenu > ol > li > ol {
+  margin-bottom: 1em;
+}
+#mainmenu > ol > li > ol li {
+  list-style-type: none;
+}
+#mainmenu > ol > li > ol li a {
+  color: white;
+  text-decoration: none;
+}
+#mainmenu > label {
+  display: block;
+  -webkit-transition: all 250ms ease-in;
+  -moz-transition: all 250ms ease-in;
+  -ms-transition: all 250ms ease-in;
+  -o-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+  cursor: pointer;
+  position: fixed;
+  padding: 0.5em 0.5em 0.3em 0.5em;
+  background: transparent;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+  z-index: 9999;
+  background: #132b19;
+}
+#mainmenu > label:hover {
+  opacity: 0.8;
+}
+#mainmenu input#menu[type=checkbox] {
+  display: none;
+}
+#mainmenu input#menu[type=checkbox]:checked ~ ol {
+  margin: 0;
+  right: 0;
+}
+#mainmenu input#menu[type=checkbox]:checked ~ label.menu {
+  right: 2em;
+  -moz-transform: rotate(0);
+  -o-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  background: none;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+  /* cross icon */
+}
+#mainmenu input#menu[type=checkbox]:checked ~ label.menu:before {
+  content: "✖";
+  position: fixed;
+  right: -1.8em;
+  top: 0.6em;
+  height: 1.7em;
+  width: 1.7em;
+  text-align: center;
+  /* font-weight: 100; */
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* end #menu*/
+.home-hero {
+  width: auto;
+  background: url("../img/homepage-hero-900.jpg") lightgray -0.36px 0px/100.056% 121.087% no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 70vw;
+  max-height: 50vh;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.home-hero .info-box {
+  opacity: 0.93;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 4%;
+  color: #000;
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 20vw;
+  width: calc(100% - 50vw);
+  min-width: 400px; /* let's have a minimum boundary */
+  max-width: 90%; /* and a maximum boundary */
+  text-align: center;
+  margin: auto;
+}
+.home-hero .info-box a {
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.home-hero .info-box a button {
+  border: 1px solid #124d20;
+  max-width: 250px;
+  width: 100%;
+  text-align: center;
+  background-color: #132b19;
+  color: white;
+  margin: 1.5em 3% 0 3%;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0.7em 1em;
+  text-transform: uppercase;
+  font-weight: 200;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+.home-hero .info-box a:hover {
+  opacity: 1;
+  background-color: white;
+  color: #132b19;
+}
+.home-hero .info-box a:hover button {
+  background-color: white;
+  color: #132b19;
+}
+
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 5% auto;
+  max-width: 1400px;
+}
+.home-section .card {
+  width: 30%;
+  border-top: 5px solid #124d20;
+  background-color: #f1f1f1;
+  padding: 2%;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 2%;
+}
+.home-section .card img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 15vw;
+}
+.home-section .card a {
+  margin-top: auto;
+}
+.home-section .card a button {
+  border: 1px solid #124d20;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+  background-color: white;
+  color: #132b19;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 0.7em 1em;
+  font-weight: 200;
+}
+.home-section .card a:hover {
+  opacity: 1;
+}
+.home-section .card a:hover button {
+  background-color: #132b19;
+  color: white;
+}
+
+#basemap {
+  z-index: -9 !important;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+}
+
+.mapOverlay {
+  z-index: 1 !important;
+  position: absolute;
+  pointer-events: none;
+  /*&:last-child {
+        width: 100%;
+        margin: 0;
+        article {
+          width: 40%;
+          margin: 0 30% 0 30%;
+          &.storyTitle {
+            margin-bottom: 0;
+          } //.storyTitle {
+          &:last-child {
+            width: 100%;
+            margin: 0;
+            padding: 0;*/
+}
+.mapOverlay img {
+  max-width: 100%;
+  display: block;
+  padding: 1em 0 0 0;
+}
+.mapOverlay nav {
+  z-index: 99;
+  pointer-events: auto;
+  background: #f2f2f2;
+  top: 0;
+  border-bottom: 0;
+  position: fixed;
+  width: calc(90% - 80px);
+  margin: 0 auto;
+  border: 1px solid #124d20;
+  border-top: 1px solid transparent;
+  position: sticky;
+  top: 0;
+}
+.mapOverlay nav > ol {
+  display: flex;
+  margin-left: -40px;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+}
+.mapOverlay nav > ol > li {
+  width: 33.33%;
+  cursor: pointer;
+  text-align: center;
+  list-style-type: none;
+  border-top: 0.1em solid #9a9a9a;
+  margin: 0 0.5em;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+  /* > ol {
+    //2nd level
+    display: flex;
+    width: 300%;
+    margin-left: calc(-100% - 40px);
+    list-style-type: none;
+    background: $darkgreen;
+    > li {
+      width: 25%;
+      margin-right: 0.05em;
+
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: white;
+        background: rgba(255, 255, 255, 0.4);
+        width: 100%;
+        display: block;
+        padding: 0.3em 0;
+        opacity: 0.4;
+        border-top: 0.1em solid transparent;
+        &:hover {
+          background: $darkgreen;
+          color: white;
+          opacity: 1;
+        }
+        &.active {
+          background: $darkgreen;
+          color: white;
+          opacity: 1;
+          border-top: 0.1em solid darken($lightgreen, 15%);
+        } //active
+      } //a
+    } //li
+  } //ol*/
+}
+.mapOverlay nav > ol > li:hover {
+  border-top: 1px solid #124d20;
+}
+.mapOverlay nav > ol > li:nth-child(1) a, .mapOverlay nav > ol > li:nth-child(7) a {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.mapOverlay nav > ol > li > a {
+  text-decoration: none;
+  color: #5a5a5a;
+  display: block;
+  padding: 1em 0 0 0;
+  line-height: 1;
+  margin-top: -0.9em;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.mapOverlay nav > ol > li > a span {
+  display: block;
+  font-size: 14px;
+  text-transform: none;
+}
+.mapOverlay nav > ol > li > a:hover {
+  color: #124d20;
+}
+.mapOverlay nav > ol > li > a.active {
+  border-top: 15px solid #132b19;
+  color: black;
+  font-weight: bold;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+  padding-top: 0.2em;
+}
+.mapOverlay nav > ol input[type=checkbox]:checked + label.check {
+  /*** Minus icon ***/
+}
+.mapOverlay nav > ol input[type=checkbox]:checked + label.check:before, .mapOverlay nav > ol input[type=checkbox]:checked + label.check:after {
+  transform: rotate(90deg);
+}
+.mapOverlay nav > ol input[type=checkbox]:checked + label.check:before {
+  display: none;
+}
+.mapOverlay nav > ol input[type=checkbox]:checked + label + ol {
+  /* reset the height when checkbox is checked */
+  max-height: 1000px;
+}
+.mapOverlay section {
+  width: 100vw;
+  position: relative;
+  margin: 0;
+  padding: 0 24px;
+}
+.mapOverlay section:first-of-type {
+  margin-top: 25vw;
+}
+.mapOverlay section h1 a {
+  margin-top: 10em;
+  font-size: 1.7em;
+}
+.mapOverlay section div.article_spacer {
+  padding-top: 75vh;
+  padding-bottom: 75vh;
+}
+.mapOverlay section article {
+  width: calc(1550px - 50vw);
+  min-width: 550px; /* let's have a minimum boundary */
+  max-width: 100%; /* and a maximum boundary */
+  margin: auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 16px 32px;
+  text-align: justify;
+  box-shadow: 1px 1px 1px lightgray;
+  font-size: 20px;
+}
+.mapOverlay section article blockquote p {
+  font-style: italic;
+  line-height: 1.3;
+  font-size: 20px;
+  border-left: 0.5em solid #cfe3c6;
+  padding-left: 0.5em;
+}
+.mapOverlay section article figure {
+  width: 95%;
+  padding: 2.5% 2.5% 0 2.5%;
+  margin: 0;
+  background: #262626;
+}
+.mapOverlay section article figure img {
+  width: 100%;
+}
+.mapOverlay section article figure figcaption {
+  width: 95%;
+  margin-left: -2.5%;
+  padding: 1% 2%;
+  background: #262626;
+  color: white;
+  font-size: 0.9em;
+}
+.mapOverlay section article figure figcaption a {
+  color: white;
+}
+.mapOverlay section article .map-filters {
+  pointer-events: auto !important;
+}
+.mapOverlay section article .filter {
+  pointer-events: auto !important;
+}
+.mapOverlay section article .filter ul.drawer-accordion,
+.mapOverlay section article .filter ul.group-list,
+.mapOverlay section article .filter ul.sub-group-list,
+.mapOverlay section article .filter ul.sub-sub-group-list {
+  margin: 0 0 0 -40px;
+  list-style: none;
+  /** Plus icon **/
+}
+.mapOverlay section article .filter ul.drawer-accordion [hidden],
+.mapOverlay section article .filter ul.group-list [hidden],
+.mapOverlay section article .filter ul.sub-group-list [hidden],
+.mapOverlay section article .filter ul.sub-sub-group-list [hidden] {
+  display: none;
+  visibility: hidden;
+}
+.mapOverlay section article .filter ul.drawer-accordion a,
+.mapOverlay section article .filter ul.group-list a,
+.mapOverlay section article .filter ul.sub-group-list a,
+.mapOverlay section article .filter ul.sub-sub-group-list a {
+  text-decoration: none;
+}
+.mapOverlay section article .filter ul.drawer-accordion a,
+.mapOverlay section article .filter ul.drawer-accordion label,
+.mapOverlay section article .filter ul.group-list a,
+.mapOverlay section article .filter ul.group-list label,
+.mapOverlay section article .filter ul.sub-group-list a,
+.mapOverlay section article .filter ul.sub-group-list label,
+.mapOverlay section article .filter ul.sub-sub-group-list a,
+.mapOverlay section article .filter ul.sub-sub-group-list label {
+  display: block;
+  padding: 0.85rem;
+  background-color: lightgray;
+  box-shadow: inset 0 -1px #dbdbdb;
+  transition: all 0.25s ease-in;
+}
+.mapOverlay section article .filter ul.drawer-accordion a:focus, .mapOverlay section article .filter ul.drawer-accordion a:hover,
+.mapOverlay section article .filter ul.drawer-accordion label:focus,
+.mapOverlay section article .filter ul.drawer-accordion label:hover,
+.mapOverlay section article .filter ul.group-list a:focus,
+.mapOverlay section article .filter ul.group-list a:hover,
+.mapOverlay section article .filter ul.group-list label:focus,
+.mapOverlay section article .filter ul.group-list label:hover,
+.mapOverlay section article .filter ul.sub-group-list a:focus,
+.mapOverlay section article .filter ul.sub-group-list a:hover,
+.mapOverlay section article .filter ul.sub-group-list label:focus,
+.mapOverlay section article .filter ul.sub-group-list label:hover,
+.mapOverlay section article .filter ul.sub-sub-group-list a:focus,
+.mapOverlay section article .filter ul.sub-sub-group-list a:hover,
+.mapOverlay section article .filter ul.sub-sub-group-list label:focus,
+.mapOverlay section article .filter ul.sub-sub-group-list label:hover {
+  opacity: 0.7;
+}
+.mapOverlay section article .filter ul.drawer-accordion a > span,
+.mapOverlay section article .filter ul.drawer-accordion label > span,
+.mapOverlay section article .filter ul.group-list a > span,
+.mapOverlay section article .filter ul.group-list label > span,
+.mapOverlay section article .filter ul.sub-group-list a > span,
+.mapOverlay section article .filter ul.sub-group-list label > span,
+.mapOverlay section article .filter ul.sub-sub-group-list a > span,
+.mapOverlay section article .filter ul.sub-sub-group-list label > span {
+  transition: transform 0.65s ease;
+}
+.mapOverlay section article .filter ul.drawer-accordion a input[type=checkbox]:checked + label > span,
+.mapOverlay section article .filter ul.drawer-accordion label input[type=checkbox]:checked + label > span,
+.mapOverlay section article .filter ul.group-list a input[type=checkbox]:checked + label > span,
+.mapOverlay section article .filter ul.group-list label input[type=checkbox]:checked + label > span,
+.mapOverlay section article .filter ul.sub-group-list a input[type=checkbox]:checked + label > span,
+.mapOverlay section article .filter ul.sub-group-list label input[type=checkbox]:checked + label > span,
+.mapOverlay section article .filter ul.sub-sub-group-list a input[type=checkbox]:checked + label > span,
+.mapOverlay section article .filter ul.sub-sub-group-list label input[type=checkbox]:checked + label > span {
+  transform: rotate(45deg);
+}
+.mapOverlay section article .filter ul.drawer-accordion input[type=checkbox]:checked + label + ul,
+.mapOverlay section article .filter ul.group-list input[type=checkbox]:checked + label + ul,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox]:checked + label + ul,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox]:checked + label + ul {
+  max-height: 1000px;
+}
+.mapOverlay section article .filter ul.drawer-accordion input[type=checkbox] + label.check,
+.mapOverlay section article .filter ul.group-list input[type=checkbox] + label.check,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox] + label.check,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox] + label.check {
+  position: relative;
+}
+.mapOverlay section article .filter ul.drawer-accordion input[type=checkbox] + label.check:before, .mapOverlay section article .filter ul.drawer-accordion input[type=checkbox] + label.check:after,
+.mapOverlay section article .filter ul.group-list input[type=checkbox] + label.check:before,
+.mapOverlay section article .filter ul.group-list input[type=checkbox] + label.check:after,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox] + label.check:before,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox] + label.check:after,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox] + label.check:before,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox] + label.check:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  background-color: black;
+  top: 50%;
+  transition: transform 0.65s ease;
+}
+.mapOverlay section article .filter ul.drawer-accordion input[type=checkbox] + label.check:after,
+.mapOverlay section article .filter ul.group-list input[type=checkbox] + label.check:after,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox] + label.check:after,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox] + label.check:after {
+  width: 10px;
+  height: 8px;
+  margin-top: -4px;
+  right: 23px;
+  width: 2px;
+}
+.mapOverlay section article .filter ul.drawer-accordion input[type=checkbox] + label.check:before,
+.mapOverlay section article .filter ul.group-list input[type=checkbox] + label.check:before,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox] + label.check:before,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox] + label.check:before {
+  height: 2px;
+  margin-top: -1px;
+  right: 20px;
+  width: 8px;
+}
+.mapOverlay section article .filter ul.drawer-accordion input[type=checkbox]:checked + label.check:before, .mapOverlay section article .filter ul.drawer-accordion input[type=checkbox]:checked + label.check:after,
+.mapOverlay section article .filter ul.group-list input[type=checkbox]:checked + label.check:before,
+.mapOverlay section article .filter ul.group-list input[type=checkbox]:checked + label.check:after,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox]:checked + label.check:before,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox]:checked + label.check:after,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox]:checked + label.check:before,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox]:checked + label.check:after {
+  transform: rotate(90deg);
+}
+.mapOverlay section article .filter ul.drawer-accordion input[type=checkbox]:checked + label.check:before,
+.mapOverlay section article .filter ul.group-list input[type=checkbox]:checked + label.check:before,
+.mapOverlay section article .filter ul.sub-group-list input[type=checkbox]:checked + label.check:before,
+.mapOverlay section article .filter ul.sub-sub-group-list input[type=checkbox]:checked + label.check:before {
+  display: none;
+}
+.mapOverlay section article .filter ul.drawer-accordion .group-list,
+.mapOverlay section article .filter ul.drawer-accordion .sub-group-list,
+.mapOverlay section article .filter ul.drawer-accordion .sub-sub-group-list,
+.mapOverlay section article .filter ul.group-list .group-list,
+.mapOverlay section article .filter ul.group-list .sub-group-list,
+.mapOverlay section article .filter ul.group-list .sub-sub-group-list,
+.mapOverlay section article .filter ul.sub-group-list .group-list,
+.mapOverlay section article .filter ul.sub-group-list .sub-group-list,
+.mapOverlay section article .filter ul.sub-group-list .sub-sub-group-list,
+.mapOverlay section article .filter ul.sub-sub-group-list .group-list,
+.mapOverlay section article .filter ul.sub-sub-group-list .sub-group-list,
+.mapOverlay section article .filter ul.sub-sub-group-list .sub-sub-group-list {
+  height: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+.mapOverlay section .storyTitleSpacerAbove {
+  padding-top: 40vh;
+}
+.mapOverlay section .storyTitleSpacerBelow {
+  padding-bottom: 65vh;
+}
+.mapOverlay section article.storyTitle {
+  padding: 2em;
+  margin-bottom: 0;
+}
+.mapOverlay section article.storyTitle h2 {
+  color: black;
+  margin: 0;
+  padding: 2em 0;
+  text-align: center;
+  border-bottom: 3px double;
+  border-top: 3px double;
+  font-size: 30px;
+}
+.mapOverlay section article.storyTitle h2 span {
+  display: block;
+  font-style: italic;
+  font-size: 16px;
+  padding-top: 16px;
+  font-weight: normal;
+}
+.mapOverlay .sectionContainer {
+  padding-top: 40vh;
+}
+
+#filter-wrapper * {
+  overscroll-behavior: contain;
+}
+
+#filter-wrapper {
+  z-index: 99;
+  pointer-events: auto;
+}
+#filter-wrapper > label {
+  display: block;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  z-index: 2;
+  cursor: pointer;
+  right: 0px;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: fixed;
+  transform-origin: top center;
+  font-size: 1.2em;
+  background: #f2f2f2;
+  color: black;
+  border: 1px solid #c1c1c1;
+  width: 120px;
+  height: 2em;
+}
+#filter-wrapper > label:hover {
+  border: 1px solid #132b19;
+  bottom: 12px;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+}
+#filter-wrapper > label:hover:after {
+  border: 1px solid #595959;
+  border-right: 1px solid transparent;
+}
+#filter-wrapper > label:hover ~ .content {
+  bottom: -370px; /* content on hover */
+}
+#filter-wrapper > label:hover:before {
+  -moz-transform: rotate(180deg) translate(0, 1px);
+  -o-transform: rotate(180deg) translate(0, 1px);
+  -ms-transform: rotate(180deg) translate(0, 1px);
+  -webkit-transform: rotate(180deg) translate(0, 1px);
+  transform: rotate(180deg) translate(0, 1px);
+}
+#filter-wrapper > label h2 {
+  font-size: 16px;
+  padding: 6px 20px;
+  line-height: 0.2;
+  color: #404040;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+#filter-wrapper > label:before {
+  content: "▾";
+  -moz-transform: rotate(180deg) translate(0, -3px);
+  -o-transform: rotate(180deg) translate(0, -3px);
+  -ms-transform: rotate(180deg) translate(0, -3px);
+  -webkit-transform: rotate(180deg) translate(0, -3px);
+  transform: rotate(180deg) translate(0, -3px);
+  position: absolute;
+  right: 0.93em;
+  bottom: 0.3em;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+}
+#filter-wrapper > label.filter-button-bottom {
+  z-index: 1;
+  width: 50px;
+  height: 2em;
+  background: #F2F2F2;
+  color: #124d20;
+  border: 1px solid black;
+  bottom: 0;
+}
+#filter-wrapper > label.filter-button-bottom h2 {
+  font-size: 14px;
+  padding: 6px 20px;
+  line-height: 0.2;
+  color: #404040;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+#filter-wrapper > label.filter-button-bottom:before {
+  content: "▾";
+  -moz-transform: rotate(0deg) translate(0, -3px);
+  -o-transform: rotate(0deg) translate(0, -3px);
+  -ms-transform: rotate(0deg) translate(0, -3px);
+  -webkit-transform: rotate(0deg) translate(0, -3px);
+  transform: rotate(0deg) translate(0, -3px);
+  position: absolute;
+  right: 0.93em;
+  bottom: 0.3em;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+}
+#filter-wrapper .content {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: -425px;
+  overflow: scroll;
+  font-size: 18px;
+  line-height: 1.5;
+  width: 800px;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+  background: white;
+  padding: 8px 16px;
+  height: 400px;
+  margin: auto;
+  border: 1px solid #132b19;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /**
+   * Provide a border when hovered and when the input is checked
+   */
+  /*:checked + label:before {
+    transform: scale(2);
+  }*/
+}
+#filter-wrapper .content section {
+  width: 45%;
+}
+#filter-wrapper .content section header {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+#filter-wrapper .content section header h3 {
+  margin: 0;
+}
+#filter-wrapper .content section header h3 em {
+  color: #757575;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+}
+#filter-wrapper .content ol {
+  list-style-type: none;
+  max-width: auto;
+  margin-left: -40px;
+}
+#filter-wrapper .content ol.icons li img {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 6px;
+}
+#filter-wrapper .content ol li {
+  margin-bottom: 4px;
+  border: 1px solid white;
+}
+#filter-wrapper .content ol li label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 2; /* set a lower z-index than the maps */
+}
+#filter-wrapper .content ol li label span {
+  font-size: 18px;
+}
+#filter-wrapper .content ol li label span em {
+  font-size: 16px;
+  margin-left: 4px;
+  font-style: normal;
+}
+#filter-wrapper .content ol li label img {
+  height: 50px;
+  width: 50px;
+  transition-duration: 0.2s;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+#filter-wrapper .content ol li:hover {
+  background: #dddddd;
+  opacity: 0.9;
+}
+#filter-wrapper .content ol input[type=checkbox][id^=checkbox] {
+  display: none;
+}
+#filter-wrapper .content ol input[type=checkbox][id^=mapcheckbox] {
+  display: none;
+}
+#filter-wrapper .content ol :checked + label {
+  background: #f2f2f2;
+  border: 1px solid #132b19;
+}
+#filter-wrapper .content ol :checked + label img {
+  opacity: 1;
+}
+
+section:first-of-type ol li {
+  position: relative;
+}
+section:first-of-type ol li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+section:first-of-type ol li:hover {
+  z-index: 3;
+}
+section:first-of-type ol li:hover img {
+  -moz-transform: scale(2) translate(100px, 0);
+  -o-transform: scale(2) translate(100px, 0);
+  -ms-transform: scale(2) translate(100px, 0);
+  -webkit-transform: scale(2) translate(100px, 0);
+  transform: scale(2) translate(100px, 0);
+  box-shadow: 1px 1px 3px #666, 0 0 1px #777;
+  opacity: 1;
+  z-index: 3;
+}
+
+section:last-of-type ol li img {
+  border-radius: 0;
+  border: none;
+}
+
+/* end .content */
+input#filter[type=checkbox] {
+  display: none;
+}
+
+input#filter[type=checkbox]:checked ~ .content {
+  bottom: 0px; /* content on click */
+}
+
+input#filter[type=checkbox]:checked ~ label.filter-button {
+  bottom: 399px;
+  background: #132b19;
+  border: 1px solid #132b19;
+  /* cross icon */
+}
+input#filter[type=checkbox]:checked ~ label.filter-button h2 {
+  color: white;
+}
+input#filter[type=checkbox]:checked ~ label.filter-button:before {
+  content: "▾";
+  -moz-transform: rotate(0) translate(0, 1px);
+  -o-transform: rotate(0) translate(0, 1px);
+  -ms-transform: rotate(0) translate(0, 1px);
+  -webkit-transform: rotate(0) translate(0, 1px);
+  transform: rotate(0) translate(0, 1px);
+  color: white;
+}
+input#filter[type=checkbox]:checked ~ label.filter-button:hover:before {
+  transform: translate(0, 3px);
+}
+
+input#filter[type=checkbox]:checked ~ label.filter-button-bottom {
+  bottom: 0px;
+  background: white;
+  /* cross icon */
+}
+input#filter[type=checkbox]:checked ~ label.filter-button-bottom h2 {
+  color: #124d20;
+}
+input#filter[type=checkbox]:checked ~ label.filter-button-bottom:before {
+  z-index: 1;
+  content: "▾";
+  display: inline-block;
+  -moz-transform: rotate(0) translate(0, 1px);
+  -o-transform: rotate(0) translate(0, 1px);
+  -ms-transform: rotate(0) translate(0, 1px);
+  -webkit-transform: rotate(0) translate(0, 1px);
+  transform: rotate(0) translate(0, 1px);
+  color: #124d20;
+}
+input#filter[type=checkbox]:checked ~ label.filter-button-bottom:hover:before {
+  transform: translate(0, 3px);
+}
+
+#legend-wrapper {
+  z-index: 99;
+  pointer-events: auto;
+  /* end .content */
+}
+#legend-wrapper > label {
+  display: block;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+  z-index: 2;
+  cursor: pointer;
+  right: -23px;
+  bottom: 0;
+  top: 20px;
+  margin: auto;
+  position: fixed;
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transform-origin: top center;
+  font-size: 1.2em;
+  background: #f2f2f2;
+  color: black;
+  border: 1px solid #c1c1c1;
+  width: 120px;
+  height: 2em;
+  z-index: 99;
+}
+#legend-wrapper > label:hover {
+  border: 1px solid #132b19;
+  right: -18px;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+}
+#legend-wrapper > label:hover:after {
+  border: 1px solid #595959;
+  border-right: 1px solid transparent;
+}
+#legend-wrapper > label:hover ~ .content {
+  right: -270px; /* content on hover */
+}
+#legend-wrapper > label:hover:before {
+  -moz-transform: rotate(180deg) translate(0, -1px);
+  -o-transform: rotate(180deg) translate(0, -1px);
+  -ms-transform: rotate(180deg) translate(0, -1px);
+  -webkit-transform: rotate(180deg) translate(0, -1px);
+  transform: rotate(180deg) translate(0, -1px);
+}
+#legend-wrapper > label h2 {
+  font-size: 16px;
+  padding: 7px 16px;
+  line-height: 0;
+  color: #404040;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+#legend-wrapper > label:before {
+  content: "▾";
+  -moz-transform: rotate(180deg) translate(0, -3px);
+  -o-transform: rotate(180deg) translate(0, -3px);
+  -ms-transform: rotate(180deg) translate(0, -3px);
+  -webkit-transform: rotate(180deg) translate(0, -3px);
+  transform: rotate(180deg) translate(0, -3px);
+  position: absolute;
+  right: 0.8em;
+  bottom: 0.3em;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+}
+#legend-wrapper .content {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -305px;
+  overflow: scroll;
+  font-size: 14px;
+  line-height: 1.6;
+  width: 290px;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+  transition: all 400ms ease-in;
+  background: white;
+  padding: 15px 0 8px 0;
+  height: 440px;
+  margin: auto;
+  border: 1px solid #124d20;
+  z-index: 9;
+}
+#legend-wrapper .content img {
+  padding: 0 10px 0 5px;
+  height: 18px;
+}
+#legend-wrapper .content table span {
+  font-size: 14px;
+}
+#legend-wrapper .content table tr {
+  line-height: 1.7;
+}
+#legend-wrapper input#legend[type=checkbox] {
+  display: none;
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ .content {
+  right: 0px; /* content on click */
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button {
+  right: 267px;
+  background: #132b19;
+  /* cross icon */
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button h2 {
+  color: white;
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:before {
+  content: "▾";
+  -moz-transform: rotate(0) translate(0, 1px);
+  -o-transform: rotate(0) translate(0, 1px);
+  -ms-transform: rotate(0) translate(0, 1px);
+  -webkit-transform: rotate(0) translate(0, 1px);
+  transform: rotate(0) translate(0, 1px);
+  color: white;
+}
+#legend-wrapper input#legend[type=checkbox]:checked ~ label.legend-button:hover:before {
+  transform: translate(0, 3px);
+}
+
+footer {
+  border-top: 1px solid #132b19;
+  padding: 2%;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+footer .logos {
+  display: flex;
+  width: 80%;
+}
+footer .logos h4 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 1.2;
+}
+footer .logos h4 span {
+  font-weight: 200;
+}
+footer .logos .logo {
+  margin: 0 4%;
+  width: 100%;
+  text-align: center;
+}
+footer .logos .logo img {
+  width: auto;
+  height: 70px;
+}
+footer .logos .logo:first-of-type img {
+  height: 80px;
+}
+footer .info {
+  display: flex;
+  width: 20%;
+  min-width: 300px;
+}
+footer .info ul {
+  margin: 0 0 0 5%;
+}
+footer .info ul li {
+  list-style-type: none;
+}
+footer .info ul li a {
+  color: #124d20;
+  text-decoration: none;
+}
+footer .info ul li:last-of-type {
+  font-size: 14px;
+}
+
+path.leaflet-interactive {
+  fill-opacity: 0.3;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mapOverlay nav > ol > li {
+    width: 15%;
+  }
+  footer {
+    display: block;
+  }
+  footer .logos {
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+  footer .logos h4 {
+    flex-basis: 100%;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  footer .logos .logo {
+    width: 33.3%;
+    text-align: center;
+    margin: 0;
+  }
+  footer .logos .logo img {
+    width: auto;
+    height: 7vw;
+    min-height: 50px;
+  }
+  footer .logos .logo:first-of-type img {
+    height: 8vw;
+    min-height: 60px;
+  }
+  footer .info {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+  }
+  footer .info ul {
+    margin: 0 0 0 -40px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #filter-wrapper .content {
+    width: 95%;
+    max-width: 400px;
+  }
+  #filter-wrapper .content section {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .mapOverlay nav > ol > li {
+    width: 10%;
+    margin: 0 1%;
+  }
+  .mapOverlay nav > ol > li:first-of-type, .mapOverlay nav > ol > li:last-of-type {
+    min-width: 100px;
+  }
+  .mapOverlay nav > ol > li > a span {
+    display: none;
+  }
+  .mapOverlay section article {
+    min-width: 250px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .container {
+    padding: 0 1%;
+  }
+  .home-hero {
+    max-height: 100vh;
+    height: 100vh;
+  }
+  .home-hero .info-box {
+    width: 95%;
+    font-size: 16px;
+    max-width: 95%;
+    min-width: 0;
+    padding: 5vh 4%;
+  }
+  .home-hero .info-box a button {
+    font-size: 16px;
+    padding: 0.6em 1em;
+  }
+  .home-section {
+    display: block;
+  }
+  .home-section .card {
+    width: 95%;
+    margin: 4% auto;
+    font-size: 16px;
+    padding: 5vh 2%;
+  }
+  .home-section .card a button {
+    font-size: 16px;
+    padding: 0.6em 1em;
+    margin-top: 5vh;
+  }
+  a#sitetitle {
+    padding-left: 1%;
+    font-size: 17px;
+  }
+  a#sitetitle span {
+    width: 70%;
+    display: block;
+  }
+  a#sitetitle .subtitle {
+    font-size: 13px;
+  }
+  #mainmenu label.menu {
+    padding-right: 1%;
+    padding: 0.3em 0.5em;
+    font-size: 17px;
+  }
+  #mainmenu label.menu:before {
+    font-size: 14px !important;
+  }
+  footer {
+    display: block;
+    padding-top: 20px;
+  }
+  footer .logos {
+    width: 100%;
+    display: block;
+  }
+  footer .logos .logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  footer .logos .logo img {
+    height: 60px;
+  }
+  footer .logos .logo:first-of-type img {
+    height: 70px;
+  }
+  footer .info {
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .mapOverlay nav > ol > li:first-of-type, .mapOverlay nav > ol > li:last-of-type {
+    min-width: 70px;
+  }
+  .mapOverlay nav > ol > li:first-of-type a, .mapOverlay nav > ol > li:last-of-type a {
+    font-size: 13px;
+  }
+  .mapOverlay nav > ol > li > a span {
+    display: none;
+  }
+  .mapOverlay section {
+    padding: 0 1%;
+  }
+  .mapOverlay section article {
+    font-size: 16px;
+    padding: 16px 3%;
+  }
+  .mapOverlay section article.storyTitle {
+    padding: 20px 2%;
+  }
+  .mapOverlay section article.storyTitle h2 {
+    font-size: 22px;
+    padding: 10px 0;
+  }
+  .mapOverlay img {
+    padding: 0;
+  }
+}

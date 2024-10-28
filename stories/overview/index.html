@@ -1,0 +1,157 @@
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <!-- Built with 11ty - 2024-10-28 16:23 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="King's Digital Lab, King's College London">
+    <meta name="description" content="">
+    
+    <meta property="og:image" content="https://bcc.kdl.kcl.ac.uk/assets/img/logos/KCL-square.svg">
+    <meta property="og:description" content="">
+    <meta property="og:title" content="BCC">
+
+
+    <title>BCC | BCC - Treatied Spaces</title>
+
+    <link rel="icon" href="/assets/images/logos/favicon.png" sizes="any">
+    <link rel="stylesheet" href="/assets/css/style.css?ts=1730132617">
+    <link rel="stylesheet" href="/assets/node_modules/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="/assets/node_modules/leaflet-dvf/dist/css/dvf.css"/>
+    <script src="/assets/js/navbar-toggle.js?ts=1730132617"></script>
+
+    <style>
+
+        .map-label {
+            background-color: #fff0 !important;
+            border: #fff0 !important;
+            font-family: 'EB Garamond, serif' !important;
+            font-weight: bold !important;
+            box-shadow: none !important;
+            font-size: 16px !important;
+            opacity: 1 !important;
+            border-left-color: #f000 !important;
+        }
+
+        .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-right:before, .leaflet-tooltip-left:before {
+            border: none !important;
+        }
+    </style>
+</head>
+<body class="type-stories slug-overview">
+<header>
+<nav>
+    <div id="mainmenu">
+        <a id="sitetitle" href="/"><span>Movement and Common World in Early America</span><div class="subtitle">Homelands, Pathways and the Peoples of the Northeast</div></a>
+        <input id="menu" type="checkbox"/>
+        <!--<img src="/assets/img/icons/font-awesome/bars-solid.svg"/>-->
+        <label class="menu" role="button" for="menu">Menu</label>
+        <ol>
+            
+                <li class="is-active">
+                    <a href="/">Home</a>
+                </li>
+            
+                <li class="">
+                    <a href="/about/">About</a>
+                </li>
+            
+                <li class="">
+                    <a href="/resources/">Resources</a>
+                </li>
+            
+                <li class="is-active">
+                    <a href="/stories/">Stories</a>
+                </li>
+            
+                <li class="">
+                    <a href="/accessibility/">Accessibility</a>
+                </li>
+            
+
+        </ol>
+
+        
+        
+
+        
+        
+    </div>
+</nav>
+</header>
+
+<article class="mapSlide" id="slide_0" data-slideId="0"><p>For a long time, American history was the story of one nation and one Continent. From the Plymouth Colony to the Great Plains, history moved west where states appeared in spaces that were apparently empty. A story on this scale has relied on maps that show angular lines and borders, British colonies becoming American states. But those maps obscure the extent to which early colonists saw themselves as settled among nations.</p>
+</article>
+<div class="article_spacer">&nbsp;</div><article class="mapSlide" id="slide_1" data-slideId="1"><p>‘we live encompassed with people of several nations and strange language’.</p>
+<p><em>New England Confederation</em>, 1643</p>
+<p>‘The territories of Britain, Spain and of the Indian nations in our neighbourhood, do not border on particular States; but encircle the Union from MAINE to GEORGIA’.</p>
+<p>Alexander Hamilton, <em>The Federalist</em>, no. 25. 21 December 1787.</p>
+</article>
+<div class="article_spacer">&nbsp;</div>
+
+    <footer>
+    <div class="logos">
+        <h4>Partners <span>&</span> Funders</h4>
+        <div class="logo">
+            <a href="//kdl.kcl.ac.uk/">
+                <picture><source type="image/webp" srcset="/assets/img/nk1khL1P44-197.webp 197w" sizes="300, 600"><img alt="King's College London logo" loading="lazy" decoding="async" src="/assets/img/nk1khL1P44-197.jpeg" width="197" height="150"></picture>
+            </a>
+        </div>
+        <div class="logo">
+            <a href="//treatiedspaces.com/">
+                <picture><source type="image/webp" srcset="/assets/img/CwY17WAq9I-300.webp 300w, /assets/img/CwY17WAq9I-571.webp 571w" sizes="300, 600"><source type="image/jpeg" srcset="/assets/img/CwY17WAq9I-300.jpeg 300w, /assets/img/CwY17WAq9I-571.jpeg 571w" sizes="300, 600"><img alt="Treatied spaces" loading="lazy" decoding="async" src="/assets/img/CwY17WAq9I-300.jpeg" width="571" height="183"></picture>
+            </a>
+        </div>
+        <div class="logo">
+            <a href="//www.ukri.org/about-us/ahrc/">
+                <picture><source type="image/webp" srcset="/assets/img/FFTP2Ugojm-300.webp 300w, /assets/img/FFTP2Ugojm-600.webp 600w, /assets/img/FFTP2Ugojm-1887.webp 1887w" sizes="300, 600"><source type="image/jpeg" srcset="/assets/img/FFTP2Ugojm-300.jpeg 300w, /assets/img/FFTP2Ugojm-600.jpeg 600w, /assets/img/FFTP2Ugojm-1887.jpeg 1887w" sizes="300, 600"><img alt="Treatied spaces" loading="lazy" decoding="async" src="/assets/img/FFTP2Ugojm-300.jpeg" width="1887" height="480"></picture>
+            </a>
+        </div>
+    </div>
+    <div class="info">
+        <ul>
+            <li><a href="/accessibility/">Accessibility Statement</a></li>
+            <li><a href="/about/">Credits &amp; Acknowledgements</a></li>
+            <li>©2024 Brightening the Covenant Chain</li>
+        </ul>
+    </div>
+</footer>
+
+
+</body>
+<script>
+    //*** Active class on menu when in section ***//
+    // Get all sections that have an ID defined
+    const sections = document.querySelectorAll("[id]");
+
+    // Add an event listener listening for scroll
+    window.addEventListener("scroll", navHighlighter);
+
+    function navHighlighter() {
+        // Get current scroll position
+        let scrollY = window.pageYOffset;
+
+        // Now we loop through sections to get height, top and ID values for each
+        sections.forEach((current) => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 150;
+            sectionId = current.getAttribute("id");
+
+            /*
+            - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
+            - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+            */
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document
+                    .querySelectorAll("ol a[href*=" + sectionId + "]")
+                    .forEach((el) => el.classList.add("active"));
+            } else {
+                document //*** END Active class on menu when in section ***//
+                    .querySelectorAll("ol a[href*=" + sectionId + "]")
+                    .forEach((el) => el.classList.remove("active"));
+            }
+        });
+    }
+
+
+</script>
+</html>

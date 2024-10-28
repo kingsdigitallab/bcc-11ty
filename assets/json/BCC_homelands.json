@@ -1,0 +1,620 @@
+{
+  "homelandsData": [
+    {
+      "id": "4130",
+      "Current normalised text": "Ancient Algonquins Extirpated",
+      "European_name": "Algonquins",
+      "Indigenous_name": "Omàmiwinini",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4131",
+      "Current normalised text": "Antient Ouataouacs",
+      "European_name": "Ottawa",
+      "Indigenous_name": "Odawa",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4161",
+      "Current normalised text": "Six Nations",
+      "European_name": "Six Nations",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "[large]",
+      "Notes": ""
+    },
+    {
+      "id": "4088",
+      "Current normalised text": "Antient Hurons",
+      "European_name": "Hurons",
+      "Indigenous_name": "Wyandot",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4107",
+      "Current normalised text": "Mataouan",
+      "European_name": "Matawa",
+      "Indigenous_name": "maadawa ᒪᑕᐧᐊ",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4101",
+      "Current normalised text": "Nipissiriniens Extirpated",
+      "European_name": "Nipissing",
+      "Indigenous_name": "Niipsing",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4133",
+      "Current normalised text": "Sauteurs or Estiaghicks",
+      "European_name": "Ojibwe",
+      "Indigenous_name": "ᐅᒋᑉᐧᐁ",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4132",
+      "Current normalised text": "Nicariages united…",
+      "European_name": "[Nicarisages]",
+      "Indigenous_name": "Nicariage",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4104",
+      "Current normalised text": "Chomonchouanistes",
+      "European_name": "[Chomonchouanistes]",
+      "Indigenous_name": "Nutashkuan Innu",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4090",
+      "Current normalised text": "Abitibis",
+      "European_name": "Abitibis",
+      "Indigenous_name": "Abitibiwinni",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4114",
+      "Current normalised text": "Chekoutimiens",
+      "European_name": "Chekoutimiens",
+      "Indigenous_name": "Chicoutimi",
+      "[Note on Label Size]": "",
+      "Notes": "Also Montagnais"
+    },
+    {
+      "id": "4113",
+      "Current normalised text": "Greater Mistassins",
+      "European_name": "Mistissini",
+      "Indigenous_name": "ᒥᔅᑎᓯᓃ",
+      "[Note on Label Size]": "",
+      "Notes": "Cree Nation of Mistissini"
+    },
+    {
+      "id": "4109",
+      "Current normalised text": "Little Mistassins",
+      "European_name": "[delete and keep above]",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4367",
+      "Current normalised text": "Gaspersians",
+      "European_name": "Gaspesian",
+      "Indigenous_name": "Mi’kmaq",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4160",
+      "Current normalised text": "Iroquois",
+      "European_name": "Iroquois",
+      "Indigenous_name": "Haudenosaunee",
+      "[Note on Label Size]": "[large]",
+      "Notes": ""
+    },
+    {
+      "id": "4356",
+      "Current normalised text": "Oneydoes",
+      "European_name": "Oneida",
+      "Indigenous_name": "Onʌyoteˀa·ká·",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4362",
+      "Current normalised text": "Mohawks",
+      "European_name": "Mohawk",
+      "Indigenous_name": "Kanienʼkehá꞉ka",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4355",
+      "Current normalised text": "Tuscarora",
+      "European_name": "Tuscarora",
+      "Indigenous_name": "Skarù:ręˀ",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4361",
+      "Current normalised text": "Onondangas",
+      "European_name": "Onondaga",
+      "Indigenous_name": "Onoñda’gegá’’",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4349",
+      "Current normalised text": "Cayugaes",
+      "European_name": "Cayuga",
+      "Indigenous_name": "Gayogo̱hó꞉nǫʼ",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4346",
+      "Current normalised text": "Shawanoes",
+      "European_name": "Shawnee",
+      "Indigenous_name": "šaawanwaki",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4092",
+      "Current normalised text": "Seneka",
+      "European_name": "Seneca",
+      "Indigenous_name": "Onödowáʼga:",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4097",
+      "Current normalised text": "Minquaas or Mingos",
+      "European_name": "Mingos",
+      "Indigenous_name": "Seneca-Cayuga",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4091",
+      "Current normalised text": "Ancient Eries",
+      "European_name": "Erie",
+      "Indigenous_name": "Erie",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4072",
+      "Current normalised text": "Delawares",
+      "European_name": "[Delewares]",
+      "Indigenous_name": "Lenni Lenape",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4138",
+      "Current normalised text": "Outauacs or Outawas",
+      "European_name": "Ottawa",
+      "Indigenous_name": "Odawa",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4117",
+      "Current normalised text": "Outagamis",
+      "European_name": "Meskwaki",
+      "Indigenous_name": "Meshkwahkihaki",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4122",
+      "Current normalised text": "Mascoutens",
+      "European_name": "Mascouten",
+      "Indigenous_name": "Mashkotêwi",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4135",
+      "Current normalised text": "Miamis or Miammees",
+      "European_name": "Miami",
+      "Indigenous_name": "Myaamiaki",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4153",
+      "Current normalised text": "Antient Villages of the Illinois",
+      "European_name": "Illinois",
+      "Indigenous_name": "inoca",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4159",
+      "Current normalised text": "Twightwies",
+      "European_name": "Twightwees",
+      "Indigenous_name": "Twa'h twa'h",
+      "[Note on Label Size]": "",
+      "Notes": "Also known as Miamis"
+    },
+    {
+      "id": "4156",
+      "Current normalised text": "Pyankashees",
+      "European_name": "Piankeshaw",
+      "Indigenous_name": "Peeyankihšiaki",
+      "[Note on Label Size]": "",
+      "Notes": "https://archive.org/stream/americanantiqua33peetgoog/americanantiqua33peetgoog_djvu.txt"
+    },
+    {
+      "id": "4157",
+      "Current normalised text": "Wauwaughtanees",
+      "European_name": "Wauwaughtanees",
+      "Indigenous_name": "waayaahtanwa",
+      "[Note on Label Size]": "",
+      "Notes": "Also known as Ouiatanons. https://journals.psu.edu/wph/article/download/2017/1865"
+    },
+    {
+      "id": "4139",
+      "Current normalised text": "Penobscots",
+      "European_name": "Penobscot",
+      "Indigenous_name": "Pαnawάhpskewi",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4137",
+      "Current normalised text": "Pafsamacadies",
+      "European_name": "Passamaquoddy",
+      "Indigenous_name": "Peskotomuhkati",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4134",
+      "Current normalised text": "Micmacs",
+      "European_name": "Micmac",
+      "Indigenous_name": "Mi’kmaq",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4076",
+      "Current normalised text": "St John’s Indians",
+      "European_name": "Maliseet",
+      "Indigenous_name": "Wəlastəkwewiyik",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4127",
+      "Current normalised text": "Souriquol",
+      "European_name": "Souriquois",
+      "Indigenous_name": "Mi’kmaq",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4116",
+      "Current normalised text": "Tadoussacs",
+      "European_name": "Tadoussacs",
+      "Indigenous_name": "Innu",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4114",
+      "Current normalised text": "Chekoutimiens",
+      "European_name": "Chekoutimiens",
+      "Indigenous_name": "Chekoutimiens",
+      "[Note on Label Size]": "",
+      "Notes": "Also Montagnais. https://qspace.library.queensu.ca/bitstream/handle/1974/11429/quebeclakestjo00cham.pdf?sequence=1"
+    },
+    {
+      "id": "4120",
+      "Current normalised text": "Sioux or Nadouessians",
+      "European_name": "Lakota Sioux",
+      "Indigenous_name": "Lakȟóta",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4102",
+      "Current normalised text": "Panis The Padoncas and Panis…",
+      "European_name": "Pawnee",
+      "Indigenous_name": "Chatiks si chatiks",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4082",
+      "Current normalised text": "Osages",
+      "European_name": "Osage",
+      "Indigenous_name": "𐓁𐒻 𐓂𐒼𐒰𐓇𐒼𐒰͘",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4081",
+      "Current normalised text": "Cherakees",
+      "European_name": "Cherokee",
+      "Indigenous_name": "ᎠᏂᏴᏫᏯᎢ",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4079",
+      "Current normalised text": "Catawbas",
+      "European_name": "Catawba",
+      "Indigenous_name": "Ye Iswąˀ",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4197",
+      "Current normalised text": "Upper Cherakees",
+      "European_name": "Upper Cherokees",
+      "Indigenous_name": "Atali Tsalagi",
+      "[Note on Label Size]": "",
+      "Notes": "https://en.wikisource.org/wiki/1911_Encyclopædia_Britannica/Cherokee Aka Overhill?"
+    },
+    {
+      "id": "4105",
+      "Current normalised text": "Lower Cherakees",
+      "European_name": "Lower Cherokees",
+      "Indigenous_name": "Elati Tsalagi",
+      "[Note on Label Size]": "",
+      "Notes": "https://en.wikisource.org/wiki/1911_Encyclopædia_Britannica/Cherokee Aka Valley?"
+    },
+    {
+      "id": "4144",
+      "Current normalised text": "Chicasaws In Alliance…",
+      "European_name": "Chickasaw",
+      "Indigenous_name": "Chikashsha",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4067",
+      "Current normalised text": "Tuscarora Indians now remov’d",
+      "European_name": "Tuscarora",
+      "Indigenous_name": "Skarù:ręˀ",
+      "[Note on Label Size]": "",
+      "Notes": "Carolina, previously."
+    },
+    {
+      "id": "4115",
+      "Current normalised text": "Congarees",
+      "European_name": "Congaree",
+      "Indigenous_name": "kųkari•",
+      "[Note on Label Size]": "",
+      "Notes": "Indigenous name is an exonym given by the Catawbas. https://en.wikipedia.org/wiki/Congaree_people"
+    },
+    {
+      "id": "4148",
+      "Current normalised text": "Abeecas or Coussas",
+      "European_name": "Coosa",
+      "Indigenous_name": "ᎦᎳᎩᎾ",
+      "[Note on Label Size]": "",
+      "Notes": "Indigenous name is an exonym by the Cherokees. https://en.wikipedia.org/wiki/Coosa_chiefdom"
+    },
+    {
+      "id": "4126",
+      "Current normalised text": "Creek Indians",
+      "European_name": "Creek",
+      "Indigenous_name": "Muscogee",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4146",
+      "Current normalised text": "Talapoosees",
+      "European_name": "[also Creek, keep or remove?]",
+      "Indigenous_name": "Muscogee",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4147",
+      "Current normalised text": "Alibamous",
+      "European_name": "Alibamous",
+      "Indigenous_name": "Albaamaha",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4089",
+      "Current normalised text": "Country of the Apalachees",
+      "European_name": "Apalachee",
+      "Indigenous_name": "Apalachee",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4129",
+      "Current normalised text": "Timooquas",
+      "European_name": "Timocua",
+      "Indigenous_name": "Timucua",
+      "[Note on Label Size]": "",
+      "Notes": "Florida, lost language"
+    },
+    {
+      "id": "4152",
+      "Current normalised text": "Country of the Cenis",
+      "European_name": "Cenis",
+      "Indigenous_name": "Coahuiltecans",
+      "[Note on Label Size]": "",
+      "Notes": "Texas. Cenis was/is part of the larger group Coahuiltecans. https://www.tshaonline.org/handbook/entries/cenizo-indians"
+    },
+    {
+      "id": "",
+      "Current normalised text": "",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "UNDETERMINED",
+      "Current normalised text": "",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4085",
+      "Current normalised text": "Onyape…",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4087",
+      "Current normalised text": "Christinaux or Kilistinos",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4112",
+      "Current normalised text": "Country of the Padoucas",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": "Either Apaches or Comanche, depending on how north or close to the Mandans this polygon is."
+    },
+    {
+      "id": "4096",
+      "Current normalised text": "Cape Sable Indians",
+      "European_name": "[not sure which of the Wabanaki to attribute - Mi’kmaq / Kespukwikt?",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": "https://en.wikipedia.org/wiki/Wabanaki_Confederacy#/media/File:Wabanaki_Confederacy_(Anglicised_Names).png"
+    },
+    {
+      "id": "4086",
+      "Current normalised text": "Northern Iroquois",
+      "European_name": "Northern Iroquois",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4103",
+      "Current normalised text": "Messesagues subdued",
+      "European_name": "[Messesagues]",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": "Anishinaabe (Mississauga]?"
+    },
+    {
+      "id": "4118",
+      "Current normalised text": "Piekouagam",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4110",
+      "Current normalised text": "Nekoubavistes",
+      "European_name": "[Nekoubavistes]",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4111",
+      "Current normalised text": "Papinachies",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4150",
+      "Current normalised text": "Ohio Indians",
+      "European_name": "[Ohio]",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4119",
+      "Current normalised text": "Sakes",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4060",
+      "Current normalised text": "Middle Cherakees",
+      "European_name": "Middle Cherokees",
+      "Indigenous_name": "[unsure]",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4099",
+      "Current normalised text": "Sacannas",
+      "European_name": "Savannas",
+      "Indigenous_name": "[should be Shawnee?]",
+      "[Note on Label Size]": "",
+      "Notes": "https://www.jstor.org/stable/1265144"
+    },
+    {
+      "id": "",
+      "Current normalised text": "",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "TOPONYMS, NOT NATIONS",
+      "Current normalised text": "",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4140",
+      "Current normalised text": "Province of Sagadahook",
+      "European_name": "[more a toponym, from the Abenaki]",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": ""
+    },
+    {
+      "id": "4084",
+      "Current normalised text": "Caligoa…",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": "Province, not nation?"
+    },
+    {
+      "id": "4154",
+      "Current normalised text": "Quadoghe so call’d…",
+      "European_name": "",
+      "Indigenous_name": "",
+      "[Note on Label Size]": "",
+      "Notes": "Toponym, of Chicago."
+    }
+  ]
+}
