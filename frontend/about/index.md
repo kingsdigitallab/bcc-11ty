@@ -21,6 +21,9 @@ We wanted to be able to show not only the layers of information that were presen
 ## Using the kinetic map
 There are two ways to interact with the *Movement and Common Worlds* map application. The first is through the Stories. Start at the 'Overview' and simply scroll downwards slowly. The map display changes to complement the accompanying text and images. The second mode allows you to explore freely, using a set of filters to see information captured from specific maps. 
 
+## Guide to Stories {#stories-guide}
+test
+
 ## The Project Team
 
 This project is part of 'Brightening the Covenant Chain: Revealing Cultures of Diplomacy between the Crown and the Iroquois Confederacy'. Arts and Humanities Research Council of the United Kingdom, Standard Research Grant AH/T006099/1, Principal Investigator: Professor Joy Porter. Project Team: Charles Prior (project lead, author of map stories); Dr Matthias Wong (PDRA - data mining); Jenson Morse (Project Intern); King’s Digital Lab (Paul Caton, Neil Jakeman, Elliot Hall, Tiffany Ong, Lucie Hao); Project review held at RAI with input from panel: Max Edelson, Chad Anderson, Hayden Haynes (Seneca Nation), Saliha Belmessous, Cassie Wise, Miriam Davis Rosenbaum (National Indian Education Association).
