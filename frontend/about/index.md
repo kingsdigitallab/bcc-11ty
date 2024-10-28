@@ -27,7 +27,7 @@ This project is part of 'Brightening the Covenant Chain: Revealing Cultures of D
 
 ## Stories guide
 
-###OVERVIEW###  
+### OVERVIEW 
 
 Display: Blank map - no features displayed
 Text: "Overview" then "For a long time, American history was ..."  
@@ -35,7 +35,7 @@ Text: "Overview" then "For a long time, American history was ..."
 Display: Blank map - no features displayed
 Text begins: "'We live encompassed with people...'"
 
-###1 - INTRODUCTION###
+### 1 - INTRODUCTION
 
 Display: Indigenous & European settlements and placenames [Mitchell 1755]
 Text: "Introduction"
@@ -51,7 +51,7 @@ Text begins: “While the common worlds of . . .”
 
 
  
-###2 - HOMELANDS###
+### 2 - HOMELANDS
 
 Display: selection of Indigenous-related annotations [Mitchell 1755], transforming from normalized spelling to Indigenous versions
 Text: "Homelands"
@@ -84,7 +84,7 @@ Display: Indigenous & European settlements, council fires [all maps]; Haudenosau
 Text begins: “The village worlds of the Haudenosaunee were broken apart ...” 
 
  
-###3 - PATHWAYS###
+### 3 - PATHWAYS
 
 Display: Two animations - principal rivers followed by pathway & council fires  [Mitchell 1755]
 Text: "Pathways"
@@ -110,7 +110,7 @@ Text begins: “Europeans found their way along single file ...”
 
 
 
-###4 - VILLAGERS, SETTLERS###
+### 4 - VILLAGERS, SETTLERS
 
 Display: animation of council fire sites [Mitchell 1755]
 Text: "Villagers, Settlers"
@@ -147,7 +147,7 @@ Text begins: “Bradley’s map shows state-driven colonialism  ...”
 
  
 
-###5 - LINES### 
+### 5 - LINES 
 
 Display: four animations of expanding border lines [Seller 1676; Burghers 1738; Mitchell 1755; Bradley 1796]
 Text: "Lines"
