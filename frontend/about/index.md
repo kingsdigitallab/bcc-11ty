@@ -19,7 +19,7 @@ We wanted to be able to show not only the layers of information that were presen
 ![Detail from Mitchell 1755 map](../assets/img/about/Image_for_about_page.jpg){class="map_page_image"}
 
 ## Using the kinetic map
-There are two ways to interact with the *Movement and Common Worlds* map application. The first is through the Stories. Start at the 'Overview' and simply scroll downwards slowly. The map display changes to complement the accompanying text and images - see **Stories guide** below for display details). The second mode allows you to explore freely, using a set of filters to see information captured from specific maps. 
+There are two ways to interact with the *Movement and Common Worlds* map application. The first is through the Stories. Start at the 'Overview' and simply scroll downwards slowly. The map display changes to complement the accompanying text and images - see **Stories guide** below for display details. The second mode allows you to explore freely, using a set of filters to see information captured from specific maps. 
 
 ## The Project Team
 
@@ -134,7 +134,7 @@ OVERVIEW
 
 5.10 **Display**: Connecticut [Buell 1784]. **Text**: “The transition between British Empire and American territorial republic ...”.
  
-5.11**Display**: Colonial border lines [Bradley 1796], Indigenous settlements [Mitchell 1755]. **Text**: “The names and location of Indigenous nations ...”.
+5.11 **Display**: Colonial border lines [Bradley 1796], Indigenous settlements [Mitchell 1755]. **Text**: “The names and location of Indigenous nations ...”.
  
 
  
