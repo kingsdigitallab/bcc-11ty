@@ -27,163 +27,118 @@ This project is part of 'Brightening the Covenant Chain: Revealing Cultures of D
 
 ## Stories guide
 
-### OVERVIEW 
 
-Display: Blank map - no features displayed
-Text: "Overview" then "For a long time, American history was ..."  
 
-Display: Blank map - no features displayed
-Text begins: "'We live encompassed with people...'"
+OVERVIEW  
 
-### 1 - INTRODUCTION
+0.0 **Display**: Blank map - no features displayed. **Text**: "Overview" then "For a long time, American history was ...".  
 
-Display: Indigenous & European settlements and placenames [Mitchell 1755]
-Text: "Introduction"
+0.1 **Display**: Blank map - no features displayed. **Text**: "'We live encompassed with people...'".
+
+
+1 - INTRODUCTION
+
+1.1 **Display**: Indigenous & European settlements and placenames [Mitchell 1755]. **Title**: "Introduction".
+
+1.2 **Display**: (unchanged). **Text**: “Maps of early America do not tell the whole truth ...”
+
+1.3 **Display**: European settlements [Mitchell 1755]. **Text**: “Settlement was fragmented and confined to a narrow strip ...”.
  
-Display: (unchanged)
-Text begins: “Maps of early America do not tell the whole truth ...”
+1.4 **Display**: Pathways, Indigenous & European settlements [Mitchell 1755]. **Text**: “While the common worlds of ...”.
 
-Display: European settlements [Mitchell 1755]
-Text begins: “Settlement was fragmented and confined to a narrow strip ...”
+
+ 2 - HOMELANDS
+
+2.0 **Display**: Selection of Indigenous-related annotations [Mitchell 1755], transforming from normalized spelling to Indigenous versions. **Title**: "Homelands".
+
+2.1 **Display**: Pathways, Indigenous & European settlements [Mitchell 1755]. **Text**: “American history begins with the deep history of the land ...”
  
-Display: Pathways, Indigenous & European settlements [Mitchell 1755]
-Text begins: “While the common worlds of . . .”
-
-
+2.2 **Display**: Rivers [Mitchell 1755]; Indigenous & European settlements and placenames [all maps]. **Text**: “The Indigenous landscape was more than a homeland ...”.
  
-### 2 - HOMELANDS
+2.3 **Display**: Principal rivers, Indigenous settlements, placenames and council fires [all maps]. **Text**: “The land was political ...”. 
 
-Display: selection of Indigenous-related annotations [Mitchell 1755], transforming from normalized spelling to Indigenous versions
-Text: "Homelands"
+2.4 **Display**: Charlestown [Mitchell 1755]; Catawba territory (source: https://native-land.ca/maps/territories/catawba/). **Text**: “Indigenous people were map makers ...”. 
 
-Display: Pathways, Indigenous & European settlements [Mitchell 1755]
-Text begins: “American history begins with the deep history of the land ...”
- 
-Display: Rivers [Mitchell 1755]; Indigenous & European settlements and placenames [all maps]
-Text begins: “The Indigenous landscape was more than a homeland ...”
- 
-Display: Principal rivers, Indigenous settlements, placenames and council fires [all maps]
-Text begins: “The land was political ....” 
+2.5 **Display**: Haudenosaunee-related annotations [Mitchell 1755]. **Text**: “Haudenosaunee can be translated as ‘the whole house’ ...”. 
 
-Display: Charlestown [Mitchell 1755]; Catawba territory (source: https://native-land.ca/maps/territories/catawba/)
-Text begins: “Indigenous people were map makers ...” 
+2.6 **Display**: Haudenosaunee-related annotation "Iroquois" and colonial domains Virginia, Pennsylvania, New York [Mitchell 1755]. **Text**: “British mapmakers took care in noting ...”. 
 
-Display: Haudenosaunee-related annotations [Mitchell 1755]
-Text begins: “Haudenosaunee can be translated as ‘the whole house’ ...” 
+2.7 **Display**: as above + other Indigenous-related annotations [Mitchell 1755]. **Text**: “Yet this was not a wholly peaceful landscape ...”. 
 
-Display: Haudenosaunee-related annotation "Iroquois" and colonial domains Virginia, Pennsylvania, New York [Mitchell 1755]; 
-Text begins: “British mapmakers took care in noting ...” 
+2.8 **Display**: Indigenous settlements, principal rivers [all maps]. **Text**: “The United Colonies emerged as a new power ...”.
 
-Display: as above + other Indigenous-related annotations [Mitchell 1755]
-Text begins: “Yet this was not a wholly peaceful landscape” 
-
-Display: Indigenous settlements, principal rivers  [all maps]
-Text begins: “The United Colonies emerged as a new power ...”
-
-Display: Indigenous & European settlements, council fires [all maps]; Haudenosaunee-related annotations [Cary 1783, Bradley 1796]
-Text begins: “The village worlds of the Haudenosaunee were broken apart ...” 
+2.9 **Display**: Indigenous & European settlements, council fires [all maps]; Haudenosaunee-related annotations [Cary 1783, Bradley 1796]. **Text**: “The village worlds of the Haudenosaunee were broken apart ...”. 
 
  
-### 3 - PATHWAYS
+3 - PATHWAYS
 
-Display: Two animations - principal rivers followed by pathway & council fires  [Mitchell 1755]
-Text: "Pathways"
+3.0 **Display**: Two animations - principal rivers followed by pathway & council fires  [Mitchell 1755]. **Title**: "Pathways".
 
-Display: Pathways, Indigenous & European settlements [Mitchell 1755]
-Text begins:“For the Haudenosaunee, the path was a powerful metaphor ...”
+3.1 **Display**: Pathways, Indigenous & European settlements [Mitchell 1755]. **Text**: “For the Haudenosaunee, the path was a powerful metaphor ...”.
 
-Display:  Pathways, principal rivers [all maps]; Indigenous & European settlements [Mitchell 1755]
-Text begins:“Pathways were conduits of communication” 
+3.2 **Display**:  Pathways, principal rivers [all maps]; Indigenous & European settlements [Mitchell 1755]. **Text**:“Pathways were conduits of communication ...”. 
 
-Display: Pathways, Indigenous & European settlements [Mitchell 1755]
-Text begins: “For the geographer Lewis Evans ...”
+3.3 **Display**: Pathways, Indigenous & European settlements [Mitchell 1755]. **Text**: “For the geographer Lewis Evans ...”.
 
-Display: Rivers [Bradley 1796]; Indigenous & European settlements [Mitchell 1755]
-Text begins: “Washington found himself serving as a messenger ...”
+3.4 **Display**: Rivers [Bradley 1796]; Indigenous & European settlements [Mitchell 1755]. **Text**: “Washington found himself serving as a messenger ...”.
 
-Display: Rivers [Bradley 1796]
-Text begins: “As Washington learned, rivers were the highways  ...”
+3.5 **Display**: Rivers [Bradley 1796]. **Text**: “As Washington learned, rivers were the highways ...”.
 
-Display: Rivers, pathways [Bradley 1796]
-Text begins: “Europeans found their way along single file ...”
+3.6 **Display**: Rivers, pathways [Bradley 1796]. **Text**: “Europeans found their way along single file ...”.
 
 
+4 - VILLAGERS, SETTLERS
 
+4.0 **Display**: Animation of council fire sites [Mitchell 1755]. **Title**: "Villagers, Settlers".
 
-### 4 - VILLAGERS, SETTLERS
+4.1 **Display**: Indigenous settlements and placenames [Foster 1677]. **Text**: “European claims to the conquest of the ‘new world’ ...”.
 
-Display: animation of council fire sites [Mitchell 1755]
-Text: "Villagers, Settlers"
+4.2 **Display**: Indigenous settlements [White 1590]. **Text**: “The English settled among Indigenous nations ...”.
 
-Display: Indigenous settlements and placenames [Foster 1677]
-Text begins: “European claims to the conquest of the ‘new world’ ...”
+4.3 **Display**: Hudson River, Indigenous & European settlements [Foster 1677]. **Text**: “A century after the creation of White’s map ...". 
 
-Display: Indigenous settlements [White 1590]
-Text begins: “The English settled among Indigenous nations ...”
+4.4 **Display**: Principal rivers, Haudenosaunee settlements [all maps]. **Text**: “The creation of new colonies disrupted the flows ...” 
 
-Display: Hudson River, Indigenous & European settlements [Foster 1677]
-Text begins: “A century after the creation of White’s map ...” 
+4.5 **Display**: Principal rivers, Indigenous & European settlements [Evans 1752]. **Text**: “Settlers pushed out of towns and villages  ...”. 
 
-Display: Principal rivers, Haudenosaunee settlements [all maps]
-Text begins: “The creation of new colonies disrupted the flows ...” 
+4.6 **Display**: Border lines [Mitchell 1755]. **Text**: “As British traders, diplomats and settlers ...”. 
 
-Display: Principal rivers, Indigenous & European settlements [Evans 1752]
-Text begins: “Settlers pushed out of towns and villages  ...” 
+4.7 **Display**: Border lines [Buell 1784]. **Text**: “Increasingly, maps portrayed colonies as ...”. 
 
-Display: Border lines [Mitchell 1755]
-Text begins: “As British traders, diplomats and settlers ...” 
+4.8 **Display**: Mississippi River system, Indigenous settlements [Mitchell 1755, Hutchins 1778]. **Text**: “Jefferies map is concerned with larger spaces ...”. 
 
-Display: Border lines [Buell 1784]
-Text begins: “Increasingly, maps portrayed colonies as ...” 
+4.9 **Display**: Pathways, Indigenous & European settlements, council fires [Bradley 1796]. **Text**: “Abraham Bradley’s *A Map of the United State*s* shows ...”. 
+ 
 
-Display: Mississippi River system, Indigenous settlements [Mitchell 1755, Hutchins 1778]
-Text begins: “Jefferies map is concerned with larger spaces ...” 
+5 - LINES 
 
-Display: Pathways, Indigenous & European settlements, council fires [Bradley 1796]
-Text begins: “Abraham Bradley’s A Map of the United States shows ...” 
+5.0 **Display**: Four animations of expanding border lines [Seller 1676; Burghers 1738; Mitchell 1755; Bradley 1796]. **Title**: "Lines".
 
-Display: Pathways, European settlements [Bradley 1796]
-Text begins: “Bradley’s map shows state-driven colonialism  ...” 
+5.1 **Display**: Virginia [Mitchell 1755]. **Text**: “The royal charters that created colonies out of ...”. 
+
+5.2 **Display**: Colonial domains [Burghers 1738]. **Text**: “As settlement expanded into the western reaches ...”. 
+
+5.3 **Display**: Pathways, descriptions, European settlements [Evans 1752]. **Text**: “The most detailed maps focused on areas ...”. 
+
+5.4 **Display**: Indigenous settlements, colonial domains [Mitchell 1755]. **Text**: “William Herbert’s ‘new’ and ‘accurate’ map ...”. 
+
+5.5 **Display**: European, Indigenous and Haudenosaunee-related annotations [Mitchell 1755]. **Text**: “The charter borders of colonies are shown at scale ...”. 
+
+5.6 **Display**: Colonial domains [Burghers 1738] with 1763 Royal Proclamation line added. **Text**: “The Royal Proclamation of 1763 created ...”. 
+
+5.7 **Display**: (unchanged). **Text**: “A letter in the St. James’ Chronicle ...”. 
+
+5.8 **Display**: Colonial border lines [all maps]. **Text**: “Later maps used European treaties to produce ...". 
+
+5.9 **Display**: Colonial border lines [Buell 1784]. **Text**: “Where colonies sat near Indigenous nations ...”.
+
+5.10 **Display**: Connecticut [Buell 1784]. **Text**: “The transition between British Empire and American territorial republic ...”.
+ 
+5.11**Display**: Colonial border lines [Bradley 1796], Indigenous settlements [Mitchell 1755]. **Text**: “The names and location of Indigenous nations ...”.
+ 
 
  
 
-### 5 - LINES 
-
-Display: four animations of expanding border lines [Seller 1676; Burghers 1738; Mitchell 1755; Bradley 1796]
-Text: "Lines"
-
-Display: Virginia [Mitchell 1755]
-Text begins: “The royal charters that created colonies out of ...” 
-
-Display: Colonial domains [Burghers 1738]
-Text begins: “As settlement expanded into the western reaches ...” 
-
-Display: Pathways, descriptions, European settlements [Evans 1752]
-Text begins: “The most detailed maps focused on areas ...” 
-
-Display: Indigenous settlements, colonial domains [Mitchell 1755]
-Text begins: “William Herbert’s ‘new’ and ‘accurate’ map  ...” 
-
-Display: European, Indigenous and Haudenosaunee-related annotations [Mitchell 1755]
-Text begins: “The charter borders of colonies are shown at scale ...” 
-
-Display: Colonial domains [Burghers 1738] with 1763 Royal Proclamation line added
-Text begins: “The Royal Proclamation of 1763 created  ...” 
-
-Display: (unchanged)
-Text begins: “A letter in the St. James’ Chronicle ...” 
-
-Display: Colonial border lines [all maps]
-Text begins: “Later maps used European treaties to produce ...” 
-
-Display: Colonial border lines [Buell 1784]
-Text begins: “Where colonies sat near Indigenous nations. ...”
-
-Display: Connecticut [Buell 1784]
-Text begins: “The transition between British Empire and American territorial republic  ...”
- 
-Display: Colonial border lines [Bradley 1796], Indigenous settlements [Mitchell 1755]
-Text begins: “The names and location of Indigenous nations  ...”
  
 
  
