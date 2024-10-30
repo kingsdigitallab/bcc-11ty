@@ -1001,10 +1001,19 @@ export class StoryMap {
             // get the parent
             target = target.parentElement;
         }
+        let href= target.href;
+       if (href.indexOf(this.exploreHash) > -1){
+            // This is the link to explore hash, jump there.
+            console.log('hash');
+            window.location.href = href;
+            window.location.reload();
+        }
         // Clear our svgs and layers
         this.d3Intro.stopAll(this.map);
         this.d3Intro.clearSvg();
         this.storyFeatureLayerGroup.clearLayers();
+
+
 
         this.observerEnabled = false;
         let dataset = target.dataset;
