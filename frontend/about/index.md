@@ -51,9 +51,9 @@ OVERVIEW
 
 2.0 **Display**: Selection of Indigenous-related annotations [Mitchell 1755], transforming from normalized spelling to Indigenous versions. **Title**: "Homelands".
 
-2.1 **Display**: Pathways, Indigenous & European settlements [Mitchell 1755]. **Text**: “American history begins with the deep history of the land ...”
+2.1 **Display**: Rivers, Indigenous & European settlements [Mitchell 1755]. **Text**: “American history begins with the deep history of the land ...”
  
-2.2 **Display**: Rivers [Mitchell 1755]; Indigenous & European settlements and placenames [all maps]. **Text**: “The Indigenous landscape was more than a homeland ...”.
+2.2 **Display**: Rivers [Mitchell 1755]; Indigenous settlements and placenames [all maps]. **Text**: “The Indigenous landscape was more than a homeland ...”.
  
 2.3 **Display**: Principal rivers, Indigenous settlements, placenames and council fires [all maps]. **Text**: “The land was political ...”. 
 
