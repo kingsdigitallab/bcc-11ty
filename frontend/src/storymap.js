@@ -400,14 +400,14 @@ export class StoryMap {
         };
 
         this.councilFireIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/council-fire.webp',
+            iconUrl: '/assets/img/stories/council_fire.webp',
             iconSize: [22, 22],
             iconAnchor: [11, 21],
             popupAnchor: [-3, -20]
         });
 
         this.indigenousSettlementIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/circle_turquoise.webp',
+            iconUrl: '/assets/img/stories/settlement_indig.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -415,7 +415,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanSettlementIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/circle_purple.webp',
+            iconUrl: '/assets/img/stories/settlement_euro.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -423,7 +423,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         })
         this.indigenousPlacenameIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/cross_turquoise.webp',
+            iconUrl: '/assets/img/stories/placename_indig.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -431,7 +431,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanPlacenameIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/cross_purple.webp',
+            iconUrl: '/assets/img/stories/placename_euro.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -1187,11 +1187,11 @@ export class StoryMap {
                                 layer.setStyle(this.europeanAnnoStyle);
                                 break;
                             case 2:
-                                // Red poly
+                                // Pale green solid fill poly
                                 layer.setStyle(this.indigenousAreaStyle);
                                 break;
                             case 3:
-                                //Grey poly (Haudenasaunee)
+                                //Green hatched poly (Haudenasaunee)
                                 layer.setStyle(this.haudenosauneeAreaStyle);
                                 break;
                             default:
