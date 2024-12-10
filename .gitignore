@@ -18,6 +18,7 @@ netlify/functions/dynamic/*
 tweets.json
 _site
 frontend/html
+html
 /osnap
 /tests
 /admin
