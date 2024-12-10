@@ -1838,7 +1838,7 @@ export class StoryMap {
             this.toggleFilterControls();
             setTimeout(function (){
                 document.getElementById("s-7").scrollIntoView();
-            }.bind(this),2000);
+            }.bind(this),7000);
         }.bind(this), 1000);
 
 
