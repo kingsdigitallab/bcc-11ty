@@ -114,8 +114,9 @@ module.exports = function (config) {
     config.addShortcode("image", async function (src, alt, sizes) {
         let metadata = await Image(src, {
             widths: [300, 600, "auto"],
-            outputDir: 'html/assets/img',
-            urlPath: '/assets/img',
+            outputDir: '../html/assets/img',
+
+            urlPath: './assets/img',
             formats: ["webp", "jpeg"],
         });
 
@@ -217,8 +218,9 @@ module.exports = function (config) {
         (s) => stripHtml.stripHtml(s).result.substring(0, 200) + "..."
     );
 
-    // pathPrefix: "/bcc-11ty/",
+    //
     return {
+        pathPrefix: "/bcc-11ty/",
         dir: {
 		    output: "../html",
         }

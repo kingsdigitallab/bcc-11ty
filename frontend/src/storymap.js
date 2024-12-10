@@ -3,6 +3,8 @@ import {D3intro} from "./d3intro.js";
 
 export class StoryMap {
     constructor(storyUris, L, d3) {
+        // todo should be empty for static deploy
+        this.pathPrefix = '/bcc-11ty';
         this.overlay = null;
         // Data parameters
         this.storyUris = storyUris;
@@ -241,7 +243,7 @@ export class StoryMap {
             lineCap: "square",
             color: "#4b5d04",
             //fillColor: "#4b5d04",
-            fill: 'url(/assets/img/stories/hatch-green.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/hatch-green.webp)',
             weight: 2,
             opacity: 1,
             fillOpacity: 1,
@@ -252,7 +254,7 @@ export class StoryMap {
             lineCap: "square",
             color: "#e29e21",
             //fillColor: "#e29e21",
-            fill: 'url(/assets/img/stories/hatch-yellow.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/hatch-yellow.webp)',
             weight: 2,
             opacity: 1,
             fillOpacity: 1,
@@ -348,7 +350,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-            fill: 'url(/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
             weight: 2,
             opacity: 0.3,
             fillOpacity: 1,
@@ -373,7 +375,7 @@ export class StoryMap {
             color: "#f8600e",
             fillOpacity: 0.5,
             fillColor: "#f8600e00", //fill colour completely transparent
-            fill: 'url(/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
             weight: 3,
             opacity: 1,
         };
@@ -383,7 +385,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-            fill: 'url(/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
             weight: 3,
             opacity: 0.3,
         };
@@ -394,20 +396,20 @@ export class StoryMap {
             color: "#8D33CC",
             fillOpacity: 0.5,
             fillColor: "#8D33CC00",
-            fill: 'url(/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
             weight: 3,
             opacity: 1,
         };
 
         this.councilFireIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/council_fire.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/council_fire.webp',
             iconSize: [22, 22],
             iconAnchor: [11, 21],
             popupAnchor: [-3, -20]
         });
 
         this.indigenousSettlementIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/settlement_indig.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/settlement_indig.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -415,7 +417,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanSettlementIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/settlement_euro.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/settlement_euro.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -423,7 +425,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         })
         this.indigenousPlacenameIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/placename_indig.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/placename_indig.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -431,7 +433,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanPlacenameIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/placename_euro.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/placename_euro.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
