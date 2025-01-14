@@ -1,0 +1,1140 @@
+{
+  "slides": [
+    {
+      "id": 2,
+      "fid": 33,
+      "lines": {},
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            10
+          ],
+          "map_source": [
+            12
+          ],
+          "identity": [
+            1,
+            2
+          ]
+          }
+        },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 3,
+      "fid": 16,
+      "lines": {},
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ],
+          "identity": [
+            1
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 4,
+      "fid": 17,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 5,
+      "fid": 10,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            8
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            10
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 6,
+      "fid": 18,
+      "lines": {},
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            10
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 7,
+      "fid": 19,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            13
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            10,
+            12
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 8,
+      "fid": 20,
+      "points": {
+        "includes": {
+          "id": [
+            50912
+          ]
+        }
+      },
+      "indigenous": {
+        "includes": {
+          "ID": [
+            36124
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 9,
+      "fid": 21,
+      "lines": {},
+      "points": {},
+      "polys": {
+        "includes": {
+          "id": [
+            4362,
+            4355,
+            4145,
+            4349,
+            4092,
+            4356
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 10,
+      "fid": 22,
+      "lines": {},
+      "points": {},
+      "polys": {
+        "includes": {
+          "id": [
+            4207,
+            4208,
+            4224,
+            4160
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 11,
+      "fid": 22,
+      "polys": {
+        "includes": {
+          "id": [
+            4060,
+            4072,
+            4079,
+            4081,
+            4088,
+            4101,
+            4102,
+            4103,
+            4104,
+            4107,
+            4111,
+            4112,
+            4114,
+            4115,
+            4116,
+            4117,
+            4118,
+            4119,
+            4120,
+            4121,
+            4122,
+            4123,
+            4125,
+            4130,
+            4131,
+            4132,
+            4133,
+            4135,
+            4137,
+            4138,
+            4139,
+            4150,
+            4153,
+            4155,
+            4156,
+            4157,
+            4159,
+            4160,
+            4197,
+            4207,
+            4208,
+            4224,
+            4346,
+            4365
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 12,
+      "fid": 23,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            13
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 13,
+      "fid": 37,
+      "lines": {},
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            12
+          ]
+        }
+      },
+      "polys": {
+        "includes": {
+          "sub_type": [
+            11
+          ],
+          "map_source": [
+            16,
+            19
+          ],
+          "identity": [
+            3
+          ]
+        },
+        "excludes": {}
+      },
+      "features": []
+    },
+    {
+      "id": 14,
+      "fid": 35,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 15,
+      "fid": 36,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5,
+            13
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 16,
+      "fid": 24,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 17,
+      "fid": 38,
+      "lines": {
+        "includes": {
+          "id": [
+            7832,
+            7860,
+            7807,
+            7841
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 18,
+      "fid": 17,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            8
+          ],
+          "map_source": [
+            19
+          ]
+        }
+      },
+      "points": {},
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 19,
+      "fid": 35,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5,
+            8
+          ],
+          "map_source": [
+            19
+          ]
+        }
+      },
+      "points": {},
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 20,
+      "fid": 26,
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            10
+          ],
+          "map_source": [
+            5
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 21,
+      "fid": 27,
+      "lines": {},
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            1
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "polys": {
+        "includes": {},
+        "excludes": {}
+      },
+      "features": []
+    },
+    {
+      "id": 22,
+      "fid": 26,
+      "lines": {
+        "includes": {
+          "id": [
+            830361
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            10
+          ],
+          "map_source": [
+            5
+          ]
+        },
+        "excludes": {
+          "id": [
+            52832,
+            52880
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 23,
+      "fid": 41,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            13
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "identity": [
+            3
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 24,
+      "fid": 28,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            13
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            8
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 25,
+      "fid": 33,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            12
+          ]
+        }
+      },
+      "points": {},
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 26,
+      "fid": 28,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            17
+          ]
+        }
+      },
+      "points": {},
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 27,
+      "fid": 29,
+      "lines": {
+        "includes": {
+          "id": [
+            8210,
+            6768,
+            7860,
+            6746,
+            6747,
+            6738
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12,
+            15
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 28,
+      "fid": 30,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            19
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            10,
+            12
+          ]
+        },
+        "excludes": {
+          "map_source": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 29,
+      "fid": 31,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            19
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            19
+          ]
+        },
+        "excludes": {
+          "identity": [
+            2,
+            3,
+            4
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 30,
+      "fid": 22,
+      "lines": {},
+      "points": {},
+      "polys": {
+        "includes": {
+          "id": [
+            4208
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 31,
+      "fid": 39,
+      "lines": {},
+      "points": {},
+      "polys": {
+        "includes": {
+          "sub_type": [
+            14
+          ],
+          "map_source": [
+            7
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 32,
+      "fid": 25,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            5
+          ],
+          "map_source": [
+            8
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            8
+          ]
+        },
+        "excludes": {
+          "identity": [
+            2,
+            3
+          ]
+        }
+      },
+      "polys": {
+        "includes": {
+          "id": [
+            981
+          ]
+        },
+        "excludes": {}
+      },
+      "features": []
+    },
+    {
+      "id": 33,
+      "fid": 22,
+      "lines": {},
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "polys": {
+        "includes": {
+          "id": [
+            4207,
+            4208,
+            4224
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 34,
+      "fid": 32,
+      "lines": {},
+      "points": {},
+      "polys": {
+        "includes": {
+          "id": [
+            4063,
+            4144,
+            4161,
+            4164
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 35,
+      "fid": 39,
+      "lines": {
+        "includes": {
+          "id": [
+            82666
+          ]
+        }
+      },
+      "points": {},
+      "polys": {
+        "includes": {
+          "sub_type": [
+            14
+          ],
+          "map_source": [
+            7
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 36,
+      "fid": 39,
+      "lines": {
+        "includes": {
+          "id": [
+            82666
+          ]
+        }
+      },
+      "points": {},
+      "polys": {
+        "includes": {
+          "sub_type": [
+            14
+          ],
+          "map_source": [
+            7
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 37,
+      "fid": 39,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "identity": [
+            1
+          ]
+        }
+      },
+      "points": {},
+      "polys": {},
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 38,
+      "fid": 40,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            17
+          ]
+        }
+      },
+      "points": {},
+      "polys": {},
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 39,
+      "fid": 18,
+      "lines": {},
+      "points": {},
+      "polys": {
+        "includes": {
+          "id": [
+            4378
+          ]
+        }
+      },
+      "features": []
+    },
+    {
+      "id": 40,
+      "fid": 15,
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            19
+          ]
+        }
+      },
+      "points": {
+        "includes": {
+          "sub_type": [
+            4
+          ],
+          "map_source": [
+            12
+          ]
+        },
+        "excludes": {
+          "identity": [
+            1
+          ]
+        }
+      },
+      "polys": {},
+      "features": []
+    },
+    {
+      "id": 500,
+      "fid": 18,
+      "points": {},
+      "polys": {
+        "includes": {
+          "id": [
+            4092,
+            4362,
+            4117,
+            4134,
+            4137,
+            4079,
+            4081,
+            4346,
+            4072,
+            4133
+          ]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 600,
+      "fid": 30,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [
+            13
+          ]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 700,
+      "fid": 30,
+      "points": {
+        "includes": {
+          "id": [
+            55507,
+            55515,
+            55509,
+            55517,
+            55511,
+            55513,
+            55499
+          ]
+        }
+      },
+      "lines": {
+        "includes": {
+          "id": [
+            7428,
+            7429
+          ]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 800,
+      "fid": 41,
+      "points": {
+        "includes": {
+          "sub_type": [
+            4,
+            12
+          ]
+        },
+        "excludes": {}
+      },
+      "polys": {
+        "includes": {},
+        "excludes": {}
+      },
+      "features": []
+    },
+    {
+      "id": 900,
+      "fid": 18,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            3
+          ]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 901,
+      "fid": 18,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            7
+          ]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 902,
+      "fid": 18,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            12
+          ]
+        },
+        "excludes": {
+          "id": [
+            6065,
+            6647,
+            3834,
+            82916
+          ]
+        }
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 903,
+      "fid": 18,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            19
+          ]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    },
+    {
+      "id": 1000,
+      "fid": 25,
+      "points": {},
+      "lines": {
+        "includes": {
+          "sub_type": [
+            3
+          ],
+          "map_source": [
+            19
+          ]
+        },
+        "excludes": {}
+      },
+      "excludes": {},
+      "features": []
+    }
+  ]
+}
