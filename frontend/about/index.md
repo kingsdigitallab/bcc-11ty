@@ -135,6 +135,29 @@ OVERVIEW
 5.10 **Display**: Connecticut [Buell 1784]. **Text**: “The transition between British Empire and American territorial republic ...”.
  
 5.11 **Display**: Colonial border lines [Bradley 1796], Indigenous settlements [Mitchell 1755]. **Text**: “The names and location of Indigenous nations ...”.
+
+
+
+
+## Map image credits
+
+**White 1587/1590**: BRY, Theodor de. “Americae Pars, Nunc Virginia Dicta ... Autore I. With. Sculptore T. de Brij, Qui et Excudit.” Frankfort: N.p. 1587, Print. British Library. Maps G.6633 
+
+**Seller 1676**: SELLER, John. “A Mapp of New England, by J. Seller.” London: N.p. 1676, Print. British Library. Maps \*71500 (32). 
+
+**Foster 1677**: Hubbard, William. *[A Narrative of the Troubles with the Indians in New England, from the First Planting Thereof in the Year 1607 to ... 1677. But Chiefly ... in ... 1675 and 1676. To Which Is Added a Discourse about the Warre with the Pequods in the Year 1637. (A Postscript, Etc.) [With “A Map of New-England, Being the First That Ever Was Here Cut.”]]*. London: N.p., 1677. Print. British Library. C.32.e.28.  
+
+**Moll 1720**: “A New Map of the North Parts of America Claimed by France under the Names of Louisiana, Mississipi, Canada and New France, with the Adjoyning Territories of England and Spain. [With Map of] The Harbour of Annapolis Royal. A Map of the Mouth of Mississipi and Mobile Rivers [and View of] The Indian Fort Sasquesahanok. By H. Moll.” London: N.p. 1720, Print. British Library. Maps \*69917.(29.) 
+
+**Burghers 1738**: “A New Map of North America, Shewing Its Principal Divisions ... Dedicated to His Highness William Duke of Gloucester ... Delin. M [ichael]. Burg[hers]. Sculpt. Univ. Oxon.” N.p. 1738, Print. British Library. 118.e.2. 
+
+**Evans 1749**: “A Map of Pensilvania, New-Jersey, New-York, and the Three Delaware Counties. By L[ewis]. Evans.” Philadelphia? N.p. 1749, Print. British Library. Maps \*71495.(4). 
+
+**Mitchell 1755**: Mitchell, John, and Thomas Kitchin. “A Map of the British and French Dominions in North America, with the Roads, Distances, Limits and Extent of the Settlements ... Inscribed to ... the Earl of Halifax.” London: Printed for Jefferys and Faden, Geographers to the King, at the corner of St Martin’s Lane, Charing Cross 1755, Print. British Library. Maps. C27.f.9 
+
+**Buell 1784**. “A New and Correct Map of the United States of North America: Layd down from the Latest Observations and Best Authorities Agreeable to the Peace of 1783 ...” Newhaven: publish’d according to act of Assembly 1783, Print. British Library. Maps \*71490.(150).  
+
+**Bradley 1796**: “Map of the United States, Exhibiting the Post-Roads, the Situations, Connections & Distances of the Post-Offices, Stage Roads, Counties, Ports of Entry and Delivery for Foreign Vessels, and the Principal Rivers. By Abraham Bradley, Junr. W. Barker Sculp. Scale of Miles, 80[ = 55 Mm].” Philadelphia: N.p. 1796, Print. British Library. Maps \*71490.(10). 
  
 
  
