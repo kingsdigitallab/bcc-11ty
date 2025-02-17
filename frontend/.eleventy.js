@@ -220,7 +220,7 @@ module.exports = function (config) {
 
     //
     return {
-        pathPrefix: "/bcc-11ty/",
+        //pathPrefix: "/bcc-11ty/",
         dir: {
 		    output: "../html",
         }
