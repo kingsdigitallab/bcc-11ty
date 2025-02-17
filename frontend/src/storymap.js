@@ -4,7 +4,8 @@ import {D3intro} from "./d3intro.js";
 export class StoryMap {
     constructor(storyUris, L, d3) {
         // todo should be empty for static deploy
-        this.pathPrefix = '/bcc-11ty';
+        //this.pathPrefix = '/bcc-11ty';
+        this.pathPrefix = '';
         this.overlay = null;
         // Data parameters
         this.storyUris = storyUris;

@@ -108,6 +108,12 @@ module.exports = function (config) {
     config.addPassthroughCopy("assets/js");
     config.addPassthroughCopy("assets/json");
 
+    config.addPassthroughCopy({
+        "../node_modules/leaflet/dist": "assets/vendor/leaflet/dist",
+        "../node_modules/leaflet-dvf/dist": "assets/vendor/leaflet-dvf/dist"
+    });
+
+
     // just copy the admin folder as is to the static site html
     // config.addPassthroughCopy("admin");
 
@@ -222,7 +228,7 @@ module.exports = function (config) {
     return {
         //pathPrefix: "/bcc-11ty/",
         dir: {
-		    output: "../html",
+            output: "../html",
         }
     };
 };
