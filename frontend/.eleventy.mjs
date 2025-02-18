@@ -3,13 +3,14 @@
 import { EleventyRenderPlugin } from "@11ty/eleventy";
 import pugPlugin from "@11ty/eleventy-plugin-pug";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+
 import { utils } from "./_includes/js/utils.js";
 import Image from "@11ty/eleventy-img";
 
 import markdownIt from "markdown-it";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItContainer from "markdown-it-container";
-import markdownItEleventyImg from "markdown-it-eleventy-img";
+//import markdownItEleventyImg from "markdown-it-eleventy-img";
 import { inspect } from "util";
 import { stripHtml } from "string-strip-html";
 
@@ -86,18 +87,14 @@ function sortByOrderNo(a, b) {
 export default async function (config) {
     "use strict";
 
-    config.setLiquidOptions({
-        dynamicPartials: true,
-        strictFilters: true
-    });
-
     config.addPlugin(EleventyRenderPlugin);
+
+
     
     utils.configureMarkdown(config);
     config.addPlugin(eleventyNavigationPlugin);
     utils.configureSass(config);
     config.addPlugin(pugPlugin);
-    config.addPlugin(UpgradeHelper);
 
 
     // just copy the assets folder as is to the static site html
