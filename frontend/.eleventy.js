@@ -1,13 +1,15 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const utils = require("./_includes/js/utils.js");
 const Image = require("@11ty/eleventy-img");
+const {eleventyImageTransformPlugin} = require("@11ty/eleventy-img");
+
 
 const inspect = require("util").inspect;
 const path = require("node:path");
 const debug = require("debug")("Eleventy:KDL");
 const markdownItEleventyImg = require("markdown-it-eleventy-img");
 const markdownItContainer = require("markdown-it-container");
-const {EleventyRenderPlugin} = require("@11ty/eleventy");
+//const {EleventyRenderPlugin} = require("@11ty/eleventy");
 const stripHtml = require("string-strip-html");
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require('markdown-it-attrs');
@@ -94,10 +96,34 @@ function sortByOrderNo(a, b) {
     return 0;
 }
 
-module.exports = function (config) {
+module.exports = async function (config) {
+    const {EleventyRenderPlugin} = await import("@11ty/eleventy");
     utils.configureMarkdown(config);
     config.addPlugin(eleventyNavigationPlugin);
     utils.configureSass(config);
+
+    config.addPlugin(eleventyImageTransformPlugin, {
+        // which file extensions to process
+        extensions: "html",
+
+        // Add any other Image utility options here:
+        outputDir: '../html/assets/img',
+        urlPath: '/assets/img',
+
+        // optional, output image formats
+        formats: ["webp", "jpeg"],
+        //formats: ["auto"],
+
+        // optional, output image widths
+        widths: [300, 600, 1200],
+
+        // optional, attributes assigned on <img> override these values.
+        defaultAttributes: {
+            sizes: [300, 600, 1200],
+            loading: "lazy",
+            decoding: "async",
+        },
+    });
 
 
     // just copy the assets folder as is to the static site html
@@ -117,25 +143,25 @@ module.exports = function (config) {
     // just copy the admin folder as is to the static site html
     // config.addPassthroughCopy("admin");
 
-    config.addShortcode("image", async function (src, alt, sizes) {
-        let metadata = await Image(src, {
-            widths: [300, 600, "auto"],
-            outputDir: '../html/assets/img',
-
-            urlPath: './assets/img',
-            formats: ["webp", "jpeg"],
-        });
-
-        let imageAttributes = {
-            alt,
-            sizes,
-            loading: "lazy",
-            decoding: "async",
-        };
-
-        // You bet we throw an error on a missing alt (alt="" works okay)
-        return Image.generateHTML(metadata, imageAttributes);
-    });
+    // config.addShortcode("image", async function (src, alt, sizes) {
+    //     let metadata = await Image(src, {
+    //         widths: [300, 600, "auto"],
+    //         outputDir: '../html/assets/img',
+    //
+    //         urlPath: './assets/img',
+    //         formats: ["webp", "jpeg"],
+    //     });
+    //
+    //     let imageAttributes = {
+    //         alt,
+    //         sizes,
+    //         loading: "lazy",
+    //         decoding: "async",
+    //     };
+    //
+    //     // You bet we throw an error on a missing alt (alt="" works okay)
+    //     return Image.generateHTML(metadata, imageAttributes);
+    // });
 
     // {{ myvar | debug }} => displays full content of myvar object
     config.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
