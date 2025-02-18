@@ -1,20 +1,22 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const utils = require("./_includes/js/utils.js");
-const Image = require("@11ty/eleventy-img");
+/*jshint esversion: 8 */
 
-const inspect = require("util").inspect;
-const path = require("node:path");
-const debug = require("debug")("Eleventy:KDL");
-const markdownItEleventyImg = require("markdown-it-eleventy-img");
-const markdownItContainer = require("markdown-it-container");
-const {EleventyRenderPlugin} = require("@11ty/eleventy");
-const stripHtml = require("string-strip-html");
-const markdownIt = require("markdown-it");
-const markdownItAttrs = require('markdown-it-attrs');
+import { EleventyRenderPlugin } from "@11ty/eleventy";
+import pugPlugin from "@11ty/eleventy-plugin-pug";
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import { utils } from "./_includes/js/utils.js";
+import Image from "@11ty/eleventy-img";
 
+import markdownIt from "markdown-it";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownItContainer from "markdown-it-container";
+import markdownItEleventyImg from "markdown-it-eleventy-img";
+import { inspect } from "util";
+import { stripHtml } from "string-strip-html";
+
+import UpgradeHelper from "@11ty/eleventy-upgrade-help";
 
 // Image shortcode
-async function imageShortcode(src, alt, classNames, sizes) {
+/*async function imageShortcode(src, alt, classNames, sizes) {
 
     const widths = [300, 600, 1200];
     const formats = ["webp", "jpeg"];
@@ -69,19 +71,6 @@ async function imageShortcode(src, alt, classNames, sizes) {
   </picture>`;
 
     return picture;
-    /*console.log(sourceHtmlString);
-
-
-    let imageAttributes = {
-      alt,
-      sizes,
-      class: classNames,
-      loading: "lazy",
-      decoding: "async",
-    };
-
-    // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-    return Image.generateHTML(metadata, imageAttributes);*/
 
 }
 
@@ -92,12 +81,23 @@ function sortByOrderNo(a, b) {
         return -1;
     }
     return 0;
-}
+}*/
 
-module.exports = function (config) {
+export default async function (config) {
+    "use strict";
+
+    config.setLiquidOptions({
+        dynamicPartials: true,
+        strictFilters: true
+    });
+
+    config.addPlugin(EleventyRenderPlugin);
+    
     utils.configureMarkdown(config);
     config.addPlugin(eleventyNavigationPlugin);
     utils.configureSass(config);
+    config.addPlugin(pugPlugin);
+    config.addPlugin(UpgradeHelper);
 
 
     // just copy the assets folder as is to the static site html
@@ -147,6 +147,7 @@ module.exports = function (config) {
         html: true,
     };
 
+
     const md = new markdownIt(options).use(markdownItContainer, "slide", {
         validate: function (params) {
             //return params.trim().match(/^slide\s+(.*)$/);
@@ -182,10 +183,7 @@ module.exports = function (config) {
             allowedAttributes: []  // empty array = all attributes are allowed
         });
 
-
     config.setLibrary("md", md);
-    config.addPlugin(EleventyRenderPlugin);
-
 
     config.addFilter(
         "exclude",
@@ -217,10 +215,12 @@ module.exports = function (config) {
         (s) => stripHtml.stripHtml(s).result.substring(0, 200) + "..."
     );
 
+
+
     // pathPrefix: "/bcc-11ty/",
     return {
         dir: {
-		    output: "html",
+            output: "html",
         }
     };
 };

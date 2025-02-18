@@ -1,10 +1,12 @@
-const path = require("node:path");
-const sass = require("sass");
-const debug = require("debug")("Eleventy:KDL");
-const markdownItImageFigures = require("markdown-it-image-figures");
-const markdownItFootnote = require("markdown-it-footnote");
-const markdownItAttrs = require("markdown-it-attrs");
-const markdownIt = require("markdown-it");
+import path from "node:path";
+import sass from "sass";
+import debug from "debug";
+import markdownItImageFigures from "markdown-it-image-figures";
+import markdownItFootnote from "markdown-it-footnote";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownIt from "markdown-it";
+
+const debugLog = debug("Eleventy:KDL");
 
 function lookup(anarray, path_to_property, accepted_values, exclude = false) {
   // returns array with elements of anarray st <element>.<path_to_property belongs> to <accepted_values>
@@ -73,12 +75,12 @@ function configureSass(config) {
     // `compile` is called once per .scss file in the input directory
     compile: async function (content, inputPath) {
       let parsed = path.parse(inputPath);
-      debug(inputPath);
+      debugLog(inputPath);
       if (parsed.name.startsWith("_")) {
-        debug("return");
+        debugLog("return");
         return;
       }
-      debug(parsed.name);
+      debugLog(parsed.name);
       // let res = sass.compileString(content);
       let res = sass.compile(inputPath);
 
@@ -108,4 +110,4 @@ function configureMarkdown(config) {
   config.setLibrary("md", markdownLib);
 }
 
-module.exports = { lookup, configureSass, configureMarkdown };
+export const utils = { lookup, configureSass, configureMarkdown };
