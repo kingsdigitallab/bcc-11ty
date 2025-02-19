@@ -1,79 +1,19 @@
-/*jshint esversion: 8 */
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const utils = require("./_includes/js/utils.js");
+const Image = require("@11ty/eleventy-img");
+const {eleventyImageTransformPlugin} = require("@11ty/eleventy-img");
 
-import { EleventyRenderPlugin } from "@11ty/eleventy";
-import pugPlugin from "@11ty/eleventy-plugin-pug";
-import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 
-import { utils } from "./_includes/js/utils.js";
-import Image from "@11ty/eleventy-img";
+const inspect = require("util").inspect;
+const path = require("node:path");
+const debug = require("debug")("Eleventy:KDL");
+const markdownItEleventyImg = require("markdown-it-eleventy-img");
+const markdownItContainer = require("markdown-it-container");
 
-import markdownIt from "markdown-it";
-import markdownItAttrs from "markdown-it-attrs";
-import markdownItContainer from "markdown-it-container";
-//import markdownItEleventyImg from "markdown-it-eleventy-img";
-import { inspect } from "util";
-import { stripHtml } from "string-strip-html";
+const stripHtml = require("string-strip-html");
+const markdownIt = require("markdown-it");
+const markdownItAttrs = require('markdown-it-attrs');
 
-import UpgradeHelper from "@11ty/eleventy-upgrade-help";
-
-// Image shortcode
-/*async function imageShortcode(src, alt, classNames, sizes) {
-
-    const widths = [300, 600, 1200];
-    const formats = ["webp", "jpeg"];
-    let imageMetadata = await Image(src, {
-        widths: widths,
-        outputDir: 'html/img',
-        urlPath: '/img',
-        formats: formats,
-    });
-
-    const sourceHtmlString = Object.values(imageMetadata)
-        // Map each format to the source HTML markup
-        .map((images) => {
-            // The first image's sourceType is the same as those of all other images
-            // belonging to this format (e.g., image/webp).
-            const {sourceType} = images[0];
-
-            // Use our util from earlier to make our lives easier
-            const sourceAttributes = stringifyAttributes({
-                type: sourceType,
-                // srcset needs to be a comma-separated attribute
-                srcset: images.map((image) => image.srcset).join(', '),
-                sizes,
-            });
-            // Return one <source> per format
-            return `<source ${sourceAttributes}>`;
-        })
-        .join('\n');
-
-    const getLargestImage = (format) => {
-        const images = imageMetadata[format];
-        return images[images.length - 1];
-    }
-
-    const largestUnoptimizedImg = getLargestImage(formats[0]);
-    const imgAttributes = stringifyAttributes({
-        src: largestUnoptimizedImg.url,
-        width: largestUnoptimizedImg.width,
-        height: largestUnoptimizedImg.height,
-        alt,
-        loading: 'lazy',
-        decoding: 'async',
-    });
-    const imgHtmlString = `<img ${imgAttributes}>`;
-
-    const pictureAttributes = stringifyAttributes({
-        class: classNames,
-    });
-    const picture = `<picture ${pictureAttributes}>
-    ${sourceHtmlString}
-    ${imgHtmlString}
-  </picture>`;
-
-    return picture;
-
-}
 
 function sortByOrderNo(a, b) {
     if (a.orderno > b.orderno) {
@@ -82,19 +22,36 @@ function sortByOrderNo(a, b) {
         return -1;
     }
     return 0;
-}*/
+}
 
-export default async function (config) {
-    "use strict";
-
-    config.addPlugin(EleventyRenderPlugin);
-
-
-    
+module.exports = async function (config) {
+    const {EleventyRenderPlugin} = await import("@11ty/eleventy");
     utils.configureMarkdown(config);
     config.addPlugin(eleventyNavigationPlugin);
     utils.configureSass(config);
-    config.addPlugin(pugPlugin);
+
+    config.addPlugin(eleventyImageTransformPlugin, {
+        // which file extensions to process
+        extensions: "html",
+
+        // Add any other Image utility options here:
+        outputDir: '../html/assets/img',
+        urlPath: '/assets/img',
+
+        // optional, output image formats
+        formats: ["webp", "jpeg"],
+        //formats: ["auto"],
+
+        // optional, output image widths
+        widths: [300, 600, 1200],
+
+        // optional, attributes assigned on <img> override these values.
+        defaultAttributes: {
+            sizes: [300, 600, 1200],
+            loading: "lazy",
+            decoding: "async",
+        },
+    });
 
 
     // just copy the assets folder as is to the static site html
@@ -105,27 +62,12 @@ export default async function (config) {
     config.addPassthroughCopy("assets/js");
     config.addPassthroughCopy("assets/json");
 
-    // just copy the admin folder as is to the static site html
-    // config.addPassthroughCopy("admin");
-
-    config.addShortcode("image", async function (src, alt, sizes) {
-        let metadata = await Image(src, {
-            widths: [300, 600, "auto"],
-            outputDir: 'html/assets/img',
-            urlPath: '/assets/img',
-            formats: ["webp", "jpeg"],
-        });
-
-        let imageAttributes = {
-            alt,
-            sizes,
-            loading: "lazy",
-            decoding: "async",
-        };
-
-        // You bet we throw an error on a missing alt (alt="" works okay)
-        return Image.generateHTML(metadata, imageAttributes);
+    config.addPassthroughCopy({
+        "../node_modules/leaflet/dist": "assets/vendor/leaflet/dist",
+        "../node_modules/leaflet-dvf/dist": "assets/vendor/leaflet-dvf/dist",
+        "../node_modules/leaflet-textpath/leaflet.text.path.js": "assets/vendor/leaflet-textpath/leaflet.text.path.js"
     });
+
 
     // {{ myvar | debug }} => displays full content of myvar object
     config.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
@@ -143,7 +85,6 @@ export default async function (config) {
     let options = {
         html: true,
     };
-
 
     const md = new markdownIt(options).use(markdownItContainer, "slide", {
         validate: function (params) {
@@ -180,7 +121,10 @@ export default async function (config) {
             allowedAttributes: []  // empty array = all attributes are allowed
         });
 
+
     config.setLibrary("md", md);
+    config.addPlugin(EleventyRenderPlugin);
+
 
     config.addFilter(
         "exclude",
@@ -212,12 +156,11 @@ export default async function (config) {
         (s) => stripHtml.stripHtml(s).result.substring(0, 200) + "..."
     );
 
-
-
-    // pathPrefix: "/bcc-11ty/",
+    //
     return {
+        //pathPrefix: "/bcc-11ty/",
         dir: {
-            output: "html",
+            output: "../html",
         }
     };
 };

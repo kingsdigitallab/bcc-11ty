@@ -1,8 +1,5 @@
 /*jshint esversion: 8 */
 
-/*import L from 'leaflet';
-import 'leaflet-dvf';
-import 'leaflet-textpath';*/
 
 // https://observablehq.com/@sfu-iat355/intro-to-leaflet-d3-interactivity
 
@@ -86,16 +83,6 @@ export class D3intro {
                         introRun = await this.playPathways1Intro(
                             map, true, true, 2500, 1500, 1000
                         );
-                        //introRun = await this.playPathways2Intro(map, startDelay);
-                        /*console.log("running: " + this.introRunning);
-                        // If we haven't been interrupted, go on to second intro
-                        if (this.introRunning == "pathways1") {
-                            this.svg.selectAll("*").interrupt();
-                            this.clearSvg();
-                            this.introRunning = "pathways2";
-                            //console.log(this.introRunning);
-                            introRun = await this.playPathways2Intro(map, startDelay);
-                        }*/
                         break;
                     case "pathways2":
                         console.log("pathways2");
@@ -600,17 +587,7 @@ export class D3intro {
         return true;
     }
 
-    /*
-    this.lineLandRouteStyle = {
-                stroke: true,
-                //dashArray: "7 6",
-                lineCap: "square",
-                lineJoin: "arcs",
-                color: "#FFFFFF",
-                weight: 3,
-                fill: false,
-            };
-     */
+
     async drawLines(features, duration, colour, majorClass, minorClass) {
         if (this.introRunning == "lines") {
             this.svg

@@ -3,6 +3,9 @@ import {D3intro} from "./d3intro.js";
 
 export class StoryMap {
     constructor(storyUris, L, d3) {
+        // todo should be empty for static deploy
+        //this.pathPrefix = '/bcc-11ty';
+        this.pathPrefix = '';
         this.overlay = null;
         // Data parameters
         this.storyUris = storyUris;
@@ -241,7 +244,7 @@ export class StoryMap {
             lineCap: "square",
             color: "#4b5d04",
             //fillColor: "#4b5d04",
-            fill: 'url(/assets/img/stories/hatch-green.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/hatch-green.webp)',
             weight: 2,
             opacity: 1,
             fillOpacity: 1,
@@ -252,7 +255,7 @@ export class StoryMap {
             lineCap: "square",
             color: "#e29e21",
             //fillColor: "#e29e21",
-            fill: 'url(/assets/img/stories/hatch-yellow.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/hatch-yellow.webp)',
             weight: 2,
             opacity: 1,
             fillOpacity: 1,
@@ -348,7 +351,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-            fill: 'url(/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
             weight: 2,
             opacity: 0.3,
             fillOpacity: 1,
@@ -373,7 +376,7 @@ export class StoryMap {
             color: "#f8600e",
             fillOpacity: 0.5,
             fillColor: "#f8600e00", //fill colour completely transparent
-            fill: 'url(/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
             weight: 3,
             opacity: 1,
         };
@@ -383,7 +386,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-            fill: 'url(/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
             weight: 3,
             opacity: 0.3,
         };
@@ -394,20 +397,20 @@ export class StoryMap {
             color: "#8D33CC",
             fillOpacity: 0.5,
             fillColor: "#8D33CC00",
-            fill: 'url(/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
+            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
             weight: 3,
             opacity: 1,
         };
 
         this.councilFireIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/council_fire.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/council_fire.webp',
             iconSize: [22, 22],
             iconAnchor: [11, 21],
             popupAnchor: [-3, -20]
         });
 
         this.indigenousSettlementIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/settlement_indig.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/settlement_indig.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -415,15 +418,15 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanSettlementIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/settlement_euro.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/settlement_euro.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
             shadowAnchor: [10, 19],
             popupAnchor: [-3, -20]
-        })
+        });
         this.indigenousPlacenameIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/placename_indig.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/placename_indig.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -431,13 +434,13 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanPlacenameIcon = this.L.icon({
-            iconUrl: '/assets/img/stories/placename_euro.webp',
+            iconUrl: this.pathPrefix+'/assets/img/stories/placename_euro.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
             shadowAnchor: [10, 19],
             popupAnchor: [-3, -20]
-        })
+        });
     }
 
     async loadShapeFile(shape_url) {
@@ -607,7 +610,7 @@ export class StoryMap {
                             bubblingMouseEvents: true
                         });
                         
-                }
+                };
             case 12: // Council fire
                 return this.L.marker(latlng, {
                     icon: this.councilFireIcon,
@@ -1339,37 +1342,6 @@ export class StoryMap {
                 }
             }
         }
-
-        /*if (this.exploreFilterControl[featureType]) {
-
-                  if (!this.exploreFilterControl[featureType].includes[criteria]) {
-                    this.exploreFilterControl[featureType].includes[criteria] = [];
-                  }
-                  const index =
-                    this.exploreFilterControl[featureType].includes[criteria].indexOf(
-                      value
-                    );
-                  // If we're including and it isn't there already
-                  if (include && index < 0) {
-                    this.exploreFilterControl[featureType].includes[criteria].push(value);
-                  } else {
-                    // Remove
-                    // If value already in filters, turn off
-
-                    console.log(this.exploreFilterControl[featureType].includes.identity);
-                    // Special case for sub_type, don't remove if we still have identity values
-                    if (
-                      index > -1 &&
-                      (criteria != "sub_type" ||
-                        !this.exploreFilterControl[featureType].includes.identity ||
-                        this.exploreFilterControl[featureType].includes.identity.length ==
-                          0)
-                    ) {
-                      console.log(index);
-
-                    }
-                  }
-                }*/
     }
 
     /**
@@ -1505,7 +1477,7 @@ export class StoryMap {
             let mapToggleAll = document.getElementById(this.exploreSelectors.selectall_maps);
             if (this.totalMapFiltersApplied == this.totalMapFilters && mapToggleAll.checked == false) {
                 mapToggleAll.checked = true;
-            } else if (mapToggleAll.checked == true && this.totalMapFiltersApplied < this.totalMapFilters) {
+            } else if (true == mapToggleAll.checked && this.totalMapFiltersApplied < this.totalMapFilters) {
                 mapToggleAll.checked = false;
             }
         }
@@ -1533,7 +1505,7 @@ export class StoryMap {
         let dataset = e.target.dataset;
         this.updateToggleAllElement(this.exploreSelectors.selectall_features, e.target.checked);
         if (dataset) {
-            // [{"sub_type":3, "identity":[2,3,4]}]
+
             const values = JSON.parse(dataset.filtervalue);
             if (values.sub_type) {
                 let subtypeValue = values.sub_type;
@@ -1836,7 +1808,7 @@ export class StoryMap {
             this.toggleFilterControls();
             setTimeout(function (){
                 document.getElementById("s-7").scrollIntoView();
-            }.bind(this),2000);
+            }.bind(this),7000);
         }.bind(this), 1000);
 
 
