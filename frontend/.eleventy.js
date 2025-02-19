@@ -61,7 +61,7 @@ module.exports = async function (config) {
     config.addPassthroughCopy({
         "../node_modules/leaflet/dist": "assets/vendor/leaflet/dist",
         "../node_modules/leaflet-dvf/dist": "assets/vendor/leaflet-dvf/dist",
-        "../node_modules/leaflet-textpath/leaflet.textpath.js": "assets/vendor/leaflet-textpath/leaflet.textpath.js",
+        "../node_modules/leaflet-textpath": "assets/vendor/leaflet-textpath",
         "../node_modules/d3/dist": "assets/vendor/d3/dist"
     });
 

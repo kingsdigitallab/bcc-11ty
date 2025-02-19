@@ -44,7 +44,9 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "d3": "^7.9.0",
     "leaflet": "^1.9.4",
+    "leaflet-dvf": "^0.3.1",
     "leaflet-textpath": "^1.2.3",
     "markdown-it": "^13.0.1"
   }
