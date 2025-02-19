@@ -1,5 +1,6 @@
 /*jshint esversion: 8 */
 import {D3intro} from "./d3intro.js";
+import * as fflate from 'fflate';
 
 export class StoryMap {
     constructor(storyUris, L, d3) {
@@ -244,7 +245,7 @@ export class StoryMap {
             lineCap: "square",
             color: "#4b5d04",
             //fillColor: "#4b5d04",
-            fill: 'url('+this.pathPrefix+'/assets/img/stories/hatch-green.webp)',
+            fill: 'url(' + this.pathPrefix + '/assets/img/stories/hatch-green.webp)',
             weight: 2,
             opacity: 1,
             fillOpacity: 1,
@@ -255,7 +256,7 @@ export class StoryMap {
             lineCap: "square",
             color: "#e29e21",
             //fillColor: "#e29e21",
-            fill: 'url('+this.pathPrefix+'/assets/img/stories/hatch-yellow.webp)',
+            fill: 'url(' + this.pathPrefix + '/assets/img/stories/hatch-yellow.webp)',
             weight: 2,
             opacity: 1,
             fillOpacity: 1,
@@ -351,7 +352,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-            fill: 'url('+this.pathPrefix+'/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
+            fill: 'url(' + this.pathPrefix + '/assets/img/stories/horizontal_hatch_print_8C8C8C.webp)',
             weight: 2,
             opacity: 0.3,
             fillOpacity: 1,
@@ -376,7 +377,7 @@ export class StoryMap {
             color: "#f8600e",
             fillOpacity: 0.5,
             fillColor: "#f8600e00", //fill colour completely transparent
-            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
+            fill: 'url(' + this.pathPrefix + '/assets/img/stories/vertical_hatch_orange_f8600e.webp)',
             weight: 3,
             opacity: 1,
         };
@@ -386,7 +387,7 @@ export class StoryMap {
             lineJoin: "arcs",
             color: "#8C8C8C",
             fillColor: "#8C8C8C00",
-            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
+            fill: 'url(' + this.pathPrefix + '/assets/img/stories/vertical_hatch_grey_8C8C8C.webp)',
             weight: 3,
             opacity: 0.3,
         };
@@ -397,20 +398,20 @@ export class StoryMap {
             color: "#8D33CC",
             fillOpacity: 0.5,
             fillColor: "#8D33CC00",
-            fill: 'url('+this.pathPrefix+'/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
+            fill: 'url(' + this.pathPrefix + '/assets/img/stories/vertical_hatch_purple_8D33CC.webp)',
             weight: 3,
             opacity: 1,
         };
 
         this.councilFireIcon = this.L.icon({
-            iconUrl: this.pathPrefix+'/assets/img/stories/council_fire.webp',
+            iconUrl: this.pathPrefix + '/assets/img/stories/council_fire.webp',
             iconSize: [22, 22],
             iconAnchor: [11, 21],
             popupAnchor: [-3, -20]
         });
 
         this.indigenousSettlementIcon = this.L.icon({
-            iconUrl: this.pathPrefix+'/assets/img/stories/settlement_indig.webp',
+            iconUrl: this.pathPrefix + '/assets/img/stories/settlement_indig.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -418,7 +419,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanSettlementIcon = this.L.icon({
-            iconUrl: this.pathPrefix+'/assets/img/stories/settlement_euro.webp',
+            iconUrl: this.pathPrefix + '/assets/img/stories/settlement_euro.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -426,7 +427,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.indigenousPlacenameIcon = this.L.icon({
-            iconUrl: this.pathPrefix+'/assets/img/stories/placename_indig.webp',
+            iconUrl: this.pathPrefix + '/assets/img/stories/placename_indig.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -434,7 +435,7 @@ export class StoryMap {
             popupAnchor: [-3, -20]
         });
         this.europeanPlacenameIcon = this.L.icon({
-            iconUrl: this.pathPrefix+'/assets/img/stories/placename_euro.webp',
+            iconUrl: this.pathPrefix + '/assets/img/stories/placename_euro.webp',
             iconSize: [20, 20],
             shadowSize: [20, 20],
             iconAnchor: [10, 19],
@@ -444,9 +445,21 @@ export class StoryMap {
     }
 
     async loadShapeFile(shape_url) {
-        let response = await fetch(shape_url);
-        let json = await response.json();
-        return json;
+        if (shape_url.indexOf('gz') > -1) {
+            // Gzipped json, we need to handle this ourselves as the encoding won't be right
+            const compressed = new Uint8Array(
+                await fetch(shape_url).then(res => res.arrayBuffer())
+            );
+            const decompressed = fflate.decompressSync(compressed);
+            const origText = fflate.strFromU8(decompressed);
+            return JSON.parse(origText);
+        } else {
+            // Uncompressed JSON, handle as normal
+            let response = await fetch(shape_url);
+            let json = await response.json();
+            return json;
+        }
+
     }
 
     /**
@@ -609,8 +622,9 @@ export class StoryMap {
                             icon: this.indigenousPlacenameIcon,
                             bubblingMouseEvents: true
                         });
-                        
-                };
+
+                }
+                ;
             case 12: // Council fire
                 return this.L.marker(latlng, {
                     icon: this.councilFireIcon,
@@ -761,7 +775,6 @@ export class StoryMap {
     }
 
 
-
     async initMap(lat, lng, zoom) {
         this.map = this.L.map("basemap", {
             scrollWheelZoom: false,
@@ -796,7 +809,7 @@ export class StoryMap {
                     behavior: "instant"
                 });
                 //window.scrollBy(0, delta);
-                lastTouch = [e.touches[0].screenX, e.touches[0].screenY+ delta];
+                lastTouch = [e.touches[0].screenX, e.touches[0].screenY + delta];
                 scrollActive = false;
                 scrollActivateTimeout = setTimeout(function () {
                     scrollActive = true;
@@ -808,7 +821,7 @@ export class StoryMap {
             console.log('touchmoveend');
             // Final scroll
             console.log(e);
-            if (e.changedTouches.length > 0){
+            if (e.changedTouches.length > 0) {
                 const delta = -1 * (e.changedTouches[0].screenY - lastTouch[1]) * touchScrollSpeed;
                 //console.log('wtf: ' + delta);
                 console.log('touchend ' + delta.toString());
@@ -994,7 +1007,7 @@ export class StoryMap {
         this.svg = await this.d3Intro.loadD3(this.map);
 
         if (window.location && window.location.hash == this.exploreHash) {
-           this.loadExploreLayer();
+            this.loadExploreLayer();
         }
     }
 
@@ -1004,8 +1017,8 @@ export class StoryMap {
             // get the parent
             target = target.parentElement;
         }
-        let href= target.href;
-       if (href.indexOf(this.exploreHash) > -1){
+        let href = target.href;
+        if (href.indexOf(this.exploreHash) > -1) {
             // This is the link to explore hash, jump there.
             console.log('hash');
             window.location.href = href;
@@ -1015,7 +1028,6 @@ export class StoryMap {
         this.d3Intro.stopAll(this.map);
         this.d3Intro.clearSvg();
         this.storyFeatureLayerGroup.clearLayers();
-
 
 
         this.observerEnabled = false;
@@ -1804,11 +1816,11 @@ export class StoryMap {
         this.d3Intro.clearSvg();
         clearTimeout(this.overviewTimeout);
         document.getElementById("s-6").scrollIntoView(false);
-        setTimeout(function (){
+        setTimeout(function () {
             this.toggleFilterControls();
-            setTimeout(function (){
+            setTimeout(function () {
                 document.getElementById("s-7").scrollIntoView();
-            }.bind(this),7000);
+            }.bind(this), 7000);
         }.bind(this), 1000);
 
 
