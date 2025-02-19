@@ -424,7 +424,7 @@ export class StoryMap {
             iconAnchor: [10, 19],
             shadowAnchor: [10, 19],
             popupAnchor: [-3, -20]
-        })
+        });
         this.indigenousPlacenameIcon = this.L.icon({
             iconUrl: this.pathPrefix+'/assets/img/stories/placename_indig.webp',
             iconSize: [20, 20],
@@ -440,7 +440,7 @@ export class StoryMap {
             iconAnchor: [10, 19],
             shadowAnchor: [10, 19],
             popupAnchor: [-3, -20]
-        })
+        });
     }
 
     async loadShapeFile(shape_url) {
@@ -610,7 +610,7 @@ export class StoryMap {
                             bubblingMouseEvents: true
                         });
                         
-                }
+                };
             case 12: // Council fire
                 return this.L.marker(latlng, {
                     icon: this.councilFireIcon,
@@ -1342,37 +1342,6 @@ export class StoryMap {
                 }
             }
         }
-
-        /*if (this.exploreFilterControl[featureType]) {
-
-                  if (!this.exploreFilterControl[featureType].includes[criteria]) {
-                    this.exploreFilterControl[featureType].includes[criteria] = [];
-                  }
-                  const index =
-                    this.exploreFilterControl[featureType].includes[criteria].indexOf(
-                      value
-                    );
-                  // If we're including and it isn't there already
-                  if (include && index < 0) {
-                    this.exploreFilterControl[featureType].includes[criteria].push(value);
-                  } else {
-                    // Remove
-                    // If value already in filters, turn off
-
-                    console.log(this.exploreFilterControl[featureType].includes.identity);
-                    // Special case for sub_type, don't remove if we still have identity values
-                    if (
-                      index > -1 &&
-                      (criteria != "sub_type" ||
-                        !this.exploreFilterControl[featureType].includes.identity ||
-                        this.exploreFilterControl[featureType].includes.identity.length ==
-                          0)
-                    ) {
-                      console.log(index);
-
-                    }
-                  }
-                }*/
     }
 
     /**
@@ -1508,7 +1477,7 @@ export class StoryMap {
             let mapToggleAll = document.getElementById(this.exploreSelectors.selectall_maps);
             if (this.totalMapFiltersApplied == this.totalMapFilters && mapToggleAll.checked == false) {
                 mapToggleAll.checked = true;
-            } else if (mapToggleAll.checked == true && this.totalMapFiltersApplied < this.totalMapFilters) {
+            } else if (true == mapToggleAll.checked && this.totalMapFiltersApplied < this.totalMapFilters) {
                 mapToggleAll.checked = false;
             }
         }
@@ -1536,7 +1505,7 @@ export class StoryMap {
         let dataset = e.target.dataset;
         this.updateToggleAllElement(this.exploreSelectors.selectall_features, e.target.checked);
         if (dataset) {
-            // [{"sub_type":3, "identity":[2,3,4]}]
+
             const values = JSON.parse(dataset.filtervalue);
             if (values.sub_type) {
                 let subtypeValue = values.sub_type;

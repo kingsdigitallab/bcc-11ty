@@ -15,78 +15,6 @@ const markdownIt = require("markdown-it");
 const markdownItAttrs = require('markdown-it-attrs');
 
 
-// Image shortcode
-async function imageShortcode(src, alt, classNames, sizes) {
-
-    const widths = [300, 600, 1200];
-    const formats = ["webp", "jpeg"];
-    let imageMetadata = await Image(src, {
-        widths: widths,
-        outputDir: 'html/img',
-        urlPath: '/img',
-        formats: formats,
-    });
-
-    const sourceHtmlString = Object.values(imageMetadata)
-        // Map each format to the source HTML markup
-        .map((images) => {
-            // The first image's sourceType is the same as those of all other images
-            // belonging to this format (e.g., image/webp).
-            const {sourceType} = images[0];
-
-            // Use our util from earlier to make our lives easier
-            const sourceAttributes = stringifyAttributes({
-                type: sourceType,
-                // srcset needs to be a comma-separated attribute
-                srcset: images.map((image) => image.srcset).join(', '),
-                sizes,
-            });
-            // Return one <source> per format
-            return `<source ${sourceAttributes}>`;
-        })
-        .join('\n');
-
-    const getLargestImage = (format) => {
-        const images = imageMetadata[format];
-        return images[images.length - 1];
-    }
-
-    const largestUnoptimizedImg = getLargestImage(formats[0]);
-    const imgAttributes = stringifyAttributes({
-        src: largestUnoptimizedImg.url,
-        width: largestUnoptimizedImg.width,
-        height: largestUnoptimizedImg.height,
-        alt,
-        loading: 'lazy',
-        decoding: 'async',
-    });
-    const imgHtmlString = `<img ${imgAttributes}>`;
-
-    const pictureAttributes = stringifyAttributes({
-        class: classNames,
-    });
-    const picture = `<picture ${pictureAttributes}>
-    ${sourceHtmlString}
-    ${imgHtmlString}
-  </picture>`;
-
-    return picture;
-    /*console.log(sourceHtmlString);
-
-
-    let imageAttributes = {
-      alt,
-      sizes,
-      class: classNames,
-      loading: "lazy",
-      decoding: "async",
-    };
-
-    // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-    return Image.generateHTML(metadata, imageAttributes);*/
-
-}
-
 function sortByOrderNo(a, b) {
     if (a.orderno > b.orderno) {
         return 1;
@@ -136,32 +64,10 @@ module.exports = async function (config) {
 
     config.addPassthroughCopy({
         "../node_modules/leaflet/dist": "assets/vendor/leaflet/dist",
-        "../node_modules/leaflet-dvf/dist": "assets/vendor/leaflet-dvf/dist"
+        "../node_modules/leaflet-dvf/dist": "assets/vendor/leaflet-dvf/dist",
+        "../node_modules/leaflet-textpath/leaflet.text.path.js": "assets/vendor/leaflet-textpath/leaflet.text.path.js"
     });
 
-
-    // just copy the admin folder as is to the static site html
-    // config.addPassthroughCopy("admin");
-
-    // config.addShortcode("image", async function (src, alt, sizes) {
-    //     let metadata = await Image(src, {
-    //         widths: [300, 600, "auto"],
-    //         outputDir: '../html/assets/img',
-    //
-    //         urlPath: './assets/img',
-    //         formats: ["webp", "jpeg"],
-    //     });
-    //
-    //     let imageAttributes = {
-    //         alt,
-    //         sizes,
-    //         loading: "lazy",
-    //         decoding: "async",
-    //     };
-    //
-    //     // You bet we throw an error on a missing alt (alt="" works okay)
-    //     return Image.generateHTML(metadata, imageAttributes);
-    // });
 
     // {{ myvar | debug }} => displays full content of myvar object
     config.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);

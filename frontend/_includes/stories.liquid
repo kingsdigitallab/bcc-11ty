@@ -387,9 +387,9 @@ layout: base.liquid
 
 <script defer type="text/javascript" src="{{ '/assets/vendor/leaflet/dist/leaflet.js' | url }}"></script>
 <script defer type="text/javascript" src="{{ '/assets/vendor/leaflet-dvf/dist/leaflet-dvf.js' | url }}"></script>
-<script defer type="text/javascript" src="{{ '/assets/js/leaflet/plugins/leaflet.textpath.js' | url }}"></script>
-<script defer type="text/javascript"
-        src="{{ '/assets/js/leaflet/plugins/leaflet-polygon.fillPattern.js' | url }}"></script>
+<script defer type="text/javascript" src="{{ '/assets/vendor/leaflet-textpath/leaflet.text.path.js' | url }}"></script>
+<!--<script defer type="text/javascript"
+        src="{{ '/assets/js/leaflet/plugins/leaflet-polygon.fillPattern.js' | url }}"></script>-->
 <script defer type="text/javascript" src="{{ '/assets/node_modules/d3/dist/d3.min.js' | url }}"></script>
 
 <script>
@@ -415,44 +415,6 @@ layout: base.liquid
 <script defer type="text/javascript" src="{{ '/assets/js/bcc/main.js' | url }}"></script>
 
 
-<script>
-    // this is for toggle show and hide, not smaller toggle
-    /*
-
-    // "Apply to All" toggle for Filters One, for the Map
-    const checkboxesOne = document.querySelectorAll(".explore_filter");
-    const toggleAllFeatures = document.getElementById("selectallFeatures");
-    const toggleAllMaps = document.getElementById("selectallMaps");
-
-    function applyMapFilter(filterValue) {
-        const values = filterValue.split('-');
-        const start = parseInt(values[0]);
-        const end = parseInt(values[1]);
-
-        if (!isNaN(start) && !isNaN(end)) {
-            for (let i = start; i <= end; i++) {
-                // this is the trigger function where to trigger a range of 1-19 value
-                console.log(`Applying filter to map with value ${i} for Filters One`);
-            }
-        } else {
-            console.log("Invalid filter range");
-        }
-    }
-
-    toggleAllFeatures.addEventListener("change", function () {
-        const applyToAll = toggleAllFeatures.checked;
-        document.querySelectorAll(".explore_filter").forEach(checkbox => {
-            checkbox.checked = applyToAll;
-            applyMapFilter(checkbox.getAttribute("data-filtervalue"));
-        });
-    });
-
-    checkboxesOne.forEach(checkbox => {
-        checkbox.addEventListener("change", function () {
-            applyMapFilter(checkbox.getAttribute("data-filtervalue"));
-        });
-    });*/
-</script>
 
 
 </body>

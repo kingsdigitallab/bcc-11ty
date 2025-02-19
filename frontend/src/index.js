@@ -6,9 +6,10 @@ import { StoryMap } from "./storymap.js";
 
 
 /* eslint-disable */
-
-let storyMap = new StoryMap(storyURIs, L, d3);
-storyMap.initMap(startLat, startLng, startZoom);
+window.onload = function (){
+    let storyMap = new StoryMap(storyURIs, L, d3);
+    storyMap.initMap(startLat, startLng, startZoom);
+};
 //return storyMap;
 
 /* eslint-enable */
