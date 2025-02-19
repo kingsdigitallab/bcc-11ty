@@ -56,18 +56,19 @@ module.exports = async function (config) {
 
     // just copy the assets folder as is to the static site html
     // config.addPassthroughCopy("**/*.css");
-    config.addPassthroughCopy("assets/node_modules");
-    config.addPassthroughCopy("assets/fonts");
-    config.addPassthroughCopy("assets/img");
-    config.addPassthroughCopy("assets/js");
-    config.addPassthroughCopy("assets/json");
+    //config.addPassthroughCopy("assets/node_modules");
 
     config.addPassthroughCopy({
         "../node_modules/leaflet/dist": "assets/vendor/leaflet/dist",
         "../node_modules/leaflet-dvf/dist": "assets/vendor/leaflet-dvf/dist",
-        "../node_modules/leaflet-textpath/leaflet.text.path.js": "assets/vendor/leaflet-textpath/leaflet.text.path.js"
+        "../node_modules/leaflet-textpath/leaflet.textpath.js": "assets/vendor/leaflet-textpath/leaflet.textpath.js",
+        "../node_modules/d3/dist": "assets/vendor/d3/dist"
     });
 
+    config.addPassthroughCopy("assets/fonts");
+    config.addPassthroughCopy("assets/img");
+    config.addPassthroughCopy("assets/js");
+    config.addPassthroughCopy("assets/json");
 
     // {{ myvar | debug }} => displays full content of myvar object
     config.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
