@@ -1486,7 +1486,11 @@ path.leaflet-interactive{
   
 }//@media only screen and (max-width: 700px) 
 
+// Ensure width is set to eleventy image works with legend icons
 
+#legend-wrapper .content img {
+  width: auto;
+}
 
 // Mobile changes
 @media only screen and (max-width: 600px) {
