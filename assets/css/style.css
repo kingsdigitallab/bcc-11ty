@@ -1286,6 +1286,10 @@ path.leaflet-interactive {
     min-width: 250px;
   }
 }
+#legend-wrapper .content img {
+  width: auto;
+}
+
 @media only screen and (max-width: 600px) {
   body .container {
     padding: 0 1%;
