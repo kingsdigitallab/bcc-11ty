@@ -17,10 +17,9 @@ title: BCC
     <meta property="og:image" content="{{ metadata.live_domain }}{{ pageImageWebPath }}">
     <meta property="og:description" content="{{ description }}">
     <meta property="og:title" content="{{ title }}">
-
-
+    <!-- permanent redirect here to go to the correct site -->
+    <meta http-equiv="refresh" content="0; url=https://bcc.kdl.kcl.ac.uk/">
     <title>{{ title }} | {{ metadata.title }}</title>
-
     <link rel="icon" href="{{ '/assets/img/logos/favicon.png' | url }}" sizes="any">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}?ts={{ "now" | date: "%s" }}">
     <link rel="stylesheet" href="{{ '/assets/vendor/leaflet/dist/leaflet.css' | url }}"/>

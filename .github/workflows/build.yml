@@ -3,8 +3,7 @@ name: Build Eleventy
 on:
   push:
     branches:
-      - main
-      - release
+      - redirect
 
 jobs:
   build:
